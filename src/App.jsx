@@ -11,6 +11,7 @@ function App() {
       </div>
       <h1 className='text-6xl'>Hello world</h1>
       <h2> Hi there, It's me faysal hosen </h2>
+      <h2>hello i am md ibrahim khalil, i want to contribute</h2>
     
     </>
   )
