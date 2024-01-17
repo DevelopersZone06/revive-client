@@ -1,11 +1,14 @@
 import Banner from "../../Components/HomeComponents/Banner";
 
+import Footer from "../Footer/Footer";
 
 const Home = () => {
     return (
         <div>
           <Banner></Banner>  
 
+            <h1>this is home</h1>
+            <Footer/>
         </div>
     );
 };
