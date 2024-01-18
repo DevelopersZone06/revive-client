@@ -2,17 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&family=Satisfy&display=swap");
 
-.primary-bg{
-    background-color: #E9F0EC;
-   }
-   .secondary-bg{
-    background-color: #448C74;
-   }
-   .headings{
-       color:#E5C466 ;
-   }
-   .btn-bg{
-       background-color:#E5C466;
-   }
-   
+.primary-bg {
+  background-color: #e9f0ec;
+}
+.secondary-bg {
+  background-color: #448c74;
+}
+.headings {
+  color: #e5c466;
+}
+.btn-bg {
+  background-color: #e5c466;
+}
+
+.normal {
+  font-family: "Montserrat", sans-serif;
+}
+.heading {
+  font-family: "Satisfy", cursive;
+}
+
