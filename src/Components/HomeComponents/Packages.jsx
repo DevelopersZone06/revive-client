@@ -1,4 +1,4 @@
-import Title from "../../Shared/Title";
+import Title from "../../Shared/Title/Title";
 
 
 const Packages = () => {
