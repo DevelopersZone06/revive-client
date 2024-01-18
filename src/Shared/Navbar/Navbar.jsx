@@ -16,6 +16,7 @@ const Navbar = () => {
               <li>Pages</li>
               <li>Blog</li>
               <li>Shop</li>
+              <li>Contact</li>
               <li className="border-e-2">Contact</li>
               <li className="w-7"><img src="https://i.ibb.co/12BnwFJ/icons8-search-64.png" alt="" /></li>
             </ul>
