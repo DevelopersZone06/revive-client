@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import Marquee from "react-fast-marquee";
-import Client from "../Client/Client";
+import Client from "./Client";
 
 
 const Clients = () => {
