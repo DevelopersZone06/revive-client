@@ -8,7 +8,7 @@ const Login = () => {
     
   const onSubmit = (data) => console.log(data)
     return (
-        <div className="bg-teal-100 overflow-x-hidden lg:overflow-x-auto lg:overflow-hidden flex items-center justify-center lg:h-screen">
+        <div className="primary-bg overflow-x-hidden lg:overflow-x-auto lg:overflow-hidden flex items-center justify-center lg:h-screen">
         <div className="login-container container w-full lg:w-4/5 lg:bg-white h-screen lg:h-screen-75 lg:border border-gray-300 rounded-lg flex flex-wrap lg:flex-nowrap flex-col lg:flex-row justify-between group">
 
         { /*product Side*/} 
@@ -41,7 +41,7 @@ const Login = () => {
             <div className="w-full space-y-5">
     
               <div className="form-caption flex items-end justify-center text-center space-x-3 mb-20">
-                <span className="text-3xl font-semibold text-gray-700">Login</span>
+                <span className="text-3xl font-bold text-gray-700">Login</span>
                
               </div>
               { /*form caption*/}
