@@ -1,18 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&family=Satisfy&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 
-.primary-bg{
-    background-color: #E9F0EC;
-   }
-   .secondary-bg{
-    background-color: #448C74;
-   }
-   .headings{
-       color:#E5C466 ;
-   }
-   .btn-bg{
-       background-color:#E5C466;
-   }
-   
+
+.primary-bg {
+  background-color: #e9f0ec;
+}
+.secondary-bg {
+  background-color: #448c74;
+}
+.headings {
+  color: #e5c466;
+}
+.btn-bg {
+  background-color: #e5c466;
+}
+
+.headingFont{
+  font-family: 'Playfair Display', serif;
+}
+.subheading{
+  font-family: "Satisfy", cursive;
+  color: #e5c466; ;
+}
+.normal{
+  font-family: "Montserrat";
+}
+
