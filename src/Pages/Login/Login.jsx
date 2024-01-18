@@ -51,7 +51,7 @@ const Login = () => {
              <label className="space-y-2 w-full lg:w-4/5 block mx-auto">
                <span className="block text-lg text-gray-800 tracking-wide">Email</span>
                <span className="block">
-                 <input type="text" name='email' {...register("email", { required: true })} className="bg-teal-50 lg:bg-white border lg:border-2 border-gray-400 lg:border-gray-200 w-full p-3 focus:outline-none active:outline-none focus:border-gray-400 active:border-gray-400"/>
+                 <input type="text" name='email' {...register("email", { required: true })} className="bg-teal-50 lg:bg-white border lg:border-2 border-gray-400 lg:border-gray-200 w-full p-1 rounded focus:outline-none active:outline-none focus:border-gray-400 active:border-gray-400"/>
                </span>
              </label>
            </div>
@@ -62,7 +62,7 @@ const Login = () => {
              <label className="space-y-2 w-full lg:w-4/5 block mx-auto">
                <span className="block text-lg text-gray-800 tracking-wide">Password</span>
                <span className="block">
-                 <input type="password" name='password' {...register("password", { required: true })} className="bg-teal-50 lg:bg-white border lg:border-2 border-gray-400 lg:border-gray-200 w-full p-3 focus:outline-none active:outline-none focus:border-gray-400 active:border-gray-400" />
+                 <input type="password" name='password' {...register("password", { required: true })} className="bg-teal-50 p-1 rounded lg:bg-white border lg:border-2 border-gray-400 lg:border-gray-200 w-full focus:outline-none active:outline-none focus:border-gray-400 active:border-gray-400" />
                </span>
              </label>
            </div>
@@ -81,7 +81,7 @@ const Login = () => {
  
            <div className="form-element">
              <span className="w-full lg:w-4/5 block mx-auto ">
-               <input type="submit" value="Login" className="cursor-pointer border-2 font-bold text-teal-50 border-teal-500 w-full p-3 bg-teal-500 focus:outline-none active:outline-none focus:bg-theme-teal active:bg-theme-teal hover:bg-theme-teal transition-all"/>
+               <input type="submit" value="Login" className="cursor-pointer border-2 font-bold text-teal-50 border-teal-500 w-full p-1 rounded-xl bg-teal-500 focus:outline-none active:outline-none focus:bg-theme-teal active:bg-theme-teal hover:bg-theme-teal transition-all"/>
              </span>
            </div>
              </form>
