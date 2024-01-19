@@ -1,7 +1,7 @@
 const Navbar = () => {
   return (
     <>
-      <div className="navbar items-center justify-between">
+      <div className="navbar items-center justify-between flex-col lg:flex-row">
         <div className="flex items-center">
           <img
             src="https://i.ibb.co/PDGbWGh/icons8-video-conference-64.png"
@@ -10,7 +10,7 @@ const Navbar = () => {
           <h4>Revive</h4>
         </div>
         <div>
-          <ul className="flex gap-5">
+          <ul className="flex gap-5 flex-wrap justify-center">
             <li>Home</li>
             <li>About</li>
             <li>Services</li>
