@@ -1,7 +1,7 @@
-import Banner from "../../Components/HomeComponents/Banner";
+import Banner from "../../Components/HomeComponents/Banner/Banner";
 import Clients from "../../Components/HomeComponents/Client/Clients";
 import Features from "../../Components/HomeComponents/Features";
-import Packages from "../../Components/HomeComponents/Packages";
+import Packages from "../../Components/HomeComponents/Packages/Packages";
 
 import Footer from "../Footer/Footer";
 
