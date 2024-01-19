@@ -8,22 +8,22 @@ const Trainers = () => {
         {
             name: "Md. Emran",
             skill: "Boxing Trainer",
-            img: "https://template.unicoderbd.com/unifit/images/trainer/trainer4.jpg"
+            img: "https://i.ibb.co/hKdkXpz/tainer1.jpg"
         },
         {
-            name: "Faysal Hossen",
+            name: "Jona Martha",
             skill: "Yoga Trainer",
-            img: "https://template.unicoderbd.com/unifit/images/trainer/trainer2.jpg"
+            img: "https://i.ibb.co/3z6SX00/gym36a.webp"
         },
         {
             name: "Md Ibrahim",
             skill: "Weight Loss Trainer",
-            img: "https://template.unicoderbd.com/unifit/images/trainer/trainer4.jpg"
+            img: "https://i.ibb.co/K0gwVkN/fitness-465202-1280.jpg"
         },
         {
-            name: "Md. Emran",
+            name: "Jarin Tasnim",
             skill: "Boxing Trainer",
-            img: "https://template.unicoderbd.com/unifit/images/trainer/trainer2.jpg"
+            img: "https://i.ibb.co/1sZ16Lj/gym39.webp"
         }
     ]
     return (
