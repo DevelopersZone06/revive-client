@@ -6,7 +6,9 @@
 @tailwind utilities;
 
 
-
+.secondary-color{
+  color: #448c74;
+}
 .primary-bg {
   background-color: #e9f0ec;
 }
@@ -32,3 +34,6 @@
   font-family: "Montserrat";
 }
 
+.border-secondary{
+  border: 1px solid #448c74;
+}
