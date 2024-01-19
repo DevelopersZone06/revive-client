@@ -27,7 +27,7 @@ const Trainers = () => {
         }
     ]
     return (
-        <div className='primary-bg py-16 px-[10%]'>
+        <div className='primary-bg py-20 px-[10%]'>
             <div>
                 <Title heading={'Our Some Trainers'} subHeading={'Trainers'}></Title>
             </div>

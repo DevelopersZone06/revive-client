@@ -3,7 +3,7 @@ import "../../../Styles/features.css";
 
 const Packages = () => {
   return (
-    <div className="primary-bg space-y-20 py-32 ">
+    <div className="space-y-20 py-32 ">
       <Headings
         heading={"Our awesome Packages"}
         subHeading={"Join us to enhance your fitness journey."}
