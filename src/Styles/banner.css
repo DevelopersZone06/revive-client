@@ -50,15 +50,7 @@ svg text {
     stroke-dasharray: 0 50%;
     stroke-width: 2;
   }
-  /* 70% {
-    fill: rgba(229, 196, 102, 0);
-    stroke: rgba(229, 229, 229, 1);
-  } */
-  /* 80% {
-    fill: rgba(229, 196, 102, 0);
-    stroke: rgba(229, 229, 229, 1);
-    stroke-width: 3;
-  } */
+  
   100% {
     fill: rgba(229, 196, 102, 1);
     stroke: rgba(229, 229, 229, 0);
