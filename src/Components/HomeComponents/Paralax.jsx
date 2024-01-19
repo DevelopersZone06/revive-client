@@ -1,7 +1,9 @@
+import Title from '../../Shared/Title';
 import '../../Styles/paralax.css'
 const Paralax = () => {
     return (
        <div className=''>
+        <Title subHeading={'Discover the Reasons'} heading={'Why Chose Us'}/>
          <div className="paralax-item  bg-fixed my-14">
          <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical py-7">
   <li>
