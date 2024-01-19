@@ -1,3 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&family=Satisfy&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.secondary-color{
+  color: #448c74;
+}
+.primary-bg {
+  background-color: #e9f0ec;
+}
+.secondary-bg {
+  background-color: #448c74;
+}
+.headings {
+  color: #e5c466;
+}
+
+.btn-bg {
+  background-color: #e5c466;
+}
+
+.headingFont{
+  font-family: 'Playfair Display', serif;
+}
+.subheading{
+  font-family: "Satisfy", cursive;
+  color: #448c74; 
+}
+.normal{
+  font-family: "Montserrat";
+}
+
+.border-secondary{
+  border: 1px solid #448c74;
+}
+
+
+
+
+
+
+/* service page css  */
+
+/* .service-content{
+  background-color: black;
+  transition: width 2s;
+} */
+
+.service-card:hover .service-content{
+  background-color: white;
+}
+
+.service-card:hover .service-title{
+  color: black;
+}
+
+.service-des{
+  transition: 1s;
+}
+
+.service-card:hover .service-des{
+  margin-top: 0px;
+}
+
+.service-card:hover .hidden{
+  display: block;
+}

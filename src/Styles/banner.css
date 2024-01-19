@@ -1,0 +1,72 @@
+.image-container {
+  position: relative;
+  overflow: hidden;
+}
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: alternateSize 5s infinite;
+  -webkit-animation: alternateSize 5s infinite;
+}
+
+@keyframes alternateSize {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -o-transform: scale(0.9);
+  }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+
+svg {
+  width: 100%;
+  height: 100%;
+}
+
+svg text {
+  letter-spacing: 1px; 
+  animation: stroke 5s infinite alternate;
+  stroke-width: 2;
+  stroke: #f9f9f9;
+  -webkit-animation: stroke 6s infinite alternate;
+}
+
+@keyframes stroke {
+  0% {
+    fill: rgba(229, 196, 102, 0);
+    stroke: rgba(229, 229, 229, 1);
+    stroke-dashoffset: 25%;
+    stroke-dasharray: 0 50%;
+    stroke-width: 2;
+  }
+  
+  100% {
+    fill: rgba(229, 196, 102, 1);
+    stroke: rgba(229, 229, 229, 0);
+    stroke-dashoffset: -25%;
+    stroke-dasharray: 50% 0;
+    stroke-width: 0;
+  }
+}
+ .bannerImage{
+ clip-path: inset(10% 3% 12% 0 round 5% 20% 0 10%);
+   
+ }
+ .box {
+    --mask:
+      radial-gradient(84.97px at 50% calc(100% - 114.00px),#000 99%,#0000 101%) calc(50% - 76px) 0/152px 100%,
+      radial-gradient(84.97px at 50% calc(100% + 76.00px),#0000 99%,#000 101%) 50% calc(100% - 38px)/152px 100% repeat-x;
+    -webkit-mask: var(--mask);
+            mask: var(--mask);
+  }
