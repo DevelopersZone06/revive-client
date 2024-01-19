@@ -2,7 +2,7 @@ import { TbRibbonHealth } from "react-icons/tb";
 
 const Title = ({ heading, subHeading }) => {
   return (
-    <div className="my-20 text-center space-y-3 corner-border capitalize">
+    <div className="mb-12 text-center space-y-3 corner-border capitalize">
       <h1 className="heading text-3xl subheading ">{subHeading}</h1>
       <div className="flex gap-5 justify-center items-center">
         <span className="w-[70px] h-[1px] btn-bg " ></span>

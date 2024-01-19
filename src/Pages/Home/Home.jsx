@@ -2,6 +2,7 @@ import Banner from "../../Components/HomeComponents/Banner";
 import Clients from "../../Components/HomeComponents/Client/Clients";
 import Features from "../../Components/HomeComponents/Features";
 import Packages from "../../Components/HomeComponents/Packages";
+import Trainers from "../../Components/HomeComponents/Trainers/Trainers";
 
 import Footer from "../Footer/Footer";
 
@@ -11,6 +12,7 @@ const Home = () => {
           <Banner></Banner> 
           <Features></Features> 
           <Packages></Packages>
+          <Trainers></Trainers>
           <Clients></Clients>
             <Footer/>
         </div>
