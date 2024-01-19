@@ -1,7 +1,6 @@
-import "../../Styles/banner.css";
-import img3 from "../../assets/banner/img3.jpg";
 
-
+import img3 from "../../../assets/banner/img3.jpg";
+import '../../../Styles/banner.css'
 
 const Banner = () => {
   return (
@@ -12,7 +11,7 @@ const Banner = () => {
             <span className="border border-white rounded-full p-2 text-xl md:text-2xl lg:text-2xl">
               Inspiration for Healthy Living
             </span>
-            <div className="lg:text-6xl md:text-4xl text-xl ">
+            <div className="lg:text-6xl md:text-6xl text-xl ">
               <svg>
                 <text x="45%" y="50%" dy=".50em" textAnchor="middle">
                   Transform Your Life
@@ -20,14 +19,14 @@ const Banner = () => {
               </svg>
             </div>
             <hr className="-mt-10 md:-mt-0" />
-            <p className="py-6">
+            <p className="py-6 text-center lg:text-left">
               Transform Your Life with Our Transformative Workouts Revitalize
               your energy, renew your vitality, and redefine your well-being
               with Revive Fitness.
             </p>
-           
-            <div className="">
-            <a
+
+            <div className="text-center lg:text-left"> 
+              <a
                 data-aos="fade-up"
                 href="#contact"
                 className="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-[#0D1322] transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 group"
@@ -70,7 +69,6 @@ const Banner = () => {
                 </span>
               </a>
             </div>
-            
           </div>
           <div className="image-container h-96 lg:w-5/12 w-full">
             <img

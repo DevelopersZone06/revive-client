@@ -27,11 +27,11 @@ const Trainers = () => {
         }
     ]
     return (
-        <div className='primary-bg py-16 px-[10%]'>
+        <div className='primary-bg py-20 px-[10%]'>
             <div>
                 <Title heading={'Our Some Trainers'} subHeading={'Trainers'}></Title>
             </div>
-            <div className='grid grid-cols-4 gap-5 text-center'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 text-center'>
                 {
                     trainers.map(trainer => <Trainer trainer={trainer}></Trainer>)
                 }
