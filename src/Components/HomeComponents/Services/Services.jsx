@@ -45,7 +45,7 @@ const Services = () => {
     return (
         <div className='primary-bg px-[10%] py-20'>
             <Title subHeading={"Services"} heading={"Our Some Services"}></Title>
-            <div className='grid grid-cols-3 gap-8'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8'>
                 {
                     services.map(service => <Service service={service}></Service>)
                 }
