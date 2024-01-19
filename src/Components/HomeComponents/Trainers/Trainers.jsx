@@ -1,4 +1,4 @@
-import React from 'react';
+
 import Title from '../../../Shared/Title';
 import Trainer from './Trainer';
 
