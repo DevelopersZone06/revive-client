@@ -8,7 +8,7 @@ import Packages from "../../Components/HomeComponents/Packages/Packages";
 
 import Trainers from "../../Components/HomeComponents/Trainers/Trainers";
 
-import Footer from "../Footer/Footer";
+
 
 const Home = () => {
     return (
@@ -20,7 +20,6 @@ const Home = () => {
           <Paralax/>
           <Trainers></Trainers>
           <Clients></Clients>
-            <Footer/>
         </div>
     );
 };

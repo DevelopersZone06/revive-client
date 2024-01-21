@@ -6,6 +6,10 @@
 @tailwind utilities;
 
 
+#root{
+  max-width: 2100px;
+  margin: 0 auto;
+}
 .secondary-color{
   color: #448c74;
 }
@@ -42,14 +46,19 @@
 
 
 
+/* banner section css  */
+
+.hero-content{
+  padding: 0px;
+}
+
+#animation-heading{
+  margin-left: -20px;
+}
+
 
 
 /* service page css  */
-
-/* .service-content{
-  background-color: black;
-  transition: width 2s;
-} */
 
 .service-card:hover .service-content{
   background-color: white;

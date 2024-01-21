@@ -8,9 +8,9 @@ const Navbar = () => {
   const [openSearch, setOpenSearch] = useState(false);
 
   return (
-    <div className="bg-[#677c35]">
-      <nav className="flex max-w-screen-2xl mx-auto justify-between items-center  top-0">
-        <Link to="/" className="title font-bold p-4 m-4 text-base flex">
+    <div className="bg-[#448c74f5] px-[2%] sm:px-[5%] lg:px-[8%]">
+      <nav className="flex max-w-screen-2xl mx-auto justify-between items-center py-4 top-0">
+        <Link to="/" className="title font-bold text-base flex">
           Revive
         </Link>
         <div
