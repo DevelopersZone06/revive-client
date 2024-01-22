@@ -132,7 +132,7 @@ const About = () => {
                                 {/* if there is a button in form, it will close the modal */}
                                 <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                             </form>
-                            <iframe className="w-full aspect-video" src="https://www.youtube.com"></iframe>
+                            <iframe className="w-full aspect-video h-[500]" src="https://www.youtube.com/embed/8ef7FhmMcLU"></iframe>
                         </div>
                     </dialog>
                     
