@@ -6,7 +6,7 @@ import { GiBoxingGloveSurprise } from "react-icons/gi";
 const AboutTitle = () => {
     return (
         <>
-        <div className="flex justify-around">
+        <div className="flex justify-between mx-6">
         <div className="flex items-center my-5 cursor-pointer">
         <h1 className="text-xl font-semibold ">Home </h1>
          <IoMdArrowDropright className="w-[22px]"/>
