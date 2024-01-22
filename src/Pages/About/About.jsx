@@ -17,7 +17,7 @@ const About = () => {
         <div>
             <AboutTitle />
             {/* 1st section */}
-            <div className="flex flex-col sm:flex-row md:flex-row mx-6 mt-14 gap-10">
+            <div className="flex flex-col sm:flex-row md:flex-row px-[2%] sm:px-[5%] lg:px-[8%] mt-14 gap-10">
                 <img src={image2} alt="" className="w-[410px] md:w-[300px] rounded-md object-cover border-t-8 border-l-8 border-[#448c74] transition delay-150 duration-300 ease-in-out hover:scale-90" />
                 <div>
                     <h2 className="text-2xl md:text-4xl lg:text-6xl font-bold">Join with best fitness coach</h2>
@@ -42,7 +42,7 @@ const About = () => {
                 </div>
             </div>
             {/* second section */}
-            <div className="flex flex-col sm:flex-row md:flex-row justify-between mx-6 mt-14 gap-10">
+            <div className="flex flex-col sm:flex-row md:flex-row justify-between px-[2%] sm:px-[5%] lg:px-[8%] mt-14 gap-10">
 
                 <div>
                     <h2 className="text-2xl md:text-4xl lg:text-6xl font-bold">Our <span className="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-[#448c74] relative inline-block"><span className="relative text-white">misssion</span></span></h2>
@@ -58,7 +58,7 @@ const About = () => {
                 <div className="paralax-item  bg-fixed my-14 py-7">
                     <Title subHeading={'Discover the Reasons'} heading={'Why People Chose Us'} />
                     <div>
-                        <div className="mx-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                        <div className="px-[2%] sm:px-[5%] lg:px-[8%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
 
 
                             <div className="p-6 max-w-sm rounded-xl shadow-lg flex items-center space-x-4 transition delay-150 duration-300 ease-in-out hover:scale-110">
@@ -121,7 +121,7 @@ const About = () => {
                 </div>
             </div>
             {/* fourth second */}
-            <div className="flex flex-col sm:flex-row md:flex-row justify-between mx-6 mt-14 gap-10 mb-14">
+            <div className="flex flex-col sm:flex-row md:flex-row justify-between px-[2%] sm:px-[5%] lg:px-[8%] mt-14 gap-10 mb-14">
                 <div className="relative">
 
                     <img src={image3} alt="" className="md:w-[500px]  object-cover  border-[#448c74] rounded-t-md" />
