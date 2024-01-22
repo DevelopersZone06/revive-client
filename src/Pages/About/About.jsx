@@ -50,19 +50,20 @@ const About = () => {
                 <div className="paralax-item  bg-fixed my-14 py-7">
                     <Title subHeading={'Discover the Reasons'} heading={'Why Chose Us'} />
                     <div>
-                       <div className="mx-6 grid grid-cols-3 gap-5">
-                       <div className="flex gap-5 py-3">
-                        <GrYoga className="h-16 w-16 rounded-full p-1 bg-[#448c74] text-[#E5C466] "/>
-                            <div className="justify-start">
-                               
-                               
-                                <h3 className="text-lg font-semibold">Experinced Coachers</h3>
-                               <p className="max-w-xs">We’re here to help you overcome the barriers in the way to a ...</p>
+                        <div className="mx-6 grid grid-cols-3 gap-5">
+                          
+                            
+                            <div className="p-6 max-w-sm rounded-xl shadow-lg flex items-center space-x-4">
+                                <div className="shrink-0">
+                                    <GrYoga className="h-12 w-12 text-[#448c74]" src="/img/logo.svg" alt="ChitChat Logo"/>
+                                </div>
+                                <div>
+                                    <div className="text-xl font-medium text-black">Experinced Coachers</div>
+                                    <p className="text-slate-500">We’re here to help you overcome the barriers in the way to a ...</p>
+                                </div>
                             </div>
-                           
+
                         </div>
-                      
-                       </div>
                     </div>
                 </div>
             </div>
