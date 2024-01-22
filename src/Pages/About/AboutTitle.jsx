@@ -12,7 +12,7 @@ const AboutTitle = () => {
          <IoMdArrowDropright className="w-[22px]"/>
          <h1 className="text-xl font-semibold text-[#9ac339]">About Us</h1>
         </div>
-        <div className="flex gap-5 items-center cursor-pointer">
+        <div className="md:flex gap-5 items-center cursor-pointer hidden ">
         <IoFitnessOutline className="text-5xl"/>
         <GrYoga/>
  <GiBoxingGloveSurprise/>
