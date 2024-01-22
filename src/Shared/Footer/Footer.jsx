@@ -2,7 +2,7 @@ import { HomeIcon, InboxIcon, PhoneIcon } from "@heroicons/react/solid";
 import { FaInstagram, FaTwitter, FaFacebookF, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 const Footer = () => {
   return (
-    <div className="secondary-bg text-white px-[2%] sm:px-[8%] lg:px-[8%] pt-16">
+    <div className="secondary-bg text-white px-[2%] sm:px-[5%] lg:px-[8%] pt-16">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pb-10">
         <div>
           <h2 className="text-3xl font-semibold mb-5">Revive</h2>
