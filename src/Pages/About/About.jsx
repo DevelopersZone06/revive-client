@@ -32,11 +32,12 @@ const About = () => {
                 </div>
             </div>
             {/* second section */}
-            <div className="flex flex-col sm:flex-row md:flex-row mx-6 mt-14 gap-10">
+            <div className="flex flex-col sm:flex-row md:flex-row justify-between mx-6 mt-14 gap-10">
                 
                 <div>
                     <h2 className="text-2xl md:text-4xl lg:text-6xl font-bold">Our misssion</h2>
-                    <p className="max-w-xl py-7">Our personal trainers can help you meet your fitness goals. They can become your teacher, your motivator, your coach and your friend. Our personal trainers are degreed and certified by an accredited fitness organization.</p>
+                    <p className="max-w-2xl py-7 text-lg">Our personal trainers can help you meet your fitness goals. They can become your teacher, your motivator, your coach and your friend. Our personal trainers are degreed and certified by an accredited fitness orga-nization.</p>
+                    <p className="max-w-2xl py-7 text-lg">Our personal trainers can help you meet your fitness goals. They can become your teacher, your motivator, your coach and your friend. Our personal trainers are degreed and certified by an accredited fitness orga-nization.</p>
                     
                 </div>
                 <img src={image1} alt="" className="md:w-[500px] rounded-md object-cover transition delay-150 duration-300 ease-in-out hover:scale-90" />
