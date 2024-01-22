@@ -5,14 +5,14 @@ import '../../../Styles/banner.css'
 const Banner = () => {
   return (
     <div>
-      <div className="hero min-h-screen secondary-bg w-full box">
-        <div className="hero-content flex-col lg:flex-row justify-between  w-full">
+      <div className="secondary-bg py-28 w-full px-[2%] sm:px-[5%] lg:px-[8%] box">
+        <div className="flex justify-between flex-col lg:flex-row">
           <div className="lg:w-1/2 w-full text-white">
             <span className="border border-white rounded-full p-2 text-xl md:text-2xl lg:text-2xl">
               Inspiration for Healthy Living
             </span>
-            <div className="lg:text-6xl md:text-6xl text-xl ">
-              <svg>
+            <div className="lg:text-6xl md:text-6xl text-xl">
+              <svg id="animation-heading">
                 <text x="45%" y="50%" dy=".50em" textAnchor="middle">
                   Transform Your Life
                 </text>
@@ -70,7 +70,7 @@ const Banner = () => {
               </a>
             </div>
           </div>
-          <div className="image-container h-96 lg:w-5/12 w-full">
+          <div className="image-container h-96 lg:w-5/12 w-full text-right">
             <img
               src={img3}
               alt="Image"
