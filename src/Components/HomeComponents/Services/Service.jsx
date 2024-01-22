@@ -13,7 +13,7 @@ const Service = ({service}) => {
                 <div className='pt-8 mt-28 service-des'>
                     <p className='text-lg hidden'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit modi aliquam porro esse voluptatem ducimus, debitis perspiciatis nobis at sint.</p>
                     <button className='text-xl hidden uppercase font-semibold tracking-widest mt-8'>More Details</button>
-                </div>
+                </div> 
             </div>
 
         </div>

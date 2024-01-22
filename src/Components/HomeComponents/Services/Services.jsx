@@ -43,7 +43,7 @@ const Services = () => {
         }
     ]
     return (
-        <div className='primary-bg px-[10%] py-20'>
+        <div className='primary-bg px-[2%] sm:px-[5%] lg:px-[8%] py-28'>
             <Title subHeading={"Services"} heading={"Our Some Services"}></Title>
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8'>
                 {

@@ -1,15 +1,13 @@
-import Headings from "../../../Shared/Headings/Headings";
+
+import Title from "../../../Shared/Title";
 import "../../../Styles/features.css";
 
 const Packages = () => {
   return (
-    <div className="space-y-20 py-32 ">
-      <Headings
-        heading={"Our awesome Packages"}
-        subHeading={"Join us to enhance your fitness journey."}
-      ></Headings>
+    <div className="py-28 px-[2%] sm:px-[5%] lg:px-[8%]">
+      <Title heading={"Our awesome Packages"} subHeading={"Join us to enhance your fitness journey."}></Title>
       <div className="">
-        <div className="container mx-auto">
+        <div>
           <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10">
             {/* Basic Plan */}
             <div>
