@@ -4,6 +4,8 @@ import image2 from '../../assets/about/about_2.jpg'
 import { IoCheckmarkDone } from "react-icons/io5";
 import Title from "../../Shared/Title";
 import { GrYoga } from "react-icons/gr";
+import { GiRunningShoe } from "react-icons/gi";
+import { FaHandshake } from "react-icons/fa";
 const About = () => {
     return (
         <div>
@@ -48,7 +50,7 @@ const About = () => {
 
             <div>
                 <div className="paralax-item  bg-fixed my-14 py-7">
-                    <Title subHeading={'Discover the Reasons'} heading={'Why Chose Us'} />
+                    <Title subHeading={'Discover the Reasons'} heading={'Why People Chose Us'} />
                     <div>
                         <div className="mx-6 grid grid-cols-3 gap-5">
                           
@@ -58,7 +60,25 @@ const About = () => {
                                     <GrYoga className="h-12 w-12 text-[#448c74]" src="/img/logo.svg" alt="ChitChat Logo"/>
                                 </div>
                                 <div>
-                                    <div className="text-xl font-medium text-black">Experinced Coachers</div>
+                                    <div className="text-xl font-medium text-black hover:text-[#448c74]">Experinced Coachers</div>
+                                    <p className="text-slate-500">We’re here to help you overcome the barriers in the way to a ...</p>
+                                </div>
+                            </div>
+                            <div className="p-6 max-w-sm rounded-xl shadow-lg flex items-center space-x-4">
+                                <div className="shrink-0">
+                                    <GiRunningShoe className="h-12 w-12 text-[#448c74]" src="/img/logo.svg" alt="ChitChat Logo"/>
+                                </div>
+                                <div>
+                                    <div className="text-xl font-medium text-black hover:text-[#448c74]">Workout routines</div>
+                                    <p className="text-slate-500">We’re here to help you overcome the barriers in the way to a ...</p>
+                                </div>
+                            </div>
+                            <div className="p-6 max-w-sm rounded-xl shadow-lg flex items-center space-x-4">
+                                <div className="shrink-0">
+                                    <FaHandshake className="h-12 w-12 text-[#448c74]" src="/img/logo.svg" alt="ChitChat Logo"/>
+                                </div>
+                                <div>
+                                    <div className="text-xl font-medium text-black hover:text-[#448c74]">Support & Motivation</div>
                                     <p className="text-slate-500">We’re here to help you overcome the barriers in the way to a ...</p>
                                 </div>
                             </div>
