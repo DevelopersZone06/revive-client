@@ -7,6 +7,8 @@ import { GrYoga } from "react-icons/gr";
 import { GiRunningShoe } from "react-icons/gi";
 import { FaHandshake } from "react-icons/fa";
 import { GiOvermind } from "react-icons/gi";
+import { GiBoxingGlove } from "react-icons/gi";
+import { FaNutritionix } from "react-icons/fa6";
 const About = () => {
     return (
         <div>
@@ -45,7 +47,7 @@ const About = () => {
                     <p className="max-w-2xl py-5 text-lg text-justify indent-16">Our personal trainers can help you meet your fitness goals. They can become your teacher, your motivator, your coach and your friend. Our personal trainers are degreed and certified by an accredited fitness orga-nization.</p>
 
                 </div>
-                <img src={image1} alt="" className="md:w-[500px] rounded-md object-cover transition delay-150 duration-300 ease-in-out hover:scale-90" />
+                <img src={image1} alt="" className="md:w-[500px] rounded-md object-cover transition delay-150 duration-300 ease-in-out hover:scale-90 border-b-8 border-r-8 border-[#448c74]" />
             </div>
             {/* third section */}
 
@@ -56,7 +58,7 @@ const About = () => {
                         <div className="mx-6 grid grid-cols-3 gap-5">
                           
                             
-                            <div className="p-6 max-w-sm rounded-xl shadow-lg flex items-center space-x-4">
+                            <div className="p-6 max-w-sm rounded-xl shadow-lg flex items-center space-x-4 transition delay-150 duration-300 ease-in-out hover:scale-110">
                                 <div className="shrink-0">
                                     <GrYoga className="h-12 w-12 text-[#448c74]" src="/img/logo.svg" alt="ChitChat Logo"/>
                                 </div>
@@ -74,7 +76,7 @@ const About = () => {
                                     <p className="text-slate-500">We’re here to help you overcome the barriers in the way to a ...</p>
                                 </div>
                             </div>
-                            <div className="p-6 max-w-sm rounded-xl shadow-lg flex items-center space-x-4">
+                            <div className="p-6 max-w-sm rounded-xl shadow-lg flex items-center space-x-4 transition delay-150 duration-300 ease-in-out hover:scale-110">
                                 <div className="shrink-0">
                                     <FaHandshake className="h-12 w-12 text-[#448c74]" src="/img/logo.svg" alt="ChitChat Logo"/>
                                 </div>
@@ -90,6 +92,24 @@ const About = () => {
                                 <div>
                                     <div className="text-xl font-medium text-black hover:text-[#448c74]">Balance Body And Mind</div>
                                     <p className="text-slate-500">The relationship between the mind and body is complex...</p>
+                                </div>
+                            </div>
+                            <div className="p-6 max-w-sm rounded-xl shadow-lg flex items-center space-x-4 transition delay-150 duration-300 ease-in-out hover:scale-110">
+                                <div className="shrink-0">
+                                    <GiBoxingGlove className="h-12 w-12 text-[#448c74]" src="/img/logo.svg" alt="ChitChat Logo"/>
+                                </div>
+                                <div>
+                                    <div className="text-xl font-medium text-black hover:text-[#448c74]">Physical Activity</div>
+                                    <p className="text-slate-500">Walking, running, dancing, swimming, yoga are a few physical activity...</p>
+                                </div>
+                            </div>
+                            <div className="p-6 max-w-sm rounded-xl shadow-lg flex items-center space-x-4">
+                                <div className="shrink-0">
+                                    <FaNutritionix className="h-12 w-12 text-[#448c74]" src="/img/logo.svg" alt="ChitChat Logo"/>
+                                </div>
+                                <div>
+                                    <div className="text-xl font-medium text-black hover:text-[#448c74]">Healthy nutrition</div>
+                                    <p className="text-slate-500">People are most productive when they wake up, and setting ...</p>
                                 </div>
                             </div>
 
