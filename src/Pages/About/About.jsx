@@ -9,6 +9,8 @@ import { FaHandshake } from "react-icons/fa";
 import { GiOvermind } from "react-icons/gi";
 import { GiBoxingGlove } from "react-icons/gi";
 import { FaNutritionix } from "react-icons/fa6";
+import image3 from '../../assets/about/about_3.jpg'
+
 const About = () => {
     return (
         <div>
@@ -55,12 +57,12 @@ const About = () => {
                 <div className="paralax-item  bg-fixed my-14 py-7">
                     <Title subHeading={'Discover the Reasons'} heading={'Why People Chose Us'} />
                     <div>
-                        <div className="mx-6 grid grid-cols-3 gap-5">
-                          
-                            
+                        <div className="mx-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+
+
                             <div className="p-6 max-w-sm rounded-xl shadow-lg flex items-center space-x-4 transition delay-150 duration-300 ease-in-out hover:scale-110">
                                 <div className="shrink-0">
-                                    <GrYoga className="h-12 w-12 text-[#448c74]" src="/img/logo.svg" alt="ChitChat Logo"/>
+                                    <GrYoga className="h-12 w-12 text-[#448c74]" src="/img/logo.svg" alt="ChitChat Logo" />
                                 </div>
                                 <div>
                                     <div className="text-xl font-medium text-black hover:text-[#448c74]">Experinced Coachers</div>
@@ -69,7 +71,7 @@ const About = () => {
                             </div>
                             <div className="p-6 max-w-sm rounded-xl shadow-lg flex items-center space-x-4">
                                 <div className="shrink-0">
-                                    <GiRunningShoe className="h-12 w-12 text-[#448c74]" src="/img/logo.svg" alt="ChitChat Logo"/>
+                                    <GiRunningShoe className="h-12 w-12 text-[#448c74]" src="/img/logo.svg" alt="ChitChat Logo" />
                                 </div>
                                 <div>
                                     <div className="text-xl font-medium text-black hover:text-[#448c74]">Workout routines</div>
@@ -78,7 +80,7 @@ const About = () => {
                             </div>
                             <div className="p-6 max-w-sm rounded-xl shadow-lg flex items-center space-x-4 transition delay-150 duration-300 ease-in-out hover:scale-110">
                                 <div className="shrink-0">
-                                    <FaHandshake className="h-12 w-12 text-[#448c74]" src="/img/logo.svg" alt="ChitChat Logo"/>
+                                    <FaHandshake className="h-12 w-12 text-[#448c74]" src="/img/logo.svg" alt="ChitChat Logo" />
                                 </div>
                                 <div>
                                     <div className="text-xl font-medium text-black hover:text-[#448c74]">Support & Motivation</div>
@@ -87,7 +89,7 @@ const About = () => {
                             </div>
                             <div className="p-6 max-w-sm rounded-xl shadow-lg flex items-center space-x-4">
                                 <div className="shrink-0">
-                                    <GiOvermind className="h-12 w-12 text-[#448c74]" src="/img/logo.svg" alt="ChitChat Logo"/>
+                                    <GiOvermind className="h-12 w-12 text-[#448c74]" src="/img/logo.svg" alt="ChitChat Logo" />
                                 </div>
                                 <div>
                                     <div className="text-xl font-medium text-black hover:text-[#448c74]">Balance Body And Mind</div>
@@ -96,7 +98,7 @@ const About = () => {
                             </div>
                             <div className="p-6 max-w-sm rounded-xl shadow-lg flex items-center space-x-4 transition delay-150 duration-300 ease-in-out hover:scale-110">
                                 <div className="shrink-0">
-                                    <GiBoxingGlove className="h-12 w-12 text-[#448c74]" src="/img/logo.svg" alt="ChitChat Logo"/>
+                                    <GiBoxingGlove className="h-12 w-12 text-[#448c74]" src="/img/logo.svg" alt="ChitChat Logo" />
                                 </div>
                                 <div>
                                     <div className="text-xl font-medium text-black hover:text-[#448c74]">Physical Activity</div>
@@ -105,7 +107,7 @@ const About = () => {
                             </div>
                             <div className="p-6 max-w-sm rounded-xl shadow-lg flex items-center space-x-4">
                                 <div className="shrink-0">
-                                    <FaNutritionix className="h-12 w-12 text-[#448c74]" src="/img/logo.svg" alt="ChitChat Logo"/>
+                                    <FaNutritionix className="h-12 w-12 text-[#448c74]" src="/img/logo.svg" alt="ChitChat Logo" />
                                 </div>
                                 <div>
                                     <div className="text-xl font-medium text-black hover:text-[#448c74]">Healthy nutrition</div>
@@ -116,6 +118,20 @@ const About = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+            {/* fourth second */}
+            <div className="flex flex-col sm:flex-row md:flex-row justify-between mx-6 mt-14 gap-10 mb-14">
+                <div>
+                <img src={image3} alt="" className="md:w-[500px]  object-cover  border-[#448c74] rounded-t-md" />
+                <p className="bg-[#448c74] text-white px-2 py-2 text-lg rounded-b-md">Watch our video to learn how you can be a part of the health revolution as a Health Coach!</p>
+                </div>
+                <div>
+                    <h2 className="text-2xl md:text-4xl  font-bold">We Have The Best Caretaker To Providing Best Services Purchase – <span className="text-[#448c74]">Revive</span>.</h2>
+                    <p className="max-w-2xl py-7 text-lg text-justify">Explain to you how all this mistaken idea of denouncing ut pleasure work praising pain was born and will give you can complete design account sed the system, and expound the actual teachngs interior of the great design explorer of the truth master-builders design of human happiness one seds rejects, dislikes, or avoids pleasures give of the master-builder of human itself.</p>
+
+
+                </div>
+
             </div>
         </div>
     );
