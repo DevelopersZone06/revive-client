@@ -10,6 +10,7 @@ import { GiOvermind } from "react-icons/gi";
 import { GiBoxingGlove } from "react-icons/gi";
 import { FaNutritionix } from "react-icons/fa6";
 import image3 from '../../assets/about/about_3.jpg'
+import { VscDebugStart } from "react-icons/vsc";
 
 const About = () => {
     return (
@@ -121,15 +122,29 @@ const About = () => {
             </div>
             {/* fourth second */}
             <div className="flex flex-col sm:flex-row md:flex-row justify-between mx-6 mt-14 gap-10 mb-14">
-                <div>
-                <img src={image3} alt="" className="md:w-[500px]  object-cover  border-[#448c74] rounded-t-md" />
-                <p className="bg-[#448c74] text-white px-2 py-2 text-lg rounded-b-md">Watch our video to learn how you can be a part of the health revolution as a Health Coach!</p>
+                <div className="relative">
+
+                    <img src={image3} alt="" className="md:w-[500px]  object-cover  border-[#448c74] rounded-t-md" />
+                    <button className=" absolute left-44 top-44" onClick={() => document.getElementById('my_modal_3').showModal()}><VscDebugStart className="w-[44px] h-[44px] text-pink-600 rounded-full bg-[#e9f0ec] animate-ping cursor-pointer" /></button>
+                    <dialog id="my_modal_3" className="modal">
+                        <div className="modal-box">
+                            <form method="dialog">
+                                {/* if there is a button in form, it will close the modal */}
+                                <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                            </form>
+                            <iframe className="w-full aspect-video" src="https://www.youtube.com"></iframe>
+                        </div>
+                    </dialog>
+                    
+                    <p className="bg-[#448c74] text-white px-2 py-2 text-lg rounded-b-md">Watch our video to learn how you can be a part of the health revolution as a Health Coach!</p>
+
+
                 </div>
                 <div>
                     <h2 className="text-2xl md:text-4xl  font-bold">We Have The Best Caretaker To Providing Best Services Purchase – <span className="text-[#448c74]">Revive</span>.</h2>
                     <p className="max-w-2xl py-7 text-lg text-justify">Explain to you how all this mistaken idea of denouncing ut pleasure work praising pain was born and will give you can complete design account sed the system, and expound the actual teachngs interior of the great design explorer of the truth master-builders design of human happiness one seds rejects, dislikes, or avoids pleasures give of the master-builder of human itself.</p>
 
-
+                     
                 </div>
 
             </div>
