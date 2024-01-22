@@ -9,7 +9,7 @@ const Navbar = () => {
 
   return (
     <div className="bg-[#448c74f5] px-[2%] sm:px-[5%] lg:px-[8%]">
-      <nav className="flex max-w-screen-2xl mx-auto justify-between items-center py-4 top-0">
+      <nav className="flex justify-between items-center py-4 top-0">
         <Link to="/" className="title font-bold text-base flex">
           Revive
         </Link>
