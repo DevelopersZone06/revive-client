@@ -6,6 +6,7 @@ import Title from "../../Shared/Title";
 import { GrYoga } from "react-icons/gr";
 import { GiRunningShoe } from "react-icons/gi";
 import { FaHandshake } from "react-icons/fa";
+import { GiOvermind } from "react-icons/gi";
 const About = () => {
     return (
         <div>
@@ -80,6 +81,15 @@ const About = () => {
                                 <div>
                                     <div className="text-xl font-medium text-black hover:text-[#448c74]">Support & Motivation</div>
                                     <p className="text-slate-500">We’re here to help you overcome the barriers in the way to a ...</p>
+                                </div>
+                            </div>
+                            <div className="p-6 max-w-sm rounded-xl shadow-lg flex items-center space-x-4">
+                                <div className="shrink-0">
+                                    <GiOvermind className="h-12 w-12 text-[#448c74]" src="/img/logo.svg" alt="ChitChat Logo"/>
+                                </div>
+                                <div>
+                                    <div className="text-xl font-medium text-black hover:text-[#448c74]">Balance Body And Mind</div>
+                                    <p className="text-slate-500">The relationship between the mind and body is complex...</p>
                                 </div>
                             </div>
 
