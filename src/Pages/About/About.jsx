@@ -7,7 +7,7 @@ const About = () => {
         <AboutTitle/>
 
         <div className="flex mx-6 mt-14 gap-5">
-            <img src={image1} alt="" className="w-[500px] h-[350px] rounded-md"/>
+            <img src={image1} alt="" className="w-[500px] h-[350px] rounded-md object-cover transition delay-150 duration-300 ease-in-out hover:scale-90"/>
             <div>
                 <h2>We Have The Best Caretaker To Providing Best Services Purchase – Revive</h2>
             </div>
