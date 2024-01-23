@@ -1,10 +1,15 @@
+// -------icons from react-icons-------
 
-
+import ContactTitle from "./ContactTitle";
 const Contact = () => {
     return (
+        <>
         <div>
-            contact
+            <ContactTitle/>
+        
         </div>
+       
+        </>
     );
 };
 
