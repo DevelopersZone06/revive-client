@@ -14,12 +14,12 @@ const Contact = () => {
                 <div className='px-[2%] sm:px-[5%] lg:px-[8%]'>
                     <h2 className='text-2xl md:text-4xl font-bold secondary-color mt-12'>Get in touch with us</h2>
                     {/* from and lottie */}
-                    <div className="flex justify-between items-center flex-col sm:flex-row md:flex-row mb-14">
+                    <div className="flex justify-between items-center flex-col sm:flex-col md:flex-col lg:flex-row mb-14">
                         <div className=' flex-1 my-3'>
 
                             <form className={`w-full duration-500 space-y-3`}>
 
-                                <div className="flex flex-col sm:flex-row md:flex-row gap-2">
+                                <div className="flex flex-col sm:flex-col md:flex-row gap-2 w-full">
 
                                     <input id="name" type="text" placeholder="Your Name" className="p-3 block w-full outline-none border rounded-md invalid:border-red-700 valid:border-black" />
 
@@ -33,11 +33,11 @@ const Contact = () => {
                             </form>
                         </div>
                         <div className=''>
-                            <Lottie animationData={contactAnimation} loop={true} className='w-[500px] h-[500px]' />
+                            <Lottie animationData={contactAnimation} loop={true} className='md:w-[500px] md:h-[500px]' />
                         </div>
                     </div>
                     <div className='shadow-md border-b-4 border-[#448c74] mb-12'>
-                        <div className='grid grid-cols-3 py-10'>
+                        <div className='grid grid-cols-1 md:grid-cols-3 py-10 gap-5'>
                             <div className='text-center'>
                                 <div className='flex justify-center items-center'>
                                     <MdLocationOn className='w-[35px] animate-bounce text-[#448c74]' />
