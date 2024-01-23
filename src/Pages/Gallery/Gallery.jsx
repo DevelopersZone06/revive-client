@@ -1,3 +1,5 @@
+
+import ButtonGallery from "./ButtonGallery";
 import GalleryTitle from "./GalleryTitle";
 
 
@@ -5,9 +7,8 @@ const Gallery = () => {
     return (
         <div>
             <GalleryTitle/>
-            <div>
-                fh
-            </div>
+            
+           <ButtonGallery/>
         </div>
     );
 };
