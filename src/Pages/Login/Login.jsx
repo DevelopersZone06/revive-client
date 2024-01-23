@@ -3,10 +3,20 @@ import Lottie from 'lottie-react';
 import LoginAni from '../../assets/loginAni.json'
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+
+import useAuth from '../../Hooks/useAuth';
 const Login = () => {
     const { register, handleSubmit,reset,  formState: { errors }, } = useForm()
+    const{signIn}= useAuth()
     
-  const onSubmit = (data) => console.log(data)
+  const onSubmit = (data) => {
+    console.log(data)
+    signIn(data.email, data.password)
+    .then(result =>{
+      const user = result.user
+      console.log(user);
+    })
+  }
     return (
         <div className="primary-bg overflow-x-hidden lg:overflow-x-auto lg:overflow-hidden flex items-center justify-center lg:h-screen">
         <div className="login-container container w-full lg:w-4/5 lg:bg-white h-screen lg:h-screen-75 lg:border border-gray-300 rounded-lg flex flex-wrap lg:flex-nowrap flex-col lg:flex-row justify-between group">

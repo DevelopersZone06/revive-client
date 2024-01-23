@@ -3,10 +3,31 @@ import LoginAni from '../../assets/loginAni.json'
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 
+import useAuth from '../../Hooks/useAuth';
+
+const image_hosting_key=import.meta.env.VITE_IMAGE_HOSTING_KEY;
+const image_hosting_api=`https://api.imgbb.com/1/upload?key=${image_hosting_key}`
 const SignUp = () => {
+ 
     const { register, handleSubmit,reset,  formState: { errors }, } = useForm()
-    
-    const onSubmit = (data) => console.log(data)
+    const{createUser,updateUserProfile}= useAuth()
+    const onSubmit = (data) =>{ 
+      console.log(data)
+      createUser (data.email,data.password)
+      .then(result =>{
+        const loggedUser = result.user
+        console.log(loggedUser)
+        updateUserProfile(data.name,data.photoUrl)
+        })
+        .then(()=>{
+          const userInfo = {
+            name : data.name,
+            email : data.email,
+            photoUrl:data.photoUrl
+          }
+        })
+    }
+
             
 
 
@@ -95,7 +116,7 @@ const SignUp = () => {
  
            <div className="form-element">
              <span className="w-full lg:w-4/5 block mx-auto ">
-               <input type="submit" value="SignUp" className="cursor-pointer border-2 font-bold text-white rounded mt-3 border-[#448c74] w-full p-1 normal secondary-bg bg-[#448c74]transition-all"/>
+               <input type="submit" value="SignUp" className="cursor-pointer border-2 font-bold text-white rounded-lg  mt-3 border-[#448c74] w-full p-1 normal secondary-bg bg-[#448c74]transition-all"/>
              </span>
            </div>
              </form>
