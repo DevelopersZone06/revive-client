@@ -23,8 +23,43 @@ const Gallery = () => {
             image:'https://designarc.biz/demos/fitzeous/theme/images/gallery/gallery-col-three-6.jpg',
             title: 'Balance Diet'
 
+        },
+        {
+            id:4,
+            image:'https://designarc.biz/demos/fitzeous/theme/images/gallery/gallery-col-three-4.jpg',
+            title: 'Yoga & meditation'
+
+        },
+        {
+            id:5,
+            image:'https://designarc.biz/demos/fitzeous/theme/images/gallery/gallery-col-three-1.jpg',
+            title: 'Workouts for fitness'
+
+        },
+        {
+            id:6,
+            image:'https://designarc.biz/demos/fitzeous/theme/images/gallery/gallery-col-three-9.jpg',
+            title: 'Gym & fitness'
+
+        },
+        {
+            id:7,
+            image:'https://designarc.biz/demos/fitzeous/theme/images/gallery/gallery-col-three-5.jpg',
+            title: 'Nutrition'
+
+        },
+        {
+            id:8,
+            image:'https://designarc.biz/demos/fitzeous/theme/images/gallery/gallery-col-three-4.jpg',
+            title: 'Yoga & meditation'
+
+        },
+        {
+            id:9,
+            image:'https://designarc.biz/demos/fitzeous/theme/images/gallery/gallery-col-three-2.jpg',
+            title: 'Weight Loss'
+
         }
-        
     ]
     return (
         <div>
