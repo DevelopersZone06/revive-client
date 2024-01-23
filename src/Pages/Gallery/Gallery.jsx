@@ -59,6 +59,24 @@ const Gallery = () => {
             image:'https://designarc.biz/demos/fitzeous/theme/images/gallery/gallery-col-three-2.jpg',
             title: 'Weight Loss'
 
+        },
+        {
+            id:10,
+            image:'https://designarc.biz/demos/fitzeous/theme/images/gallery/gallery-col-three-8.jpg',
+            title: 'Yoga & meditation'
+
+        },
+        {
+            id:11,
+            image:'https://designarc.biz/demos/fitzeous/theme/images/gallery/gallery-col-three-6.jpg',
+            title: 'Balance Diet'
+
+        },
+        {
+            id:12,
+            image:'https://designarc.biz/demos/fitzeous/theme/images/gallery/gallery-col-three-5.jpg',
+            title: 'Nutrition'
+
         }
     ]
     return (
