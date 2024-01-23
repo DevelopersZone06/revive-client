@@ -8,7 +8,7 @@ const ContactTitle = () => {
         <div className="flex items-center my-5 cursor-pointer">
         <h1 className="text-xl font-semibold ">Home </h1>
          <IoMdArrowDropright className="w-[22px]"/>
-         <h1 className="text-xl font-semibold text-[#448c74]">Contact</h1>
+         <h1 className="text-xl font-semibold text-[#448c74]">Contact Us</h1>
         </div>
         <div className="md:flex gap-5 items-center cursor-pointer hidden ">
         <MdOutlineConnectWithoutContact className="text-3xl"/>
