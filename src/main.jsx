@@ -10,6 +10,7 @@ import AuthProvider from "./Provider/AuthProvider";
 import Blogs from "./Pages/Blogs/Blogs";
 import About from "./Pages/About/About";
 import Contact from "./Pages/Contact/Contact";
+import Gallery from "./Pages/Gallery/Gallery";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         path:'/contact',
         element:<Contact/>
+      },
+      {
+path:'/gallery',
+element:<Gallery/>
       }
     ],
   },
