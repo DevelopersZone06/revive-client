@@ -6,6 +6,10 @@
 @tailwind utilities;
 
 
+#root{
+  max-width: 2100px;
+  margin: 0 auto;
+}
 .secondary-color{
   color: #448c74;
 }
@@ -18,6 +22,7 @@
 .headings {
   color: #e5c466;
 }
+
 .btn-bg {
   background-color: #e5c466;
 }
@@ -27,7 +32,8 @@
 }
 .subheading{
   font-family: "Satisfy", cursive;
-  color: #e5c466; ;
+  
+  color: #448c74; 
 }
 .normal{
   font-family: "Montserrat";
@@ -35,4 +41,41 @@
 
 .border-secondary{
   border: 1px solid #448c74;
+}
+
+
+
+
+/* banner section css  */
+
+.hero-content{
+  padding: 0px;
+}
+
+#animation-heading{
+  margin-left: -20px;
+}
+
+
+
+/* service page css  */
+
+.service-card:hover .service-content{
+  background-color: white;
+}
+
+.service-card:hover .service-title{
+  color: black;
+}
+
+.service-des{
+  transition: 1s;
+}
+
+.service-card:hover .service-des{
+  margin-top: 0px;
+}
+
+.service-card:hover .hidden{
+  display: block;
 }

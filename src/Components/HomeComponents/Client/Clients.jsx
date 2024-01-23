@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import Marquee from "react-fast-marquee";
 import Client from "./Client";
+import Title from "../../../Shared/Title";
 
 
 const Clients = () => {
@@ -12,8 +13,8 @@ const Clients = () => {
         .then(data=>setClient(data))
     },[])
     return (
-        <div>
-            <p className="mt-10 text-4xl font-semibold text-center">Our Happy Clients</p>
+        <div className="primary-bg py-28">
+            <Title heading={'Our Happy Clients'} subHeading={'Clients Review'}></Title>
             <Marquee>
                 
             <div className="flex mt-10 gap-10">
