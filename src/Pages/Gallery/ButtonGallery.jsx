@@ -5,22 +5,22 @@ const ButtonGallery = () => {
         <div>
             <div className="flex justify-center items-center gap-8 my-14">
                 <div>
-                    <h1 className="text-xl font-bold hover:text-[#448c74]    hover:underline cursor-pointer">Show All </h1>
+                    <button className="text-xl font-bold hover:text-[#448c74]    hover:underline cursor-pointer">Show All </button>
                 </div>
                 <div>
-                    <h1 className="text-xl font-bold hover:text-[#448c74]    hover:underline cursor-pointer">Yoga </h1>
+                    <button className="text-xl font-bold hover:text-[#448c74]    hover:underline cursor-pointer">Yoga </button>
                 </div>
                 <div>
-                    <h1 className="text-xl font-bold hover:text-[#448c74]    hover:underline cursor-pointer"> Workouts </h1>
+                    <button className="text-xl font-bold hover:text-[#448c74]    hover:underline cursor-pointer"> Workouts </button>
                 </div>
                 <div>
-                    <h1 className="text-xl font-bold hover:text-[#448c74]    hover:underline cursor-pointer"> Fitness </h1>
+                    <button className="text-xl font-bold hover:text-[#448c74]    hover:underline cursor-pointer"> Fitness </button>
                 </div>
                 <div>
-                    <h1 className="text-xl font-bold hover:text-[#448c74]    hover:underline cursor-pointer"> Weight Loss </h1>
+                    <button className="text-xl font-bold hover:text-[#448c74]    hover:underline cursor-pointer"> Weight Loss </button>
                 </div>
                 <div>
-                    <h1 className="text-xl font-bold hover:text-[#448c74]    hover:underline cursor-pointer"> Nutrition </h1>
+                    <button className="text-xl font-bold hover:text-[#448c74]    hover:underline cursor-pointer"> Nutrition </button>
                 </div>
             
             
