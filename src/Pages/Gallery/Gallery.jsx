@@ -77,6 +77,24 @@ const Gallery = () => {
             image:'https://designarc.biz/demos/fitzeous/theme/images/gallery/gallery-col-three-5.jpg',
             title: 'Nutrition'
 
+        },
+        {
+            id:13,
+            image:'https://tk.commonsupport.com/healthcoach/wp-content/uploads/2016/11/15.jpg',
+            title: 'Yoga & meditation'
+
+        },
+        {
+            id:14,
+            image:'https://tk.commonsupport.com/healthcoach/wp-content/uploads/2016/11/3.jpg',
+            title: 'Nutrition'
+
+        },
+        {
+            id:15,
+            image:'https://tk.commonsupport.com/healthcoach/wp-content/uploads/2016/11/11.jpg',
+            title: 'Workouts for fitness'
+
         }
     ]
     return (
