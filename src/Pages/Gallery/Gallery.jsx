@@ -1,9 +1,13 @@
+import GalleryTitle from "./GalleryTitle";
 
 
 const Gallery = () => {
     return (
         <div>
-            gallery
+            <GalleryTitle/>
+            <div>
+                fh
+            </div>
         </div>
     );
 };
