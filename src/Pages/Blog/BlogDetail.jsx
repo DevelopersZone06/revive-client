@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 
-const Blog = () => {
+const BlogDetail = () => {
   //  practice json datas
 
   const title = "This is a basic blog title";
@@ -171,4 +171,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default BlogDetail;
