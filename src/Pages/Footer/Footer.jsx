@@ -23,7 +23,7 @@ const Footer = () => {
 
 
           <ul style={{ marginLeft: "1.70em" }}>
-            <li className="mb-3 flex justify-center text-start uppercase  list-unstyled">
+            <li className="mb-3 flex justify-center text-start   list-unstyled">
               Company
             </li>
           

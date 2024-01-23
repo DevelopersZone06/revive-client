@@ -6,11 +6,14 @@ import Root from "./Layout/Root/Root";
 import Login from "./Pages/Login/Login";
 import Home from "./Pages/Home/Home";
 import SignUp from "./Pages/SignUp/SignUp";
+import ErrorPage from "./Pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
+
     children: [
       {
         path: "/",
