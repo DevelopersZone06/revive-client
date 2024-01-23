@@ -8,6 +8,7 @@ import Home from "./Pages/Home/Home";
 import SignUp from "./Pages/SignUp/SignUp";
 import Blogs from "./Pages/Blogs/Blogs";
 import About from "./Pages/About/About";
+import Blog from "./Pages/Blog/Blog";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
         element: <Blogs></Blogs>
       },
       {
+        path: "/blogggi", 
+        element:<Blog></Blog>
+      },
+      {
         path: '/about',
         element: <About />
       },
@@ -34,6 +39,7 @@ const router = createBrowserRouter([
         path: "/signUp",
         element: <SignUp></SignUp>
       },
+      
     ],
   },
 ]);
