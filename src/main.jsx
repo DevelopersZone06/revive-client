@@ -14,6 +14,7 @@ import Pages from "./Pages/Pages/Pages";
 import Contact from "./Pages/Contact/Contact";
 import Gallery from "./Pages/Gallery/Gallery";
 import AuthProvider from "./Provider/AuthProvider";
+import BlogDetail from "./Pages/Blog/BlogDetail";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/blogggi", 
-        element:<Blog></Blog>
+        element:<BlogDetail></BlogDetail>
       },
       {
         path: '/about',
@@ -64,7 +65,7 @@ element:<Gallery/>
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <AuthProvider>
+    <AuthProvider >
       <RouterProvider router={router} />
     </AuthProvider>
   </React.StrictMode>

@@ -3,6 +3,7 @@
 import { Link } from "react-router-dom";
 import Lottie from "lottie-react";
 import Error from '../../assets/Animation.json'
+import { useRef } from "react";
 
 
 const ErrorPage = () => {
