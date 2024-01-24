@@ -1,21 +1,63 @@
+import EventCard from "./EventCard";
 import EventsTitle from "./EventsTitle";
 
 
 const Events = () => {
-    return (
-        <div>
-            <EventsTitle/>
-            <div className="grid grid-cols-3 my-14 gap-5 px-[2%] sm:px-[5%] lg:px-[8%]">
-              <div className="text-center space-y-3 cursor-pointer ">
-                <img src="https://template.unicoderbd.com/unifit/images/event/event1.jpg" alt="" className="rounded transition delay-150 duration-300 ease-in-out hover:scale-95" />
-              
-                <h2 className="text-xl font-semibold text-[#448c74] hover:text-black">Reunion With Our X Student</h2>
-                <p className="text-wrap py-3">Vulputate vitae eget vehicula nam ullamcorper nascetur lacus cubilia urna.</p>
-                
-              </div>
-            </div>
-        </div>
-    );
+  const eventData = [
+    {
+      id: 1,
+      image: 'https://template.unicoderbd.com/unifit/images/event/event1.jpg',
+      title: 'Reunion With Our X Student',
+      description: 'Vulputate vitae eget vehicula nam ullamcorper nascetur lacus cubilia urna.'
+
+    },
+    {
+      id: 2,
+      image: 'https://template.unicoderbd.com/unifit/images/event/event2.jpg',
+      title: 'Reunion With Our X Student',
+      description: 'Vulputate vitae eget vehicula nam ullamcorper nascetur lacus cubilia urna.'
+
+    },
+    {
+      id: 3,
+      image: 'https://template.unicoderbd.com/unifit/images/event/event3.jpg',
+      title: 'compitition for resling',
+      description: 'Vulputate vitae eget vehicula nam ullamcorper nascetur lacus cubilia urna.'
+
+    },
+    {
+      id: 4,
+      image: 'https://template.unicoderbd.com/unifit/images/event/event4.jpg',
+      title: 'compitition for resling',
+      description: 'Vulputate vitae eget vehicula nam ullamcorper nascetur lacus cubilia urna.'
+
+    },
+    {
+      id: 5,
+      image: 'https://template.unicoderbd.com/unifit/images/event/event1.jpg',
+      title: 'Reunion With Our X Student',
+      description: 'Vulputate vitae eget vehicula nam ullamcorper nascetur lacus cubilia urna.'
+
+    },
+    {
+      id: 2,
+      image: 'https://template.unicoderbd.com/unifit/images/event/event2.jpg',
+      title: 'Reunion With Our X Student',
+      description: 'Vulputate vitae eget vehicula nam ullamcorper nascetur lacus cubilia urna.'
+
+    }
+  ]
+  return (
+    <div>
+      <EventsTitle />
+      <div className="grid grid-cols-3 my-14 gap-5 px-[2%] sm:px-[5%] lg:px-[8%]">
+        {
+          eventData?.map(event => <EventCard key={event.id} event={event}></EventCard>)
+        }
+
+      </div>
+    </div>
+  );
 };
 
 export default Events;
