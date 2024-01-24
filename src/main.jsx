@@ -16,6 +16,7 @@ import Gallery from "./Pages/Gallery/Gallery";
 import BlogDetail from "./Pages/Blog/BlogDetail";
 import Events from "./Pages/Event/Events";
 
+
 const router = createBrowserRouter([
   {
     path: "/",
