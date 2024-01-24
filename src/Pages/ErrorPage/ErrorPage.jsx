@@ -1,7 +1,9 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 import { Link } from "react-router-dom";
-import React, {  useRef } from "react";
 import Lottie from "lottie-react";
 import Error from '../../assets/Animation.json'
+import { useRef } from "react";
 
 
 const ErrorPage = () => {

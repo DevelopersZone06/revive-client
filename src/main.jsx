@@ -10,8 +10,10 @@ import ErrorPage from "./Pages/ErrorPage/ErrorPage";
 import AuthProvider from "./Provider/AuthProvider";
 import Blogs from "./Pages/Blogs/Blogs";
 import About from "./Pages/About/About";
+import Pages from "./Pages/Pages/Pages";
 import Contact from "./Pages/Contact/Contact";
 import Gallery from "./Pages/Gallery/Gallery";
+import BlogDetail from "./Pages/Blog/BlogDetail";
 
 const router = createBrowserRouter([
   {
@@ -29,8 +31,16 @@ const router = createBrowserRouter([
         element: <Blogs></Blogs>
       },
       {
+        path: "/blogggi", 
+        element:<BlogDetail></BlogDetail>
+      },
+      {
         path: '/about',
         element: <About />
+      },
+      {
+        path: '/pages', 
+        element: <Pages></Pages>
       },
       {
         path: "/login",
@@ -40,6 +50,7 @@ const router = createBrowserRouter([
         path: "/signUp",
         element: <SignUp></SignUp>,
       },
+      
       {
         path:'/contact',
         element:<Contact/>
@@ -54,7 +65,7 @@ element:<Gallery/>
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <AuthProvider>
+    <AuthProvider >
       <RouterProvider router={router} />
     </AuthProvider>
   </React.StrictMode>
