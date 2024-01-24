@@ -22,6 +22,7 @@ const Navbar = () => {
           <span className="h-2 w-[100%] bg-white rounded"></span>
         </div>
         <ul className={menuOpen ? "open" : ""}>
+          {/* all nav items here */}
           <li>
             <NavLink to="/">Home</NavLink>
           </li>
@@ -44,7 +45,7 @@ const Navbar = () => {
             <NavLink to="/blogs">Blogs</NavLink>
           </li>
           <li>
-            <NavLink to="/shop">Shop</NavLink>
+            <NavLink to="/login">Login</NavLink>
           </li>
           <li>
             <NavLink to="/contact">Contact</NavLink>
