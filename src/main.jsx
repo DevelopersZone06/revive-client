@@ -14,6 +14,7 @@ import Pages from "./Pages/Pages/Pages";
 import Contact from "./Pages/Contact/Contact";
 import Gallery from "./Pages/Gallery/Gallery";
 import ErrorPage from "./Pages/ErrorPage/ErrorPage";
+import Events from "./Pages/Event/Events";
 
 const router = createBrowserRouter([
   {
@@ -31,15 +32,15 @@ const router = createBrowserRouter([
         element: <Blogs></Blogs>
       },
       {
-        path: "/blogggi", 
-        element:<Blog></Blog>
+        path: "/blogggi",
+        element: <Blog></Blog>
       },
       {
         path: '/about',
         element: <About />
       },
       {
-        path: '/pages', 
+        path: '/pages',
         element: <Pages></Pages>
       },
       {
@@ -50,14 +51,18 @@ const router = createBrowserRouter([
         path: "/signUp",
         element: <SignUp></SignUp>,
       },
-      
+
       {
-        path:'/contact',
-        element:<Contact/>
+        path: '/contact',
+        element: <Contact />
       },
       {
-path:'/gallery',
-element:<Gallery/>
+        path: '/gallery',
+        element: <Gallery />
+      },
+      {
+        path: '/events',
+        element: <Events />
       }
     ],
   },
