@@ -6,14 +6,14 @@ import Root from "./Layout/Root/Root";
 import Login from "./Pages/Login/Login";
 import Home from "./Pages/Home/Home";
 import SignUp from "./Pages/SignUp/SignUp";
+import ErrorPage from "./Pages/ErrorPage/ErrorPage";
 import AuthProvider from "./Provider/AuthProvider";
 import Blogs from "./Pages/Blogs/Blogs";
 import About from "./Pages/About/About";
-import Blog from "./Pages/Blog/Blog";
 import Pages from "./Pages/Pages/Pages";
 import Contact from "./Pages/Contact/Contact";
 import Gallery from "./Pages/Gallery/Gallery";
-import ErrorPage from "./Pages/ErrorPage/ErrorPage";
+import BlogDetail from "./Pages/Blog/BlogDetail";
 import Events from "./Pages/Event/Events";
 
 const router = createBrowserRouter([
@@ -32,8 +32,8 @@ const router = createBrowserRouter([
         element: <Blogs></Blogs>
       },
       {
-        path: "/blogggi",
-        element: <Blog></Blog>
+        path: "/blogggi", 
+        element:<BlogDetail/>
       },
       {
         path: '/about',
@@ -70,7 +70,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <AuthProvider>
+    <AuthProvider >
       <RouterProvider router={router} />
     </AuthProvider>
   </React.StrictMode>
