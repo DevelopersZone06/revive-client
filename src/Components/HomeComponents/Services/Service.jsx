@@ -7,7 +7,7 @@ const Service = ({service}) => {
             <div className='absolute secondary-bg p-4 rounded-full w-24 h-24 -top-12 left-12 z-10'>
                 <img src={svg} alt="" />
             </div>
-            <img src={image} alt="" className='w-full h-[450px] rounded-[15px]' />
+            <img src={image} alt="" className='w-full h-[380px] rounded-[15px]' />
             <div className='w-full h-full absolute top-0 bg-[#0000003b] rounded-[15px] pl-12 pt-20 service-content'>
                 <h1 className='text-white text-4xl font-bold service-title'>{title}</h1>
                 <div className='pt-8 mt-28 service-des'>
