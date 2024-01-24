@@ -14,6 +14,7 @@ import Pages from "./Pages/Pages/Pages";
 import Contact from "./Pages/Contact/Contact";
 import Gallery from "./Pages/Gallery/Gallery";
 import BlogDetail from "./Pages/Blog/BlogDetail";
+import Events from "./Pages/Event/Events";
 
 const router = createBrowserRouter([
   {
@@ -32,14 +33,14 @@ const router = createBrowserRouter([
       },
       {
         path: "/blogggi", 
-        element:<BlogDetail></BlogDetail>
+        element:<BlogDetail/>
       },
       {
         path: '/about',
         element: <About />
       },
       {
-        path: '/pages', 
+        path: '/pages',
         element: <Pages></Pages>
       },
       {
@@ -50,14 +51,18 @@ const router = createBrowserRouter([
         path: "/signUp",
         element: <SignUp></SignUp>,
       },
-      
+
       {
-        path:'/contact',
-        element:<Contact/>
+        path: '/contact',
+        element: <Contact />
       },
       {
-path:'/gallery',
-element:<Gallery/>
+        path: '/gallery',
+        element: <Gallery />
+      },
+      {
+        path: '/events',
+        element: <Events />
       }
     ],
   },
