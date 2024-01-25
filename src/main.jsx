@@ -15,8 +15,13 @@ import Gallery from "./Pages/Gallery/Gallery";
 import BlogDetail from "./Pages/Blog/BlogDetail";
 import Events from "./Pages/Event/Events";
 import Trainers from "./Pages/Trainers/Trainers";
+import BMIServices from "./Pages/UsersServices/BMIServices/BMIServices";
+import AllServices from "./Pages/UsersServices/AllServices/AllServices";
 
 
+
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
     path: "/",
@@ -33,7 +38,7 @@ const router = createBrowserRouter([
         element: <Blogs></Blogs>
       },
       {
-        path: "/blogggi", 
+        path: "/blog/:id", 
         element:<BlogDetail/>
       },
       {
@@ -64,6 +69,12 @@ const router = createBrowserRouter([
       {
         path: '/events',
         element: <Events />
+      },{
+        path:'/services',
+        element:<AllServices></AllServices>
+      },{
+        path:'/BMIServices',
+        element:<BMIServices></BMIServices>
       }
     ],
   },
@@ -72,7 +83,11 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthProvider >
+   
+      <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />
+      </QueryClientProvider>
+      
     </AuthProvider>
   </React.StrictMode>
 );
