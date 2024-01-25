@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 const Service = ({service}) => {
     const {title, description, image, svg} = service

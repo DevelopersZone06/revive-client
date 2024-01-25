@@ -14,4 +14,5 @@ const Title = ({ heading, subHeading }) => {
   );
 };
 
+
 export default Title;
