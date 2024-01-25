@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 
 const BlogDetail = () => {
@@ -15,40 +14,56 @@ const BlogDetail = () => {
 
   const reacttionNumber = "124";
 
-  const commentNumber = '32'; 
+  const commentNumber = "32";
 
   //    practice json data
 
   const [isReacted, setIsReacted] = useState(false);
 
-  const [isBookmarked, setIsBookmarked] = useState(false); 
+  const [isBookmarked, setIsBookmarked] = useState(false);
 
   return (
-    <>
-      <div className="text-center max-w-[1750px] mx-auto">
+    <div className="flex max-w-[84%] mx-auto justify-between">
+      {/* post image, blog text content etc */}
+      <div>
         <h3 className="text-5xl my-10 font-bold">{title}</h3>
 
-        <div className="flex items-center justify-between  border-y border-black">
-          {/* user profile picture and his/her name */}
-          <div className="flex mx-5 items-center my-2">
-            <div className="avatar">
-              <div className="w-16 rounded-full">
-                <img src={userProfilePicture} />
-              </div>
-            </div>
-            <p className="ps-3 text-green-600 underline text-xl font-semibold">
-              {userName}
+        <div className="my-20 w-[60%]">
+          {/* image of the blog post  */}
+          <img src={image} alt="" />
+          {/* published date and the reaction and comment icon and number */}
+          <div className="flex items-center justify-between">
+            {/* published date */}
+            <p className="text-xl mt-1 font-semibold">
+              Published: {publishDate}
             </p>
-          </div>
-
-          {/* published date of that specific post */}
-          <div className="mx-5 my-1">
-            <p className="text-xl font-semibold">Published: {publishDate}</p>
+            {/* div for reaction and comment */}
+            <div className="flex p-4">
+              {isReacted ? (
+                <img
+                  onClick={() => setIsReacted(false)}
+                  src="https://i.ibb.co/b7QHj8Z/icons8-love-24.png"
+                  alt=""
+                />
+              ) : (
+                <img
+                  onClick={() => setIsReacted(true)}
+                  src="https://i.ibb.co/yNHKG1D/icons8-love-24-1.png"
+                  alt=""
+                />
+              )}{" "}
+              <p className="px-4">{reacttionNumber}</p>
+              <img
+                className="pe-4"
+                src="https://i.ibb.co/MchxQgJ/icons8-comment-24.png"
+                alt=""
+              />
+              <p>{commentNumber}</p>
+            </div>
           </div>
         </div>
-
-        <img className="my-20 mx-auto" src={image} alt="" />
-        <div className="text-lg px-2 max-w-[1500px] my-20 mx-auto text-justify">
+        {/* mock blog text content */}
+        <div className="text-lg px-2 max-w-[60%] my-20 text-justify">
           <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit.
             Dignissimos voluptatem sint cupiditate, eius ad mollitia quia
@@ -137,37 +152,43 @@ const BlogDetail = () => {
           </p>
         </div>
         <div className="border-y my-10 flex items-center justify-between border-black">
-          {/* div for reaction and comment */}
-          <div className="flex p-4">
-            {isReacted ? (
+          {/* div for bookmark and share */}
+          <div className="flex gap-4 pe-4">
+            {isBookmarked ? (
               <img
-                onClick={() => setIsReacted(false)}
-                src="https://i.ibb.co/b7QHj8Z/icons8-love-24.png"
+                onClick={() => setIsBookmarked(false)}
+                src="https://i.ibb.co/hYQ7rcR/icons8-bookmark-24-1.png"
                 alt=""
               />
             ) : (
               <img
-                onClick={() => setIsReacted(true)}
-                src="https://i.ibb.co/yNHKG1D/icons8-love-24-1.png"
+                onClick={() => setIsBookmarked(true)}
+                src="https://i.ibb.co/BzShvcP/icons8-bookmark-24.png"
                 alt=""
               />
-            )} <p className="px-4">{reacttionNumber}</p>
-            <img className="pe-4" src="https://i.ibb.co/MchxQgJ/icons8-comment-24.png" alt="" /> 
-            <p>{commentNumber}</p>
-          </div>
-          {/* div for bookmark and share */}
-          <div className="flex gap-4 pe-4">
-              {
-                isBookmarked ? 
-                <img onClick={() => setIsBookmarked(false)} src="https://i.ibb.co/hYQ7rcR/icons8-bookmark-24-1.png" alt="" /> : 
-                <img  onClick={() => setIsBookmarked(true)} src="https://i.ibb.co/BzShvcP/icons8-bookmark-24.png" alt="" />
-              }
+            )}
 
-              <img src="https://i.ibb.co/3hfc6Tm/icons8-share-24.png" alt="" />
+            <img src="https://i.ibb.co/3hfc6Tm/icons8-share-24.png" alt="" />
           </div>
         </div>
       </div>
-    </>
+      {/* author informations and all commments  */}
+      <div>
+        {/* author related informations */}
+        <div>
+          <div className="my-10">
+            {/* <div className="avatar">
+              <div className="w-16 rounded-full">
+                <img src={userProfilePicture} />
+              </div>
+            </div> */}
+            <p className="ps-3 hover:text-green-600 hover:underline text-start text-xl font-semibold">
+              {userName}
+            </p>
+          </div>
+        </div>  
+      </div>
+    </div>
   );
 };
 
