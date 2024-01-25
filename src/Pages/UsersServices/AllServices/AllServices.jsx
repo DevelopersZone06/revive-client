@@ -40,7 +40,7 @@ const AllServices = () => {
                 placeholder="Search In Revive"
                 className="rounded-md px-10 py-2 border-2 border-[#448c74] w-full"
               />
-              <div className="text-2xl absolute left-280 ">
+              <div className="text-2xl absolute left-28 ">
                 <IoMdSearch className=""></IoMdSearch>
               </div>
             </div>
