@@ -38,7 +38,7 @@ const router = createBrowserRouter([
         element: <Blogs></Blogs>
       },
       {
-        path: "/blogggi", 
+        path: "/blog/:id", 
         element:<BlogDetail/>
       },
       {
