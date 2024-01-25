@@ -95,7 +95,13 @@ const Gallery = () => {
             image:'https://tk.commonsupport.com/healthcoach/wp-content/uploads/2016/11/11.jpg',
             title: 'Workouts for fitness'
 
-        }
+        },
+        {
+            id:16,
+            image:'https://designarc.biz/demos/fitzeous/theme/images/gallery/gallery-col-three-2.jpg',
+            title: 'Weight Loss'
+
+        },
     ]
     return (
         <div>
@@ -103,7 +109,7 @@ const Gallery = () => {
             
            <ButtonGallery/>
 
-           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-[2%] sm:px-[5%] lg:px-[8%] gap-5">
+           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 px-[2%] sm:px-[5%] lg:px-[8%] gap-5">
             {
                 galleryData?.map(data => <GalleryCard data={data} key={data.id}></GalleryCard>)
             }
