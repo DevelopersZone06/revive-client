@@ -1,45 +1,16 @@
+import { useEffect, useState } from "react";
 import Blog from "./Blog";
 
 const Blogs = () => {
 
-    const blogs = [
-        {
-            title: 'this is blog 1',
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore impedit exercitationem aspernatur eius, nisi nam amet possimus iste deserunt modi nemo voluptates. Quaerat dolores, ipsum repudiandae deleniti numquam aliquid doloremque laudantium autem porro facere quasi distinctio cumque iste culpa optio itaque, quia et at deserunt, dolorum vel? Suscipit, eius excepturi!',
-            image: 'https://www.lemongym.lt/wp-content/uploads/2023/02/MG_1741-243x240.jpg',
-            category: 'Yoga',
-            like: 23,
-            comments: 20,
-            author: 'Md Ibrahim khalil',
-            authorTitle: 'Weight Loss Trainer',
-            date: "01 - 01 - 2024",
-            authorImage: 'https://lh3.googleusercontent.com/ogw/ANLem4bOxtOHcxrUUzUJvFeR2LDgwMMZEEDjAmc05xlPEA=s32-c-mo'
-        },
-        {
-            title: 'this is blog 1',
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore impedit exercitationem aspernatur eius, nisi nam amet possimus iste deserunt modi nemo voluptates. Quaerat dolores, ipsum repudiandae deleniti numquam aliquid doloremque laudantium autem porro facere quasi distinctio cumque iste culpa optio itaque, quia et at deserunt, dolorum vel? Suscipit, eius excepturi!',
-            image: 'https://www.lemongym.lt/wp-content/uploads/2023/02/MG_1741-243x240.jpg',
-            category: 'Yoga',
-            like: 23,
-            comments: 20,
-            author: 'Md Ibrahim khalil',
-            authorTitle: 'Weight Loss Trainer',
-            date: "01 - 01 - 2024",
-            authorImage: 'https://lh3.googleusercontent.com/ogw/ANLem4bOxtOHcxrUUzUJvFeR2LDgwMMZEEDjAmc05xlPEA=s32-c-mo'
-        },
-        {
-            title: 'this is blog 1',
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore impedit exercitationem aspernatur eius, nisi nam amet possimus iste deserunt modi nemo voluptates. Quaerat dolores, ipsum repudiandae deleniti numquam aliquid doloremque laudantium autem porro facere quasi distinctio cumque iste culpa optio itaque, quia et at deserunt, dolorum vel? Suscipit, eius excepturi!',
-            image: 'https://www.lemongym.lt/wp-content/uploads/2023/02/MG_1741-243x240.jpg',
-            category: 'Yoga',
-            like: 23,
-            comments: 20,
-            author: 'Md Ibrahim khalil',
-            authorTitle: 'Weight Loss Trainer',
-            date: "01 - 01 - 2024",
-            authorImage: 'https://lh3.googleusercontent.com/ogw/ANLem4bOxtOHcxrUUzUJvFeR2LDgwMMZEEDjAmc05xlPEA=s32-c-mo'
-        }
-    ]
+    const [blogs, setBlogs] = useState([])
+
+    useEffect( () => {
+        fetch('https://revive-server-dun.vercel.app/blogs')
+        .then(res => res.json())
+        .then(data => setBlogs(data))
+    }, [])
+
 
 
     const trainer = e => {
