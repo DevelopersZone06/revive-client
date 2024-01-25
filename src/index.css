@@ -66,7 +66,8 @@
 /* service page css  */
 
 .service-card:hover .service-content{
-  background-color: white;
+  /* background-color: white; */
+  background-color: #448c74;
 }
 
 .service-card:hover .service-title{

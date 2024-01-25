@@ -89,7 +89,7 @@ const Blogs = () => {
                 {/* all blogs section  */}
                 <div className="flex-1 border-primary rounded-r-md p-5">
                     <h1 className="text-2xl font-semibold mb-9">All Blogs</h1>
-                    <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-8">
                         {
                             blogs.map(blog => <Blog blog={blog}></Blog>)
                         }
