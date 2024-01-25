@@ -10,11 +10,11 @@ import ErrorPage from "./Pages/ErrorPage/ErrorPage";
 import AuthProvider from "./Provider/AuthProvider";
 import Blogs from "./Pages/Blogs/Blogs";
 import About from "./Pages/About/About";
-import Pages from "./Pages/Pages/Pages";
 import Contact from "./Pages/Contact/Contact";
 import Gallery from "./Pages/Gallery/Gallery";
 import BlogDetail from "./Pages/Blog/BlogDetail";
 import Events from "./Pages/Event/Events";
+import Trainers from "./Pages/Trainers/Trainers";
 
 
 const router = createBrowserRouter([
@@ -37,8 +37,8 @@ const router = createBrowserRouter([
         element:<BlogDetail/>
       },
       {
-        path: '/pages',
-        element: <Pages></Pages>
+        path: '/trainers',
+        element: <Trainers></Trainers>
       },
       {
         path: "/login",

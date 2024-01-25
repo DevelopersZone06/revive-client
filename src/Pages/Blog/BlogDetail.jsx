@@ -23,7 +23,7 @@ const BlogDetail = () => {
   const [isBookmarked, setIsBookmarked] = useState(false);
 
   return (
-    <div className="flex max-w-[84%] mx-auto justify-between">
+    <div className="flex max-w-[84%] mx-auto">
       {/* post image, blog text content etc */}
       <div>
         <h3 className="text-5xl my-10 font-bold">{title}</h3>
@@ -177,14 +177,14 @@ const BlogDetail = () => {
         {/* author related informations */}
         <div>
           <div className="my-10">
+            <p className="ps-3 hover:text-green-600 hover:underline text-start text-xl font-semibold">
+              {userName}
+            </p>
             {/* <div className="avatar">
               <div className="w-16 rounded-full">
                 <img src={userProfilePicture} />
               </div>
             </div> */}
-            <p className="ps-3 hover:text-green-600 hover:underline text-start text-xl font-semibold">
-              {userName}
-            </p>
           </div>
         </div>  
       </div>
