@@ -1,9 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import CommentCard from "./CommentCard";
 
 const BlogDetail = () => {
   //  practice json datas
 
-  const title = "This is a basic blog title";
+  const [comments, setComments] = useState([]); 
+
+  useEffect(() => {
+    fetch('/comments.json')
+    .then(res => res.json())
+    .then(data => setComments(data))
+  }, [])
+
+  const title = "Maditation that makes you strong";
   const image =
     "https://images.healthshots.com/healthshots/en/uploads/2023/05/10200007/exercise.jpg";
   const userProfilePicture =
@@ -213,6 +222,9 @@ const BlogDetail = () => {
                 <option value="admin">From admin</option>
               </select>
           </div>
+          {
+            comments.map((comment, index) => <CommentCard key={index} comment={comment}></CommentCard>)
+          }
         </div>
       </div>
     </>
