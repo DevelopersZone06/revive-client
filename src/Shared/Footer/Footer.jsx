@@ -1,5 +1,6 @@
 import { HomeIcon, InboxIcon, PhoneIcon } from "@heroicons/react/solid";
 import { FaInstagram, FaTwitter, FaFacebookF, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
+import moment from 'moment'
 const Footer = () => {
   return (
     <div className="secondary-bg text-white px-[2%] sm:px-[5%] lg:px-[8%] pt-16">
@@ -87,7 +88,7 @@ const Footer = () => {
 
           <p className="text-center">
             <small>
-              Copyright 2024 - All right reserved by Revive
+              Copyright {moment().format('YYYY')} - All right reserved by Revive
             </small>
           </p>
 

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Blog = ({blog}) => {
     const {title, description, image, category, like, comments, author, authorTitle, date, authorImage, _id} = blog
     return (
-        <div className='shadow-gray-300 shadow-md rounded-md skeleton relative'>
+        <div className='shadow-gray-300 shadow-md rounded-md relative'>
             <img src={image} alt="" className='h-[150px] w-full rounded-t-lg' />
             <div className='p-3'>
                 <div className='flex justify-between'>
