@@ -11,7 +11,7 @@ const ServiceDetails = () => {
     return (
         <>
             <ServicesTitle />
-            <div className="grid grid-cols-6 px-[2%] gap-5 sm:px-[5%] lg:px-[8%] pt-3">
+            <div className="grid  lg:grid-cols-6 px-[2%] gap-5 sm:px-[5%] lg:px-[8%] pt-3">
                 <div className="col-span-4">
                     <img src={serviceData?.serviceImg} alt="" className="py-3 rounded" />
                     <div className="flex items-center justify-between">
