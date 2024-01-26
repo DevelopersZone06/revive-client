@@ -31,7 +31,7 @@ const AllServices = () => {
       </div>
 
       {/* Search and filter  */}
-      <div className="flex  items-center md:flex-row flex-col">
+      <div className="flex  items-center md:flex-row flex-col mb-6">
         <div className="md:w-3/4 w-full">
           <form
             action="
@@ -124,45 +124,45 @@ const AllServices = () => {
               <input
                 type="radio"
                 name="price"
-                value="5-10"
+                value="15-30"
                 id="regular"
              
                 // onChange={onOptionChange}
               />
-              <label htmlFor="regular">5-10</label>
+              <label htmlFor="regular">15-30</label>
             </div>
             <div>
               <input
                 type="radio"
                 name="price"
-                value="10-20"
+                value="30-50"
                 id="medium"
               
                 // onChange={onOptionChange}
               />
-              <label htmlFor="medium">10-20</label>
+              <label htmlFor="medium">30-50</label>
             </div>
             <div>
               <input
                 type="radio"
                 name="price"
-                value="20-30"
+                value="50-80"
                 id="large"
                 
                 // onChange={onOptionChange}
               />
-              <label htmlFor="large">20-30</label>
+              <label htmlFor="large">50-80</label>
             </div>
             <div>
               <input
                 type="radio"
                 name="price"
-                value="30-40"
+                value="80-100"
                 id="extra-large"
                
                 // onChange={onOptionChange}
               />
-              <label htmlFor="extra-large">30-40</label>
+              <label htmlFor="extra-large">80-100</label>
             </div>
           </div>
           </div>
@@ -175,7 +175,7 @@ const AllServices = () => {
                 </div>
       <div className="flex-1 p-5">
       <h1 className="text-2xl font-semibold border-b border-b-white ">All Services</h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8">
           {services.map((service) => (
 
             <ServiceCard key={service._id} service={service}></ServiceCard>

@@ -22,7 +22,7 @@ const BlogDetail = () => {
 
   const [isReacted, setIsReacted] = useState(false);
 
-  const [isBookmarked, setIsBookmarked] = useState(false);
+  // const [isBookmarked, setIsBookmarked] = useState(false);
 
   return (
     <>
