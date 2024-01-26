@@ -1,0 +1,77 @@
+[
+  {
+    "name": "Emma Wilson",
+    "comment": "This article is very informative.",
+    "category": "Positive"
+  },
+  {
+    "name": "Michael Davis",
+    "comment": "I'm confused about the second point. Can someone clarify?",
+    "category": "Question"
+  },
+  {
+    "name": "Sophie Turner",
+    "comment": "Great insights! I appreciate the author's perspective.",
+    "category": "Positive"
+  },
+  {
+    "name": "David Lee",
+    "comment": "The content is well-researched and presented.",
+    "category": "Positive"
+  },
+  {
+    "name": "Olivia Baker",
+    "comment": "I think the conclusion is too abrupt.",
+    "category": "Negative"
+  },
+  {
+    "name": "Ryan Miller",
+    "comment": "Is there a citation for the third paragraph?",
+    "category": "Question"
+  },
+  {
+    "name": "Ava Garcia",
+    "comment": "I completely disagree with the author's viewpoint.",
+    "category": "Negative"
+  },
+  {
+    "name": "Noah Thompson",
+    "comment": "Well-written article! Looking forward to more.",
+    "category": "Positive"
+  },
+  {
+    "name": "Lily Robinson",
+    "comment": "The formatting could be improved for better readability.",
+    "category": "Constructive Feedback"
+  },
+  {
+    "name": "Mason White",
+    "comment": "I found a typo in the fourth paragraph.",
+    "category": "Minor Issue"
+  },
+  {
+    "name": "Isabella Hill",
+    "comment": "The author's arguments are weak and unconvincing.",
+    "category": "Negative"
+  },
+  {
+    "name": "Elijah Scott",
+    "comment": "I appreciate the author addressing a variety of perspectives.",
+    "category": "Positive"
+  },
+  {
+    "name": "Zoe Adams",
+    "comment": "The article lacks depth in its analysis.",
+    "category": "Constructive Feedback"
+  },
+  {
+    "name": "Carter Wright",
+    "comment": "I love the examples used to illustrate key points.",
+    "category": "Positive"
+  },
+  {
+    "name": "Hannah Foster",
+    "comment": "Can we have more references to support the claims made?",
+    "category": "Question"
+  }
+]
