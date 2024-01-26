@@ -4,48 +4,54 @@ import EventsTitle from "./EventsTitle";
 
 const Events = () => {
   const eventData = [
-    {
-      id: 1,
-      image: 'https://i.ibb.co/m6d1mrf/people-fitness-class-gym.jpg',
-      title: 'Fitness Fusion Workshop',
-      description: 'Join us for a dynamic workshop that combines various fitness disciplines, from high-intensity interval training to yoga. Experience a fusion of workouts to elevate your fitness routine and achieve holistic well-being.'
-
+    {id:1,
+      title: "Fitness Fusion Workshop",
+      date: "2024-02-15",
+      image:'https://i.ibb.co/YBWZGqM/2150847945.jpg',
+      time: "10:00 AM - 2:00 PM",
+      location: "Wellness Center",
+      description: "Join us for an energizing workshop that combines various fitness techniques, including yoga, cardio, and strength training. Suitable for all fitness levels!"
     },
-    {
-      id: 2,
-      image: 'https://i.ibb.co/dKbvStQ/woman-doing-sport-with-stats-side-view.jpg',
-      title: 'Mindful Marathon Challenge',
-      description: 'Embark on a mindful journey with our virtual marathon challenge. Run or walk at your own pace, focusing on mental and physical wellness. Connect with the global fitness community and celebrate your achievements together.'
-
+    {id:2,
+      title: "Nutrition and Wellness Seminar",
+      date: "2024-03-10",
+      image:'https://i.ibb.co/VCRVvQW/72412-1.jpg',
+      time: "3:00 PM - 5:00 PM",
+      location: "Health Hub",
+      description: "Learn about the importance of nutrition in achieving your fitness goals. Our expert nutritionist will provide valuable insights and answer your questions."
     },
-    {
-      id: 3,
-      image: 'https://i.ibb.co/cbDKbX1/teenager-shaking-hair-while-performing-splitsr.jpg',
-      title: 'Strength and Stretch Retreat',
-      description: 'Escape to a weekend retreat focused on building strength and enhancing flexibility. Engage in empowering workouts, yoga sessions, and mindfulness activities surrounded by nature. Rediscover your body potential.'
-
+    {id:3,
+      title: "Mindful Meditation Retreat",
+      date: "2024-04-20",
+      image:'https://i.ibb.co/m8zxVGx/2150847963.jpg',
+    time: "9:00 AM - 4:00 PM",
+      location: "Serene Spa Retreat",
+      description: "Take a day to relax and rejuvenate with our mindfulness meditation retreat. Experience inner peace and enhance your mental well-being."
     },
-    {
-      id: 4,
-      image: 'https://i.ibb.co/4Z7zcXR/cheerful-people-with-yoga-mats-chatting-laughing.jpg',
-      title: 'Wellness Warriors Bootcamp',
-      description: 'Join our intensive bootcamp designed to transform you into a wellness warrior. Push your limits with high-energy workouts, nutritional guidance, and motivational coaching. Unleash the best version of yourself.'
-
+    {id:4,
+      title: "5K Charity Run for Health",
+      date: "2024-05-08",
+      image:'https://i.ibb.co/yg10Mg5/portrait-smiling-young-male-athlete-standing-race-track.jpg',
+      time: "8:00 AM - 11:00 AM",
+      location: "City Park",
+      description: "Participate in our annual charity run to support health initiatives. Lace up your sneakers, get active, and contribute to a healthier community."
     },
-    {
-      id: 5,
-      image: 'https://i.ibb.co/QCN7qgL/fitness-body-builder-challenge.jpg',
-      title: 'Healthy Habits Challenge',
-      description: 'Kickstart a healthier lifestyle with our month-long challenge. Develop sustainable habits through fitness routines, nutritional tips, and lifestyle changes. Achieve small victories that lead to long-term well-being.'
-
+    {id:5,
+      title: "Fitness Fusion Workshop",
+      date: "2024-02-15",
+      image:'https://i.ibb.co/YBWZGqM/2150847945.jpg',
+      time: "10:00 AM - 2:00 PM",
+      location: "Wellness Center",
+      description: "Join us for an energizing workshop that combines various fitness techniques, including yoga, cardio, and strength training. Suitable for all fitness levels!"
     },
-    {
-      id: 6,
-      image: 'https://i.ibb.co/yWx2WPt/full-shot-fit-people-training-outdoors.jpg',
-      title: 'Fitness Fiesta Social',
-      description: 'Get ready to dance, sweat, and socialize at our Fitness Fiesta! Enjoy a lively atmosphere with dance workouts, fitness challenges, and healthy refreshments. Bring your friends and make fitness a celebration.'
-
-    }
+    {id:4,
+      title: "Mindful Meditation Retreat",
+      date: "2024-04-20",
+      image:'https://i.ibb.co/m8zxVGx/2150847963.jpg',
+    time: "9:00 AM - 4:00 PM",
+      location: "Serene Spa Retreat",
+      description: "Take a day to relax and rejuvenate with our mindfulness meditation retreat. Experience inner peace and enhance your mental well-being."
+    },
   ]
   return (
     <div>
