@@ -36,7 +36,7 @@
   
   color: #448c74; 
 }
-.normal, p{
+.normal, p, a, h6{
   font-family: "Montserrat";
 }
 
@@ -84,4 +84,10 @@
 
 .service-card:hover .hidden{
   display: block;
+}
+
+
+
+.trainer:hover .hidden{
+  display: grid;
 }
