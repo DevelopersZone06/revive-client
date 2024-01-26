@@ -7,9 +7,7 @@ import Loading from '../../../Shared/Loading/Loading';
 import { Link } from 'react-router-dom';
 
 const Services = () => {
-
-   
-    const axiosPublic = useAxiosPublic();
+  const axiosPublic = useAxiosPublic();
   const { data: services, isPending } = useQuery({
     queryKey: ["services"],
     queryFn: async () => {
@@ -18,6 +16,17 @@ const Services = () => {
     },
   });
   if (isPending) return <Loading></Loading>;
+
+   
+   {/*  const axiosPublic = useAxiosPublic();
+  const { data: services, isPending } = useQuery({
+    queryKey: ["services"],
+    queryFn: async () => {
+      const res = await axiosPublic.get("/services");
+      return res.data;
+    },
+  });
+  if (isPending) return <Loading></Loading>; */}
     return (
         <div className='primary-bg px-[2%] sm:px-[5%] lg:px-[8%] py-28'>
             <Title subHeading={"Services"} heading={"Our Some Services"}></Title>
@@ -35,6 +44,6 @@ const Services = () => {
     </div>
         </div>
     );
-};
 
+}
 export default Services;
