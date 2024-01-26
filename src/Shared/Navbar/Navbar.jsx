@@ -8,7 +8,7 @@ const Navbar = () => {
   const [openSearch, setOpenSearch] = useState(false);
 
   return (
-    <div className="bg-[#448c74f5] px-[2%] sm:px-[5%] lg:px-[8%]">
+    <div className="bg-[#599983] px-[2%] sm:px-[5%] lg:px-[8%]">
       <nav className="flex justify-between items-center py-4 top-0">
         <Link to="/" className="title font-bold text-base flex">
           Revive
@@ -22,6 +22,7 @@ const Navbar = () => {
           <span className="h-2 w-[100%] bg-white rounded"></span>
         </div>
         <ul className={menuOpen ? "open" : ""}>
+          {/* all nav items here */}
           <li>
             <NavLink to="/">Home</NavLink>
           </li>
@@ -38,13 +39,13 @@ const Navbar = () => {
             <NavLink to="/events">Events</NavLink>
           </li>
           <li>
-            <NavLink to="/pages">Pages</NavLink>
+            <NavLink to="/trainers">Trainers</NavLink>
           </li>
           <li>
             <NavLink to="/blogs">Blogs</NavLink>
           </li>
           <li>
-            <NavLink to="/shop">Shop</NavLink>
+            <NavLink to="/login">Login</NavLink>
           </li>
           <li>
             <NavLink to="/contact">Contact</NavLink>

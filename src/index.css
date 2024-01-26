@@ -6,6 +6,7 @@
 @tailwind utilities;
 
 
+
 #root{
   max-width: 2100px;
   margin: 0 auto;
@@ -27,7 +28,7 @@
   background-color: #e5c466;
 }
 
-.headingFont{
+.headingFont, h1, h2, h3, h4, h5{
   font-family: 'Playfair Display', serif;
 }
 .subheading{
@@ -35,12 +36,16 @@
   
   color: #448c74; 
 }
-.normal{
+.normal, p{
   font-family: "Montserrat";
 }
 
 .border-secondary{
   border: 1px solid #448c74;
+}
+
+.border-primary{
+  border: 1px solid #e9f0ec;
 }
 
 
@@ -61,7 +66,8 @@
 /* service page css  */
 
 .service-card:hover .service-content{
-  background-color: white;
+  /* background-color: white; */
+  background-color: #448c74;
 }
 
 .service-card:hover .service-title{
