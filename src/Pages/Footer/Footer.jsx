@@ -1,5 +1,6 @@
 import { HomeIcon, InboxIcon, PhoneIcon } from '@heroicons/react/solid';
 import {  FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+var moment = require('moment');
 const Footer = () => {
   return (
     <div className="bg-base-200 mt-10 p-10">
@@ -124,7 +125,7 @@ const Footer = () => {
       </div>
       <div className='flex gap-2 items-center justify-center px-5'>
                
-                <p><small>Copyright <span></span> 2024 - All right reserved by Revive</small></p>
+                <p><small>Copyright <span></span> {} - All right reserved by Revive</small></p>
             </div>
 
 
