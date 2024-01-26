@@ -7,14 +7,16 @@ const BlogDetail = () => {
   const image =
     "https://images.healthshots.com/healthshots/en/uploads/2023/05/10200007/exercise.jpg";
   const userProfilePicture =
-    "https://images.healthshots.com/healthshots/en/uploads/2023/05/10200007/exercise.jpg";
-  const userName = "John Doe";
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Elon_Musk_Colorado_2022_%28cropped2%29.jpg/220px-Elon_Musk_Colorado_2022_%28cropped2%29.jpg";
+  const authorName = "John Doe";
 
   const publishDate = "12-04-2023";
 
   const reacttionNumber = "124";
 
   const commentNumber = "32";
+
+  const authorPosition = "Trainer and Writer";
 
   //    practice json data
 
@@ -179,21 +181,37 @@ const BlogDetail = () => {
             {/* </div> */}
           </div>
         </div>
-        <div className="w-[30%] ps-10 ">
+        <div className="w-[40%] ps-10 ">
           <div className="">
             {/* author related informations */}
             <div>
-              <div className="my-10">
-                <p className="hover:text-green-600 hover:underline text-xl font-semibold">
-                  {userName}
-                </p>
-                {/* <div className="avatar">
-              <div className="w-16 rounded-full">
-                <img src={userProfilePicture} />
-              </div>
-            </div> */}
+              <div className="my-16 flex">
+                <div className="avatar me-2">
+                  <div className="w-16 rounded-btn">
+                    <img src={userProfilePicture} />
+                  </div>
+                </div>
+                <div>
+                  <p className="hover:text-green-600 hover:underline text-2xl font-semibold">
+                    {authorName}
+                  </p>
+                  <p className="text-[#E5C466] text-xl font-semibold">
+                    {authorPosition}
+                  </p>
+                </div>
               </div>
             </div>
+          </div>
+          <div className="divider divider-success"></div>
+          <div className="flex items-center justify-between ">
+            <h4 className="text-3xl font-semibold">All comments</h4>
+              <select className="p-1 rounded-md bg-[#5999833a]" name="" id="">
+                <option value="recent">Recent</option>
+                <option value="all">All Comments</option>
+                <option value="relevant" selected>Most relevant</option>
+                <option value="trainers">From trainers</option>
+                <option value="admin">From admin</option>
+              </select>
           </div>
         </div>
       </div>
