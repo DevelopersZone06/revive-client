@@ -1,3 +1,4 @@
+
 const TrainerDetailPage = () => {
   return (
     <>
@@ -8,18 +9,28 @@ const TrainerDetailPage = () => {
               backgroundImage:
                 "url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Nastya_photoshooting_at_Laima_Rendez_Vous_Jurmala_2017_%28cropped%29.jpg/640px-Nastya_photoshooting_at_Laima_Rendez_Vous_Jurmala_2017_%28cropped%29.jpg')",
             }}
-            className="rounded-b-[50%] rounded-xl opacity-95 shadow-xl text-center text-black text-xl font-semibold h-[50%] bg-cover "
+            className="rounded-b-[50%] relative rounded-xl opacity-95 shadow-xl text-center text-black text-xl font-semibold h-[50%] bg-cover "
           >
-            <p>Position: Wellness Coach </p>
-            <p>Education: Standford University</p>
-            <p>Home Town: UK</p>
-            <p>Age: 24yrs</p>
+            <div className="absolute top-56 w-full text-white ">
+              <p>Position: Wellness Coach </p>
+              <p>Education: Standford University</p>
+              <p>Home Town: UK</p>
+              <p>Age: 24yrs</p>
+            </div>
           </div>
           <div className="my-20 ms-10 flex gap-4 flex-col bg-[#74b39c76] rounded-xl p-4 shadow-lg">
-            <button className="btn w-[60%] shadow-xl text-black bg-[#74b39c76] mx-auto border-[#373e3c] hover:bg-[#373e3c] hover:text-white border-2">Hire</button>
-            <button className="btn w-[60%] text-black shadow-xl bg-[#74b39c76] mx-auto border-[#373e3c] hover:bg-[#373e3c] hover:text-white border-2">Contact</button>
-            <button className="btn w-[60%] text-black shadow-xl bg-[#74b39c76] mx-auto border-[#373e3c] hover:bg-[#373e3c] hover:text-white border-2">curriculum</button>
-            <button className="btn w-[60%] text-black shadow-xl bg-[#74b39c76] mx-auto border-[#373e3c] hover:bg-[#373e3c] hover:text-white border-2">Error</button>
+            <button className="btn w-[60%] shadow-xl text-black bg-[#74b39c76] mx-auto border-[#373e3c] hover:bg-[#373e3c] hover:text-white border-2">
+              Hire
+            </button>
+            <button className="btn w-[60%] text-black shadow-xl bg-[#74b39c76] mx-auto border-[#373e3c] hover:bg-[#373e3c] hover:text-white border-2">
+              Contact
+            </button>
+            <button className="btn w-[60%] text-black shadow-xl bg-[#74b39c76] mx-auto border-[#373e3c] hover:bg-[#373e3c] hover:text-white border-2">
+              curriculum
+            </button>
+            <button className="btn w-[60%] text-black shadow-xl bg-[#74b39c76] mx-auto border-[#373e3c] hover:bg-[#373e3c] hover:text-white border-2">
+              Error
+            </button>
           </div>
         </div>
         <div>
@@ -65,13 +76,8 @@ const TrainerDetailPage = () => {
           </div>
           <div className="text-start py-7 w-[96%] bg-[#74b39c76] ps-2 text-lg rounded-xl shadow-xl my-10">
             <h2>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Dignissimos soluta praesentium non, similique veritatis <br />{" "}
-              maiores quidem neque, maxime voluptas sunt dolorem in ut, dicta
-              dolorum excepturi ad est numquam ipsam. Lorem <br />
-              ipsum, dolor sit amet consectetur adipisicing elit. Expedita
-              aperiam tenetur quos pariatur velit fugit sed! Harum vero enim
-              accusamus.
+            Hey there! I'm Anastasiia Oleksiivna Kamenskykh, your dedicated fitness coach at Revive. My journey into the world of <br /> fitness began with a passion for health and a desire to inspire others to lead a more active lifestyle.
+            Growing up, I was <br /> always drawn to sports and physical activities. Whether it was playing soccer with friends or hitting the gym, I found joy <br /> in the movement and the sense of accomplishment that comes with a good workout.My formal education in  Physical <br /> Education  equipped me with the knowledge of anatomy, physiology, and nutrition  the pillars of a holistic approach to fitness. 
             </h2>
           </div>
         </div>
