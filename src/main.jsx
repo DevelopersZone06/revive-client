@@ -10,13 +10,18 @@ import ErrorPage from "./Pages/ErrorPage/ErrorPage";
 import AuthProvider from "./Provider/AuthProvider";
 import Blogs from "./Pages/Blogs/Blogs";
 import About from "./Pages/About/About";
-import Pages from "./Pages/Pages/Pages";
 import Contact from "./Pages/Contact/Contact";
 import Gallery from "./Pages/Gallery/Gallery";
 import BlogDetail from "./Pages/Blog/BlogDetail";
 import Events from "./Pages/Event/Events";
-
-
+import BMIServices from "./Pages/UsersServices/BMIServices/BMIServices";
+import AllServices from "./Pages/UsersServices/AllServices/AllServices";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import EventDetails from "./Pages/Event/EventDetails";
+import AllTrainers from "./Pages/AllTrainers/AllTrainers";
+import ServiceDetails from "./Components/ServicesComponents/ServiceDetails/ServiceDetails";
+// import useAxiosPublic from "./Hooks/useAxiosPublic";
+const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
     path: "/",
@@ -33,12 +38,12 @@ const router = createBrowserRouter([
         element: <Blogs></Blogs>
       },
       {
-        path: "/blogggi", 
+        path: "/blog/:id", 
         element:<BlogDetail/>
       },
       {
-        path: '/pages',
-        element: <Pages></Pages>
+        path: '/trainers',
+        element: <AllTrainers></AllTrainers>
       },
       {
         path: "/login",
@@ -64,6 +69,24 @@ const router = createBrowserRouter([
       {
         path: '/events',
         element: <Events />
+      },
+      {
+        path:'/eventDetails',
+        element:<EventDetails/>
+      },
+      {
+        path:'/services',
+        element:<AllServices></AllServices>
+      },
+      {
+         path:'/services/:id',
+         element:<ServiceDetails/>,
+         loader:({params}) => fetch(`https://revive-server-dun.vercel.app/service/${params.id}`)
+      },
+      
+      {
+        path:'/BMIServices',
+        element:<BMIServices></BMIServices>
       }
     ],
   },
@@ -72,7 +95,11 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthProvider >
+   
+      <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />
+      </QueryClientProvider>
+      
     </AuthProvider>
   </React.StrictMode>
 );

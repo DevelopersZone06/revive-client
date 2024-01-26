@@ -39,16 +39,16 @@ const Navbar = () => {
             <NavLink to="/events">Events</NavLink>
           </li>
           <li>
-            <NavLink to="/pages">Pages</NavLink>
+            <NavLink to="/trainers">Trainers</NavLink>
           </li>
           <li>
             <NavLink to="/blogs">Blogs</NavLink>
           </li>
           <li>
-            <NavLink to="/login">Login</NavLink>
+            <NavLink to="/contact">Contact</NavLink>
           </li>
           <li>
-            <NavLink to="/contact">Contact</NavLink>
+            <NavLink to="/login">Login</NavLink>
           </li>
           {openSearch ? (
             <li>

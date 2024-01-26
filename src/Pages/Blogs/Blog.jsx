@@ -3,17 +3,18 @@ import { MdOutlineTextsms } from "react-icons/md";
 import { Link } from 'react-router-dom';
 
 const Blog = ({blog}) => {
-    const {title, description, image, category, like, comments, author, authorTitle, date, authorImage} = blog
+    const {title, description, image, category, like, comments, author, authorTitle, date, authorImage, _id} = blog
     return (
-        <div className='primary-bg rounded-md h-[400px] relative'>
+        <div className='shadow-gray-300 shadow-md rounded-md relative'>
             <img src={image} alt="" className='h-[150px] w-full rounded-t-lg' />
             <div className='p-3'>
                 <div className='flex justify-between'>
                     <span className='secondary-bg text-white px-3 rounded-lg text-sm'>{category}</span>
                     <p className='text-sm'>{date}</p>
                 </div>
-                <h1 className='capitalize font-medium text-xl mt-2'>{title}</h1>
-                <p className='text-sm'>{description.slice(0, 100)} <Link to={`/blog/3`} className='secondary-color'>Read More...</Link></p>
+                <h1 className='capitalize font-semibold text-xl mt-2'>{title}</h1>
+
+                <p className='text-sm mb-20'>{description.slice(0, 200)} <Link to={`/blog/${_id}`} className='secondary-color font-bold'>Read More...</Link></p>
                 <div className='absolute bottom-3 flex justify-between w-full left-0 px-3'>
                    <div className='flex gap-3 items-center'>
                         <img src={authorImage} alt="" className='w-9 h-9 rounded-full' />
