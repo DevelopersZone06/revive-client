@@ -3,6 +3,7 @@ import { IoMdArrowDropright } from "react-icons/io";
 import { MdLocationOn } from "react-icons/md";
 import { MdMarkEmailRead } from "react-icons/md";
 import { MdPhoneInTalk } from "react-icons/md";
+import { Link } from "react-router-dom";
 const EventDetails = () => {
     return (
         <>
@@ -59,12 +60,12 @@ const EventDetails = () => {
                         </div>
                     </div>
                     <h2 className="font-semibold">WE ARE GOING TO OPEN OUR EVENT</h2>
-<p className="font-medium py-4 text-justify px-5" >Welcome to our Fitness Fusion Workshop – an exhilarating event that combines various fitness disciplines to create a holistic and dynamic approach to well-being.</p>
-<p className="flex px-5 gap-4 text-[#448c74]"><MdMarkEmailRead className="w-[25px]"/>DevelopersZone06.com</p>
-<p className="flex px-5 gap-4 text-[#448c74]"><MdPhoneInTalk className="w-[25px]"/>+880 111 222 333 999</p>
-<div className="py-5">
-<button className='border-secondary px-10 py-2 rounded-md uppercase text-xl font-semibold secondary-color hover:bg-[#448c74] hover:text-white'>Join Now</button>
-</div>
+                    <p className="font-medium py-4 text-justify px-5" >Welcome to our Fitness Fusion Workshop – an exhilarating event that combines various fitness disciplines to create a holistic and dynamic approach to well-being.</p>
+                    <p className="flex px-5 gap-4 text-[#448c74]"><MdMarkEmailRead className="w-[25px]" />DevelopersZone06.com</p>
+                    <p className="flex px-5 gap-4 text-[#448c74]"><MdPhoneInTalk className="w-[25px]" />+880 111 222 333 999</p>
+                    <div className="py-5">
+                       <Link to='https://meet.google.com/jsz-qmex-cpr'> <button className='border-secondary px-10 py-2 rounded-md uppercase text-xl font-semibold secondary-color hover:bg-[#448c74] hover:text-white'>Join Now</button></Link>
+                    </div>
                 </div>
             </div>
         </>
