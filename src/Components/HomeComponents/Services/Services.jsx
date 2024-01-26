@@ -1,4 +1,3 @@
-import React from 'react';
 import Title from '../../../Shared/Title';
 import Service from './Service';
 
@@ -47,7 +46,7 @@ const Services = () => {
             <Title subHeading={"Services"} heading={"Our Some Services"}></Title>
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8'>
                 {
-                    services.map(service => <Service service={service}></Service>)
+                    services.map((service, index) => <Service key={index} service={service}></Service>)
                 }
             </div>
         </div>
