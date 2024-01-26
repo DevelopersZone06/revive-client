@@ -22,6 +22,8 @@ import AllServices from "./Pages/UsersServices/AllServices/AllServices";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import EventDetails from "./Pages/Event/EventDetails";
+import ServiceDetails from "./Components/ServicesComponents/ServiceDetails/ServiceDetails";
+// import useAxiosPublic from "./Hooks/useAxiosPublic";
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
@@ -70,14 +72,22 @@ const router = createBrowserRouter([
       {
         path: '/events',
         element: <Events />
-      },{
+      },
+      {
         path:'/eventDetails',
         element:<EventDetails/>
       },
       {
         path:'/services',
         element:<AllServices></AllServices>
-      },{
+      },
+      {
+        path:'/services/:id',
+        element:<ServiceDetails/>,
+        loader:({params}) => fetch(`https://revive-server-dun.vercel.app/service/${params.id}`)
+              },
+      
+      {
         path:'/BMIServices',
         element:<BMIServices></BMIServices>
       }
