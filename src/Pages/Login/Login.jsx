@@ -3,6 +3,7 @@ import Lottie from 'lottie-react';
 import LoginAni from '../../assets/loginAni.json'
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import '../../Styles/banner.css'
 
 import useAuth from '../../Hooks/useAuth';
 const Login = () => {
@@ -52,6 +53,13 @@ const Login = () => {
     
               <div className="form-caption flex items-end justify-center text-center space-x-3 mb-20">
                 <span className="text-3xl secondary-color font-bold headingFont ">Login</span>
+                <div className="lg:text-6xl md:text-6xl text-xl">
+                <svg id="animation-heading">
+                  <text x="45%" y="50%" dy=".50em" textAnchor="middle">
+                    Login
+                  </text>
+                </svg>
+              </div>
                
               </div>
               { /*form caption*/}

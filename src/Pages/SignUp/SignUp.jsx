@@ -74,7 +74,7 @@ const SignUp = () => {
              <form onSubmit={handleSubmit(onSubmit)}>
              <div className="form-element">
              <label className="space-y-2 w-full lg:w-4/5 block mx-auto">
-               <span className="block text-sm secondary-color normal font-semibold  tracking-wide">Name</span>
+               <span className="block text-sm secondary-color normal font-semibold  tracking-wide">Name*</span>
                <span className="block">
                  <input type="text" name='name' {...register("email", { required: true })} className="bg-teal-50 lg:bg-white border lg:border-2 border-gray-400 lg:border-gray-200 w-full p-1 rounded focus:outline-none text-sm active:outline-none focus:border-gray-400 active:border-gray-400"/>
                </span>
@@ -83,7 +83,7 @@ const SignUp = () => {
             
              <div className="form-element">
              <label className="space-y-2 w-full lg:w-4/5 block mx-auto">
-               <span className="block text-sm secondary-color normal font-semibold tracking-wide">Email</span>
+               <span className="block text-sm secondary-color normal font-semibold tracking-wide">Email*</span>
                <span className="block">
                  <input type="text" name='email' {...register("email", { required: true })} className="bg-teal-50 lg:bg-white border lg:border-2 border-gray-400 lg:border-gray-200 w-full p-1 rounded focus:outline-none text-sm active:outline-none focus:border-gray-400 active:border-gray-400"/>
                </span>
@@ -94,7 +94,7 @@ const SignUp = () => {
  
            <div className="form-element pb-5">
              <label className="space-y-2 w-full lg:w-4/5 block mx-auto">
-               <span className="block   secondary-color normal font-semibold text-sm tracking-wide">Password</span>
+               <span className="block   secondary-color normal font-semibold text-sm tracking-wide">Password*</span>
                <span className="block">
                  <input type="password" name='password' {...register("password", { required: true })} className="bg-teal-50 lg:bg-white border lg:border-2 text-sm border-gray-400 lg:border-gray-200 w-full p-1 rounded focus:outline-none active:outline-none focus:border-gray-400 active:border-gray-400" />
                </span>
