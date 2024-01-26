@@ -4,15 +4,25 @@ import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 
 import useAuth from '../../Hooks/useAuth';
+import useAxiosPublic from '../../Hooks/useAxiosPublic';
 
 const image_hosting_key=import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api=`https://api.imgbb.com/1/upload?key=${image_hosting_key}`
 const SignUp = () => {
  
     const { register, handleSubmit,reset,  formState: { errors }, } = useForm()
+    const axiosPublic = useAxiosPublic()
     const{createUser,updateUserProfile}= useAuth()
-    const onSubmit = (data) =>{ 
+    const onSubmit =async (data) =>{ 
       console.log(data)
+      //image upload to imagebb and get an url
+      const imageFile = { image: data.photo[0] }
+      const res = await axiosPublic.post(image_hosting_api, imageFile,{
+        headers: {
+          'content-type':'multipart/form-data'
+        }
+      })
+      console.log(res.data);
       createUser (data.email,data.password)
       .then(result =>{
         const loggedUser = result.user
@@ -34,14 +44,14 @@ const SignUp = () => {
    
     return (
         <div className="primary-bg overflow-x-hidden lg:overflow-x-auto lg:overflow-hidden flex items-center justify-center lg:h-screen">
-        <div className="login-container  container w-full lg:w-4/5 lg:bg-white h-screen lg:h-screen-75 lg:border border-gray-300 rounded-lg flex flex-wrap lg:flex-nowrap flex-col lg:flex-row justify-between group">
+        <div className="login-container  container w-full lg:w-4/5 lg:bg-white h-screen lg:h-screen-75 lg:border border-gray-300 rounded-lg flex gap-4  flex-wrap lg:flex-nowrap flex-col lg:flex-row  justify-between group">
 
         { /*product Side*/} 
         <div className="w-full lg:w-1/2 h-28 lg:h-full mt-32 lg:mt-0 lg:bg-theme-yellow-dark flex relative order-2 lg:order-1">
     
           <div className="text-center hidden lg:flex items-center justify-start h-full w-full select-none">
     
-            <span className="transform block whitespace-nowrap h-full -rotate-90 text-[55px] 2xl:text-[70px] font-black uppercase secondary-color opacity-0 transition-all group-hover:opacity-100 ml-10 2xl:ml-12 group-hover:-ml-32 2xl:group-hover:ml-32 lg:group-hover:ml-20 duration-1000 lg:duration-700 ease-in-out">Revive </span>
+            <span className="transform block whitespace-nowrap h-full -rotate-90 text-[55px] 2xl:text-[70px] font-black uppercase secondary-color opacity-0 transition-all group-hover:opacity-100 ml-10 2xl:ml-12 group-hover:-ml-24 2xl:group-hover:ml-32 lg:group-hover:ml-20 duration-1000 lg:duration-700 ease-in-out">Revive </span>
     
           </div>
           { /*product text*/} 
@@ -49,13 +59,13 @@ const SignUp = () => {
           <div className="product absolute right-0 bottom-0 flex items-center lg:justify-center w-full opacity-50 lg:opacity-100">
     
            
-            <Lottie animationData={LoginAni} loop={true} className="-mb-5 lg:mb-0 -ml-12 lg:ml-0 product h-[500px] xl:h-[700px] 2xl:h-[900px] w-auto object-cover transform group-hover:translate-x-26 2xl:group-hover:translate-x-48 transition-all duration-1000 lg:duration-700 ease-in-out" />
+            <Lottie animationData={LoginAni} loop={true} className="-mb-5 lg:mb-0 md:mb-0  -ml-8 lg:ml-0 md:ml-0 product h-[500px] xl:h-[700px] 2xl:h-[900px] w-auto object-cover transform group-hover:translate-x-26 2xl:group-hover:translate-x-48 transition-all duration-1000 lg:duration-700 ease-in-out" />
            
            
             { /*product shadow*/}
           </div>
     
-          <div className="hidden lg:block w-1/3 bg-white ml-auto"></div>
+          <div className="hidden lg:block md:block w-1/3 bg-white ml-auto"></div>
     
         </div>
         { /*Product Side End*/}
@@ -66,7 +76,14 @@ const SignUp = () => {
             <div className="w-full space-y-5">
     
               <div className="form-caption  flex items-end justify-center text-center space-x-3 mb-20">
-                <span className="text-3xl font-semibold secondary-color headingFont">Sign Up</span>
+                {/* <span className="text-3xl font-semibold secondary-color headingFont">Sign Up</span> */}
+                <div className="lg:text-6xl px-10  md:text-6xl text-xl">
+                <svg id="animation-heading">
+                  <text x="45%" y="50%" dy=".50em" textAnchor="middle">
+                    Sign Up
+                  </text>
+                </svg>
+              </div>
                
               </div>
               { /*form caption*/}
@@ -121,7 +138,7 @@ const SignUp = () => {
            </div>
              </form>
               { /* form element*/}
-      <p className='pl-9 text-md secondary-color   '>Already have an account? <Link to="/login" className='underline'>Login </Link> </p>
+      <p className='pl-9 text-md secondary-color pb-10  '>Already have an account? <Link to="/login" className='underline'>Login </Link> </p>
             </div>
           </div>
          { /*form wrapper*/}
