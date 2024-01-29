@@ -18,6 +18,7 @@ import BMIServices from "./Pages/UsersServices/BMIServices/BMIServices";
 import AllServices from "./Pages/UsersServices/AllServices/AllServices";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import EventDetails from "./Pages/Event/EventDetails";
+import TrainerDetailPage from "./Pages/Trainers/TrainerDetailPage";
 import AllTrainers from "./Pages/AllTrainers/AllTrainers";
 import ServiceDetails from "./Components/ServicesComponents/ServiceDetails/ServiceDetails";
 // import useAxiosPublic from "./Hooks/useAxiosPublic";
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
       {
         path: '/trainers',
         element: <AllTrainers></AllTrainers>
+      },
+      {
+        path: '/trainersdetails', 
+        element: <TrainerDetailPage></TrainerDetailPage>
       },
       {
         path: "/login",
