@@ -14,15 +14,12 @@ import Contact from "./Pages/Contact/Contact";
 import Gallery from "./Pages/Gallery/Gallery";
 import BlogDetail from "./Pages/Blog/BlogDetail";
 import Events from "./Pages/Event/Events";
-import Trainers from "./Pages/Trainers/Trainers";
 import BMIServices from "./Pages/UsersServices/BMIServices/BMIServices";
 import AllServices from "./Pages/UsersServices/AllServices/AllServices";
-
-
-
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import EventDetails from "./Pages/Event/EventDetails";
 import TrainerDetailPage from "./Pages/Trainers/TrainerDetailPage";
+import AllTrainers from "./Pages/AllTrainers/AllTrainers";
 import ServiceDetails from "./Components/ServicesComponents/ServiceDetails/ServiceDetails";
 // import useAxiosPublic from "./Hooks/useAxiosPublic";
 const queryClient = new QueryClient();
@@ -47,7 +44,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/trainers',
-        element: <Trainers></Trainers>
+        element: <AllTrainers></AllTrainers>
       },
       {
         path: '/trainersdetails', 
@@ -87,10 +84,10 @@ const router = createBrowserRouter([
         element:<AllServices></AllServices>
       },
       {
-        path:'/services/:id',
-        element:<ServiceDetails/>,
-        loader:({params}) => fetch(`https://revive-server-dun.vercel.app/service/${params.id}`)
-              },
+         path:'/services/:id',
+         element:<ServiceDetails/>,
+         loader:({params}) => fetch(`https://revive-server-dun.vercel.app/service/${params.id}`)
+      },
       
       {
         path:'/BMIServices',

@@ -31,7 +31,7 @@ const Trainers = () => {
             <div>
                 <Title heading={'Our Some Trainers'} subHeading={'Trainers'}></Title>
             </div>
-            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 text-center'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 text-center'>
                 {
                     trainers.map(trainer => <Trainer trainer={trainer}></Trainer>)
                 }
