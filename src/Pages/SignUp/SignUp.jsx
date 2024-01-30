@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 import useAuth from '../../Hooks/useAuth';
 import useAxiosPublic from '../../Hooks/useAxiosPublic';
+import SocialLogin from '../../Components/SocialLogin/SocialLogin';
 
 const image_hosting_key=import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api=`https://api.imgbb.com/1/upload?key=${image_hosting_key}`
@@ -138,6 +139,9 @@ const SignUp = () => {
            </div>
              </form>
               { /* form element*/}
+              <div className='px-12'>
+            <SocialLogin/>
+            </div>
       <p className='pl-9 text-md secondary-color pb-10  '>Already have an account? <Link to="/login" className='underline'>Login </Link> </p>
             </div>
           </div>

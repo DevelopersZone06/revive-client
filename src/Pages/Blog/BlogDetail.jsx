@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import CommentCard from "./CommentCard";
-
+import { FaShare } from "react-icons/fa";
 const BlogDetail = ({ blog }) => {
   //  practice json datas
 
@@ -82,6 +82,10 @@ const BlogDetail = ({ blog }) => {
                     alt=""
                   />
                   <p>{commentNumber}</p>
+                  {/* Share */}
+                  <div>
+                    <button type=""><FaShare/> </button>
+                  </div>
                 </div>
               </div>
             </div>

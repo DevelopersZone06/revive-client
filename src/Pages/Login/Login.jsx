@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import '../../Styles/banner.css'
 
 import useAuth from '../../Hooks/useAuth';
+import SocialLogin from '../../Components/SocialLogin/SocialLogin';
 const Login = () => {
   const { register, handleSubmit, reset, formState: { errors }, } = useForm()
   const { signIn } = useAuth()
@@ -103,8 +104,13 @@ const Login = () => {
                     <input type="submit" value="Login" className="cursor-pointer border-2 font-bold text-teal-50 border-[#448c74] w-full p-1 normal rounded-xl hover:secondary-bg bg-[#448c74]    transition-all" />
                   </span>
                 </div>
+                
               </form>
-              { /* form element*/}
+              {/* Social Login */}
+
+            <div className='px-12'>
+            <SocialLogin/>
+            </div>
               <p className='pl-9 text-md secondary-color  pb-10  '>Don't have an account? <Link to='/signUp' className='underline'>Sign Up </Link> </p>
             </div>
           </div>
