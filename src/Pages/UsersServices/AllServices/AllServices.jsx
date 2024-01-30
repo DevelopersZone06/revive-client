@@ -23,7 +23,7 @@ const AllServices = () => {
   };
   return (
     <>
-      <AllServiceTitle></AllServiceTitle>
+      {/* <AllServiceTitle></AllServiceTitle> */}
       <div className="px-[2%] sm:px-[5%] lg:px-[8%] py-28">
         {/* Special BMI */}
 

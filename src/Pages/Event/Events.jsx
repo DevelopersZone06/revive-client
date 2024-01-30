@@ -1,5 +1,4 @@
 import EventCard from "./EventCard";
-import EventsTitle from "./EventsTitle";
 
 
 const Events = () => {
@@ -55,7 +54,7 @@ const Events = () => {
   ]
   return (
     <div>
-      <EventsTitle />
+      {/* <EventsTitle /> */}
       <div className="grid grid-cols-3 my-14 gap-5 px-[2%] sm:px-[5%] lg:px-[8%]">
         {
           eventData?.map(event => <EventCard key={event.id} event={event}></EventCard>)

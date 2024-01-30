@@ -1,7 +1,6 @@
 // -------icons from react-icons-------
 import Lottie from 'lottie-react';
 import contactAnimation from '../../../public/Animation - 1706002574502 (2).json'
-import ContactTitle from "./ContactTitle";
 import { MdLocationOn } from "react-icons/md";
 import { FaPhoneVolume } from "react-icons/fa6";
 import { MdMarkEmailRead } from "react-icons/md";
@@ -9,7 +8,7 @@ const Contact = () => {
     return (
         <>
             <div>
-                <ContactTitle />
+                {/* <ContactTitle /> */}
 
                 <div className='px-[2%] sm:px-[5%] lg:px-[8%]'>
                     <h2 className='text-2xl md:text-4xl font-bold secondary-color mt-12'>Get in touch with us</h2>

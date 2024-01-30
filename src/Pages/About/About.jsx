@@ -1,4 +1,4 @@
-import AboutTitle from "./AboutTitle";
+
 import image1 from '../../assets/about/about_1.jpg'
 import image2 from '../../assets/about/about_2.jpg'
 import { IoCheckmarkDone } from "react-icons/io5";
@@ -15,7 +15,7 @@ import { VscDebugStart } from "react-icons/vsc";
 const About = () => {
     return (
         <div>
-            <AboutTitle />
+            {/* <AboutTitle /> */}
             {/* 1st section */}
             <div className="flex flex-col sm:flex-row md:flex-row px-[2%] sm:px-[5%] lg:px-[8%] mt-14 gap-10">
                 <img src={image2} alt="" className="w-[410px] md:w-[300px] rounded-md object-cover border-t-8 border-l-8 border-[#448c74] transition delay-150 duration-300 ease-in-out hover:scale-90" />

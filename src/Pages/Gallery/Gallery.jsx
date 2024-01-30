@@ -1,7 +1,6 @@
 
 import ButtonGallery from "./ButtonGallery";
 import GalleryCard from "./GalleryCard";
-import GalleryTitle from "./GalleryTitle";
 
 
 const Gallery = () => {
@@ -105,7 +104,7 @@ const Gallery = () => {
     ]
     return (
         <div>
-            <GalleryTitle/>
+            {/* <GalleryTitle/> */}
             
            <ButtonGallery/>
 
