@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import CommentCard from "./CommentCard";
 import { FaShare } from "react-icons/fa";
+import { FacebookShareButton, TwitterShareButton,FacebookIcon,TwitterIcon } from "react-share";
+
 const BlogDetail = ({ blog }) => {
   //  practice json datas
 
@@ -9,6 +11,7 @@ const BlogDetail = ({ blog }) => {
   const [reactionNumber, setReactionNumber] = useState(blog?.reacts || 0);
 
   const [isReacted, setIsReacted] = useState(false);
+  const currentPageUrl= "tutorend.com"
 
   useEffect(() => {
     fetch("/comments.json")
@@ -83,8 +86,18 @@ const BlogDetail = ({ blog }) => {
                   />
                   <p>{commentNumber}</p>
                   {/* Share */}
-                  <div>
-                    <button type=""><FaShare/> </button>
+                  <div  className="px-4">
+
+                  <FacebookShareButton
+                  url={ currentPageUrl}
+                  quote="Please share this blog"
+                  hashtag="#revive"
+                  >
+
+                   <button  className="subheading"  type=""><FaShare/> </button> 
+                 {/* <FacebookIcon/> */}
+                  </FacebookShareButton>
+                   
                   </div>
                 </div>
               </div>
