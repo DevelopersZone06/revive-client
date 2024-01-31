@@ -33,7 +33,7 @@ const Contact = () => {
                             </form>
                         </div>
                         <div className=''>
-                            <Lottie animationData={contactAnimation} loop={true} className='md:w-[500px] md:h-[500px]' />
+                            <Lottie animationData={contactAnimation} className='md:w-[500px] md:h-[500px]' />
                         </div>
                     </div>
                     <div className='shadow-md border-b-4 border-[#448c74] mb-12'>
