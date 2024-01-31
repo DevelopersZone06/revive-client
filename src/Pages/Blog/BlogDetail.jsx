@@ -67,23 +67,24 @@ const BlogDetail = ({ blog }) => {
                   {isReacted ? (
                     <img
                       onClick={handleDecreaseReaction}
-                      src="https://i.ibb.co/b7QHj8Z/icons8-love-24.png"
+                      src="https://i.ibb.co/KbRDCSX/icons8-love-24-4.png"
                       alt=""
                     />
                   ) : (
                     <img
                       onClick={handleIncreaseReaction}
-                      src="https://i.ibb.co/yNHKG1D/icons8-love-24-1.png"
+                      src="https://i.ibb.co/zNMtnNc/icons8-love-24-3.png"
                       alt=""
                     />
                   )}{" "}
                   <p className="px-4">{reactionNumber}</p>
                   <img
                     className="pe-4"
-                    src="https://i.ibb.co/MchxQgJ/icons8-comment-24.png"
+                    src="https://i.ibb.co/80PGNMg/icons8-comment-24-1.png"
                     alt=""
                   />
                   <p>{commentNumber}</p>
+                  <img className="ms-4" src="https://i.ibb.co/9wKM6gZ/icons8-share-24-1.png" alt="" />
                 </div>
               </div>
             </div>
