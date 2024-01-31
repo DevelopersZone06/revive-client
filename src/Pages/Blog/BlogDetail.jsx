@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import CommentCard from "./CommentCard";
+import BlogTitle from "./BlogTitle";
 
 const BlogDetail = ({ blog }) => {
   //  practice json datas
@@ -46,6 +47,7 @@ const BlogDetail = ({ blog }) => {
   return (
     <>
       {/* main div starts */}
+      <BlogTitle></BlogTitle>
       <div className="flex max-w-[1600px] mx-auto">
         <div className="w-[60%]">
           <div>
@@ -203,7 +205,7 @@ const BlogDetail = ({ blog }) => {
             </div>
           </div>
           <div className="divider divider-success"></div>
-          <div className="flex items-center justify-between ">
+          <div className="lg:flex items-center justify-between ">
             <h4 className="text-3xl font-semibold">All comments</h4>
             <select className="p-1 rounded-md bg-[#5999833a]" name="" id="">
               <option value="recent">Recent</option>
@@ -216,12 +218,8 @@ const BlogDetail = ({ blog }) => {
             </select>
           </div>
           <textarea
-            className="border mt-1 rounded-lg p-2 bg-[#cce0d98b]"
-            placeholder="Your comment "
-            name=""
-            id=""
-            cols="61"
-            rows="3"
+            className="border mt-1 w-full rounded-lg p-2 bg-[#cce0d98b]"
+            placeholder="Your comment"
           ></textarea>
           <div>
             <button className="bg-[#599983] p-1 rounded-md text-white ms-1">
