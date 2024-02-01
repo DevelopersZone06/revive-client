@@ -1,6 +1,6 @@
 import { FaSearch } from "react-icons/fa";
 import Trainer from "../../Components/HomeComponents/Trainers/Trainer";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 const AllTrainers = () => {
   const trainers = [
