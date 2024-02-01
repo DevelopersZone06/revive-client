@@ -21,6 +21,7 @@ import EventDetails from "./Pages/Event/EventDetails";
 import TrainerDetailPage from "./Pages/Trainers/TrainerDetailPage";
 import AllTrainers from "./Pages/AllTrainers/AllTrainers";
 import ServiceDetails from "./Components/ServicesComponents/ServiceDetails/ServiceDetails";
+import { HelmetProvider } from "react-helmet-async";
 // import useAxiosPublic from "./Hooks/useAxiosPublic";
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -36,19 +37,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/blogs",
-        element: <Blogs></Blogs>
+        element: <Blogs></Blogs>,
       },
       {
-        path: "/blog/:id", 
-        element:<BlogDetail/>
+        path: "/blog/:id",
+        element: <BlogDetail />,
       },
       {
-        path: '/trainers',
-        element: <AllTrainers></AllTrainers>
+        path: "/trainers",
+        element: <AllTrainers></AllTrainers>,
       },
       {
-        path: '/trainersdetails', 
-        element: <TrainerDetailPage></TrainerDetailPage>
+        path: "/trainersdetails",
+        element: <TrainerDetailPage></TrainerDetailPage>,
       },
       {
         path: "/login",
@@ -59,52 +60,52 @@ const router = createBrowserRouter([
         element: <SignUp></SignUp>,
       },
       {
-        path: '/about',
-        element: <About />
+        path: "/about",
+        element: <About />,
       },
       {
-        path:'/contact',
-        element:<Contact/>
+        path: "/contact",
+        element: <Contact />,
       },
       {
-        path:'/gallery',
-        element:<Gallery/>
-        
+        path: "/gallery",
+        element: <Gallery />,
       },
       {
-        path: '/events',
-        element: <Events />
+        path: "/events",
+        element: <Events />,
       },
       {
-        path:'/eventDetails',
-        element:<EventDetails/>
+        path: "/eventDetails",
+        element: <EventDetails />,
       },
       {
-        path:'/services',
-        element:<AllServices></AllServices>
+        path: "/services",
+        element: <AllServices></AllServices>,
       },
       {
-         path:'/services/:id',
-         element:<ServiceDetails/>,
-         loader:({params}) => fetch(`https://revive-server-dun.vercel.app/service/${params.id}`)
+        path: "/services/:id",
+        element: <ServiceDetails />,
+        loader: ({ params }) =>
+          fetch(`https://revive-server-dun.vercel.app/service/${params.id}`),
       },
-      
+
       {
-        path:'/BMIServices',
-        element:<BMIServices></BMIServices>
-      }
+        path: "/BMIServices",
+        element: <BMIServices></BMIServices>,
+      },
     ],
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <AuthProvider >
-   
-      <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-      </QueryClientProvider>
-      
-    </AuthProvider>
+    <HelmetProvider>
+      <AuthProvider>
+        <QueryClientProvider client={queryClient}>
+          <RouterProvider router={router} />
+        </QueryClientProvider>
+      </AuthProvider>
+    </HelmetProvider>
   </React.StrictMode>
 );
