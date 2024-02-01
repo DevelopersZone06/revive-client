@@ -11,11 +11,17 @@ const BlogDetail = ({ blog }) => {
 
   const [isReacted, setIsReacted] = useState(false);
 
+  const [commentOpen, setCommentOpen] = useState(false); 
+
   useEffect(() => {
     fetch("/comments.json")
       .then((res) => res.json())
       .then((data) => setComments(data));
   }, []);
+
+  const handleComment = () => {
+    setCommentOpen(true); 
+  }
 
   const handleIncreaseReaction = () => {
     setIsReacted(!isReacted);
@@ -79,7 +85,8 @@ const BlogDetail = ({ blog }) => {
                   )}{" "}
                   <p className="px-4">{reactionNumber}</p>
                   <img
-                    className="pe-4"
+                  onClick={handleComment}
+                    className="pe-4 cursor-pointer"
                     src="https://i.ibb.co/80PGNMg/icons8-comment-24-1.png"
                     alt=""
                   />
@@ -218,7 +225,8 @@ const BlogDetail = ({ blog }) => {
               <option value="admin">From admin</option>
             </select>
           </div>
-          <textarea
+          {
+            commentOpen && <> <textarea
             className="border mt-1 w-full rounded-lg p-2 bg-[#cce0d98b]"
             placeholder="Your comment"
           ></textarea>
@@ -230,6 +238,8 @@ const BlogDetail = ({ blog }) => {
               Cencel
             </button>
           </div>
+          </>
+          }
           {comments.map((comment, index) => (
             <CommentCard key={index} comment={comment}></CommentCard>
           ))}
