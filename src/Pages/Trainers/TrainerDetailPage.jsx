@@ -1,6 +1,24 @@
+import { useParams } from "react-router-dom";
 import TrainerDetailTitle from "./TrainerDetailTitle";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const TrainerDetailPage = () => {
+
+  const {id} = useParams()
+  console.log(id)
+
+  const [trainer, setTrainer] = useState({})
+  useEffect( () => {
+    axios(`https://revive-server-dun.vercel.app/trainers?id=${id}`)
+    .then(res => {
+      setTrainer(res.data)
+    })
+  }, [])
+
+  console.log(trainer)
+
+
   return (
     <>
       <TrainerDetailTitle />
