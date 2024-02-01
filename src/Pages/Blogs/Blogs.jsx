@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Blog from "./Blog";
+import axios from "axios";
 
 const Blogs = () => {
 
@@ -17,6 +18,32 @@ const Blogs = () => {
         const val = e.target.value
         console.log(val)
     }
+
+
+
+    const testPut = () => {
+        console.log('1')
+
+
+
+        const notificationIs = {
+            title: 'registration complete',
+            redirect: '/profile/:userEmail',
+            isRead: false
+        }
+
+        const obj = {
+            notificationIs
+        }
+
+        axios.patch('http://localhost:5000/notification/nipupu@gmail.com', obj)
+        .then(res => {
+            console.log(res.data)
+        })
+    }
+
+
+
     return (
         <div>
             <div className="sm:flex px-[2%] sm:px-[5%] lg:px-[8%] py-10">
@@ -53,6 +80,11 @@ const Blogs = () => {
                                 <option value="most comment">Most Comment</option>
                                 <option value="most like">Most Like</option>
                             </select>
+                        </div>
+
+                        {/* testing put operation */}
+                        <div>
+                            <button onClick={testPut} type="button" class="btn btn-outline-primary">click</button>
                         </div>
                     </div>
                 </div>

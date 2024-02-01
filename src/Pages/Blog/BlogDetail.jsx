@@ -36,7 +36,7 @@ const BlogDetail = () => {
   return (
     <>
       {/* main div starts */}
-      <div className="flex max-w-[1600px] mx-auto">
+      <div className="flex px-[2%] sm:px-[5%] lg:px-[8%]">
         <div className="w-[60%]">
           <div>
             <h3 className="text-5xl my-10 font-bold">{title}</h3>

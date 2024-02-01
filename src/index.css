@@ -91,3 +91,7 @@
 .trainer:hover .hidden{
   display: grid;
 }
+
+.navbar li{
+  font-size: 16px !important;
+}
