@@ -15,6 +15,7 @@ const ParallaxForBMI = () => {
           strength={300}
           className="hero w-full rounded-lg"
         >
+          {/* Parallax added  */}
           <div className="hero-overlay bg-opacity-60 bg-[#448c74] "></div>
           <div className="text-center p-10 w-full">
             <div className="max-w-md secondary-color ">

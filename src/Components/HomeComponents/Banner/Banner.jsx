@@ -11,9 +11,9 @@ const Banner = () => {
             <span className="border border-white rounded-full p-2 text-xl md:text-2xl lg:text-2xl">
               Inspiration for Healthy Living
             </span>
-            <div className="lg:text-6xl md:text-6xl text-xl">
+            <div className="lg:text-6xl md:text-6xl text-xl ">
               <svg id="animation-heading">
-                <text x="45%" y="50%" dy=".50em" textAnchor="middle">
+                <text x="45%" y="50%" dy=".50em" textAnchor="middle" >
                   Transform Your Life
                 </text>
               </svg>
@@ -70,11 +70,11 @@ const Banner = () => {
               </a>
             </div>
           </div>
-          <div className="image-container h-96 lg:w-5/12 w-full text-right">
+          <div className="image-container md:h-[450px] h-[200px] lg:w-5/12 w-6/12 text-right">
             <img
               src={img3}
               alt="Image"
-              className="image rounded-4xl bannerImage"
+              className="image rounded-4xl bannerImage object-cover"
             />
           </div>
         </div>
