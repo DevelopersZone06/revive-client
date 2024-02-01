@@ -1,16 +1,31 @@
 import { useEffect, useState } from "react";
 import CommentCard from "./CommentCard";
+import BlogTitle from "./BlogTitle";
 
-const BlogDetail = () => {
+const BlogDetail = ({ blog }) => {
   //  practice json datas
 
-  const [comments, setComments] = useState([]); 
+  const [comments, setComments] = useState([]);
+
+  const [reactionNumber, setReactionNumber] = useState(blog?.reacts || 0);
+
+  const [isReacted, setIsReacted] = useState(false);
 
   useEffect(() => {
-    fetch('/comments.json')
-    .then(res => res.json())
-    .then(data => setComments(data))
-  }, [])
+    fetch("/comments.json")
+      .then((res) => res.json())
+      .then((data) => setComments(data));
+  }, []);
+
+  const handleIncreaseReaction = () => {
+    setIsReacted(!isReacted);
+    setReactionNumber(reactionNumber + 1);
+  };
+
+  const handleDecreaseReaction = () => {
+    setIsReacted(!isReacted);
+    setReactionNumber(reactionNumber - 1);
+  };
 
   const title = "Maditation that makes you strong";
   const image =
@@ -21,22 +36,19 @@ const BlogDetail = () => {
 
   const publishDate = "12-04-2023";
 
-  const reacttionNumber = "124";
-
-  const commentNumber = "32";
+  const commentNumber = 32;
 
   const authorPosition = "Trainer and Writer";
 
   //    practice json data
-
-  const [isReacted, setIsReacted] = useState(false);
 
   // const [isBookmarked, setIsBookmarked] = useState(false);
 
   return (
     <>
       {/* main div starts */}
-      <div className="flex px-[2%] sm:px-[5%] lg:px-[8%]">
+      <BlogTitle></BlogTitle>
+      <div className="flex max-w-[1600px] mx-auto">
         <div className="w-[60%]">
           <div>
             <h3 className="text-5xl my-10 font-bold">{title}</h3>
@@ -54,18 +66,18 @@ const BlogDetail = () => {
                 <div className="flex p-4">
                   {isReacted ? (
                     <img
-                      onClick={() => setIsReacted(false)}
+                      onClick={handleDecreaseReaction}
                       src="https://i.ibb.co/b7QHj8Z/icons8-love-24.png"
                       alt=""
                     />
                   ) : (
                     <img
-                      onClick={() => setIsReacted(true)}
+                      onClick={handleIncreaseReaction}
                       src="https://i.ibb.co/yNHKG1D/icons8-love-24-1.png"
                       alt=""
                     />
                   )}{" "}
-                  <p className="px-4">{reacttionNumber}</p>
+                  <p className="px-4">{reactionNumber}</p>
                   <img
                     className="pe-4"
                     src="https://i.ibb.co/MchxQgJ/icons8-comment-24.png"
@@ -168,26 +180,7 @@ const BlogDetail = () => {
                 fugit! Cum magni aspernatur ex dicta!
               </p>
             </div>
-            {/* <div className="border-y my-10 flex items-center justify-between border-black"> */}
-            {/* div for bookmark and share
-            <div className="flex gap-4 pe-4">
-              {isBookmarked ? (
-                <img
-                  onClick={() => setIsBookmarked(false)}
-                  src="https://i.ibb.co/hYQ7rcR/icons8-bookmark-24-1.png"
-                  alt=""
-                />
-              ) : (
-                <img
-                  onClick={() => setIsBookmarked(true)}
-                  src="https://i.ibb.co/BzShvcP/icons8-bookmark-24.png"
-                  alt=""
-                />
-              )}
-
-              <img src="https://i.ibb.co/3hfc6Tm/icons8-share-24.png" alt="" />
-            </div> */}
-            {/* </div> */}
+            
           </div>
         </div>
         <div className="w-[40%] ps-10 ">
@@ -212,19 +205,33 @@ const BlogDetail = () => {
             </div>
           </div>
           <div className="divider divider-success"></div>
-          <div className="flex items-center justify-between ">
+          <div className="lg:flex items-center justify-between ">
             <h4 className="text-3xl font-semibold">All comments</h4>
-              <select className="p-1 rounded-md bg-[#5999833a]" name="" id="">
-                <option value="recent">Recent</option>
-                <option value="all">All Comments</option>
-                <option value="relevant" selected>Most relevant</option>
-                <option value="trainers">From trainers</option>
-                <option value="admin">From admin</option>
-              </select>
+            <select className="p-1 rounded-md bg-[#5999833a]" name="" id="">
+              <option value="recent">Recent</option>
+              <option value="all">All Comments</option>
+              <option value="relevant" selected>
+                Most relevant
+              </option>
+              <option value="trainers">From trainers</option>
+              <option value="admin">From admin</option>
+            </select>
           </div>
-          {
-            comments.map((comment, index) => <CommentCard key={index} comment={comment}></CommentCard>)
-          }
+          <textarea
+            className="border mt-1 w-full rounded-lg p-2 bg-[#cce0d98b]"
+            placeholder="Your comment"
+          ></textarea>
+          <div>
+            <button className="bg-[#599983] p-1 rounded-md text-white ms-1">
+              Post
+            </button>
+            <button className="bg-[#599983] p-1 rounded-md text-white ms-1">
+              Cencel
+            </button>
+          </div>
+          {comments.map((comment, index) => (
+            <CommentCard key={index} comment={comment}></CommentCard>
+          ))}
         </div>
       </div>
     </>

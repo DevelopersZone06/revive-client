@@ -1,10 +1,17 @@
 import { useEffect, useState } from "react";
 import Blog from "./Blog";
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
+// import { Helmet } from "react-helmet";
 
 const Blogs = () => {
+  const [blogs, setBlogs] = useState([]);
 
-    const [blogs, setBlogs] = useState([])
+  useEffect(() => {
+    fetch("https://revive-server-dun.vercel.app/blogs")
+      .then((res) => res.json())
+      .then((data) => setBlogs(data));
+  }, []);
 
     useEffect( () => {
         fetch('https://revive-server-dun.vercel.app/blogs')
@@ -99,8 +106,8 @@ const Blogs = () => {
                     </div>
                 </div>
             </div>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default Blogs;

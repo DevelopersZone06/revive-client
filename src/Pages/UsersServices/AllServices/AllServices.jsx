@@ -5,7 +5,8 @@ import Loading from "../../../Shared/Loading/Loading";
 import Title from "../../../Shared/Title";
 
 import ParallaxForBMI from "../../../Components/ServicesComponents/ParallaxForBMI/ParallaxForBMI";
-import AllServiceTitle from "./AllServiceTitle";
+import { Helmet } from "react-helmet-async";
+// import { Helmet } from "react-helmet";
 
 const AllServices = () => {
   const axiosPublic = useAxiosPublic();
@@ -23,7 +24,12 @@ const AllServices = () => {
   };
   return (
     <>
-      <AllServiceTitle></AllServiceTitle>
+    <Helmet>
+            <title>
+              Revive | Services
+            </title>
+          </Helmet>
+      {/* <AllServiceTitle></AllServiceTitle> */}
       <div className="px-[2%] sm:px-[5%] lg:px-[8%] py-28">
         {/* Special BMI */}
 
