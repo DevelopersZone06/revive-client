@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import CommentCard from "./CommentCard";
 import { FaShare } from "react-icons/fa";
 import { FacebookShareButton, TwitterShareButton,FacebookIcon,TwitterIcon } from "react-share";
+import BlogTitle from "./BlogTitle";
 
 const BlogDetail = ({ blog }) => {
   //  practice json datas
@@ -11,7 +12,7 @@ const BlogDetail = ({ blog }) => {
   const [reactionNumber, setReactionNumber] = useState(blog?.reacts || 0);
 
   const [isReacted, setIsReacted] = useState(false);
-  const currentPageUrl= "tutorend.com"
+  const currentPageUrl= `https://soft-monstera-bbb73f.netlify.app/blog/65b2434b8209fff72f1ace46`
 
   useEffect(() => {
     fetch("/comments.json")
@@ -49,6 +50,7 @@ const BlogDetail = ({ blog }) => {
   return (
     <>
       {/* main div starts */}
+      <BlogTitle></BlogTitle>
       <div className="flex max-w-[1600px] mx-auto">
         <div className="w-[60%]">
           <div>
@@ -88,15 +90,33 @@ const BlogDetail = ({ blog }) => {
                   {/* Share */}
                   <div  className="px-4">
 
-                  <FacebookShareButton
-                  url={ currentPageUrl}
-                  quote="Please share this blog"
-                  hashtag="#revive"
-                  >
 
-                   <button  className="subheading"  type=""><FaShare/> </button> 
-                 {/* <FacebookIcon/> */}
-                  </FacebookShareButton>
+                  <label htmlFor="my_modal_7" className="subheading w-14"><FaShare className=""/></label>
+
+{/* Put this part before </body> tag */}
+<input type="checkbox" id="my_modal_7" className="modal-toggle" />
+<div className="modal" role="dialog">
+  <div className="modal-box w-64">
+  <FacebookShareButton
+  url={ currentPageUrl}
+  quote="Please share this blog"
+  hashtag="#revive"
+  >
+  {/* <FacebookIcon/> */}
+  <FacebookIcon className="pl-9"/>  
+  </FacebookShareButton>
+
+  <TwitterShareButton  url={ currentPageUrl}
+  quote="Please share this blog"
+  hashtag="#revive">
+  <TwitterIcon className="pl-5"/>
+  </TwitterShareButton>
+  </div>
+  <label className="modal-backdrop" htmlFor="my_modal_7">Close</label>
+</div>
+                  
+
+                
                    
                   </div>
                 </div>
@@ -220,7 +240,7 @@ const BlogDetail = ({ blog }) => {
             </div>
           </div>
           <div className="divider divider-success"></div>
-          <div className="flex items-center justify-between ">
+          <div className="lg:flex items-center justify-between ">
             <h4 className="text-3xl font-semibold">All comments</h4>
             <select className="p-1 rounded-md bg-[#5999833a]" name="" id="">
               <option value="recent">Recent</option>
@@ -233,12 +253,8 @@ const BlogDetail = ({ blog }) => {
             </select>
           </div>
           <textarea
-            className="border mt-1 rounded-lg p-2 bg-[#cce0d98b]"
-            placeholder="Your comment "
-            name=""
-            id=""
-            cols="61"
-            rows="3"
+            className="border mt-1 w-full rounded-lg p-2 bg-[#cce0d98b]"
+            placeholder="Your comment"
           ></textarea>
           <div>
             <button className="bg-[#599983] p-1 rounded-md text-white ms-1">

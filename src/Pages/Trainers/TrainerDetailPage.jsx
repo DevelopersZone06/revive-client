@@ -1,7 +1,9 @@
+import TrainerDetailTitle from "./TrainerDetailTitle";
 
 const TrainerDetailPage = () => {
   return (
     <>
+      <TrainerDetailTitle />
       <div className="flex gap-14 bg-[#74b39c76] rounded-xl my-20 h-[80vh] shadow-lg max-w-[1600px] mx-auto">
         <div className="w-[30%] ps-5">
           <div
@@ -76,8 +78,16 @@ const TrainerDetailPage = () => {
           </div>
           <div className="text-start py-7 w-[96%] bg-[#74b39c76] ps-2 text-lg rounded-xl shadow-xl my-10">
             <h2>
-            Hey there! I'm Anastasiia Oleksiivna Kamenskykh, your dedicated fitness coach at Revive. My journey into the world of <br /> fitness began with a passion for health and a desire to inspire others to lead a more active lifestyle.
-            Growing up, I was <br /> always drawn to sports and physical activities. Whether it was playing soccer with friends or hitting the gym, I found joy <br /> in the movement and the sense of accomplishment that comes with a good workout.My formal education in  Physical <br /> Education  equipped me with the knowledge of anatomy, physiology, and nutrition  the pillars of a holistic approach to fitness. 
+              Hey there! I'm Anastasiia Oleksiivna Kamenskykh, your dedicated
+              fitness coach at Revive. My journey into the world of <br />{" "}
+              fitness began with a passion for health and a desire to inspire
+              others to lead a more active lifestyle. Growing up, I was <br />{" "}
+              always drawn to sports and physical activities. Whether it was
+              playing soccer with friends or hitting the gym, I found joy <br />{" "}
+              in the movement and the sense of accomplishment that comes with a
+              good workout.My formal education in Physical <br /> Education
+              equipped me with the knowledge of anatomy, physiology, and
+              nutrition the pillars of a holistic approach to fitness.
             </h2>
           </div>
         </div>

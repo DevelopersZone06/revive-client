@@ -7,12 +7,19 @@ import Services from "../../Components/HomeComponents/Services/Services";
 import Packages from "../../Components/HomeComponents/Packages/Packages";
 
 import Trainers from "../../Components/HomeComponents/Trainers/Trainers";
+import { Helmet } from "react-helmet-async";
+// import { Helmet } from "react-helmet";
 
 
 
 const Home = () => {
     return (
         <div>
+          <Helmet>
+            <title>
+              Revive | Home
+            </title>
+          </Helmet>
           <Banner></Banner> 
           <Features></Features> 
           <Services></Services>

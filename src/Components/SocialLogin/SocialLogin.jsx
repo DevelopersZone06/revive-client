@@ -34,10 +34,10 @@ const SocialLogin = () => {
     return (
         <div className="flex flex-col gap-3">
             <div>
-                <button  onClick={handleGoogleLogin} className="cursor-pointer border-2 font-bold text-teal-50 border-[#448c74] w-full py-1 normal rounded-xl hover:secondary-bg bg-[#448c74]  flex items-center justify-center  transition-all" type=""> Login with Google </button>
+                <button  onClick={handleGoogleLogin} className="cursor-pointer border-2 font-bold text-teal-50 border-[#448c74] w-full py-1 normal rounded-lg hover:secondary-bg bg-[#448c74]  flex items-center justify-center  transition-all" type=""> Login with Google </button>
             </div>
             <div>
-                <button  onClick={handleFbLogin} className="cursor-pointer border-2 font-bold text-teal-50 border-[#448c74] w-full py-1 normal rounded-xl hover:secondary-bg bg-[#448c74]  flex items-center justify-center  transition-all" type=""> Login with Facebook </button>
+                <button  onClick={handleFbLogin} className="cursor-pointer border-2 font-bold text-teal-50 border-[#448c74] w-full py-1 normal rounded-lg hover:secondary-bg bg-[#448c74]  flex items-center justify-center  transition-all" type=""> Login with Facebook </button>
             </div>
         </div>
     );
