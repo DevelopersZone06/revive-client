@@ -1,50 +1,60 @@
 import { FaSearch } from "react-icons/fa";
 import Trainer from "../../Components/HomeComponents/Trainers/Trainer";
 import { Helmet } from "react-helmet";
+import { useEffect, useState } from "react";
 
 const AllTrainers = () => {
-  const trainers = [
-    {
-      name: "Md. Emran",
-      skill: "Boxing Trainer",
-      img: "https://template.unicoderbd.com/unifit/images/trainer/trainer4.jpg",
-    },
-    {
-      name: "Jona Martha",
-      skill: "Yoga Trainer",
-      img: "https://template.unicoderbd.com/unifit/images/trainer/trainer2.jpg",
-    },
-    {
-      name: "Md Ibrahim",
-      skill: "Weight Loss Trainer",
-      img: "https://template.unicoderbd.com/unifit/images/trainer/trainer4.jpg",
-    },
-    {
-      name: "Jarin Tasnim",
-      skill: "Boxing Trainer",
-      img: "https://www.lemongym.lt/wp-content/uploads/2023/02/MG_1741-243x240.jpg",
-    },
-    {
-      name: "Md. Emran",
-      skill: "Boxing Trainer",
-      img: "https://template.unicoderbd.com/unifit/images/trainer/trainer4.jpg",
-    },
-    {
-      name: "Jona Martha",
-      skill: "Yoga Trainer",
-      img: "https://template.unicoderbd.com/unifit/images/trainer/trainer2.jpg",
-    },
-    {
-      name: "Md Ibrahim",
-      skill: "Weight Loss Trainer",
-      img: "https://template.unicoderbd.com/unifit/images/trainer/trainer4.jpg",
-    },
-    {
-      name: "Jarin Tasnim",
-      skill: "Boxing Trainer",
-      img: "https://www.lemongym.lt/wp-content/uploads/2023/02/MG_1741-243x240.jpg",
-    },
-  ];
+
+  const [trainers, setTrainers] = useState([])
+
+  useEffect(() => {
+    fetch("http://localhost:5000/trainers")
+      .then((res) => res.json())
+      .then((data) => setTrainers(data));
+  }, []);
+
+  // const trainers = [
+  //   {
+  //     name: "Md. Emran",
+  //     skill: "Boxing Trainer",
+  //     img: "https://template.unicoderbd.com/unifit/images/trainer/trainer4.jpg",
+  //   },
+  //   {
+  //     name: "Jona Martha",
+  //     skill: "Yoga Trainer",
+  //     img: "https://template.unicoderbd.com/unifit/images/trainer/trainer2.jpg",
+  //   },
+  //   {
+  //     name: "Md Ibrahim",
+  //     skill: "Weight Loss Trainer",
+  //     img: "https://template.unicoderbd.com/unifit/images/trainer/trainer4.jpg",
+  //   },
+  //   {
+  //     name: "Jarin Tasnim",
+  //     skill: "Boxing Trainer",
+  //     img: "https://www.lemongym.lt/wp-content/uploads/2023/02/MG_1741-243x240.jpg",
+  //   },
+  //   {
+  //     name: "Md. Emran",
+  //     skill: "Boxing Trainer",
+  //     img: "https://template.unicoderbd.com/unifit/images/trainer/trainer4.jpg",
+  //   },
+  //   {
+  //     name: "Jona Martha",
+  //     skill: "Yoga Trainer",
+  //     img: "https://template.unicoderbd.com/unifit/images/trainer/trainer2.jpg",
+  //   },
+  //   {
+  //     name: "Md Ibrahim",
+  //     skill: "Weight Loss Trainer",
+  //     img: "https://template.unicoderbd.com/unifit/images/trainer/trainer4.jpg",
+  //   },
+  //   {
+  //     name: "Jarin Tasnim",
+  //     skill: "Boxing Trainer",
+  //     img: "https://www.lemongym.lt/wp-content/uploads/2023/02/MG_1741-243x240.jpg",
+  //   },
+  // ];
   return (
     <div className="px-[2%] sm:px-[5%] lg:px-[8%]">
       <Helmet>
