@@ -54,8 +54,8 @@ const BlogDetail = ({ blog }) => {
     <>
       {/* main div starts */}
       <BlogTitle></BlogTitle>
-      <div className="flex max-w-[1600px] mx-auto">
-        <div className="w-[60%]">
+      <div className="md:flex md:max-w-[1600px] mx-auto">
+        <div className="md:w-[60%]">
           <div>
             <h3 className="text-5xl my-10 font-bold">{title}</h3>
 
@@ -191,7 +191,7 @@ const BlogDetail = ({ blog }) => {
             
           </div>
         </div>
-        <div className="w-[40%] ps-10 ">
+        <div className="md:w-[40%] ps-10 ">
           <div className="">
             {/* author related informations */}
             <div>
