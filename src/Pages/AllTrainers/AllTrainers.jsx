@@ -1,6 +1,7 @@
 import { FaSearch } from "react-icons/fa";
 import Trainer from "../../Components/HomeComponents/Trainers/Trainer";
 
+
 import PageTitle from "../../Shared/PageTitle/PageTitle";
 import { useEffect, useState } from "react";
 import axios from "axios";
