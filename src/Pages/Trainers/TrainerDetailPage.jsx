@@ -22,23 +22,23 @@ const TrainerDetailPage = () => {
   return (
     <>
       <TrainerDetailTitle />
-      <div className="flex gap-14 bg-[#74b39c76] rounded-xl my-20 h-[80vh] shadow-lg max-w-[1600px] mx-auto">
+      <div className="lg:flex gap-14 bg-[#74b39c76] rounded-xl my-20 h-[80vh] shadow-lg max-w-[1600px] mx-auto">
         <div className="w-[30%] ps-5">
           <div
             style={{
               backgroundImage:
                 "url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Nastya_photoshooting_at_Laima_Rendez_Vous_Jurmala_2017_%28cropped%29.jpg/640px-Nastya_photoshooting_at_Laima_Rendez_Vous_Jurmala_2017_%28cropped%29.jpg')",
             }}
-            className="rounded-b-[50%] relative rounded-xl opacity-95 shadow-xl text-center text-black text-xl font-semibold h-[50%] bg-cover "
+            className="rounded-b-[50%] hover:opacity-55 rounded-xl opacity-95 shadow-xl text-center text-black text-xl font-semibold h-[50%] bg-cover "
           >
-            <div className="absolute top-56 w-full text-white ">
+            <div className="w-full text-white ">
               <p>Position: Wellness Coach </p>
               <p>Education: Standford University</p>
               <p>Home Town: UK</p>
               <p>Age: 24yrs</p>
             </div>
           </div>
-          <div className="my-20 ms-10 flex gap-4 flex-col bg-[#74b39c76] rounded-xl p-4 shadow-lg">
+          <div className="my-20 lg:ms-10 lg:flex lg:gap-4 lg:flex-col bg-[#74b39c76] rounded-xl p-4 shadow-lg">
             <button className="btn w-[60%] shadow-xl text-black bg-[#74b39c76] mx-auto border-[#373e3c] hover:bg-[#373e3c] hover:text-white border-2">
               Hire
             </button>
