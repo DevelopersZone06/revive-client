@@ -8,7 +8,7 @@ const AllTrainers = () => {
   const [trainers, setTrainers] = useState([])
 
   useEffect(() => {
-    fetch("http://localhost:5000/trainers")
+    fetch("https://revive-server-dun.vercel.app/trainers")
       .then((res) => res.json())
       .then((data) => setTrainers(data));
   }, []);
