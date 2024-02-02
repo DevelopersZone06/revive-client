@@ -48,7 +48,7 @@ const router = createBrowserRouter([
         element: <AllTrainers></AllTrainers>,
       },
       {
-        path: "/trainersdetails",
+        path: "/trainersdetails/:id",
         element: <TrainerDetailPage></TrainerDetailPage>,
       },
       {
@@ -76,7 +76,7 @@ const router = createBrowserRouter([
         element: <Events />,
       },
       {
-        path: "/eventDetails",
+        path: "/eventDetails/:id",
         element: <EventDetails />,
       },
       {

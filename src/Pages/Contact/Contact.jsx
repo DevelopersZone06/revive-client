@@ -1,6 +1,5 @@
 // -------icons from react-icons-------
-import Lottie from "lottie-react";
-import contactAnimation from "../../../public/Animation - 1706002574502 (2).json";
+
 import { MdLocationOn } from "react-icons/md";
 import { FaPhoneVolume } from "react-icons/fa6";
 import { MdMarkEmailRead } from "react-icons/md";
@@ -59,13 +58,7 @@ const Contact = () => {
           </button>
         </form>
       </div>
-      <div className="">
-        <Lottie
-          animationData={contactAnimation}
-          loop={true}
-          className="md:w-[500px] md:h-[500px]"
-        />
-      </div>
+      
     </div>
     <div className="shadow-md border-b-4 border-[#448c74] mb-12">
       <div className="grid grid-cols-1 md:grid-cols-3 py-10 gap-5">
