@@ -1,8 +1,13 @@
 import { Link, NavLink } from "react-router-dom";
 import { FaBars, FaRegEnvelope, FaSearch, FaRegEnvelopeOpen } from "react-icons/fa";
 import { IoNotificationsOutline } from "react-icons/io5";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import axios from "axios";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import moment from "moment";
+
+
 
 
 const Navbar = () => {
@@ -23,26 +28,21 @@ const Navbar = () => {
 
 
 
-  const notifications = [
-    {
-      title: "You successfully registered in revive health and fitness platform website",
-      redirect: '/',
-      isRead: false,
-      date: '02 - 02 - 2024'
-    },
-    {
-      title: "Registration",
-      redirect: '/',
-      isRead: true,
-      date: '02 - 02 - 2024'
-    },
-    {
-      title: "Registration",
-      redirect: '/',
-      isRead: false,
-      date: '02 - 02 - 2024'
-    },
-  ]
+  const axiosPublic = useAxiosPublic();
+  const [notifications, setNotifications] = useState({})
+
+  useEffect( () => {
+    axiosPublic(`notification/${user?.email}`)
+    .then(res => {
+      setNotifications(res.data)
+    })
+  }, [user])
+
+
+  // const date = notifications ? moment(notifications.allNotification.date, "YYYYMMDD").fromNow() : ''
+  // console.log(date)
+
+ 
 
   return (
     <div className="bg-[#599983] px-[2%] sm:px-[5%] lg:px-[8%] text-white relative z-20">
@@ -100,10 +100,10 @@ const Navbar = () => {
                 <div className={notification ? "w-96 primary-bg max-h-screen absolute right-0 top-10 rounded-md py-4 ease-in duration-300 border-primary" : "w-96 primary-bg overflow-hidden absolute right-0 -top-[500px] py-10 z-10 ease-in duration-300 max-h-80"}>
                   <h1 className="border-b border-b-white px-4 pb-4">Notification</h1>
                   {
-                    notifications.map(notification => <Link to={notification.redirect}><div className="px-4 py-2 border-b border-b-white hover:bg-white">
+                    notifications && notifications.allNotification.map(notification => <Link to={notification.redirect}><div className="px-4 py-2 border-b border-b-white hover:bg-white">
                       <p>{notification.title}</p>
                       <div className="flex justify-between items-center">
-                        <p className="text-[10px]">{notification.date}</p>
+                        <p className="text-[10px]">{moment(notification.date, "YYYYMMDD").fromNow()}</p>
                         {
                           notification.isRead ? <p className="w-5"><FaRegEnvelopeOpen ></FaRegEnvelopeOpen></p> : <p className="w-5"><FaRegEnvelope></FaRegEnvelope></p>  
                         }

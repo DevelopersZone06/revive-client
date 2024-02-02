@@ -26,7 +26,7 @@ const Blogs = () => {
         console.log(val)
     }
 
-
+ 
 
     const testPut = () => {
         console.log('1')
@@ -34,7 +34,7 @@ const Blogs = () => {
 
 
         const notificationIs = {
-            title: 'registration complete',
+            title: 'registration complete check',
             redirect: '/profile/:userEmail',
             isRead: false
         }
@@ -43,7 +43,7 @@ const Blogs = () => {
             notificationIs
         }
 
-        axios.patch('http://localhost:5000/notification/nipupu@gmail.com', obj)
+        axios.patch('http://localhost:5000/notification/nipupteryagfdu@gmail.com', obj)
         .then(res => {
             console.log(res.data)
         })

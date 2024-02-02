@@ -10,10 +10,15 @@ import SocialLogin from '../../Components/SocialLogin/SocialLogin';
 
 import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
+import moment from "moment";
+
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 const SignUp = () => {
+
+
+  const date = moment().format('YYYY MM DD');
   
   const {
     register,
@@ -46,7 +51,7 @@ const SignUp = () => {
           email: data.email,
           photoUrl: data.photoUrl,
         };
-        console.log(userInfo);
+
         axiosPublic.post('/users',userInfo)
         .then((res) =>{
           if(res.data.insertedId){
@@ -58,14 +63,23 @@ const SignUp = () => {
               showConfirmButton: false,
               timer: 1500
             });
-            console.log(data.email);
-            const notificationDes = {
-              title: "You successfully registered in revive health and fitness platform website",
+
+
+            const notificationIs = {
+              title: 'registration complete check',
               redirect: '/',
               isRead: false,
-              date: new Date()
-            }
-            axiosPublic.patch(`/notification/${data.email}`,notificationDes)
+              date
+          }
+  
+          const newNotification = {
+              notificationIs
+          }
+  
+          axiosPublic.patch(`/notification/${data.email}`, newNotification)
+          .then(res => {
+              console.log(res.data)
+          })
           }
         })
       });
