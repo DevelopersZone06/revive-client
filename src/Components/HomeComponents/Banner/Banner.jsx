@@ -8,10 +8,10 @@ const Banner = () => {
       <div className="secondary-bg py-28 w-full px-[2%] sm:px-[5%] lg:px-[8%] box">
         <div className="flex justify-between flex-col lg:flex-row">
           <div className="lg:w-1/2 w-full text-white">
-            <span className="border border-white rounded-full p-2 text-xl md:text-2xl lg:text-2xl">
+            <span className="border border-white rounded-full p-2 text-md md:text-xl  ">
               Inspiration for Healthy Living
             </span>
-            <div className="lg:text-6xl md:text-6xl text-xl ">
+            <div className="lg:text-6xl md:text-6xl text-3xl ">
               <svg id="animation-heading">
                 <text x="45%" y="50%" dy=".50em" textAnchor="middle" >
                   Transform Your Life
@@ -70,7 +70,7 @@ const Banner = () => {
               </a>
             </div>
           </div>
-          <div className="image-container md:h-[450px] h-[200px] lg:w-5/12 w-6/12 text-right">
+          <div className="image-container md:h-[450px] h-[300px] lg:w-5/12 text-right">
             <img
               src={img3}
               alt="Image"

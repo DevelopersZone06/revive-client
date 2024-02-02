@@ -111,12 +111,12 @@ const AllServices = () => {
             <h1 className="text-2xl font-semibold border-b border-b-white pb-1">
               Filter Services
             </h1>
-            <div className="grid grid-cols-2 gap-5 sm:block">
+            <div className="grid lg:grid-cols-2  grid-cols-1 gap-5 sm:block">
               {/*Category  */}
               <h1 className="text-2xl font-semibold border-b border-b-white pb-1 mt-8  ">
                 Filter Category
               </h1>
-              <div className="gap-2 grid-cols-2 grid p-5">
+              <div className="gap-2 lg:grid-cols-2 grid-cols-3 grid p-5">
                 {categories.map(({ label, value }) => (
                   <button
                     key={value}
@@ -181,9 +181,9 @@ const AllServices = () => {
             </div>
           </div>
           <div className="flex-1 p-5">
-            <h1 className="text-2xl font-semibold border-b border-b-white ">
-              All Services
-            </h1>
+            {/* <h1 className="text-4xl font-semibold border-b border-b-white text-center">
+             Find  Services
+            </h1> */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8">
               {searchResults.map((service) => (
                 <ServiceCard key={service._id} service={service}></ServiceCard>
