@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation, useParams } from "react-router-dom";
 import { FaBars, FaRegEnvelope, FaSearch, FaRegEnvelopeOpen } from "react-icons/fa";
 import { IoNotificationsOutline } from "react-icons/io5";
 import { useContext, useEffect, useState } from "react";
@@ -30,13 +30,15 @@ const Navbar = () => {
 
   const axiosPublic = useAxiosPublic();
   const [notifications, setNotifications] = useState({})
+ 
+  const location = useLocation()
 
   useEffect( () => {
     axiosPublic(`notification/${user?.email}`)
     .then(res => {
       setNotifications(res.data)
     })
-  }, [user])
+  }, [user, location.pathname])
 
 
 
