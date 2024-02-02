@@ -18,7 +18,8 @@ const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_ke
 const SignUp = () => {
 
 
-  const date = moment().format('YYYY MM DD');
+  const date = moment().format('YYYY MM DD HH mm');
+
   
   const {
     register,
@@ -66,7 +67,7 @@ const SignUp = () => {
 
 
             const notificationIs = {
-              title: 'registration complete check',
+              title: 'Congratulation ! Your Registration successfully complete',
               redirect: '/',
               isRead: false,
               date
@@ -85,6 +86,7 @@ const SignUp = () => {
       });
 
   };
+
 
   return (
     <div className="primary-bg overflow-x-hidden lg:overflow-x-auto lg:overflow-hidden flex items-center justify-center lg:h-screen">
@@ -142,7 +144,7 @@ const SignUp = () => {
                     <input
                       type="text"
                       name="name"
-                      {...register("email", { required: true })}
+                      {...register("name", { required: true })}
                       className="bg-teal-50 lg:bg-white border lg:border-2 border-gray-400 lg:border-gray-200 w-full p-1 rounded focus:outline-none text-sm active:outline-none focus:border-gray-400 active:border-gray-400"
                     />
                   </span>
