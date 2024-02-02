@@ -83,7 +83,7 @@ const Events = () => {
         <title>Revive | Events</title>
       </Helmet>
       {/* <EventsTitle /> */}
-      <div className="grid grid-cols-3 my-14 gap-5 px-[2%] sm:px-[5%] lg:px-[8%]">
+      <div className="grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2  my-14 gap-5 px-[2%] sm:px-[5%] lg:px-[8%] ">
         {eventData?.map((event) => (
           <EventCard key={event.id} event={event}></EventCard>
         ))}
