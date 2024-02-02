@@ -6,7 +6,7 @@ import { IoCheckmarkDone } from "react-icons/io5";
 
 const ServiceDetails = () => {
     const serviceData = useLoaderData();
-    console.log(serviceData);
+   
 
     return (
         <>

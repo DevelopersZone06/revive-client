@@ -14,11 +14,17 @@ const BlogDetail = ({ blog }) => {
   const [isReacted, setIsReacted] = useState(false);
   const currentPageUrl= `https://soft-monstera-bbb73f.netlify.app/blog/65b2434b8209fff72f1ace46`
 
+  const [commentOpen, setCommentOpen] = useState(false); 
+
   useEffect(() => {
     fetch("/comments.json")
       .then((res) => res.json())
       .then((data) => setComments(data));
   }, []);
+
+  const handleComment = () => {
+    setCommentOpen(true); 
+  }
 
   const handleIncreaseReaction = () => {
     setIsReacted(!isReacted);
@@ -51,8 +57,8 @@ const BlogDetail = ({ blog }) => {
     <>
       {/* main div starts */}
       <BlogTitle></BlogTitle>
-      <div className="flex max-w-[1600px] mx-auto">
-        <div className="w-[60%]">
+      <div className="md:flex md:max-w-[1600px] mx-auto">
+        <div className="md:w-[60%]">
           <div>
             <h3 className="text-5xl my-10 font-bold">{title}</h3>
 
@@ -70,20 +76,21 @@ const BlogDetail = ({ blog }) => {
                   {isReacted ? (
                     <img
                       onClick={handleDecreaseReaction}
-                      src="https://i.ibb.co/b7QHj8Z/icons8-love-24.png"
+                      src="https://i.ibb.co/KbRDCSX/icons8-love-24-4.png"
                       alt=""
                     />
                   ) : (
                     <img
                       onClick={handleIncreaseReaction}
-                      src="https://i.ibb.co/yNHKG1D/icons8-love-24-1.png"
+                      src="https://i.ibb.co/zNMtnNc/icons8-love-24-3.png"
                       alt=""
                     />
                   )}{" "}
                   <p className="px-4">{reactionNumber}</p>
                   <img
-                    className="pe-4"
-                    src="https://i.ibb.co/MchxQgJ/icons8-comment-24.png"
+                  onClick={handleComment}
+                    className="pe-4 cursor-pointer"
+                    src="https://i.ibb.co/80PGNMg/icons8-comment-24-1.png"
                     alt=""
                   />
                   <p>{commentNumber}</p>
@@ -138,6 +145,7 @@ const BlogDetail = ({ blog }) => {
                 
                    
                   </div>
+                
                 </div>
               </div>
             </div>
@@ -237,7 +245,7 @@ const BlogDetail = ({ blog }) => {
             
           </div>
         </div>
-        <div className="w-[40%] ps-10 ">
+        <div className="md:w-[40%] ps-10 ">
           <div className="">
             {/* author related informations */}
             <div>
@@ -259,7 +267,7 @@ const BlogDetail = ({ blog }) => {
             </div>
           </div>
           <div className="divider divider-success"></div>
-          <div className="lg:flex items-center justify-between ">
+          <div className="lg:flex items-center justify-between mb-3">
             <h4 className="text-3xl font-semibold">All comments</h4>
             <select className="p-1 rounded-md bg-[#5999833a]" name="" id="">
               <option value="recent">Recent</option>
@@ -272,17 +280,18 @@ const BlogDetail = ({ blog }) => {
             </select>
           </div>
           <textarea
-            className="border mt-1 w-full rounded-lg p-2 bg-[#cce0d98b]"
-            placeholder="Your comment"
+            className="border mt-1 w-full rounded-lg p-4 my-4 bg-[#cce0d98b]"
+            placeholder="Your comment" rows={5}
           ></textarea>
           <div>
-            <button className="bg-[#599983] p-1 rounded-md text-white ms-1">
+            <button className="bg-[#599983] px-2 py-2 mr-2 rounded-md text-white ms-1">
               Post
             </button>
-            <button className="bg-[#599983] p-1 rounded-md text-white ms-1">
-              Cencel
+            <button className="bg-[#599983] px-2 py-2 rounded-md text-white ms-1">
+              Cancel
             </button>
           </div>
+          
           {comments.map((comment, index) => (
             <CommentCard key={index} comment={comment}></CommentCard>
           ))}

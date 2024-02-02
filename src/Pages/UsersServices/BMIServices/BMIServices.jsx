@@ -17,7 +17,7 @@ const BMIServices = () => {
   const { data, isPending } = useQuery({
     queryKey: ["BMIservices"],
     queryFn: async () => {
-      const res = await axiosPublic.get("/services");
+      const res = await axiosPublic.get("/servicesAll");
       return res.data;
     },
   });

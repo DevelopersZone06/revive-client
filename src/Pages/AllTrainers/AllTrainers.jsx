@@ -2,6 +2,7 @@ import { FaSearch } from "react-icons/fa";
 import Trainer from "../../Components/HomeComponents/Trainers/Trainer";
 import { Helmet } from "react-helmet-async";
 
+
 import PageTitle from "../../Shared/PageTitle/PageTitle";
 import { useEffect, useState } from "react";
 import axios from "axios";
