@@ -1,13 +1,17 @@
 import { Link, NavLink } from "react-router-dom";
 import { FaBars, FaRegEnvelope, FaSearch, FaRegEnvelopeOpen } from "react-icons/fa";
 import { IoNotificationsOutline } from "react-icons/io5";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 
 const Navbar = () => {
-  const user = true
+  // const user = true
   const [menu, setMenu] = useState(false)
   const [notification, setNotification] = useState(false)
+
+  const {user} = useContext(AuthContext)
+  console.log(user)
 
   const handleMenu = () => {
     setMenu(!menu)
@@ -112,7 +116,7 @@ const Navbar = () => {
               <img className="w-8 h-8 rounded-full" src="https://cdn-icons-png.flaticon.com/512/3541/3541871.png" alt="" />
             </div>
             :
-            <Link className="login bg-white secondary-color">Login</Link>
+            <Link to={'/login'} className="login bg-white secondary-color">Login</Link>
           }
           
         </div>
