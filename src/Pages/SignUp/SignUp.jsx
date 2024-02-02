@@ -6,10 +6,12 @@ import { Link } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import { Helmet } from "react-helmet-async";
+import Swal from "sweetalert2";
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 const SignUp = () => {
+  
   const {
     register,
     handleSubmit,
@@ -19,7 +21,8 @@ const SignUp = () => {
   const axiosPublic = useAxiosPublic();
   const { createUser, updateUserProfile } = useAuth();
   const onSubmit = async (data) => {
-    console.log(data);
+    // console.log(data);
+    // console.log(data.email);
     //image upload to imagebb and get an url
     const imageFile = { image: data.photo[0] };
     const res = await axiosPublic.post(image_hosting_api, imageFile, {
@@ -27,11 +30,11 @@ const SignUp = () => {
         "content-type": "multipart/form-data",
       },
     });
-    console.log(res.data);
+    // console.log(res.data);
     createUser(data.email, data.password)
       .then((result) => {
         const loggedUser = result.user;
-        console.log(loggedUser);
+        // console.log(loggedUser);
         updateUserProfile(data.name, data.photoUrl);
       })
       .then(() => {
@@ -40,7 +43,30 @@ const SignUp = () => {
           email: data.email,
           photoUrl: data.photoUrl,
         };
+        console.log(userInfo);
+        axiosPublic.post('/users',userInfo)
+        .then((res) =>{
+          if(res.data.insertedId){
+            // 
+            Swal.fire({
+              position: "center",
+              icon: "success",
+              title: "Your work has been saved",
+              showConfirmButton: false,
+              timer: 1500
+            });
+            console.log(data.email);
+            const notificationDes = {
+              title: "You successfully registered in revive health and fitness platform website",
+              redirect: '/',
+              isRead: false,
+              date: new Date()
+            }
+            axiosPublic.patch(`/notification/${data.email}`,notificationDes)
+          }
+        })
       });
+
   };
 
   return (
