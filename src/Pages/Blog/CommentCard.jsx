@@ -4,9 +4,10 @@ const CommentCard = ({ comment }) => {
 
   return (
     <>
-      <div className="bg-[#5999834e] my-3 py-4 px-2 rounded-xl">
-        <h3 className="py-1 text-lg font-semibold">{name}</h3>
-        <p>{commentText}</p>
+      <div className="shadow-lg shadow-gray-400 my-3 py-7 px-4 rounded-xl">
+        <h3 className="py-2 text-lg font-semibold text-[#448c74]">{name}</h3>
+        <hr className="w-1/4 text-lg"/>
+        <p className="text-black pt-2">💬 {commentText} </p>
       </div>
     </>
   );

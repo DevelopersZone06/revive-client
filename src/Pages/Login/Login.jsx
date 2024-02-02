@@ -7,8 +7,10 @@ import "../../Styles/banner.css";
 import useAuth from "../../Hooks/useAuth";
 import { Helmet } from "react-helmet-async";
 import PageTitle from "../../Shared/PageTitle/PageTitle";
+
 // import { HelmetData } from "react-helmet-async";
 const Login = () => {
+  
   const {
     register,
     handleSubmit,
@@ -22,6 +24,7 @@ const Login = () => {
     signIn(data.email, data.password).then((result) => {
       const user = result.user;
       console.log(user);
+      
     });
   };
   return (

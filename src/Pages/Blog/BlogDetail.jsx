@@ -213,7 +213,7 @@ const BlogDetail = ({ blog }) => {
             </div>
           </div>
           <div className="divider divider-success"></div>
-          <div className="lg:flex items-center justify-between ">
+          <div className="lg:flex items-center justify-between mb-3">
             <h4 className="text-3xl font-semibold">All comments</h4>
             <select className="p-1 rounded-md bg-[#5999833a]" name="" id="">
               <option value="recent">Recent</option>
@@ -225,21 +225,19 @@ const BlogDetail = ({ blog }) => {
               <option value="admin">From admin</option>
             </select>
           </div>
-          {
-            commentOpen && <> <textarea
-            className="border mt-1 w-full rounded-lg p-2 bg-[#cce0d98b]"
-            placeholder="Your comment"
+          <textarea
+            className="border mt-1 w-full rounded-lg p-4 my-4 bg-[#cce0d98b]"
+            placeholder="Your comment" rows={5}
           ></textarea>
           <div>
-            <button className="bg-[#599983] p-1 rounded-md text-white ms-1">
+            <button className="bg-[#599983] px-2 py-2 mr-2 rounded-md text-white ms-1">
               Post
             </button>
-            <button className="bg-[#599983] p-1 rounded-md text-white ms-1">
-              Cencel
+            <button className="bg-[#599983] px-2 py-2 rounded-md text-white ms-1">
+              Cancel
             </button>
           </div>
-          </>
-          }
+          
           {comments.map((comment, index) => (
             <CommentCard key={index} comment={comment}></CommentCard>
           ))}
