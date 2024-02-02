@@ -91,7 +91,7 @@ const Blogs = () => {
 
                         {/* testing put operation */}
                         <div>
-                            <button onClick={testPut} type="button" class="btn btn-outline-primary">click</button>
+                            <button onClick={testPut} type="button" className="btn btn-outline-primary">click</button>
                         </div>
                     </div>
                 </div>

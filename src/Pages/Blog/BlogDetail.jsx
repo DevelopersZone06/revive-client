@@ -11,11 +11,17 @@ const BlogDetail = ({ blog }) => {
 
   const [isReacted, setIsReacted] = useState(false);
 
+  const [commentOpen, setCommentOpen] = useState(false); 
+
   useEffect(() => {
     fetch("/comments.json")
       .then((res) => res.json())
       .then((data) => setComments(data));
   }, []);
+
+  const handleComment = () => {
+    setCommentOpen(true); 
+  }
 
   const handleIncreaseReaction = () => {
     setIsReacted(!isReacted);
@@ -48,8 +54,8 @@ const BlogDetail = ({ blog }) => {
     <>
       {/* main div starts */}
       <BlogTitle></BlogTitle>
-      <div className="flex max-w-[1600px] mx-auto">
-        <div className="w-[60%]">
+      <div className="md:flex md:max-w-[1600px] mx-auto">
+        <div className="md:w-[60%]">
           <div>
             <h3 className="text-5xl my-10 font-bold">{title}</h3>
 
@@ -67,23 +73,25 @@ const BlogDetail = ({ blog }) => {
                   {isReacted ? (
                     <img
                       onClick={handleDecreaseReaction}
-                      src="https://i.ibb.co/b7QHj8Z/icons8-love-24.png"
+                      src="https://i.ibb.co/KbRDCSX/icons8-love-24-4.png"
                       alt=""
                     />
                   ) : (
                     <img
                       onClick={handleIncreaseReaction}
-                      src="https://i.ibb.co/yNHKG1D/icons8-love-24-1.png"
+                      src="https://i.ibb.co/zNMtnNc/icons8-love-24-3.png"
                       alt=""
                     />
                   )}{" "}
                   <p className="px-4">{reactionNumber}</p>
                   <img
-                    className="pe-4"
-                    src="https://i.ibb.co/MchxQgJ/icons8-comment-24.png"
+                  onClick={handleComment}
+                    className="pe-4 cursor-pointer"
+                    src="https://i.ibb.co/80PGNMg/icons8-comment-24-1.png"
                     alt=""
                   />
                   <p>{commentNumber}</p>
+                  <img className="ms-4" src="https://i.ibb.co/9wKM6gZ/icons8-share-24-1.png" alt="" />
                 </div>
               </div>
             </div>
@@ -183,7 +191,7 @@ const BlogDetail = ({ blog }) => {
             
           </div>
         </div>
-        <div className="w-[40%] ps-10 ">
+        <div className="md:w-[40%] ps-10 ">
           <div className="">
             {/* author related informations */}
             <div>
@@ -229,6 +237,7 @@ const BlogDetail = ({ blog }) => {
               Cancel
             </button>
           </div>
+          
           {comments.map((comment, index) => (
             <CommentCard key={index} comment={comment}></CommentCard>
           ))}
