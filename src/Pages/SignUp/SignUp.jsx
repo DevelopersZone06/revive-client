@@ -1,7 +1,7 @@
 import Lottie from "lottie-react";
 import LoginAni from "../../assets/loginAni.json";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import useAuth from '../../Hooks/useAuth';
 import useAxiosPublic from '../../Hooks/useAxiosPublic';
@@ -17,6 +17,7 @@ const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 const SignUp = () => {
 
+  const navigate = useNavigate()
 
   const date = moment().format('YYYY MM DD HH mm');
 
@@ -80,6 +81,8 @@ const SignUp = () => {
           axiosPublic.patch(`/notification/${data.email}`, newNotification)
           .then(res => {
               console.log(res.data)
+              navigate('/')
+
           })
           }
         })
