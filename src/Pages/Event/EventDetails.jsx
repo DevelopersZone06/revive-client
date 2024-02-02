@@ -38,7 +38,7 @@ useEffect(() => {
   console.log(event)
     return (
         <>
-            <div className="flex justify-between px-[2%] sm:px-[5%] lg:px-[8%]">
+            <div className="flex  justify-between px-[2%] sm:px-[5%] lg:px-[8%]">
                 <div className="flex items-center my-5 cursor-pointer">
                     <h1 className="text-xl font-semibold ">Home </h1>
                     <IoMdArrowDropright className="w-[22px]" />
@@ -52,7 +52,7 @@ useEffect(() => {
             </div>
             <hr className="text-[#448c74]" />
 
-            <div className="grid grid-cols-6 gap-5 px-[2%] sm:px-[5%] lg:px-[8%] mt-14">
+            <div className="grid md:grid-cols-6 grid-col-1 gap-5 px-[2%] sm:px-[5%] lg:px-[8%] mt-14">
                 <div className="col-span-4">
                     <h2 className="text-4xl font-bold">{event.title}</h2>
                     <p className="flex items-center text-[#448c74] pt-3"> <MdLocationOn className="w-[20px]" />{event.location}</p>
@@ -63,7 +63,7 @@ useEffect(() => {
                     <p className="font-medium text-justify py-4">Discover the joy of movement and the benefits of a well-rounded fitness routine, all while connecting with like-minded individuals in a supportive and uplifting environment. This workshop is not just about breaking a sweat; it's about cultivating a healthier lifestyle that encompasses both physical and mental well-being.</p>
                     <p className="font-medium text-justify py-4">Don't miss the opportunity to revitalize your fitness routine and explore the fusion of different exercise modalities. Secure your spot now for a day of inspiration, motivation, and a holistic approach to health at our Fitness Fusion Workshop. Let's redefine fitness together!"</p>
                 </div>
-                <div className="col-span-2 primary-bg text-center h-[500px] space-y-2 rounded-md">
+                <div className="col-span-2 primary-bg text-center h-[500px] space-y-2 rounded-md my-10 md:my-0 ">
                     <div className="grid grid-flow-col gap-5 text-center auto-cols-max px-7 py-7">
                         <div className="flex flex-col p-2 secondary-color rounded-box text-neutral-content">
                        
@@ -103,7 +103,7 @@ useEffect(() => {
                     <p className="font-medium py-4 text-justify px-5" >Welcome to our Fitness Fusion Workshop – an exhilarating event that combines various fitness disciplines to create a holistic and dynamic approach to well-being.</p>
                     <p className="flex px-5 gap-4 text-[#448c74]"><MdMarkEmailRead className="w-[25px]" />DevelopersZone06.com</p>
                     <p className="flex px-5 gap-4 text-[#448c74]"><MdPhoneInTalk className="w-[25px]" />+880 111 222 333 999</p>
-                    <div className="py-5">
+                    <div className="py-5 ">
                        <Link to='https://meet.google.com/jsz-qmex-cpr'> <button className='border-secondary px-10 py-2 rounded-md uppercase text-xl font-semibold secondary-color hover:bg-[#448c74] hover:text-white'>Join Now</button></Link>
                     </div>
                 </div>
