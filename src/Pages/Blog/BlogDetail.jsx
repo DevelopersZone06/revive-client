@@ -53,6 +53,13 @@ const BlogDetail = ({ blog }) => {
 
   // const [isBookmarked, setIsBookmarked] = useState(false);
 
+
+  const [allComments, setAllComments] = useState([{commentText: 'Nice Blog', authorName: 'Ibrahim'}])
+
+  const handleComments = () => {
+    setAllComments([{commentText: 'Helpfully Blog', authorName: 'Ibrahim'}, {commentText: 'Nice Blog', authorName: 'Emran Hossen'}])
+  }
+
   return (
     <>
       {/* main div starts */}
@@ -284,7 +291,7 @@ const BlogDetail = ({ blog }) => {
             placeholder="Your comment" rows={5}
           ></textarea>
           <div>
-            <button className="bg-[#599983] px-2 py-2 mr-2 rounded-md text-white ms-1">
+            <button onClick={handleComments} className="bg-[#599983] px-2 py-2 mr-2 rounded-md text-white ms-1">
               Post
             </button>
             <button className="bg-[#599983] px-2 py-2 rounded-md text-white ms-1">
@@ -292,7 +299,7 @@ const BlogDetail = ({ blog }) => {
             </button>
           </div>
           
-          {comments.map((comment, index) => (
+          {allComments.map((comment, index) => (
             <CommentCard key={index} comment={comment}></CommentCard>
           ))}
         </div>
