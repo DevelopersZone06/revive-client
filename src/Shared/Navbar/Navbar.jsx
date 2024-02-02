@@ -39,8 +39,7 @@ const Navbar = () => {
   }, [user])
 
 
-  // const date = notifications ? moment(notifications.allNotification.date, "YYYYMMDD").fromNow() : ''
-  // console.log(date)
+
 
  
 
@@ -100,10 +99,10 @@ const Navbar = () => {
                 <div className={notification ? "w-96 primary-bg max-h-screen absolute right-0 top-10 rounded-md py-4 ease-in duration-300 border-primary" : "w-96 primary-bg overflow-hidden absolute right-0 -top-[500px] py-10 z-10 ease-in duration-300 max-h-80"}>
                   <h1 className="border-b border-b-white px-4 pb-4">Notification</h1>
                   {
-                    notifications && notifications.allNotification.map(notification => <Link to={notification.redirect}><div className="px-4 py-2 border-b border-b-white hover:bg-white">
+                    notifications && notifications?.allNotification.map(notification => <Link to={notification.redirect}><div className="px-4 py-2 border-b border-b-white hover:bg-white">
                       <p>{notification.title}</p>
                       <div className="flex justify-between items-center">
-                        <p className="text-[10px]">{moment(notification.date, "YYYYMMDD").fromNow()}</p>
+                        <p className="text-[10px]">{moment(notification.date, "YYYYMMDDHHmm").fromNow()}</p>
                         {
                           notification.isRead ? <p className="w-5"><FaRegEnvelopeOpen ></FaRegEnvelopeOpen></p> : <p className="w-5"><FaRegEnvelope></FaRegEnvelope></p>  
                         }
