@@ -1,5 +1,6 @@
 import { FaSearch } from "react-icons/fa";
 import Trainer from "../../Components/HomeComponents/Trainers/Trainer";
+import { Helmet } from "react-helmet-async";
 
 
 import PageTitle from "../../Shared/PageTitle/PageTitle";
@@ -20,7 +21,13 @@ const AllTrainers = () => {
 
   return (
     <div className="px-[2%] sm:px-[5%] lg:px-[8%]">
+
+     <Helmet>
+       <title>Revive | Trainers</title>
+     </Helmet> 
+
       <PageTitle title={'Trainers'}></PageTitle>
+
       <div className="pt-16 border-b mb-10 border-b-gray-400 flex justify-between items-center">
         <h1 className="text-2xl font-semibold">Our All Trainers</h1>
         <div className="flex pb-2">

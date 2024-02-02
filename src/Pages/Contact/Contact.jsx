@@ -4,6 +4,7 @@ import { MdLocationOn } from "react-icons/md";
 import { FaPhoneVolume } from "react-icons/fa6";
 import { MdMarkEmailRead } from "react-icons/md";
 import { Helmet } from "react-helmet-async";
+
 const Contact = () => {
   return (
     <>

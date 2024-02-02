@@ -4,11 +4,17 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import "../../Styles/banner.css";
 
-import useAuth from "../../Hooks/useAuth";
-import { Helmet } from "react-helmet-async";
+import '../../Styles/banner.css'
+
+import useAuth from '../../Hooks/useAuth';
+import SocialLogin from '../../Components/SocialLogin/SocialLogin';
+
+// import { Helmet } from "react-helmet-async";
 import PageTitle from "../../Shared/PageTitle/PageTitle";
+
 // import { HelmetData } from "react-helmet-async";
 const Login = () => {
+  
   const {
     register,
     handleSubmit,
@@ -22,6 +28,7 @@ const Login = () => {
     signIn(data.email, data.password).then((result) => {
       const user = result.user;
       console.log(user);
+      
     });
   };
   return (
@@ -132,7 +139,14 @@ const Login = () => {
                     />
                   </span>
                 </div>
+                
               </form>
+              {/* Social Login */}
+
+            <div className='px-12'>
+            <SocialLogin/>
+            </div>
+              <p className='pl-9 text-md secondary-color  pb-10  '>Don't have an account? <Link to='/signUp' className='underline'>Sign Up </Link> </p>
               {/* form element*/}
               <p className="pl-9 text-md secondary-color  pb-10  ">
                 Don't have an account?{" "}
