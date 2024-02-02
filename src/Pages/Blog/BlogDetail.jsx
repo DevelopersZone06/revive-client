@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import CommentCard from "./CommentCard";
 import { FaShare } from "react-icons/fa";
-import { FacebookShareButton, TwitterShareButton,FacebookIcon,TwitterIcon } from "react-share";
+import { FacebookShareButton, TwitterShareButton,FacebookIcon,TwitterIcon, WhatsappShareButton, WhatsappIcon, LinkedinShareButton, LinkedinIcon } from "react-share";
 import BlogTitle from "./BlogTitle";
 
 const BlogDetail = ({ blog }) => {
@@ -94,23 +94,42 @@ const BlogDetail = ({ blog }) => {
                   <label htmlFor="my_modal_7" className="subheading w-14"><FaShare className=""/></label>
 
 {/* Put this part before </body> tag */}
-<input type="checkbox" id="my_modal_7" className="modal-toggle" />
+<input type="checkbox" id="my_modal_7" className="modal-toggle " />
 <div className="modal" role="dialog">
-  <div className="modal-box w-64">
-  <FacebookShareButton
-  url={ currentPageUrl}
-  quote="Please share this blog"
-  hashtag="#revive"
-  >
-  {/* <FacebookIcon/> */}
-  <FacebookIcon className="pl-9"/>  
-  </FacebookShareButton>
+  <div className="modal-box w-80 py-10 pb-10 ">
+  <h1 className="text-center pb-4 font-bold text-[#448c74]">Share Now</h1>
+ <div className="flex flex-row items-center justify-evenly">
+ <FacebookShareButton
+ url={ currentPageUrl}
+ quote="Please share this blog"
+ hashtag="#revive"
+ >
+ {/* <FacebookIcon/> */}
+ <FacebookIcon className=" rounded-lg"/>  
+ </FacebookShareButton >
 
-  <TwitterShareButton  url={ currentPageUrl}
-  quote="Please share this blog"
-  hashtag="#revive">
-  <TwitterIcon className="pl-5"/>
-  </TwitterShareButton>
+ <TwitterShareButton  url={ currentPageUrl}
+ quote="Please share this blog"
+ hashtag="#revive">
+ <TwitterIcon className="rounded-lg"/>
+ </TwitterShareButton>
+
+ <WhatsappShareButton
+ url={ currentPageUrl}
+ quote="Please share this blog"
+ hashtag="#revive"
+ >
+ <WhatsappIcon className="rounded-lg"/>
+ </WhatsappShareButton>
+
+ <LinkedinShareButton
+ url={ currentPageUrl}
+ quote="Please share this blog"
+ hashtag="#revive"
+ >
+ <LinkedinIcon  className="rounded-lg"/>
+ </LinkedinShareButton>
+ </div>
   </div>
   <label className="modal-backdrop" htmlFor="my_modal_7">Close</label>
 </div>
