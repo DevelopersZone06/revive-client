@@ -104,7 +104,7 @@ useEffect(() => {
                     <p className="flex px-5 gap-4 text-[#448c74]"><MdMarkEmailRead className="w-[25px]" />DevelopersZone06.com</p>
                     <p className="flex px-5 gap-4 text-[#448c74]"><MdPhoneInTalk className="w-[25px]" />+880 111 222 333 999</p>
                     <div className="py-5 ">
-                       <Link to='https://meet.google.com/jsz-qmex-cpr'> <button className='border-secondary px-10 py-2 rounded-md uppercase text-xl font-semibold secondary-color hover:bg-[#448c74] hover:text-white'>Join Now</button></Link>
+                       <Link to='https://meet.google.com/jsz-qmex-cpr'> <button className='border-secondary px-10 py-2 rounded-md uppercase text-xl font-semibold secondary-color hover:bg-[#448c74] hover:text-white cursor-not-allowed'>Join Now</button></Link>
                     </div>
                 </div>
             </div>
