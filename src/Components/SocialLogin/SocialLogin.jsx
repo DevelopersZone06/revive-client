@@ -3,7 +3,7 @@ import useAuth from "../../Hooks/useAuth";
 //import { FaGoogle } from "react-icons/fa";
 
 const SocialLogin = () => {
-    const{googleSignIn,fbSignIn} = useAuth()
+    const{googleSignIn} = useAuth()
     const handleGoogleLogin=()=>{
         console.log("clicked");
         googleSignIn()
@@ -24,21 +24,13 @@ const SocialLogin = () => {
 
     }
 
-    const handleFbLogin=()=>{
-         fbSignIn()
-        .then(result=>{
-            console.log(result.user);
-        })
-        .catch(error=>console.log(error))
-    }
+
     return (
         <div className="flex flex-col gap-3">
             <div>
                 <button  onClick={handleGoogleLogin} className="cursor-pointer border-2 font-bold text-teal-50 border-[#448c74] w-full py-1 normal rounded-lg hover:secondary-bg bg-[#448c74]  flex items-center justify-center  transition-all" type=""> Login with Google </button>
             </div>
-            <div>
-                <button  onClick={handleFbLogin} className="cursor-pointer border-2 font-bold text-teal-50 border-[#448c74] w-full py-1 normal rounded-lg hover:secondary-bg bg-[#448c74]  flex items-center justify-center  transition-all" type=""> Login with Facebook </button>
-            </div>
+           
         </div>
     );
 };
