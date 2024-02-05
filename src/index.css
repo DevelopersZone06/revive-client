@@ -91,3 +91,22 @@
 .trainer:hover .hidden{
   display: grid;
 }
+
+
+
+/* navbar css  */
+
+.active{
+  background-color: white;
+  color: #448c74;
+}
+
+.menu-item a, .login{
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.menu-item a:hover{
+  background-color: white;
+  color: #448c74;
+}
+

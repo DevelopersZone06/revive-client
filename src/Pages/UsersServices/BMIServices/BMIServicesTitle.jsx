@@ -9,8 +9,8 @@ const BMIServicesTitle = () => {
     <>
       <div className="flex justify-between px-[2%] sm:px-[5%] lg:px-[8%]">
         <div className="flex items-center my-5 cursor-pointer">
-          <Link to={"/"} className="text-xl font-semibold ">
-            Home{" "}
+          <Link to={"/services"} className="text-xl font-semibold ">
+            Services{" "}
           </Link>
           <IoMdArrowDropright className="w-[22px]" />
           <h1 className="text-xl font-semibold text-[#448c74]">

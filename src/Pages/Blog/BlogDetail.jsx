@@ -1,16 +1,40 @@
 import { useEffect, useState } from "react";
 import CommentCard from "./CommentCard";
+import { FaShare } from "react-icons/fa";
+import { FacebookShareButton, TwitterShareButton,FacebookIcon,TwitterIcon, WhatsappShareButton, WhatsappIcon, LinkedinShareButton, LinkedinIcon } from "react-share";
+import BlogTitle from "./BlogTitle";
 
-const BlogDetail = () => {
+const BlogDetail = ({ blog }) => {
   //  practice json datas
 
-  const [comments, setComments] = useState([]); 
+  const [comments, setComments] = useState([]);
+
+  const [reactionNumber, setReactionNumber] = useState(blog?.reacts || 0);
+
+  const [isReacted, setIsReacted] = useState(false);
+  const currentPageUrl= `https://soft-monstera-bbb73f.netlify.app/blog/65b2434b8209fff72f1ace46`
+
+  const [commentOpen, setCommentOpen] = useState(false); 
 
   useEffect(() => {
-    fetch('/comments.json')
-    .then(res => res.json())
-    .then(data => setComments(data))
-  }, [])
+    fetch("/comments.json")
+      .then((res) => res.json())
+      .then((data) => setComments(data));
+  }, []);
+
+  const handleComment = () => {
+    setCommentOpen(true); 
+  }
+
+  const handleIncreaseReaction = () => {
+    setIsReacted(!isReacted);
+    setReactionNumber(reactionNumber + 1);
+  };
+
+  const handleDecreaseReaction = () => {
+    setIsReacted(!isReacted);
+    setReactionNumber(reactionNumber - 1);
+  };
 
   const title = "Maditation that makes you strong";
   const image =
@@ -21,23 +45,27 @@ const BlogDetail = () => {
 
   const publishDate = "12-04-2023";
 
-  const reacttionNumber = "124";
-
-  const commentNumber = "32";
+  const commentNumber = 32;
 
   const authorPosition = "Trainer and Writer";
 
   //    practice json data
 
-  const [isReacted, setIsReacted] = useState(false);
-
   // const [isBookmarked, setIsBookmarked] = useState(false);
+
+
+  const [allComments, setAllComments] = useState([{commentText: 'Nice Blog', authorName: 'Ibrahim'}])
+
+  const handleComments = () => {
+    setAllComments([{commentText: 'Helpfully Blog', authorName: 'Ibrahim'}, {commentText: 'Nice Blog', authorName: 'Emran Hossen'}])
+  }
 
   return (
     <>
       {/* main div starts */}
-      <div className="flex max-w-[1600px] mx-auto">
-        <div className="w-[60%]">
+      <BlogTitle></BlogTitle>
+      <div className="md:flex md:max-w-[1600px] mx-auto">
+        <div className="md:w-[60%]">
           <div>
             <h3 className="text-5xl my-10 font-bold">{title}</h3>
 
@@ -54,24 +82,77 @@ const BlogDetail = () => {
                 <div className="flex p-4">
                   {isReacted ? (
                     <img
-                      onClick={() => setIsReacted(false)}
-                      src="https://i.ibb.co/b7QHj8Z/icons8-love-24.png"
+                      onClick={handleDecreaseReaction}
+                      src="https://i.ibb.co/KbRDCSX/icons8-love-24-4.png"
                       alt=""
                     />
                   ) : (
                     <img
-                      onClick={() => setIsReacted(true)}
-                      src="https://i.ibb.co/yNHKG1D/icons8-love-24-1.png"
+                      onClick={handleIncreaseReaction}
+                      src="https://i.ibb.co/zNMtnNc/icons8-love-24-3.png"
                       alt=""
                     />
                   )}{" "}
-                  <p className="px-4">{reacttionNumber}</p>
+                  <p className="px-4">{reactionNumber}</p>
                   <img
-                    className="pe-4"
-                    src="https://i.ibb.co/MchxQgJ/icons8-comment-24.png"
+                  onClick={handleComment}
+                    className="pe-4 cursor-pointer"
+                    src="https://i.ibb.co/80PGNMg/icons8-comment-24-1.png"
                     alt=""
                   />
                   <p>{commentNumber}</p>
+                  {/* Share */}
+                  <div  className="px-4">
+
+
+                  <label htmlFor="my_modal_7" className="subheading w-14"><FaShare className=""/></label>
+
+{/* Put this part before </body> tag */}
+<input type="checkbox" id="my_modal_7" className="modal-toggle " />
+<div className="modal" role="dialog">
+  <div className="modal-box w-80 py-10 pb-10 ">
+  <h1 className="text-center pb-4 font-bold text-[#448c74]">Share Now</h1>
+ <div className="flex flex-row items-center justify-evenly">
+ <FacebookShareButton
+ url={ currentPageUrl}
+ quote="Please share this blog"
+ hashtag="#revive"
+ >
+ {/* <FacebookIcon/> */}
+ <FacebookIcon className=" rounded-lg"/>  
+ </FacebookShareButton >
+
+ <TwitterShareButton  url={ currentPageUrl}
+ quote="Please share this blog"
+ hashtag="#revive">
+ <TwitterIcon className="rounded-lg"/>
+ </TwitterShareButton>
+
+ <WhatsappShareButton
+ url={ currentPageUrl}
+ quote="Please share this blog"
+ hashtag="#revive"
+ >
+ <WhatsappIcon className="rounded-lg"/>
+ </WhatsappShareButton>
+
+ <LinkedinShareButton
+ url={ currentPageUrl}
+ quote="Please share this blog"
+ hashtag="#revive"
+ >
+ <LinkedinIcon  className="rounded-lg"/>
+ </LinkedinShareButton>
+ </div>
+  </div>
+  <label className="modal-backdrop" htmlFor="my_modal_7">Close</label>
+</div>
+                  
+
+                
+                   
+                  </div>
+                
                 </div>
               </div>
             </div>
@@ -168,29 +249,10 @@ const BlogDetail = () => {
                 fugit! Cum magni aspernatur ex dicta!
               </p>
             </div>
-            {/* <div className="border-y my-10 flex items-center justify-between border-black"> */}
-            {/* div for bookmark and share
-            <div className="flex gap-4 pe-4">
-              {isBookmarked ? (
-                <img
-                  onClick={() => setIsBookmarked(false)}
-                  src="https://i.ibb.co/hYQ7rcR/icons8-bookmark-24-1.png"
-                  alt=""
-                />
-              ) : (
-                <img
-                  onClick={() => setIsBookmarked(true)}
-                  src="https://i.ibb.co/BzShvcP/icons8-bookmark-24.png"
-                  alt=""
-                />
-              )}
-
-              <img src="https://i.ibb.co/3hfc6Tm/icons8-share-24.png" alt="" />
-            </div> */}
-            {/* </div> */}
+            
           </div>
         </div>
-        <div className="w-[40%] ps-10 ">
+        <div className="md:w-[40%] ps-10 ">
           <div className="">
             {/* author related informations */}
             <div>
@@ -212,19 +274,34 @@ const BlogDetail = () => {
             </div>
           </div>
           <div className="divider divider-success"></div>
-          <div className="flex items-center justify-between ">
+          <div className="lg:flex items-center justify-between mb-3">
             <h4 className="text-3xl font-semibold">All comments</h4>
-              <select className="p-1 rounded-md bg-[#5999833a]" name="" id="">
-                <option value="recent">Recent</option>
-                <option value="all">All Comments</option>
-                <option value="relevant" selected>Most relevant</option>
-                <option value="trainers">From trainers</option>
-                <option value="admin">From admin</option>
-              </select>
+            <select className="p-1 rounded-md bg-[#5999833a]" name="" id="">
+              <option value="recent">Recent</option>
+              <option value="all">All Comments</option>
+              <option value="relevant" selected>
+                Most relevant
+              </option>
+              <option value="trainers">From trainers</option>
+              <option value="admin">From admin</option>
+            </select>
           </div>
-          {
-            comments.map((comment, index) => <CommentCard key={index} comment={comment}></CommentCard>)
-          }
+          <textarea
+            className="border mt-1 w-full rounded-lg p-4 my-4 bg-[#cce0d98b]"
+            placeholder="Your comment" rows={5}
+          ></textarea>
+          <div>
+            <button onClick={handleComments} className="bg-[#599983] px-2 py-2 mr-2 rounded-md text-white ms-1">
+              Post
+            </button>
+            <button className="bg-[#599983] px-2 py-2 rounded-md text-white ms-1">
+              Cancel
+            </button>
+          </div>
+          
+          {allComments.map((comment, index) => (
+            <CommentCard key={index} comment={comment}></CommentCard>
+          ))}
         </div>
       </div>
     </>
