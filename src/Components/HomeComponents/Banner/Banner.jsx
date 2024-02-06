@@ -1,11 +1,12 @@
 
-import img3 from "../../../assets/banner/img3.jpg";
+import img3 from "../../../assets/banner/woman-lotus-pose-park.jpg";
 import '../../../Styles/banner.css'
+import bannerImg from '../../../assets/banner/bg2.jpg'
 
 const Banner = () => {
   return (
     <div>
-      <div className="secondary-bg py-28 w-full px-[2%] sm:px-[5%] lg:px-[8%] box">
+      <div style={{ backgroundImage: `url(${bannerImg})`,backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', }} className="  py-28 w-full px-[2%] sm:px-[5%] lg:px-[8%] box">
         <div className="flex justify-between flex-col lg:flex-row">
           <div className="lg:w-1/2 w-full text-white">
             <span className="border border-white rounded-full p-2 text-md md:text-xl  ">
