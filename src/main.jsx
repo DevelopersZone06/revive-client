@@ -22,6 +22,9 @@ import TrainerDetailPage from "./Pages/Trainers/TrainerDetailPage";
 import AllTrainers from "./Pages/AllTrainers/AllTrainers";
 import ServiceDetails from "./Components/ServicesComponents/ServiceDetails/ServiceDetails";
 import { HelmetProvider } from "react-helmet-async";
+import ToBeTrainers from "./Pages/Dashboard/Admin/Trainers/BeTrainers";
+import Dashboard from "./Layout/Dashboard/Dashboard";
+import AdminHome from "./Pages/Dashboard/Admin/Home/AdminHome";
 // import useAxiosPublic from "./Hooks/useAxiosPublic";
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -94,8 +97,21 @@ const router = createBrowserRouter([
         path: "/BMIServices",
         element: <BMIServices></BMIServices>,
       },
+      {
+        path:'/toBeTrainers',
+        element:<ToBeTrainers/>
+      }
     ],
-  },
+  },{
+    path:'dashboard',
+    element:<Dashboard></Dashboard>,
+    children:[
+      {
+         path:'adminHome',
+         element:<AdminHome></AdminHome>
+    }
+  ]
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
