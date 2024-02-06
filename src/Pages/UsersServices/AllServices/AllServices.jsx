@@ -44,7 +44,8 @@ const AllServices = () => {
   const handleDurationChange = async (duration) => {
     setSelectedDuration(duration);
   };
-
+ 
+  //use
   useEffect(() => {
     const fetchData = async () => {
       try {
