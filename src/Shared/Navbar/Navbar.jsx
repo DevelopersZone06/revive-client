@@ -6,11 +6,16 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import axios from "axios";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import moment from "moment";
+import useAdmin from "../../Hooks/useAdmin";
+
 
 
 
 
 const Navbar = () => {
+ 
+   const {isAdmin}=useAdmin();
+   console.log(isAdmin);
   // const user = true
   const [menu, setMenu] = useState(false)
   const [notification, setNotification] = useState(false)
@@ -87,6 +92,11 @@ const Navbar = () => {
             <li>
               <NavLink to="/contact">Contact</NavLink>
             </li>
+             {
+              (user && isAdmin) &&  (<li>
+                <NavLink to="/dashboard/adminHome">Dashboard</NavLink>
+              </li>)
+             }
           </ul>
         </div>
         
