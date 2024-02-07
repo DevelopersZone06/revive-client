@@ -13,7 +13,7 @@ const useAdmin = () => {
     const { data, isPending } = useQuery({
       queryKey: [user?.email, "isAdmin"],
       queryFn: async () => {
-        const res = await axios.get(`http://localhost:5000/admin`);
+        const res = await axios.get(`https://revive-server-dun.vercel.app/admin`);
         return res.data;
       },
     });
