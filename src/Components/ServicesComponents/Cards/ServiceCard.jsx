@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const ServiceCard = ({ service }) => {
   const { title,  serviceImg,duration,price,_id,category,trainer } = service;
   return (
-    <div className="relative rounded-[15px] mt-20 service-card shadow-gray-300 shadow-xl  ">
+    <div className="relative rounded-[15px] mt-20 service-card shadow-gray-300 shadow-xl" style={{ backgroundImage: `url(${serviceImg})` }} >
     
       <img src={serviceImg} alt="" className="w-full h-[280px]  rounded-[15px]" />
       <h2 className="text-center p-4 font-bold text-3xl mt-4 secondary-color">{title}</h2>
