@@ -1,9 +1,9 @@
-import { Link, NavLink, useLocation, useParams } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { FaBars, FaRegEnvelope, FaSearch, FaRegEnvelopeOpen } from "react-icons/fa";
 import { IoNotificationsOutline } from "react-icons/io5";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
-import axios from "axios";
+
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import moment from "moment";
 import useAdmin from "../../Hooks/useAdmin";
