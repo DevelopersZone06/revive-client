@@ -1,9 +1,11 @@
 import { HomeIcon, InboxIcon, PhoneIcon } from '@heroicons/react/solid';
 import {  FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+
+
 var moment = require('moment');
 const Footer = () => {
   return (
-    <div className="bg-base-200 mt-10 p-10">
+    <div   className=" mt-10 p-10" >
       <div className="grid grid-cols-1 lg:grid-cols-5 mx-10  ">
 
         <div className="col-lg-4  col-md-6 mb-4 mb-md-0">

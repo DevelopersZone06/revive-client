@@ -5,6 +5,7 @@ import { FaPhoneVolume } from "react-icons/fa6";
 import { MdMarkEmailRead } from "react-icons/md";
 import { Helmet } from "react-helmet-async";
 
+
 const Contact = () => {
   return (
     <>
@@ -84,6 +85,7 @@ const Contact = () => {
           <h2 className="font-semibold text-2xl">Contact us now</h2>
           <p>DevelopersZone06.com</p>
         </div>
+       
       </div>
     </div>
   </div>

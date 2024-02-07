@@ -6,10 +6,13 @@ import Title from "../../../Shared/Title";
 import ParallaxForBMI from "../../../Components/ServicesComponents/ParallaxForBMI/ParallaxForBMI";
 import { Helmet } from "react-helmet-async";
 import { useEffect, useState } from "react";
+import useAdmin from "../../../Hooks/useAdmin";
 
 // import { Helmet } from "react-helmet";
 
 const AllServices = () => {
+  const {isAdmin}=useAdmin();
+  console.log(isAdmin);
   const axiosPublic = useAxiosPublic();
   const [searchQuery, setSearchQuery] = useState("");
   const [sortOrder, setSortOrder] = useState("asc");
@@ -41,7 +44,8 @@ const AllServices = () => {
   const handleDurationChange = async (duration) => {
     setSelectedDuration(duration);
   };
-
+ 
+  //use
   useEffect(() => {
     const fetchData = async () => {
       try {
