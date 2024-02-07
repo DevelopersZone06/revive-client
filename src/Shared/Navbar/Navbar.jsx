@@ -1,13 +1,14 @@
-import { Link, NavLink, useLocation, useParams } from "react-router-dom";
-import { FaBars, FaRegEnvelope, FaSearch, FaRegEnvelopeOpen } from "react-icons/fa";
-import { IoNotificationsOutline } from "react-icons/io5";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { FaBars, FaRegEnvelope, FaSearch, FaRegEnvelopeOpen, FaFacebookF, FaTwitter, FaLinkedinIn, FaUser} from "react-icons/fa";
+import { IoMdNotifications } from "react-icons/io";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
-import axios from "axios";
+
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import moment from "moment";
 import useAdmin from "../../Hooks/useAdmin";
-import logo from '../../assets/images/Logo2.png'
+import logo from '../../assets/images/logo2.png'
+import LogOut from "../../Components/LogOut/LogOut";
 
 
 
@@ -53,17 +54,38 @@ const Navbar = () => {
 
   return (
     <div className="bg-[#05111D] px-[2%] sm:px-[5%] lg:px-[8%] subheading text-sky-200 relative z-20">
-      <nav className="flex justify-between items-center py-4">
+      <nav className="flex justify-between items-center py-2">
       <div className="block lg:hidden">
           <span onClick={handleMenu}><FaBars className="text-xl" /></span>
+
         </div>
 
-        <div  >
-          {/* <h1 className="text-3xl subheading font-bold">Revive</h1> */}
-          <img src={logo} className="w-32 h-10 object-cover "  />
+        <div className="md:hidden block" >
+         
+          <img src={logo} className="md:w-44 md:h-10 h-8 w-32 object-cover "  />
         </div>
+        <div className="lg:block hidden">
 
-        <div className={menu ? "lg:flex-1 ease-in  duration-300 subheading lg:relative lg:top-0 w-60 absolute top-0 left-0 bg-[#05111D] text-center  text-sky-200 lg:bg-[#0000] lg:text-white z-30 rounded-br-md" : "lg:flex-1 lg:relative lg:top-0 absolute -top-[500px] ease-in duration-300 left-0 z-30 primary-bg text-center w-60 lg:bg-[#0000] rounded-br-md"}>
+        
+        <div className="flex gap-3 text-white justify-end  ">
+            
+            <a className=" rounded-full cursor-pointer border border-white p-2 bg-white text-sky-700 hover:bg-[#448c7400] hover:text-sky-200">
+              <FaFacebookF className="w-5 h-5" />
+            </a>
+
+            <a className=" rounded-full cursor-pointer border border-white p-2 bg-white text-sky-700 hover:bg-[#448c7400] hover:text-sky-200">
+              <FaTwitter className="w-5 h-5" />
+            </a>
+
+            <a className=" rounded-full cursor-pointer border border-white p-2 bg-white text-sky-700 hover:bg-[#448c7400] hover:text-sky-200">
+              <FaLinkedinIn className="w-5 h-5" />
+            </a>
+
+            
+          </div>
+          </div>
+
+        <div className={menu ? "lg:flex-1 ease-in  duration-300 subheading lg:relative lg:top-0 w-60 absolute top-0 left-0 bg-[#05111D] text-center  text-sky-200 lg:bg-[#0000] lg:text-white z-30 rounded-br-md" : "lg:flex-1 lg:relative lg:top-0 absolute -top-[550px] ease-in duration-300 left-0 z-30 primary-bg text-center w-60 lg:bg-[#0000] rounded-br-md"}>
           
           <ul className="lg:flex justify-center subheading gap-1 text-lg menu-item font-medium flex-wrap relative space-y-3 pb-4">
             {/* all nav items here */}
@@ -71,55 +93,63 @@ const Navbar = () => {
               <span className=" absolute left-0 top-0 secondary-bg px-3 rounded-bl-sm text-white" onClick={handleMenu}>X</span>
             </div>
             <li className="subheading">
-              <NavLink to="/"   >Home</NavLink>
+              <NavLink to="/" className="subheading"  >Home</NavLink>
               
             </li>
             <li>
-              <NavLink to="/about">About</NavLink>
+              <NavLink className="subheading" to="/about">About</NavLink>
             </li>
             <li>
-              <NavLink to="/services">Services</NavLink>
+              <NavLink className="subheading" to="/services">Services</NavLink>
             </li>
             <li>
-              <NavLink to="/gallery">Gallery</NavLink>
+              <NavLink  className="subheading" to="/gallery">Gallery</NavLink>
             </li>
             <li>
-              <NavLink to="/events">Events</NavLink>
+              <NavLink className="subheading" to="/events">Events</NavLink>
+            </li>
+            <div  className="" >
+          {/* <h1 className="text-3xl subheading font-bold">Revive</h1> */}
+          <img src={logo} className="w-44 h-8 object-cover hidden md:block "  />
+        </div>
+            <li>
+              <NavLink className="subheading" to="/trainers">Trainers</NavLink>
             </li>
             <li>
-              <NavLink to="/trainers">Trainers</NavLink>
+              <NavLink className="subheading" to="/blogs">Blogs</NavLink>
             </li>
             <li>
-              <NavLink to="/blogs">Blogs</NavLink>
+              <NavLink className="subheading" to="/contact">Contact</NavLink>
             </li>
             <li>
-              <NavLink to="/contact">Contact</NavLink>
+             <LogOut/>
             </li>
-             {
+             {/* {
               (user && isAdmin) &&  (<li>
                 <NavLink to="/dashboard/adminHome">Dashboard</NavLink>
               </li>)
-             }
+             } */}
           </ul>
         </div>
         
         <div className="text-lg">
           {
             user ?
-            <div className="flex justify-end gap-2">
-              <span className="w-8 bg-white rounded-full  secondary-color p-1"><FaSearch></FaSearch></span>
-              <span onClick={handleNotification} className="w-8 relative bg-white rounded-full secondary-color cursor-pointer p-1">
-                <IoNotificationsOutline></IoNotificationsOutline>
+            <div className="flex justify-end md:gap-2 gap-0">
+              <span className=" md:bg-white rounded-full  md:text-sky-700 p-2 hover:bg-[#448c7400] hover:text-sky-200 md:border   text-sky-400 border-white"><FaSearch  className="w-5 h-5"></FaSearch></span>
+              <span onClick={handleNotification} className=" md:bg-white rounded-full  md:text-sky-700 p-2 hover:bg-[#448c7400] hover:text-sky-200 md:border   text-sky-400 border-white">
+                 
+                <IoMdNotifications className="w-5 h-5" ></IoMdNotifications>
 
                 <div className={notification ? "w-96 primary-bg max-h-screen absolute right-0 top-10 rounded-md py-4 ease-in duration-300 border-primary" : "w-96 primary-bg overflow-hidden absolute right-0 -top-[500px] py-10 z-10 ease-in duration-300 max-h-80"}>
                   <h1 className="border-b border-b-white px-4 pb-4">Notification</h1>
                   {
-                    notifications?.allNotification && notifications?.allNotification.map(notification => <Link to={notification.redirect}><div className="px-4 py-2 border-b border-b-white hover:bg-white">
+                    notifications?.allNotification && notifications?.allNotification.map((notification,index) => <Link  key={index} to={notification.redirect}><div className="px-4 py-2 border-b border-b-white hover:bg-white">
                       <p>{notification.title}</p>
                       <div className="flex justify-between items-center">
                         <p className="text-[10px]">{moment(notification.date, "YYYYMMDDHHmm").fromNow()}</p>
                         {
-                          notification.isRead ? <p className="w-5"><FaRegEnvelopeOpen ></FaRegEnvelopeOpen></p> : <p className="w-5"><FaRegEnvelope></FaRegEnvelope></p>  
+                          notification.isRead ? <p className="w-5 "><FaRegEnvelopeOpen ></FaRegEnvelopeOpen></p> : <p className="w-5"><FaRegEnvelope></FaRegEnvelope></p>  
                         }
                         
                       </div>
@@ -127,10 +157,11 @@ const Navbar = () => {
                   }
                 </div>
               </span>
-              <img className="w-8 h-8 rounded-full" src="https://cdn-icons-png.flaticon.com/512/3541/3541871.png" alt="" />
+              {/* <img className="w- h-10  rounded-full" src="https://cdn-icons-png.flaticon.com/512/3541/3541871.png" alt="" /> */}
+              <span className="  md:bg-white rounded-full  md:text-sky-700 p-2 hover:bg-[#448c7400] hover:text-sky-200 md:border   text-sky-400 border-white"><FaUser  className="w-5 h-5"></FaUser></span>
             </div>
             :
-            <Link to={'/login'} className="login bg-white secondary-color">Login</Link>
+            <Link to={'/login'} className="login bg-white text-sky-700">Login</Link>
           }
           
         </div>
