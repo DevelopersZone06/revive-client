@@ -67,7 +67,7 @@ const Login = () => {
             <div className="w-full space-y-5">
               <div className="form-caption flex items-end justify-center text-center space-x-3 mb-20">
                 {/*  <span className="text-3xl secondary-color font-bold headingFont ">Login</span> */}
-                <div className="lg:text-6xl md:text-6xl text-xl">
+                <div className="lg:text-7xl md:text-7xl text-xl">
                   <svg id="animation-heading">
                     <text x="45%" y="50%" dy=".50em" textAnchor="middle">
                       Login

@@ -12,7 +12,7 @@
   margin: 0 auto;
 }
 .secondary-color{
-  color: #448c74;
+  color: #46A9D2;
 }
 .primary-bg {
   background-color: #e9f0ec;
@@ -34,7 +34,7 @@
 .subheading{
   font-family: "Satisfy", cursive;
   
-  color: #448c74; 
+  /* color: #448c74;  */
 }
 .normal, p, a, h6{
   font-family: "Montserrat";
@@ -97,8 +97,8 @@
 /* navbar css  */
 
 .active{
-  background-color: white;
-  color: #448c74;
+  /* background-color: white; */
+  color: #0EA5E9;
 }
 
 .menu-item a, .login{
@@ -106,7 +106,7 @@
   border-radius: 5px;
 }
 .menu-item a:hover{
-  background-color: white;
-  color: #448c74;
+  /* background-color: white; */
+  color: #7DD3FC;
 }
 
