@@ -9,17 +9,17 @@ const Banner = () => {
       <div style={{ backgroundImage: `url(${bannerImg})`,backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', }} className="  py-28 w-full px-[2%] sm:px-[5%] lg:px-[8%] box">
         <div className="flex justify-between flex-col lg:flex-row">
           <div className="lg:w-1/2 w-full text-white">
-            <span className="border border-white rounded-full p-2 text-md md:text-xl  ">
+            <span className="border-2 border-white rounded-full subheading font-semibold p-2 lg:ml-28 md:ml-40 ml-16 text-md md:text-xl  ">
               Inspiration for Healthy Living
             </span>
-            <div className="lg:text-6xl md:text-6xl text-3xl ">
+            <div className="lg:text-6xl md:text-6xl md:ml-20 lg:ml-0 ml-14 text-3xl subheading ">
               <svg id="animation-heading">
                 <text x="45%" y="50%" dy=".50em" textAnchor="middle" >
                   Transform Your Life
                 </text>
               </svg>
             </div>
-            <hr className="-mt-10 md:-mt-0" />
+            <hr className="-mt-8 md:-mt-0" />
             <p className="py-6 text-center lg:text-left">
               Transform Your Life with Our Transformative Workouts Revitalize
               your energy, renew your vitality, and redefine your well-being

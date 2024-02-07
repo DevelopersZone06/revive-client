@@ -73,7 +73,7 @@ const AllServices = () => {
 
         <ParallaxForBMI></ParallaxForBMI>
         <div className="mt-36 -mb-5">
-          <Title subHeading={"Find Your Fitness Goal With Us"}></Title>
+          <Title subHeading={"Find Your Fitness Goal With Us"} fontColor={'sky-700'}></Title>
         </div>
 
         {/* Search and filter  */}
