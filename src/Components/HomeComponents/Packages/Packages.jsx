@@ -13,10 +13,10 @@ const Packages = () => {
             <div>
               <div className=" pricingTable shadow-2xl  transition-all duration-150 ease-in-out hover:mt-7 ">
                 <div className="pricingTable-header">
-                  <h3 className="title">Basic</h3>
+                  <h3 className="text-4xl text-sky-700 font-bold">Basic</h3>
                 </div>
                 <div className="price-value ">$19.99</div>
-                <ul className=" text-black space-y-6 mb-10 text-sm md:text-base   capitalize">
+                <ul className=" text-black space-y-6 mb-10 text-sm md:text-base  capitalize">
                   <li>Personalized Guidance</li>
                   <li>Become a Trainer</li>
                   <li>Community Insights</li>
@@ -27,10 +27,11 @@ const Packages = () => {
                 <div className="pricingTable-signup ">
                   <a
                     href="#"
-                    className="rounded-full px-8 py-3 hover:bg-white hover:border hover:border-[#448c74] hover:text-[#448c74] text-white capitalize secondary-bg md:text-2xl text-base  transition-all duration-150 ease-in-out "
+                    className="rounded-full px-8 py-3 hover:bg-[#144479] border border-sky-700 hover:text-sky-100 text-sky-700 font-bold capitalize md:text-2xl text-base  transition-all duration-150 ease-in-out "
                   >
                     Join now
                   </a>
+           
                 </div>
               </div>
             </div>
