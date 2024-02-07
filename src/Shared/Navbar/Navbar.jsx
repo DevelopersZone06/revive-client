@@ -8,6 +8,7 @@ import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import moment from "moment";
 import useAdmin from "../../Hooks/useAdmin";
 import logo from '../../assets/images/Logo2.png'
+import LogOut from "../../Components/LogOut/LogOut";
 
 
 
@@ -63,37 +64,40 @@ const Navbar = () => {
           <img src={logo} className="w-32 h-10 object-cover "  />
         </div>
 
-        <div className={menu ? "lg:flex-1 ease-in  duration-300 subheading lg:relative lg:top-0 w-60 absolute top-0 left-0 bg-[#05111D] text-center  text-sky-200 lg:bg-[#0000] lg:text-white z-30 rounded-br-md" : "lg:flex-1 lg:relative lg:top-0 absolute -top-[500px] ease-in duration-300 left-0 z-30 primary-bg text-center w-60 lg:bg-[#0000] rounded-br-md"}>
+        <div className={menu ? "lg:flex-1 ease-in  duration-300  lg:relative lg:top-0 w-60 absolute top-0 left-0 bg-[#05111D] text-center  text-sky-200 lg:bg-[#0000] lg:text-white z-30 rounded-br-md" : "lg:flex-1 lg:relative lg:top-0 absolute -top-[500px] ease-in duration-300 left-0 z-30 primary-bg text-center w-60 lg:bg-[#0000] rounded-br-md"}>
           
-          <ul className="lg:flex justify-center subheading gap-1 text-lg menu-item font-medium flex-wrap relative space-y-3 pb-4">
+          <ul className="lg:flex justify-center  gap-1 text-xl menu-item font-medium flex-wrap relative space-y-3 pb-4">
             {/* all nav items here */}
             <div className="h-10 block lg:hidden">
               <span className=" absolute left-0 top-0 secondary-bg px-3 rounded-bl-sm text-white" onClick={handleMenu}>X</span>
             </div>
             <li className="subheading">
-              <NavLink to="/"   >Home</NavLink>
+              <NavLink to="/" className="subheading"  >Home</NavLink>
               
             </li>
             <li>
-              <NavLink to="/about">About</NavLink>
+              <NavLink className="subheading" to="/about">About</NavLink>
             </li>
             <li>
-              <NavLink to="/services">Services</NavLink>
+              <NavLink className="subheading" to="/services">Services</NavLink>
             </li>
             <li>
-              <NavLink to="/gallery">Gallery</NavLink>
+              <NavLink  className="subheading" to="/gallery">Gallery</NavLink>
             </li>
             <li>
-              <NavLink to="/events">Events</NavLink>
+              <NavLink className="subheading" to="/events">Events</NavLink>
             </li>
             <li>
-              <NavLink to="/trainers">Trainers</NavLink>
+              <NavLink className="subheading" to="/trainers">Trainers</NavLink>
             </li>
             <li>
-              <NavLink to="/blogs">Blogs</NavLink>
+              <NavLink className="subheading" to="/blogs">Blogs</NavLink>
             </li>
             <li>
-              <NavLink to="/contact">Contact</NavLink>
+              <NavLink className="subheading" to="/contact">Contact</NavLink>
+            </li>
+            <li>
+             <LogOut/>
             </li>
              {
               (user && isAdmin) &&  (<li>
