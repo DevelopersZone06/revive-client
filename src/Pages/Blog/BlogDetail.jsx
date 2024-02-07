@@ -58,13 +58,19 @@ const BlogDetail = ({ blog }) => {
 
   const handleComments = () => {
     setAllComments([{commentText: 'Helpfully Blog', authorName: 'Ibrahim'}, {commentText: 'Nice Blog', authorName: 'Emran Hossen'}])
+    handleCount()
+  }
+
+  const [commentCount, setCommentCount] = useState(1)
+  const handleCount = () => {
+    setCommentCount(commentCount + 1)
   }
 
   return (
     <>
       {/* main div starts */}
       <BlogTitle></BlogTitle>
-      <div className="md:flex md:max-w-[1600px] mx-auto">
+      <div className="md:flex px-[2%] sm:px-[5%] lg:px-[8%]">
         <div className="md:w-[60%]">
           <div>
             <h3 className="text-5xl my-10 font-bold">{title}</h3>
@@ -100,7 +106,7 @@ const BlogDetail = ({ blog }) => {
                     src="https://i.ibb.co/80PGNMg/icons8-comment-24-1.png"
                     alt=""
                   />
-                  <p>{commentNumber}</p>
+                  <p>{commentCount}</p>
                   {/* Share */}
                   <div  className="px-4">
 
