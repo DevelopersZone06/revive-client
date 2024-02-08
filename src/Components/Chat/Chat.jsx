@@ -1,12 +1,14 @@
-import  io  from "socket.io-client";
-
-
-const socket = io.connect("http://localhost:5000")
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 
 const Chat = () => {
     return (
         <div>
-            Chat
+        <MessengerCustomerChat
+        pageId="192045557334552"
+        appId="766194558744896"
+        
+      />
+      
         </div>
     );
 };
