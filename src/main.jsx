@@ -27,6 +27,7 @@ import Dashboard from "./Layout/Dashboard/Dashboard";
 import AdminHome from "./Pages/Dashboard/Admin/Home/AdminHome";
 import AllUsers from "./Pages/AllUsers/AllUsers";
 import PostGallery from "./Pages/PostGallery/PostGallery";
+import ServicesApproval from "./Pages/Dashboard/Admin/Services/ServicesApproval";
 // import useAxiosPublic from "./Hooks/useAxiosPublic";
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -103,6 +104,7 @@ const router = createBrowserRouter([
         path: '/toBeTrainers',
         element: <ToBeTrainers />
       }
+      
     ],
   }, {
     path: 'dashboard',
@@ -119,8 +121,17 @@ const router = createBrowserRouter([
       {
         path: 'postGallery',
         element: <PostGallery></PostGallery>
-      }
-    ]
+      },
+    
+    {
+      path:'toBeTrainers',
+      element:<ToBeTrainers/>
+    },
+    {
+      path:'servicesApproval',
+      element:<ServicesApproval/>
+    }
+  ]
   }
 ]);
 
