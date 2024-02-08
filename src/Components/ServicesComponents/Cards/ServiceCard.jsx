@@ -4,11 +4,11 @@ const ServiceCard = ({ service }) => {
     service;
   return (
     
-    <section className="mx-auto w-fit  rounded-md shadow-lg shadow-white bg-white">
+    <section className="mx-auto w-full  rounded-md shadow-lg shadow-white bg-white">
       <div className="h-fit group">
         <div className="relative overflow-hidden w-full rounded-md">
-          <img className="h-96 w-full object-cover" src={serviceImg} alt="" />
-          <div className="absolute h-full w-full bg-black/60 flex flex-col items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300 space-y-2 text-center">
+          <img className="h-52 w-full object-cover" src={serviceImg} alt="" />
+          <div className="absolute h-full w-full bg-black/60 flex flex-col items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300 space-y-1 text-center">
             <p className=" text-sky-200">
               <span className="font-bold">Trainer`s Name: </span>
               {trainer}{" "}
@@ -29,12 +29,12 @@ const ServiceCard = ({ service }) => {
             </Link>
           </div>
         </div>
-        <h2 className="mt-3 text-xl capitalize text-center text-sky-600 font-bold">
+        <h2 className="mt-3 text-lg capitalize text-center text-sky-600 font-bold">
           {title}
         </h2>
 
-        <p className="capitalize text-center p-4 mb-5 text-sky-600">
-          <span className="font-bold capitalize lg:text-xl text-normal">
+        <p className="capitalize text-center p-2 mb-5 text-sky-600">
+          <span className="font-bold capitalize lg:text-lg text-normal">
             Category:{" "}
           </span>
           {category}{" "}
