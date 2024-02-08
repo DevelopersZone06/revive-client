@@ -85,7 +85,7 @@ const AllServices = () => {
                 value={searchQuery}
                 onChange={handleSearchChange}
                 placeholder="Search In Revive (Course Name and Trainer'name)"
-                className="rounded-md px-10 py-2 border-2 border-[#448c74] w-full"
+                className="rounded-md px-10 py-2 border-2 border-sky-900 w-full"
               />
               {/* <div className="text-2xl  ">
                 <IoMdSearch className=""></IoMdSearch>

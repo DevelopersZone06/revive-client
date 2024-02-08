@@ -5,7 +5,7 @@ import "../../../Styles/features.css";
 const Packages = () => {
   return (
     <div className="py-28 px-[2%] sm:px-[5%] lg:px-[8%]">
-      <Title heading={"Our awesome Packages"} subHeading={"Join us to enhance your fitness journey."}></Title>
+      <Title heading={"Our awesome Packages"} subHeading={"Join us to enhance your fitness journey."} fontColor={'sky-800'}></Title>
       <div className="">
         <div>
           <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-10">

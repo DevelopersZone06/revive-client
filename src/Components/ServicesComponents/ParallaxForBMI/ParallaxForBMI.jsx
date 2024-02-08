@@ -1,6 +1,6 @@
 import { Parallax } from "react-parallax";
 import { Link } from "react-router-dom";
-import img from '../../../assets/banner/dark.jpg'
+
 
 
 const ParallaxForBMI = () => {
@@ -9,9 +9,7 @@ const ParallaxForBMI = () => {
              <div className="-my-16 rounded-lg bg-center">
         <Parallax
           blur={5}
-          // bgImage={
-          //   "https://i.ibb.co/jLWbY6P/ypga.jpg"
-          // }
+        
           bgImage={"https://i.ibb.co/MDmhv1m/dark.jpg"}
           bgImageAlt="the cat"
           strength={500}

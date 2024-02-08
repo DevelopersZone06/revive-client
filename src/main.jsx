@@ -25,6 +25,7 @@ import { HelmetProvider } from "react-helmet-async";
 import ToBeTrainers from "./Pages/Dashboard/Admin/Trainers/BeTrainers";
 import Dashboard from "./Layout/Dashboard/Dashboard";
 import AdminHome from "./Pages/Dashboard/Admin/Home/AdminHome";
+import PostGallery from "./Pages/Dashboard/Admin/PostGallery/PostGallery";
 // import useAxiosPublic from "./Hooks/useAxiosPublic";
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -109,6 +110,9 @@ const router = createBrowserRouter([
       {
          path:'adminHome',
          element:<AdminHome></AdminHome>
+    },{
+      path:'postGallery',
+      element:<PostGallery></PostGallery>
     }
   ]
   }
