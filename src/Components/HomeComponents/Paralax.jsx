@@ -1,10 +1,24 @@
+import { Parallax } from "react-parallax";
 import Title from "../../Shared/Title";
 import "../../Styles/paralax.css";
+
 const Paralax = () => {
   return (
-    <div className="primary-bg py-28 px-[2%] sm:px-[5%] lg:px-[8%]">
-      <Title subHeading={"Discover the Reasons"} heading={"Why Chose Us"} />
-      <div>
+
+    <div className=" py-28 px-[2%] sm:px-[5%] lg:px-[8%]">
+        <Title subHeading={"Discover the Reasons"} heading={"Why Chose Us"} fontColor={'sky-800'} />
+       <div className="">
+       <Parallax
+          blur={1}
+        
+          bgImage={"https://i.ibb.co/0t842nT/silhouette-stylish-female-cut-out-brown-hair.jpg"}
+          bgImageAlt="the cat"
+          strength={200}
+          className="hero w-full rounded-lg bg-center "
+        >
+    
+    
+      <div className="py-28 px-36">
         <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
           <li>
             <div className="timeline-middle">
@@ -22,10 +36,10 @@ const Paralax = () => {
               </svg>
             </div>
             <div className="timeline-start md:text-end mb-16">
-              <div className="text-xl font-semibold text-[#e5c466]">
+              <div className="text-xl font-bold text-[#e5c466] ">
                 Balance Body And Mind
               </div>
-              <p className="font-semibold">
+              <p className="font-semibold text-sky-200">
                 {" "}
                 The relationship between the mind and body is complex. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, deleniti?
               </p>
@@ -52,7 +66,7 @@ const Paralax = () => {
               <div className="text-lg font-semibold text-[#e5c466]">
                 Physical Activity
               </div>
-              <p className="font-semibold">
+              <p className="font-semibold text-sky-200">
                 {" "}
                 Walking, running, dancing, swimming, yoga are a few physical
                 activity. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, deleniti?
@@ -80,7 +94,7 @@ const Paralax = () => {
               <div className="text-lg font-semibold text-[#e5c466]">
                 Fitness & Performance
               </div>
-              <p className="font-semibold">
+              <p className="font-semibold text-sky-200">
                 {" "}
                 We’re here to help you overcome the barriers in the Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, deleniti?
               </p>
@@ -107,7 +121,7 @@ const Paralax = () => {
               <div className="text-lg font-semibold text-[#e5c466]">
                 Exercise Program
               </div>
-              <p className="font-semibold">
+              <p className="font-semibold text-sky-200">
                 {" "}
                 You have to know which exercises are useful for which Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, deleniti?
               </p>
@@ -134,7 +148,7 @@ const Paralax = () => {
               <div className="text-lg font-semibold text-[#e5c466]">
                 Healthy Daily Life
               </div>
-              <p className="font-semibold">
+              <p className="font-semibold text-sky-200">
                 {" "}
                 People are most productive when they wake up, and setting Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, voluptate?
               </p>
@@ -142,7 +156,10 @@ const Paralax = () => {
           </li>
         </ul>
       </div>
+      </Parallax>
+       </div>
     </div>
+  
   );
 };
 

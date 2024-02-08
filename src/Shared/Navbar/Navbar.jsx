@@ -108,7 +108,7 @@ const Navbar = () => {
             </li>
              {
               (user && isAdmin) &&  (<li>
-                <NavLink to="/dashboard/adminHome">Dashboard</NavLink>
+                <NavLink className="subheading" to="/dashboard/adminHome">Dashboard</NavLink>
               </li>)
              }
           </ul>
