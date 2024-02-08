@@ -1,36 +1,46 @@
-
 import { Link } from "react-router-dom";
 const ServiceCard = ({ service }) => {
-  const { title,  serviceImg,duration,price,_id,category,trainer } = service;
+  const { title, serviceImg, duration, price, _id, category, trainer } =
+    service;
   return (
-    <div className="relative rounded-[15px] mt-20 service-card shadow-gray-300 shadow-xl" style={{ backgroundImage: `url(${serviceImg})` }} >
     
-      <img src={serviceImg} alt="" className="w-full h-[280px]  rounded-[15px]" />
-      <h2 className="text-center p-4 font-bold text-3xl mt-4 secondary-color">{title}</h2>
-      <p className="capitalize text-center p-4 mb-5 secondary-color"><span className="font-bold capitalize lg:text-xl text-normal">Category: </span>{category} </p>
-     
-      <div className="w-full h-full absolute top-0 bg-[#ababab00] rounded-[15px] pt-14 px-10 service-content  ">
-        
-        <div className="mt-28 service-des text-white lg:space-y-4 md:space-y-2  ">
-          <h2 className="hidden lg:text-4xl text-2xl  headings font-bold ">{title}</h2>
-          <div className="lg:text-base text-xm space-y-4 ">
-         
-          <p className="hidden capitalize"><span className="font-bold capitalize">Category: </span>{category} </p>
-          <p className="hidden "><span className="font-bold">Trainer`s Name: </span>{trainer} </p>
-          <p className="hidden"><span className="font-bold">Price: </span>{price} $</p>
-          <p className="hidden"><span className="font-bold">Duration: </span>{duration} Days</p>
-          
-          <Link to={`/services/${_id}`}>
-          <button className="text-xl hidden uppercase font-semibold tracking-widest mt-4 rounded-full border-[#e5c466] border lg:px-4  lg:py-3 px-6 py-3 ">
-            More Details
-          </button>
-          </Link>
+    <section className="mx-auto w-fit  rounded-md shadow-lg shadow-white bg-white">
+      <div className="h-fit group">
+        <div className="relative overflow-hidden w-full rounded-md">
+          <img className="h-96 w-full object-cover" src={serviceImg} alt="" />
+          <div className="absolute h-full w-full bg-black/60 flex flex-col items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300 space-y-2 text-center">
+            <p className=" text-sky-200">
+              <span className="font-bold">Trainer`s Name: </span>
+              {trainer}{" "}
+            </p>
+            <p className=" text-sky-200">
+              <span className="font-bold">Price: </span>
+              {price} $
+            </p>
+            <p className=" text-sky-200">
+              <span className="font-bold">Duration: </span>
+              {duration} Days
+            </p>
+
+            <Link to={`/services/${_id}`}>
+              <button className="  capitalize font-semibold  mt-4 rounded-md border-sky-200 border  px-4 py-2 hover:bg-sky-900  text-white ">
+                More Details
+              </button>
+            </Link>
           </div>
-          
         </div>
+        <h2 className="mt-3 text-xl capitalize text-center text-sky-600 font-bold">
+          {title}
+        </h2>
+
+        <p className="capitalize text-center p-4 mb-5 text-sky-600">
+          <span className="font-bold capitalize lg:text-xl text-normal">
+            Category:{" "}
+          </span>
+          {category}{" "}
+        </p>
       </div>
-     
-    </div>
+    </section>
   );
 };
 

@@ -1,16 +1,18 @@
+import { IoMdArrowDropdown } from "react-icons/io";
+import { IoIosArrowBack } from "react-icons/io";
+import { IoIosArrowForward } from "react-icons/io";
 const ToBeTrainers = () => {
     return (
        <>
         <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
-          <thead>
-            <tr>
-              
+          <thead className="text-lg font-semibold">
+            <tr className="text-sky-700">
               <th></th>
               <th>Name</th>
-              <th>Favorite Color</th>
-              <th></th>
+              <th>Category</th>
+              <th>Details</th>
             </tr>
           </thead>
           <tbody>
@@ -18,39 +20,92 @@ const ToBeTrainers = () => {
             <tr>
               
               <td>
-                <div className="items-center">
-                  <div className="avatar">
-                    <div className="mask mask-squircle w-16 h-16">
-                      <img src="https://i.ibb.co/B4YPD5L/download-1.jpg" alt="Avatar Tailwind CSS Component" />
-                    </div>
-                  </div>
+              
+                <img className="w-[80px] h-[80px] bg-slate-500 object-cover rounded-lg duration-500" src="https://source.unsplash.com/300x300/?profile" alt="" />
+                 
                   
-                </div>
+                
               </td>
               <td>
                 Zemlak, Daniel and Leannon
-                <br/>
-                <span className="badge badge-ghost badge-sm">Desktop Support Technician</span>
+                
               </td>
-              <td>Purple</td>
+              <td>Yoga</td>
               <th>
-                <button className="btn btn-ghost btn-xs">details</button>
+              <button
+                 
+                    className="rounded-full px-4 py-2 hover:bg-[#144479] border border-sky-700 hover:text-sky-100 text-sky-700 font-bold capitalize md:text-sm text-sm transition-all duration-150 ease-in-out "
+                  >
+                    Details
+                  </button>
               </th>
             </tr>
-            
+            {/* row 2 */}
+            <tr>
+              
+              <td>
+              
+                <img className="w-[80px] h-[80px] bg-slate-500 object-cover rounded-lg duration-500" src="https://source.unsplash.com/300x300/?profile" alt="" />
+                 
+                  
+                
+              </td>
+              <td>
+                Zemlak, Daniel and Leannon
+                
+              </td>
+              <td>Gym</td>
+              <th>
+              <button
+                 
+                 className="rounded-full px-4 py-2 hover:bg-[#144479] border border-sky-700 hover:text-sky-100 text-sky-700 font-bold capitalize md:text-sm text-sm  transition-all duration-150 ease-in-out "
+               >
+                 Details
+               </button>
+              </th>
+            </tr>
+            {/* row 3 */}
+            <tr>
+              
+              <td>
+              
+                <img className="w-[80px] h-[80px] bg-slate-500 object-cover rounded-lg duration-500" src="https://source.unsplash.com/300x300/?profile" alt="" />
+                 
+                  
+                
+              </td>
+              <td>
+                Zemlak, Daniel and Leannon
+                
+              </td>
+              <td>Yoga</td>
+              <th>
+              <button
+                 
+                 className="rounded-full px-4 py-2 hover:bg-[#144479] border border-sky-700 hover:text-sky-100 text-sky-700 font-bold capitalize md:text-sm text-sm  transition-all duration-150 ease-in-out "
+               >
+                 Details
+               </button>
+              </th>
+            </tr>
+            <hr />
           </tbody>
           {/* foot */}
-          <tfoot>
-            <tr>
-              <th></th>
-              <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
-              <th></th>
-            </tr>
-          </tfoot>
+          
           
         </table>
+        <div className="flex justify-around">
+          <div>
+            
+          </div>
+        <div className="flex gap-2 items-center">
+                  <h2>Rows Per Page</h2>
+                  <p className="flex items-center">5 <IoMdArrowDropdown className="w-[22px]"/></p>
+                  <h1 className="text-lg">1-3 of 9</h1>
+                  <IoIosArrowBack className="w-[25px]"/>
+                  <IoIosArrowForward className="w-[25px]"/>
+                </div>
+        </div>
       </div>
       
        </>

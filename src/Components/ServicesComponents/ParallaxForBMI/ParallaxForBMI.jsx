@@ -2,31 +2,31 @@ import { Parallax } from "react-parallax";
 import { Link } from "react-router-dom";
 
 
+
 const ParallaxForBMI = () => {
     return (
         <div>
-             <div className="-my-16 rounded-lg">
+             <div className="-my-16 rounded-lg bg-center">
         <Parallax
-          blur={4}
-          bgImage={
-            "https://i.ibb.co/WvnTkMJ/top-view-sneakers-with-copy-space-weights.jpg"
-          }
+          blur={5}
+        
+          bgImage={"https://i.ibb.co/MDmhv1m/dark.jpg"}
           bgImageAlt="the cat"
-          strength={300}
-          className="hero w-full rounded-lg"
+          strength={500}
+          className="hero w-full rounded-lg bg-center bg-cover"
         >
           {/* Parallax added  */}
-          <div className="hero-overlay bg-opacity-60 bg-[#448c74] "></div>
-          <div className="text-center p-10 w-full">
+          <div className="hero-overlay bg-opacity-70 bg-white "></div>
+          <div className="text-center p-20 w-full">
             <div className="max-w-md secondary-color ">
               <div>
-                <h1 className="mb-5 text-5xl font-bold ">Our new features</h1>
-                <p className="mb-5 text-black">
+                <h1 className="mb-5 text-5xl font-bold text-sky-100 ">Our new features</h1>
+                <p className="mb-5 text-sky-200">
                   Get services by BMI (Body Mass Index)
                 </p>
               </div>
               <Link to={"/BMIServices"}>
-              <button className="btn secondary-bg  text-white  hover:text-[#448c74] ">
+              <button className="text-sky-200 bg-sky-950  hover:bg-sky-200 hover:text-sky-900 rounded-sm  border border-sky-200 block font-semibold px-6 py-3  mx-auto ">
                 FIND YOUR BMI
               </button></Link>
              

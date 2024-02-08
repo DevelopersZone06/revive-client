@@ -68,12 +68,12 @@ const AllServices = () => {
         <title>Revive | Services</title>
       </Helmet>
 
-      <div className="px-[2%] sm:px-[5%] lg:px-[8%] py-28">
+      <div className="px-[2%] sm:px-[5%] lg:px-[4%] py-28">
         {/* Special feature BMI */}
 
         <ParallaxForBMI></ParallaxForBMI>
         <div className="mt-36 -mb-5">
-          <Title subHeading={"Find Your Fitness Goal With Us"}></Title>
+          <Title subHeading={"Find Your Fitness Goal With Us"} fontColor={'sky-700'}></Title>
         </div>
 
         {/* Search and filter  */}
@@ -85,7 +85,7 @@ const AllServices = () => {
                 value={searchQuery}
                 onChange={handleSearchChange}
                 placeholder="Search In Revive (Course Name and Trainer'name)"
-                className="rounded-md px-10 py-2 border-2 border-[#448c74] w-full"
+                className="rounded-md px-10 py-2 border-2 border-sky-900 w-full"
               />
               {/* <div className="text-2xl  ">
                 <IoMdSearch className=""></IoMdSearch>
@@ -111,11 +111,11 @@ const AllServices = () => {
         </div>
         {/* All services with side ber */}
         <div className="sm:flex gap-5">
-          <div className="sm:w-[250px] primary-bg p-5 border-primary rounded-l-md">
-            <h1 className="text-2xl font-semibold border-b border-b-white pb-1">
+          <div className="sm:w-[250px] bg-[#05111D] p-5 border-primary rounded-l-md">
+            <h1 className="text-2xl font-semibold text-sky-200 border-b border-b-white pb-1">
               Filter Services
             </h1>
-            <div className="grid lg:grid-cols-2  grid-cols-1 gap-5 sm:block">
+            <div className="grid lg:grid-cols-2 text-sky-200 grid-cols-1 gap-5 sm:block">
               {/*Category  */}
               <h1 className="text-2xl font-semibold border-b border-b-white pb-1 mt-8  ">
                 Filter Category
@@ -124,7 +124,7 @@ const AllServices = () => {
                 {categories.map(({ label, value }) => (
                   <button
                     key={value}
-                    className="text-white  hover:bg-[#448c74] hover:text-[#e5c466] secondary-bg block btn font-semibold w-20"
+                    className="text-sky-200  hover:bg-sky-200 hover:text-sky-900 rounded-sm  border border-sky-200 block font-semibold w-20"
                     onClick={() => handleCategoryClick(value)}
                   >
                     {label}
@@ -184,11 +184,10 @@ const AllServices = () => {
               {/* end of category */}
             </div>
           </div>
-          <div className="flex-1 p-5">
-            {/* <h1 className="text-4xl font-semibold border-b border-b-white text-center">
-             Find  Services
-            </h1> */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+          <div className="flex-1 p-5 " style={{backgroundImage:`url('https://i.ibb.co/GpYsZ4Z/img2.jpg')`}}>
+          {/* All services  */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 p-10">
+              {/* services card */}
               {searchResults.map((service) => (
                 <ServiceCard key={service._id} service={service}></ServiceCard>
               ))}

@@ -72,7 +72,7 @@ const Footer = () => {
 
         </div>
             <li className="mb-3 flex text-start justify-center list-unstyled">
-              <span><HomeIcon style={{ width: "30px" }}></HomeIcon></span><span className="ms-2">Sector-03,  Dhaka-1230.</span>
+              <span><HomeIcon style={{ width: "30px" }}></HomeIcon></span><span className="ms-2">Sector-03,  Dhaka-1212.</span>
             </li>
             <li className="mb-3 flex text-start justify-center list-unstyled">
               <span ><InboxIcon style={{ width: "30px" }}></InboxIcon></span><span className="ms-2">DevelopersZone06.com</span>

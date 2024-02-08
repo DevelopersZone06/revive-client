@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom/dist";
 import Navbar from "../../Shared/Navbar/Navbar";
 import Footer from "../../Shared/Footer/Footer";
+import Chat from "../../Components/Chat/Chat";
 
 
 const Root = () => {
@@ -12,7 +13,7 @@ const Root = () => {
 
             </Outlet>
             <Footer></Footer>
-            
+            <Chat/>
         </div>
     );
 };

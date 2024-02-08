@@ -25,6 +25,9 @@ import { HelmetProvider } from "react-helmet-async";
 import ToBeTrainers from "./Pages/Dashboard/Admin/Trainers/BeTrainers";
 import Dashboard from "./Layout/Dashboard/Dashboard";
 import AdminHome from "./Pages/Dashboard/Admin/Home/AdminHome";
+import AllUsers from "./Pages/AllUsers/AllUsers";
+import PostGallery from "./Pages/PostGallery/PostGallery";
+import ServicesApproval from "./Pages/Dashboard/Admin/Services/ServicesApproval";
 // import useAxiosPublic from "./Hooks/useAxiosPublic";
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -98,17 +101,35 @@ const router = createBrowserRouter([
         element: <BMIServices></BMIServices>,
       },
       {
-        path:'/toBeTrainers',
-        element:<ToBeTrainers/>
+        path: '/toBeTrainers',
+        element: <ToBeTrainers />
       }
+      
     ],
-  },{
-    path:'dashboard',
-    element:<Dashboard></Dashboard>,
-    children:[
+  }, {
+    path: 'dashboard',
+    element: <Dashboard></Dashboard>,
+    children: [
       {
-         path:'adminHome',
-         element:<AdminHome></AdminHome>
+        path: 'adminHome',
+        element: <AdminHome></AdminHome>
+      },
+      {
+        path: 'allUsers', 
+        element: <AllUsers></AllUsers>
+      }, 
+      {
+        path: 'postGallery',
+        element: <PostGallery></PostGallery>
+      },
+    
+    {
+      path:'toBeTrainers',
+      element:<ToBeTrainers/>
+    },
+    {
+      path:'servicesApproval',
+      element:<ServicesApproval/>
     }
   ]
   }
