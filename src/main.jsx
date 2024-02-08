@@ -25,6 +25,7 @@ import { HelmetProvider } from "react-helmet-async";
 import ToBeTrainers from "./Pages/Dashboard/Admin/Trainers/BeTrainers";
 import Dashboard from "./Layout/Dashboard/Dashboard";
 import AdminHome from "./Pages/Dashboard/Admin/Home/AdminHome";
+import ServicesApproval from "./Pages/Dashboard/Admin/Services/ServicesApproval";
 // import useAxiosPublic from "./Hooks/useAxiosPublic";
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -96,11 +97,8 @@ const router = createBrowserRouter([
       {
         path: "/BMIServices",
         element: <BMIServices></BMIServices>,
-      },
-      {
-        path:'/toBeTrainers',
-        element:<ToBeTrainers/>
       }
+      
     ],
   },{
     path:'dashboard',
@@ -109,6 +107,14 @@ const router = createBrowserRouter([
       {
          path:'adminHome',
          element:<AdminHome></AdminHome>
+    },
+    {
+      path:'toBeTrainers',
+      element:<ToBeTrainers/>
+    },
+    {
+      path:'servicesApproval',
+      element:<ServicesApproval/>
     }
   ]
   }

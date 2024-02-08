@@ -1,4 +1,4 @@
-# Revive - Health and Fitness Website
+# Revive - Health and Fitness knowledge Platform Website
 
 Welcome to Revive, your ultimate destination for health and fitness insights. Revive is designed to empower individuals on their wellness journey, offering a holistic approach to physical health, mental well-being, and emotional balance.
 
