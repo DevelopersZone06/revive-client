@@ -1,9 +1,8 @@
 
 const UsersCard = ({user}) => {
 
-    const {email, name} = user || {}; 
+    const {email, name, category} = user || {}; 
 
-    
     return (
         <>
             <tr>
@@ -21,7 +20,7 @@ const UsersCard = ({user}) => {
                     </div>
                 </td>
                 <td>
-                    <span className="badge badge-ghost badge-sm">Community Outreach Specialist</span>
+                    <span className="badge badge-ghost badge-sm">{category}</span>
                 </td>
                 <th>
                     <button className="btn btn-neutral btn-xs">details</button>
