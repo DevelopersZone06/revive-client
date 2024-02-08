@@ -43,7 +43,7 @@ const Dashboard = () => {
                 </li>
                 <li>
                   <NavLink
-                    to={"/"}
+                    to={"/dashboard/toBeTrainers"}
                     className={({ isActive, isPending }) =>
                       isPending ? "pending" : isActive ? "text-yellow-300" : ""
                     }
