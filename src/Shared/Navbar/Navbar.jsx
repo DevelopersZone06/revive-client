@@ -106,11 +106,11 @@ const Navbar = () => {
             <li>
              {/* <LogOut/> */}
             </li>
-             {/* {
+             {
               (user && isAdmin) &&  (<li>
                 <NavLink to="/dashboard/adminHome">Dashboard</NavLink>
               </li>)
-             } */}
+             }
           </ul>
         </div>
         
