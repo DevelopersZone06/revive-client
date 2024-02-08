@@ -28,7 +28,7 @@
   background-color: #e5c466;
 }
 
-.headingFont, h1, h2, h3, h4, h5{
+.headingFont {
   font-family: 'Playfair Display', serif;
 }
 .subheading{
@@ -36,7 +36,7 @@
   
   /* color: #448c74;  */
 }
-.normal, p, a, h6{
+.normal,h1, h2, h3, h4, h5, p, a, h6{
   font-family: "Montserrat";
 }
 
