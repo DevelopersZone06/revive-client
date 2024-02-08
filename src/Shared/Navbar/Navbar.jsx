@@ -1,5 +1,5 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { FaBars, FaRegEnvelope, FaSearch, FaRegEnvelopeOpen, FaFacebookF, FaTwitter, FaLinkedinIn, FaUser} from "react-icons/fa";
+import { FaBars, FaRegEnvelope, FaSearch, FaRegEnvelopeOpen,  FaUser} from "react-icons/fa";
 import { IoMdNotifications } from "react-icons/io";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
@@ -7,8 +7,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import moment from "moment";
 import useAdmin from "../../Hooks/useAdmin";
-import logo from '../../assets/images/logo2.png'
-import LogOut from "../../Components/LogOut/LogOut";
+import logo from '../../assets/images/logo2.png';
 
 
 
@@ -28,6 +27,8 @@ const Navbar = () => {
   const handleMenu = () => {
     setMenu(!menu)
   }
+
+
   
   const handleNotification = () => {
     setNotification(!notification)
@@ -45,7 +46,7 @@ const Navbar = () => {
     .then(res => {
       setNotifications(res.data)
     })
-  }, [user, location.pathname])
+  }, [user, location.pathname, axiosPublic])
 
 
 
@@ -60,32 +61,16 @@ const Navbar = () => {
 
         </div>
 
-        <div className="md:hidden block" >
+        <div className=" md:block hidden" >
          
           <img src={logo} className="md:w-44 md:h-10 h-8 w-32 object-cover "  />
         </div>
         <div className="lg:block hidden">
 
-        
-        <div className="flex gap-3 text-white justify-end  ">
-            
-            <a className=" rounded-full cursor-pointer border border-white p-2 bg-white text-sky-700 hover:bg-[#448c7400] hover:text-sky-200">
-              <FaFacebookF className="w-5 h-5" />
-            </a>
-
-            <a className=" rounded-full cursor-pointer border border-white p-2 bg-white text-sky-700 hover:bg-[#448c7400] hover:text-sky-200">
-              <FaTwitter className="w-5 h-5" />
-            </a>
-
-            <a className=" rounded-full cursor-pointer border border-white p-2 bg-white text-sky-700 hover:bg-[#448c7400] hover:text-sky-200">
-              <FaLinkedinIn className="w-5 h-5" />
-            </a>
-
-            
-          </div>
+    
           </div>
 
-        <div className={menu ? "lg:flex-1 ease-in  duration-300 subheading lg:relative lg:top-0 w-60 absolute top-0 left-0 bg-[#05111D] text-center  text-sky-200 lg:bg-[#0000] lg:text-white z-30 rounded-br-md" : "lg:flex-1 lg:relative lg:top-0 absolute -top-[550px] ease-in duration-300 left-0 z-30 primary-bg text-center w-60 lg:bg-[#0000] rounded-br-md"}>
+          <div className={menu ? "lg:flex-1 ease-in  duration-300 subheading lg:relative lg:top-0 w-60 absolute top-0 left-0 bg-[#05111D] text-center  text-sky-200 lg:bg-[#0000] lg:text-white z-30 rounded-br-md" : "lg:flex-1 lg:relative lg:top-0 absolute -top-[550px] ease-in duration-300 left-0 z-30 primary-bg text-center w-60 lg:bg-[#0000] rounded-br-md"}>
           
           <ul className="lg:flex justify-center subheading gap-1 text-lg menu-item font-medium flex-wrap relative space-y-3 pb-4">
             {/* all nav items here */}
@@ -108,10 +93,7 @@ const Navbar = () => {
             <li>
               <NavLink className="subheading" to="/events">Events</NavLink>
             </li>
-            <div  className="" >
-          {/* <h1 className="text-3xl subheading font-bold">Revive</h1> */}
-          <img src={logo} className="w-44 h-8 object-cover hidden md:block "  />
-        </div>
+          
             <li>
               <NavLink className="subheading" to="/trainers">Trainers</NavLink>
             </li>
@@ -122,7 +104,7 @@ const Navbar = () => {
               <NavLink className="subheading" to="/contact">Contact</NavLink>
             </li>
             <li>
-             <LogOut/>
+             {/* <LogOut/> */}
             </li>
              {/* {
               (user && isAdmin) &&  (<li>

@@ -8,6 +8,8 @@ import Packages from "../../Components/HomeComponents/Packages/Packages";
 
 import Trainers from "../../Components/HomeComponents/Trainers/Trainers";
 import { Helmet } from "react-helmet-async";
+import MessengerCustomerChat from 'react-messenger-customer-chat';
+
 // import { Helmet } from "react-helmet";
 
 
@@ -27,6 +29,12 @@ const Home = () => {
           <Paralax/>
           <Trainers></Trainers>
           <Clients></Clients>
+          
+          <MessengerCustomerChat
+          pageId="192045557334552"
+          appId="766194558744896"
+          
+        />
         </div>
     );
 };

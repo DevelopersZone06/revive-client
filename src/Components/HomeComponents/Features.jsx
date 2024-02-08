@@ -6,6 +6,7 @@ import { BsEmojiSmile } from "react-icons/bs";
 import { MdDirectionsBike } from "react-icons/md";
 import FeatureCard from "./Card/FeatureCard";
 import Title from "../../Shared/Title";
+
 const Features = () => {
     return (
         <div className="py-28 px-[2%] sm:px-[5%] lg:px-[8%]">
@@ -29,6 +30,9 @@ const Features = () => {
                 {/* Cycling Card */}
                 <FeatureCard title="Cycling" icon={MdDirectionsBike} description='Cycling is a low-impact exercise that improves cardiovascular health and leg strength. Get on your bike and enjoy the ride!' />
 
+            </div>
+            <div className="w-10 h-10 bg-sky-200">
+           
             </div>
         </div>
     );
