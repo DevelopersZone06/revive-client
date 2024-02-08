@@ -5,8 +5,8 @@ import ServiceCard from "../../ServicesComponents/Cards/ServiceCard";
 
 import Loading from "../../../Shared/Loading/Loading";
 import { Link } from "react-router-dom";
-import img from '../../../assets/images/img.jpg'
-import img2 from '../../../assets/banner/bg.jpg'
+// import img from '../../../assets/images/img.jpg'
+// import img2 from '../../../assets/banner/bg.jpg'
 
 const Services = () => {
   const axiosPublic = useAxiosPublic();
