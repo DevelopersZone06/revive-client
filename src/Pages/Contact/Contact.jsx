@@ -9,7 +9,7 @@ import { Helmet } from "react-helmet-async";
 
 const Contact = () => {
   return (
-    <>
+ 
       <div>
 
 <Helmet>
@@ -62,7 +62,7 @@ const Contact = () => {
                     </div>
                     {/* google map */}
                     <div>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14604.462637538703!2d90.39441833345147!3d23.778895394663838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c77094eace8b%3A0x1cd8c2d9239b6cb7!2sMohakhali%2C%20Dhaka%201212!5e0!3m2!1sen!2sbd!4v1707363299554!5m2!1sen!2sbd" height="450"  allowFullScreen loading="lazy" className="w-full md:w-[600px]" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14604.462637538703!2d90.39441833345147!3d23.778895394663838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c77094eace8b%3A0x1cd8c2d9239b6cb7!2sMohakhali%2C%20Dhaka%201212!5e0!3m2!1sen!2sbd!4v1707363299554!5m2!1sen!2sbd" height="450"  allowFullScreen loading="lazy" className="w-full md:w-[600px]" referrerPolicy="no-referrer-when-downgrade"/>
                
                 
                 </div>
@@ -71,11 +71,51 @@ const Contact = () => {
                 </div>
                
 
-            </div>
-        </div>
+  <div className="px-[2%] sm:px-[5%] lg:px-[8%]">
+    <h2 className="text-2xl md:text-4xl font-bold text-sky-800 mt-12">
+      Get in touch with us
+    </h2>
+    {/* from and lottie */}
+    <div className="flex justify-between items-center flex-col sm:flex-col md:flex-col lg:flex-row mb-14">
+      <div className=" flex-1 my-3">
+        <form className={`w-full duration-500 space-y-3`}>
+          <div className="flex flex-col sm:flex-col md:flex-row gap-2 w-full">
+            <input
+              id="name"
+              type="text"
+              placeholder="Your Name"
+              className="p-3 block w-full outline-none border rounded-md invalid:border-red-700 valid:border-black"
+            />
 
-  <div className="px-[2%] sm:px-[5%] lg:px-[8%] mt-16">
-    
+            <input
+              id="_email"
+              type="email"
+              placeholder="example@gmail.com"
+              min={5}
+              className="p-3 block w-full outline-none border rounded-md invalid:border-red-700 valid:border-black"
+            />
+          </div>
+          <input
+            id="subject"
+            type="text"
+            placeholder="Your Subject"
+            className="p-3 block w-full outline-none border rounded-md invalid:border-red-700 valid:border-black"
+          />
+          <textarea
+            id="_email"
+            type="email"
+            placeholder="Your Massage"
+            rows={8}
+            className="p-3 block w-full outline-none border rounded-md invalid:border-red-700 valid:border-black"
+          />
+          {/* button type will be submit for handling form submission*/}
+          <button className="border-secondary px-10 py-2 rounded-md uppercase text-xl font-semibold text-sky-800 hover:bg-sky-800 hover:text-sky-100">
+            Submit
+          </button>
+        </form>
+      </div>
+      
+    </div>
     <div className="shadow-md border-b-4 border-sky-800 mb-12">
       <div className="grid grid-cols-1 md:grid-cols-3 py-10 gap-5">
         <div className="text-center">
@@ -104,8 +144,9 @@ const Contact = () => {
     </div>
   </div>
 </div>
-
-    </>
+</div>
+</div>
+    
   );
 };
 
