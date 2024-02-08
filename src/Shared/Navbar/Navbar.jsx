@@ -8,6 +8,7 @@ import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import moment from "moment";
 import useAdmin from "../../Hooks/useAdmin";
 import logo from '../../assets/images/logo2.png';
+import LogOut from "../../Components/LogOut/LogOut";
 
 
 
@@ -104,7 +105,7 @@ const Navbar = () => {
               <NavLink className="subheading" to="/contact">Contact</NavLink>
             </li>
             <li>
-             {/* <LogOut/> */}
+             <LogOut/>
             </li>
              {/* {
               (user && isAdmin) &&  (<li>
