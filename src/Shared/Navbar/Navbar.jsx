@@ -7,7 +7,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import moment from "moment";
 import useAdmin from "../../Hooks/useAdmin";
-import logo from '../../assets/images/Logo2.png';
+import logo from '../../assets/images/logo2.png';
 
 
 
