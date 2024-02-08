@@ -28,26 +28,6 @@ const Blogs = () => {
 
  
 
-    const testPut = () => {
-        console.log('1')
-
-
-
-        const notificationIs = {
-            title: 'registration complete check',
-            redirect: '/profile/:userEmail',
-            isRead: false
-        }
-
-        const obj = {
-            notificationIs
-        }
-
-        axios.patch('http://localhost:5000/notification/nipupteryagfdu@gmail.com', obj)
-        .then(res => {
-            console.log(res.data)
-        })
-    }
 
 
 
@@ -89,10 +69,6 @@ const Blogs = () => {
                             </select>
                         </div>
 
-                        {/* testing put operation */}
-                        <div>
-                            <button onClick={testPut} type="button" className="btn btn-outline-primary">click</button>
-                        </div>
                     </div>
                 </div>
 
