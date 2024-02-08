@@ -32,7 +32,7 @@ const Dashboard = () => {
   
                 <li>
                   <NavLink
-                    to={"/"}
+                    to={"/dashboard/allUsers"}
                     className={({ isActive, isPending }) =>
                       isPending ? "pending" : isActive ? "text-yellow-300" : ""
                     }
