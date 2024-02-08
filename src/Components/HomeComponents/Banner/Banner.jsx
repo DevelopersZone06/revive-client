@@ -3,6 +3,7 @@ import img3 from "../../../assets/banner/woman-lotus-pose-park.jpg";
 import '../../../Styles/banner.css'
 import bannerImg from '../../../assets/banner/bg2.jpg'
 
+
 const Banner = () => {
   return (
     <div>
@@ -69,7 +70,9 @@ const Banner = () => {
                   Contact
                 </span>
               </a>
+
             </div>
+            
           </div>
           <div className="image-container md:h-[450px] h-[300px] lg:w-5/12 text-right">
             <img
@@ -78,6 +81,7 @@ const Banner = () => {
               className="image rounded-4xl bannerImage object-cover"
             />
           </div>
+         
         </div>
       </div>
     </div>
