@@ -27,6 +27,8 @@ const Navbar = () => {
   const handleMenu = () => {
     setMenu(!menu)
   }
+
+
   
   const handleNotification = () => {
     setNotification(!notification)
@@ -44,7 +46,7 @@ const Navbar = () => {
     .then(res => {
       setNotifications(res.data)
     })
-  }, [user, location.pathname])
+  }, [user, location.pathname, axiosPublic])
 
 
 
