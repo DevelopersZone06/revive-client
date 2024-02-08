@@ -96,11 +96,8 @@ const router = createBrowserRouter([
       {
         path: "/BMIServices",
         element: <BMIServices></BMIServices>,
-      },
-      {
-        path:'/toBeTrainers',
-        element:<ToBeTrainers/>
       }
+      
     ],
   },{
     path:'dashboard',
@@ -109,6 +106,10 @@ const router = createBrowserRouter([
       {
          path:'adminHome',
          element:<AdminHome></AdminHome>
+    },
+    {
+      path:'toBeTrainers',
+      element:<ToBeTrainers/>
     }
   ]
   }
