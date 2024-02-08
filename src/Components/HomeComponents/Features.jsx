@@ -10,7 +10,7 @@ import Title from "../../Shared/Title";
 const Features = () => {
     return (
         <div className="py-28 px-[2%] sm:px-[5%] lg:px-[8%]">
-            <Title heading={'Let`s Explore Our Features'} subHeading={'Our Features'} />
+            <Title heading={'Let`s Explore Our Features'} subHeading={'Our Features'} fontColor={'sky-800'}/>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3'>
                 {/* card-1 */}
                 <FeatureCard title="Yoga" icon={GrYoga} description="Yoga is a holistic discipline that originated in ancient India, encompassing physical, mental, and spiritual practices." />

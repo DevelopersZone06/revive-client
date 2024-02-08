@@ -25,6 +25,8 @@ const Clients = () => {
             </div>
             </Marquee>
 
+
+
         </div>
     );
 };

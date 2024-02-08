@@ -19,7 +19,7 @@ const Trainers = () => {
     return (
         <div className='primary-white py-28 px-[10%]'>
             <div>
-                <Title heading={'Our Some Trainers'} subHeading={'Trainers'}></Title>
+                <Title heading={'Our Some Trainers'} subHeading={'Trainers'}fontColor={'sky-800'}></Title>
             </div>
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-20 text-center'>
                 {

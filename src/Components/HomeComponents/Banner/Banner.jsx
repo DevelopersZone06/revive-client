@@ -10,7 +10,7 @@ const Banner = () => {
       <div style={{ backgroundImage: `url(${bannerImg})`,backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', }} className="  py-28 w-full px-[2%] sm:px-[5%] lg:px-[8%] box">
         <div className="flex justify-between flex-col lg:flex-row">
           <div className="lg:w-1/2 w-full text-white">
-            <span className="border-2 border-white rounded-full subheading font-semibold p-2 lg:ml-28 md:ml-40 ml-16 text-md md:text-xl  ">
+            <span className="border-2 border-white rounded-full subheading  px-5 py-3 lg:ml-28 md:ml-40 ml-16 text-md md:text-xl  ">
               Inspiration for Healthy Living
             </span>
             <div className="lg:text-6xl md:text-6xl md:ml-20 lg:ml-0 ml-14 text-3xl subheading ">
