@@ -7,11 +7,13 @@ import { GrGallery } from "react-icons/gr";
 import { TbPackages } from "react-icons/tb";
 import { RiServiceFill } from "react-icons/ri";
 import logo from '../../assets/images/Logo2.png'
+import { IoLogOut } from "react-icons/io5";
+import LogOut from "../../Components/LogOut/LogOut";
 
 const Dashboard = () => {
     const {isAdmin}=useAdmin();
     return (
-        <div className="flex flex-col md:flex-row  " style={{ background: 'radial-gradient(circle, rgba(0,51,111,1) 0%, rgba(0,0,0,1) 100%)' }}>
+        <div className="flex flex-col md:flex-row py-28 px-[2%] sm:px-[5%] lg:px-[5%] " style={{ background: 'radial-gradient(circle, rgba(0,51,111,1) 0%, rgba(0,0,0,1) 100%)' }}>
         <div className="md:w-64  md:min-h-screen ">
           <ul className="menu flex flex-row md:flex-col text-white space-y-4">
             <li>
@@ -92,9 +94,24 @@ const Dashboard = () => {
                   </NavLink>
                 </li>
               </>
+              
             ) }
-            
-  
+            <div className="divider border-b w-3/4 ml-2  border-sky-100"> </div>
+  <>
+  <li>
+  <NavLink
+    to={"/dashboard/servicesApproval"}
+    className={({ isActive, isPending }) =>
+      isPending ? "pending" : isActive ? "text-sky-200 flex items-center" : "flex items-center"
+    } 
+  >
+<div className="flex items-center text-sm ">
+<IoLogOut className="w-5 -mr-4 "/>
+<LogOut />
+</div>
+  </NavLink>
+</li>
+  </>
            
           </ul>
         </div>
