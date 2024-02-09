@@ -73,7 +73,7 @@ const Dashboard = () => {
                 </li>
                 <li>
                   <NavLink
-                    to={"/"}
+                    to={"/dashboard/postPackages"}
                     className={({ isActive, isPending }) =>
                       isPending ? "pending" : isActive ? "text-sky-200  " : ""
                     }
