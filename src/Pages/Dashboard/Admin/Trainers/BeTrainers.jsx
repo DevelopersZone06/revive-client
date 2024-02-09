@@ -1,30 +1,32 @@
 import { IoMdArrowDropdown } from "react-icons/io";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
-import Title from "../../../../Shared/Title";
+
 import { Link } from "react-router-dom";
+import Title from "../../../../Shared/Title";
 const ToBeTrainers = () => {
     return (
        <>
-       <Title subHeading={"Applied for trainers"} fontColor={'sky-800'}></Title>
+        <Title subHeading={"Applied for Trainers"} fontColor={'sky-50'}></Title>
+       
         <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
-          <thead className="text-lg font-semibold">
-            <tr className="text-sky-700">
+          <thead className="text-lg font-semibold text-center">
+            <tr className="text-white text-center">
               <th>Trainer Image</th>
               <th>Name</th>
               <th>Category</th>
               <th>Details</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="text-sky-100">
             {/* row 1 */}
-            <tr>
+            <tr className="text-center">
               
-              <td>
+              <td className="flex justify-center items-center">
               
-                <img className="w-[80px] h-[80px] bg-slate-500 object-cover rounded-lg duration-500" src="https://source.unsplash.com/300x300/?profile" alt="" />
+                <img className="w-[80px] h-[80px] bg-slate-500 object-cover rounded-lg duration-500" src="https://i.ibb.co/1sZ16Lj/gym39.webp" alt="" />
                  
                   
                 
@@ -36,78 +38,85 @@ const ToBeTrainers = () => {
               <td>Yoga</td>
               <th>
               
-             <div>
+             
              <Link to={"/dashboard/toBeTrainers/trainerDetail"}>
              <button
                  
-                 className="rounded-full px-4 py-2 hover:bg-[#144479] border border-sky-700 hover:text-sky-100 text-sky-700 font-bold capitalize md:text-sm text-sm transition-all duration-150 ease-in-out "
-               >
-                 Details
-               </button>
-             </Link>
-             </div>
-              
+                    className="rounded-full px-4 py-2 hover:bg-sky-100 border bg-sky-50 hover:text-sky-700 text-sky-700 font-bold capitalize md:text-sm text-sm  transition-all duration-150 ease-in-out "
+                  >
+                    Details
+                  </button>
+                  </Link>
               </th>
             </tr>
             {/* row 2 */}
-            <tr>
+            <tr className="text-center">
               
-              <td>
+              <td className="flex justify-center items-center">
               
-                <img className="w-[80px] h-[80px] bg-slate-500 object-cover rounded-lg duration-500" src="https://source.unsplash.com/300x300/?profile" alt="" />
+                <img className="w-[80px] h-[80px] bg-slate-500 object-cover rounded-lg duration-500" src="https://i.ibb.co/1sZ16Lj/gym39.webp" alt="" />
                  
                   
                 
               </td>
               <td>
-                Zemlak
+              Emily Clark
                 
               </td>
-              <td>Gym</td>
+              <td>Nutrition</td>
               <th>
-              <button
+              
+             
+             <Link to={"/dashboard/toBeTrainers/trainerDetail"}>
+             <button
                  
-                 className="rounded-full px-4 py-2 hover:bg-[#144479] border border-sky-700 hover:text-sky-100 text-sky-700 font-bold capitalize md:text-sm text-sm  transition-all duration-150 ease-in-out "
-               >
-                 Details
-               </button>
+                    className="rounded-full px-4 py-2 hover:bg-sky-100 border bg-sky-50 hover:text-sky-700 text-sky-700 font-bold capitalize md:text-sm text-sm  transition-all duration-150 ease-in-out"
+                  >
+                    Details
+                  </button>
+                  </Link>
               </th>
             </tr>
             {/* row 3 */}
-            <tr>
+            <tr className="text-center">
               
-              <td>
+              <td className="flex justify-center items-center">
               
-                <img className="w-[80px] h-[80px] bg-slate-500 object-cover rounded-lg duration-500" src="https://source.unsplash.com/300x300/?profile" alt="" />
+                <img className="w-[80px] h-[80px] bg-slate-500 object-cover rounded-lg duration-500" src="https://i.ibb.co/1sZ16Lj/gym39.webp" alt="" />
                  
                   
                 
               </td>
               <td>
-                Leannon
+              David Smith
                 
               </td>
-              <td>Yoga</td>
+              <td>Weight Loss</td>
               <th>
-              <button
+              
+             
+             <Link to={"/dashboard/toBeTrainers/trainerDetail"}>
+             <button
                  
-                 className="rounded-full px-4 py-2 hover:bg-[#144479] border border-sky-700 hover:text-sky-100 text-sky-700 font-bold capitalize md:text-sm text-sm  transition-all duration-150 ease-in-out "
-               >
-                 Details
-               </button>
+                    className="rounded-full px-4 py-2 hover:bg-sky-100 border bg-sky-50 hover:text-sky-700 text-sky-700 font-bold capitalize md:text-sm text-sm  transition-all duration-150 ease-in-out "
+                  >
+                    Details
+                  </button>
+                  </Link>
               </th>
             </tr>
+            
             <hr />
           </tbody>
           {/* foot */}
           
           
         </table>
-        <div className="flex justify-around">
+        <div className="flex justify-around mt-4">
           <div>
             
           </div>
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-2 items-center text-sky-100">
                   <h2>Rows Per Page</h2>
                   <p className="flex items-center">5 <IoMdArrowDropdown className="w-[22px]"/></p>
                   <h1 className="text-lg">1-3 of 9</h1>

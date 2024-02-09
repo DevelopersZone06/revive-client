@@ -4,7 +4,7 @@ import EventCard from "./EventCard";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Title from "../../Shared/Title";
-import eventBg from '../../assets/images/bg4.jpg'
+
 const Events = () => {
   // const eventData = [
   //   {
