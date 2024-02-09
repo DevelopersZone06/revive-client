@@ -88,10 +88,94 @@ const ToBeTrainers = () => {
                 
               </td>
               <td>
+             Brand Taylor
+                
+              </td>
+              <td>WorkOut</td>
+              <th>
+              
+             
+             <Link to={"/dashboard/toBeTrainers/trainerDetail"}>
+             <button
+                 
+                    className="rounded-full px-4 py-2 hover:bg-sky-100 border bg-sky-50 hover:text-sky-700 text-sky-700 font-bold capitalize md:text-sm text-sm  transition-all duration-150 ease-in-out "
+                  >
+                    Details
+                  </button>
+                  </Link>
+              </th>
+            </tr>
+            {/* row 3 */}
+            <tr className="text-center">
+              
+              <td className="flex justify-center items-center">
+              
+                <img className="w-[80px] h-[80px] bg-slate-500 object-cover rounded-lg duration-500" src="https://i.ibb.co/yg10Mg5/portrait-smiling-young-male-athlete-standing-race-track.jpg" alt="" />
+                 
+                  
+                
+              </td>
+              <td>
               David Smith
                 
               </td>
               <td>Weight Loss</td>
+              <th>
+              
+             
+             <Link to={"/dashboard/toBeTrainers/trainerDetail"}>
+             <button
+                 
+                    className="rounded-full px-4 py-2 hover:bg-sky-100 border bg-sky-50 hover:text-sky-700 text-sky-700 font-bold capitalize md:text-sm text-sm  transition-all duration-150 ease-in-out "
+                  >
+                    Details
+                  </button>
+                  </Link>
+              </th>
+            </tr>
+            {/* row 4 */}
+            <tr className="text-center">
+              
+              <td className="flex justify-center items-center">
+              
+                <img className="w-[80px] h-[80px] bg-slate-500 object-cover rounded-lg duration-500" src="https://i.ibb.co/9VK5fFx/download.jpg" alt="" />
+                 
+                  
+                
+              </td>
+              <td>
+              Khatun Hasan
+                
+              </td>
+              <td>Nutrition</td>
+              <th>
+              
+             
+             <Link to={"/dashboard/toBeTrainers/trainerDetail"}>
+             <button
+                 
+                    className="rounded-full px-4 py-2 hover:bg-sky-100 border bg-sky-50 hover:text-sky-700 text-sky-700 font-bold capitalize md:text-sm text-sm  transition-all duration-150 ease-in-out "
+                  >
+                    Details
+                  </button>
+                  </Link>
+              </th>
+            </tr>
+            {/* row 3 */}
+            <tr className="text-center">
+              
+              <td className="flex justify-center items-center">
+              
+                <img className="w-[80px] h-[80px] bg-slate-500 object-cover rounded-lg duration-500" src="https://i.ibb.co/yyqYXZK/download-2.jpg" alt="" />
+                 
+                  
+                
+              </td>
+              <td>
+              Rose Mith
+                
+              </td>
+              <td>Cardio</td>
               <th>
               
              

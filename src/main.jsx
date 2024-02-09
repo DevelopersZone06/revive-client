@@ -33,6 +33,7 @@ import ServiceDetail from "./Pages/Dashboard/Admin/Services/ServiceDetail";
 import PostedPackages from "./Pages/Dashboard/Admin/Packages/PostedPackages";
 
 
+
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
@@ -122,6 +123,7 @@ const router = createBrowserRouter([
       {
         path: 'postGallery',
         element: <PostGallery></PostGallery>
+     
       },
     
     
