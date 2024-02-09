@@ -24,7 +24,7 @@ const ServicesApproval = () => {
         {/* row 1 */}
             <tr className="text-sky-100 text-center">
         <td className="flex justify-center items-center">
-              <img className="w-[80px] h-[80px] bg-slate-500 object-cover rounded-full hover:blur-[2px] duration-500" src="https://source.unsplash.com/300x300/?profile" alt="" />
+              <img className="w-[80px] h-[80px] bg-slate-500 object-cover rounded-full hover:blur-[2px] duration-500" src="https://i.ibb.co/W34N2YD/tainer4.jpg" alt="" />
               </td>
               <td> Olivia White</td>
               <td>Healthy Habits Workshop</td>
@@ -39,7 +39,7 @@ const ServicesApproval = () => {
         {/* row 1 */}
             <tr className="text-sky-100 text-center">
         <td className="flex justify-center items-center">
-              <img className="w-[80px] h-[80px] bg-slate-500 object-cover rounded-full hover:blur-[2px] duration-500" src="https://source.unsplash.com/300x300/?profile" alt="" />
+              <img className="w-[80px] h-[80px] bg-slate-500 object-cover rounded-full hover:blur-[2px] duration-500" src="https://i.ibb.co/GRsmKyJ/portrait-beautiful-young-adult-white-happy-woman-white-wall.jpg" alt="" />
               </td>
               <td> Olivia White</td>
               <td>Healthy Habits Workshop</td>
@@ -54,7 +54,7 @@ const ServicesApproval = () => {
         {/* row 1 */}
             <tr className="text-sky-100 text-center">
         <td className="flex justify-center items-center">
-              <img className="w-[80px] h-[80px] bg-slate-500 object-cover rounded-full hover:blur-[2px] duration-500" src="https://source.unsplash.com/300x300/?profile" alt="" />
+              <img className="w-[80px] h-[80px] bg-slate-500 object-cover rounded-full hover:blur-[2px] duration-500" src="https://i.ibb.co/BVTvjn6/fashion-portrait-attractive-smiling-man-white-shirt-poses-wall-with-contrast-shadows.jpg" alt="" />
               </td>
               <td> Olivia White</td>
               <td>Healthy Habits Workshop</td>
