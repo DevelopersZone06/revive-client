@@ -54,7 +54,7 @@ const ToBeTrainers = () => {
               
               <td className="flex justify-center items-center">
               
-                <img className="w-[80px] h-[80px] bg-slate-500 object-cover rounded-lg duration-500" src="https://i.ibb.co/1sZ16Lj/gym39.webp" alt="" />
+                <img className="w-[80px] h-[80px] bg-slate-500 object-cover rounded-lg duration-500" src="https://i.ibb.co/BVTvjn6/fashion-portrait-attractive-smiling-man-white-shirt-poses-wall-with-contrast-shadows.jpg" alt="" />
                  
                   
                 
@@ -82,7 +82,7 @@ const ToBeTrainers = () => {
               
               <td className="flex justify-center items-center">
               
-                <img className="w-[80px] h-[80px] bg-slate-500 object-cover rounded-lg duration-500" src="https://i.ibb.co/1sZ16Lj/gym39.webp" alt="" />
+                <img className="w-[80px] h-[80px] bg-slate-500 object-cover rounded-lg duration-500" src="https://i.ibb.co/GRsmKyJ/portrait-beautiful-young-adult-white-happy-woman-white-wall.jpg" alt="" />
                  
                   
                 

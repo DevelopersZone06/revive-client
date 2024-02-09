@@ -39,7 +39,7 @@ const Frequently = () => {
                     <div>
                         <div className="w-full md:max-w-[450px] bg-sky-50 shadow-md border-t-[12px] p-3 border-sky-800 relative">
                             <span className="h-0 w-0 border-b-[40px] border-b-transparent border-r-[40px] border-r-sky-800 absolute top-0 right-0"></span>
-                            <h1 className="text-[#448c74] text-xl text-center">{arr.title}</h1>
+                            <h1 className="text-sky-800 text-xl text-center">{arr.title}</h1>
                         </div>
                         <div
                             className={`grid overflow-hidden transition-all duration-300 ease-in-out text-sky-600  ${
