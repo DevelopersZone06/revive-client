@@ -80,7 +80,7 @@ const Login = () => {
               <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-element">
                   <label className="space-y-2 w-full lg:w-4/5 block mx-auto">
-                    <span className="block text-md secondary-color normal font-semibold tracking-wide ">
+                    <span className="block text-md text-sky-800 normal font-semibold tracking-wide ">
                       Email
                     </span>
                     <span className="block">
@@ -97,7 +97,7 @@ const Login = () => {
 
                 <div className="form-element">
                   <label className="space-y-2 w-full lg:w-4/5 block mx-auto">
-                    <span className="block text-md text-md normal secondary-color font-semibold  tracking-wide">
+                    <span className="block text-md pt-5 text-md normal text-sky-800 font-semibold  tracking-wide">
                       Password
                     </span>
                     <span className="block">
@@ -116,13 +116,13 @@ const Login = () => {
                   <div className="w-full lg:w-4/5  mx-auto flex items-center justify-between">
                     <label className=" text-gray-800 tracking-wide flex items-center space-x-2 select-none">
                       <input type="checkbox" name="" id="" />
-                      <span className="block text-md secondary-color font-semibold tracking-wide">
+                      <span className="block text-md text-sky-800 font-semibold tracking-wide">
                         Remember me
                       </span>
                     </label>
                     <a
                       href="#"
-                      className=" text-md secondary-color font-semibold tracking-wide inline-block border-b border-gray-300"
+                      className=" text-md text-sky-800 font-semibold tracking-wide inline-block border-b border-gray-300"
                     >
                       Forgot Password?
                     </a>
@@ -135,7 +135,7 @@ const Login = () => {
                     <input
                       type="submit"
                       value="Login"
-                      className="cursor-pointer border-2 font-bold text-teal-50 border-[#448c74] w-full p-1 normal rounded-xl hover:secondary-bg bg-[#448c74]    transition-all"
+                      className="cursor-pointer border-2 font-bold text-sky-50 border-sky-900 bg-sky-800 w-full p-1 normal rounded-xl hover:secondary-bg     transition-all"
                     />
                   </span>
                 </div>
@@ -146,9 +146,9 @@ const Login = () => {
             <div className='px-12'>
             <SocialLogin/>
             </div>
-              <p className='pl-9 text-md secondary-color  pb-10  '>Don't have an account? <Link to='/signUp' className='underline'>Sign Up </Link> </p>
+            
               {/* form element*/}
-              <p className="pl-9 text-md secondary-color  pb-10  ">
+              <p className="pl-12 text-md text-sky-800 font-semibold  pb-10  ">
                 Don't have an account?{" "}
                 <Link to="/signUp" className="underline">
                   Sign Up{" "}

@@ -9,7 +9,7 @@ import { Helmet } from "react-helmet-async";
 
 const Contact = () => {
   return (
-    <>
+ 
       <div>
 
 <Helmet>
@@ -62,7 +62,7 @@ const Contact = () => {
                     </div>
                     {/* google map */}
                     <div>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14604.462637538703!2d90.39441833345147!3d23.778895394663838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c77094eace8b%3A0x1cd8c2d9239b6cb7!2sMohakhali%2C%20Dhaka%201212!5e0!3m2!1sen!2sbd!4v1707363299554!5m2!1sen!2sbd" height="450"  allowFullScreen loading="lazy" className="w-full md:w-[600px]" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14604.462637538703!2d90.39441833345147!3d23.778895394663838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c77094eace8b%3A0x1cd8c2d9239b6cb7!2sMohakhali%2C%20Dhaka%201212!5e0!3m2!1sen!2sbd!4v1707363299554!5m2!1sen!2sbd" height="450"  allowFullScreen loading="lazy" className="w-full md:w-[600px]" referrerPolicy="no-referrer-when-downgrade"/>
                
                 
                 </div>
@@ -71,11 +71,12 @@ const Contact = () => {
                 </div>
                
 
-            </div>
-        </div>
-
-  <div className="px-[2%] sm:px-[5%] lg:px-[8%] mt-16">
+  <div className="px-[2%] sm:px-[5%] lg:px-[8%]">
     
+    {/* from and lottie */}
+    <div className="flex justify-between items-center flex-col sm:flex-col md:flex-col lg:flex-row mb-14">
+     
+    </div>
     <div className="shadow-md border-b-4 border-sky-800 mb-12">
       <div className="grid grid-cols-1 md:grid-cols-3 py-10 gap-5">
         <div className="text-center">
@@ -104,8 +105,9 @@ const Contact = () => {
     </div>
   </div>
 </div>
-
-    </>
+</div>
+</div>
+    
   );
 };
 
