@@ -1,10 +1,14 @@
 import { IoMdArrowDropdown } from "react-icons/io";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
+import Title from "../../../../Shared/Title";
+import { Link } from "react-router-dom";
 
 const ServicesApproval = () => {
     return (
-        <div className="overflow-x-auto">
+      <>
+       <Title subHeading={"Applied for services"} fontColor={'sky-800'}></Title>
+      <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
           <thead className="text-lg font-semibold">
@@ -49,12 +53,16 @@ const ServicesApproval = () => {
               </td>
               <td>Yoga</td>
               <td>
-              <button
+             <div>
+             <Link to={'/dashboard/servicesApproval/serviceDetail'}>
+             <button
                  
-                    className="rounded-full px-4 py-2 hover:bg-[#144479] border border-sky-700 hover:text-sky-100 text-sky-700 font-bold capitalize md:text-sm text-sm transition-all duration-150 ease-in-out "
-                  >
-                   View  Details
-                  </button>
+                 className="rounded-full px-4 py-2 hover:bg-[#144479] border border-sky-700 hover:text-sky-100 text-sky-700 font-bold capitalize md:text-sm text-sm transition-all duration-150 ease-in-out "
+               >
+                View  Details
+               </button>
+             </Link>
+             </div>
               </td>
              
             </tr>
@@ -146,7 +154,8 @@ const ServicesApproval = () => {
                   <IoIosArrowForward className="w-[25px]"/>
                 </div>
         </div>
-      </div>
+      </div></>
+        
     );
 };
 

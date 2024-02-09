@@ -1,15 +1,18 @@
 import { IoMdArrowDropdown } from "react-icons/io";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
+import Title from "../../../../Shared/Title";
+import { Link } from "react-router-dom";
 const ToBeTrainers = () => {
     return (
        <>
+       <Title subHeading={"Applied for trainers"} fontColor={'sky-800'}></Title>
         <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
           <thead className="text-lg font-semibold">
             <tr className="text-sky-700">
-              <th></th>
+              <th>Trainer Image</th>
               <th>Name</th>
               <th>Category</th>
               <th>Details</th>
@@ -27,17 +30,23 @@ const ToBeTrainers = () => {
                 
               </td>
               <td>
-                Zemlak, Daniel and Leannon
+               Daniel
                 
               </td>
               <td>Yoga</td>
               <th>
-              <button
+              
+             <div>
+             <Link to={"/dashboard/toBeTrainers/trainerDetail"}>
+             <button
                  
-                    className="rounded-full px-4 py-2 hover:bg-[#144479] border border-sky-700 hover:text-sky-100 text-sky-700 font-bold capitalize md:text-sm text-sm transition-all duration-150 ease-in-out "
-                  >
-                    Details
-                  </button>
+                 className="rounded-full px-4 py-2 hover:bg-[#144479] border border-sky-700 hover:text-sky-100 text-sky-700 font-bold capitalize md:text-sm text-sm transition-all duration-150 ease-in-out "
+               >
+                 Details
+               </button>
+             </Link>
+             </div>
+              
               </th>
             </tr>
             {/* row 2 */}
@@ -51,7 +60,7 @@ const ToBeTrainers = () => {
                 
               </td>
               <td>
-                Zemlak, Daniel and Leannon
+                Zemlak
                 
               </td>
               <td>Gym</td>
@@ -75,7 +84,7 @@ const ToBeTrainers = () => {
                 
               </td>
               <td>
-                Zemlak, Daniel and Leannon
+                Leannon
                 
               </td>
               <td>Yoga</td>

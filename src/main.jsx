@@ -28,6 +28,8 @@ import AdminHome from "./Pages/Dashboard/Admin/Home/AdminHome";
 import AllUsers from "./Pages/AllUsers/AllUsers";
 import PostGallery from "./Pages/PostGallery/PostGallery";
 import ServicesApproval from "./Pages/Dashboard/Admin/Services/ServicesApproval";
+import TrainerDetail from "./Pages/Dashboard/Admin/Trainers/TrainerDetail";
+import ServiceDetail from "./Pages/Dashboard/Admin/Services/ServiceDetail";
 // import useAxiosPublic from "./Hooks/useAxiosPublic";
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -100,10 +102,7 @@ const router = createBrowserRouter([
         path: "/BMIServices",
         element: <BMIServices></BMIServices>,
       },
-      {
-        path: '/toBeTrainers',
-        element: <ToBeTrainers />
-      }
+      
       
     ],
   }, {
@@ -130,6 +129,14 @@ const router = createBrowserRouter([
     {
       path:'servicesApproval',
       element:<ServicesApproval/>
+    },
+    {
+      path:'/dashboard/toBeTrainers/trainerDetail',
+      element:<TrainerDetail/>
+    },
+    {
+      path:'/dashboard/servicesApproval/serviceDetail',
+      element:<ServiceDetail/>
     }
   ]
   }
