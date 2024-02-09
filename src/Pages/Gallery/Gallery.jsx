@@ -2,106 +2,18 @@
 import { Helmet } from "react-helmet-async";
 import ButtonGallery from "./ButtonGallery";
 import GalleryCard from "./GalleryCard";
+import { useEffect, useState } from "react";
 
 const Gallery = () => {
-  const galleryData = [
-    {
-      id: 1,
-      image:
-        "https://designarc.biz/demos/fitzeous/theme/images/gallery/gallery-col-three-1.jpg",
-      title: "Workouts for fitness",
-    },
-    {
-      id: 2,
-      image:
-        "https://designarc.biz/demos/fitzeous/theme/images/gallery/gallery-col-three-2.jpg",
-      title: "Weight Loss",
-    },
-    {
-      id: 3,
-      image:
-        "https://designarc.biz/demos/fitzeous/theme/images/gallery/gallery-col-three-6.jpg",
-      title: "Balance Diet",
-    },
-    {
-      id: 4,
-      image:
-        "https://designarc.biz/demos/fitzeous/theme/images/gallery/gallery-col-three-4.jpg",
-      title: "Yoga & meditation",
-    },
-    {
-      id: 5,
-      image:
-        "https://designarc.biz/demos/fitzeous/theme/images/gallery/gallery-col-three-1.jpg",
-      title: "Workouts for fitness",
-    },
-    {
-      id: 6,
-      image:
-        "https://designarc.biz/demos/fitzeous/theme/images/gallery/gallery-col-three-9.jpg",
-      title: "Gym & fitness",
-    },
-    {
-      id: 7,
-      image:
-        "https://designarc.biz/demos/fitzeous/theme/images/gallery/gallery-col-three-5.jpg",
-      title: "Nutrition",
-    },
-    {
-      id: 8,
-      image:
-        "https://designarc.biz/demos/fitzeous/theme/images/gallery/gallery-col-three-4.jpg",
-      title: "Yoga & meditation",
-    },
-    {
-      id: 9,
-      image:
-        "https://designarc.biz/demos/fitzeous/theme/images/gallery/gallery-col-three-2.jpg",
-      title: "Weight Loss",
-    },
-    {
-      id: 10,
-      image:
-        "https://designarc.biz/demos/fitzeous/theme/images/gallery/gallery-col-three-8.jpg",
-      title: "Yoga & meditation",
-    },
-    {
-      id: 11,
-      image:
-        "https://designarc.biz/demos/fitzeous/theme/images/gallery/gallery-col-three-6.jpg",
-      title: "Balance Diet",
-    },
-    {
-      id: 12,
-      image:
-        "https://designarc.biz/demos/fitzeous/theme/images/gallery/gallery-col-three-5.jpg",
-      title: "Nutrition",
-    },
-    {
-      id: 13,
-      image:
-        "https://tk.commonsupport.com/healthcoach/wp-content/uploads/2016/11/15.jpg",
-      title: "Yoga & meditation",
-    },
-    {
-      id: 14,
-      image:
-        "https://tk.commonsupport.com/healthcoach/wp-content/uploads/2016/11/3.jpg",
-      title: "Nutrition",
-    },
-    {
-      id: 15,
-      image:
-        "https://tk.commonsupport.com/healthcoach/wp-content/uploads/2016/11/11.jpg",
-      title: "Workouts for fitness",
-    },
-    {
-      id: 16,
-      image:
-        "https://designarc.biz/demos/fitzeous/theme/images/gallery/gallery-col-three-2.jpg",
-      title: "Weight Loss",
-    },
-  ];
+ 
+  const [galleryData, setGalleryData] = useState([]); 
+
+  useEffect(() => {
+      fetch('http://localhost:5000/gallery')
+      .then(res => res.json())
+      .then(data => setGalleryData(data))
+  }, [])
+
   return (
     <div>
       <Helmet>
