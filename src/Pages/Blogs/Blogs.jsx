@@ -28,26 +28,6 @@ const Blogs = () => {
 
  
 
-    const testPut = () => {
-        console.log('1')
-
-
-
-        const notificationIs = {
-            title: 'registration complete check',
-            redirect: '/profile/:userEmail',
-            isRead: false
-        }
-
-        const obj = {
-            notificationIs
-        }
-
-        axios.patch('http://localhost:5000/notification/nipupteryagfdu@gmail.com', obj)
-        .then(res => {
-            console.log(res.data)
-        })
-    }
 
 
 
@@ -61,16 +41,16 @@ const Blogs = () => {
                     <div className="grid grid-cols-2 gap-5 sm:block">
                         <div className="bg-white text-center mt-8 p-5 space-y-2 rounded-md">
                             <h1 className="font-semibold">Filter By Trainer</h1>
-                            <select onChange={trainer} name="trainer" id="trainer" className="w-full primary-bg text-center py-1 rounded-md outline-0">
-                                <option selected disabled value="disable">Select</option>
+                            <select defaultValue="null" onChange={trainer} name="trainer" id="trainer" className="w-full primary-bg text-center py-1 rounded-md outline-0">
+                                <option value="null">Select</option>
                                 <option value="john doe">Jhon doe</option>
                             </select>
                         </div>
 
                         <div className="bg-white text-center mt-8 p-5 space-y-2 rounded-md">
                             <h1 className="font-semibold">Filter By Category</h1>
-                            <select name="trainer" id="trainer" className="w-full primary-bg text-center py-1 rounded-md outline-0">
-                                <option selected disabled value="">Select</option>
+                            <select defaultValue="null" name="trainer" id="trainer" className="w-full primary-bg text-center py-1 rounded-md outline-0">
+                                <option value="null">Select</option>
                                 <option value="john doe">Jhon doe</option>
                             </select>
                         </div>
@@ -82,17 +62,13 @@ const Blogs = () => {
 
                         <div className="bg-white text-center mt-8 p-5 space-y-2 rounded-md">
                             <h1 className="font-semibold">Sort By</h1>
-                            <select name="trainer" id="trainer" className="w-full primary-bg text-center py-1 rounded-md outline-0">
-                                <option disabled selected value="">Select</option>
+                            <select defaultValue="null" name="trainer" id="trainer" className="w-full primary-bg text-center py-1 rounded-md outline-0">
+                                <option value="null">Select</option>
                                 <option value="most comment">Most Comment</option>
                                 <option value="most like">Most Like</option>
                             </select>
                         </div>
 
-                        {/* testing put operation */}
-                        <div>
-                            <button onClick={testPut} type="button" className="btn btn-outline-primary">click</button>
-                        </div>
                     </div>
                 </div>
 
@@ -101,7 +77,7 @@ const Blogs = () => {
                     <h1 className="text-2xl font-semibold mb-9">All Blogs</h1>
                     <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-8">
                         {
-                            blogs.map(blog => <Blog blog={blog}></Blog>)
+                            blogs.map((blog, i) => <Blog key={i} blog={blog}></Blog>)
                         }
                     </div>
                 </div>
