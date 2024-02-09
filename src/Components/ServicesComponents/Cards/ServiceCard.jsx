@@ -5,7 +5,7 @@ const ServiceCard = ({ service }) => {
   return (
     
     <section className="mx-auto w-full  rounded-md shadow-lg shadow-white bg-white">
-      <div className="h-fit group">
+      <div className="h-fit group" >
         <div className="relative overflow-hidden w-full rounded-md">
           <img className="h-52 w-full object-cover" src={serviceImg} alt="" />
           <div className="absolute h-full w-full bg-black/60 flex flex-col items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300 space-y-1 text-center">
