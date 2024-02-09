@@ -1,15 +1,20 @@
 import { IoMdArrowDropdown } from "react-icons/io";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
+
+import { Link } from "react-router-dom";
+import Title from "../../../../Shared/Title";
 const ToBeTrainers = () => {
     return (
        <>
+        <Title subHeading={"Applied for Trainers"} fontColor={'sky-50'}></Title>
+       
         <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
-          <thead className="text-lg font-semibold">
-            <tr className="text-white">
-              <th></th>
+          <thead className="text-lg font-semibold text-center">
+            <tr className="text-white text-center">
+              <th>Trainer Image</th>
               <th>Name</th>
               <th>Category</th>
               <th>Details</th>
@@ -17,84 +22,181 @@ const ToBeTrainers = () => {
           </thead>
           <tbody className="text-sky-100">
             {/* row 1 */}
-            <tr>
+            <tr className="text-center">
               
-              <td>
+              <td className="flex justify-center items-center">
               
-                <img className="w-[80px] h-[80px] bg-slate-500 object-cover rounded-lg duration-500" src="https://source.unsplash.com/300x300/?profile" alt="" />
+                <img className="w-[80px] h-[80px] bg-slate-500 object-cover rounded-lg duration-500" src="https://i.ibb.co/1sZ16Lj/gym39.webp" alt="" />
                  
                   
                 
               </td>
               <td>
-                Zemlak, Daniel and Leannon
+               Daniel
                 
               </td>
               <td>Yoga</td>
               <th>
-              <button
+              
+             
+             <Link to={"/dashboard/toBeTrainers/trainerDetail"}>
+             <button
                  
                     className="rounded-full px-4 py-2 hover:bg-sky-100 border bg-sky-50 hover:text-sky-700 text-sky-700 font-bold capitalize md:text-sm text-sm  transition-all duration-150 ease-in-out "
                   >
                     Details
                   </button>
+                  </Link>
               </th>
             </tr>
             {/* row 2 */}
-            <tr>
+            <tr className="text-center">
               
-              <td>
+              <td className="flex justify-center items-center">
               
-                <img className="w-[80px] h-[80px] bg-slate-500 object-cover rounded-lg duration-500" src="https://source.unsplash.com/300x300/?profile" alt="" />
+                <img className="w-[80px] h-[80px] bg-slate-500 object-cover rounded-lg duration-500" src="https://i.ibb.co/BVTvjn6/fashion-portrait-attractive-smiling-man-white-shirt-poses-wall-with-contrast-shadows.jpg" alt="" />
                  
                   
                 
               </td>
               <td>
-                Zemlak, Daniel and Leannon
+              Emily Clark
                 
               </td>
-              <td>Gym</td>
+              <td>Nutrition</td>
               <th>
-              <button
+              
+             
+             <Link to={"/dashboard/toBeTrainers/trainerDetail"}>
+             <button
                  
-                 className="rounded-full px-4 py-2 hover:bg-sky-100 border bg-sky-50 hover:text-sky-700 text-sky-700 font-bold capitalize md:text-sm text-sm  transition-all duration-150 ease-in-out "
-               >
-                 Details
-               </button>
+                    className="rounded-full px-4 py-2 hover:bg-sky-100 border bg-sky-50 hover:text-sky-700 text-sky-700 font-bold capitalize md:text-sm text-sm  transition-all duration-150 ease-in-out"
+                  >
+                    Details
+                  </button>
+                  </Link>
               </th>
             </tr>
             {/* row 3 */}
-            <tr>
+            <tr className="text-center">
               
-              <td>
+              <td className="flex justify-center items-center">
               
-                <img className="w-[80px] h-[80px] bg-slate-500 object-cover rounded-lg duration-500" src="https://source.unsplash.com/300x300/?profile" alt="" />
+                <img className="w-[80px] h-[80px] bg-slate-500 object-cover rounded-lg duration-500" src="https://i.ibb.co/GRsmKyJ/portrait-beautiful-young-adult-white-happy-woman-white-wall.jpg" alt="" />
                  
                   
                 
               </td>
               <td>
-                Zemlak, Daniel and Leannon
+             Brand Taylor
                 
               </td>
-              <td>Yoga</td>
+              <td>WorkOut</td>
               <th>
-              <button
+              
+             
+             <Link to={"/dashboard/toBeTrainers/trainerDetail"}>
+             <button
                  
-                 className="rounded-full px-4 py-2 hover:bg-sky-100 border bg-sky-50 hover:text-sky-700 text-sky-700 font-bold capitalize md:text-sm text-sm  transition-all duration-150 ease-in-out"
-               >
-                 Details
-               </button>
+                    className="rounded-full px-4 py-2 hover:bg-sky-100 border bg-sky-50 hover:text-sky-700 text-sky-700 font-bold capitalize md:text-sm text-sm  transition-all duration-150 ease-in-out "
+                  >
+                    Details
+                  </button>
+                  </Link>
               </th>
             </tr>
+            {/* row 3 */}
+            <tr className="text-center">
+              
+              <td className="flex justify-center items-center">
+              
+                <img className="w-[80px] h-[80px] bg-slate-500 object-cover rounded-lg duration-500" src="https://i.ibb.co/yg10Mg5/portrait-smiling-young-male-athlete-standing-race-track.jpg" alt="" />
+                 
+                  
+                
+              </td>
+              <td>
+              David Smith
+                
+              </td>
+              <td>Weight Loss</td>
+              <th>
+              
+             
+             <Link to={"/dashboard/toBeTrainers/trainerDetail"}>
+             <button
+                 
+                    className="rounded-full px-4 py-2 hover:bg-sky-100 border bg-sky-50 hover:text-sky-700 text-sky-700 font-bold capitalize md:text-sm text-sm  transition-all duration-150 ease-in-out "
+                  >
+                    Details
+                  </button>
+                  </Link>
+              </th>
+            </tr>
+            {/* row 4 */}
+            <tr className="text-center">
+              
+              <td className="flex justify-center items-center">
+              
+                <img className="w-[80px] h-[80px] bg-slate-500 object-cover rounded-lg duration-500" src="https://i.ibb.co/9VK5fFx/download.jpg" alt="" />
+                 
+                  
+                
+              </td>
+              <td>
+              Khatun Hasan
+                
+              </td>
+              <td>Nutrition</td>
+              <th>
+              
+             
+             <Link to={"/dashboard/toBeTrainers/trainerDetail"}>
+             <button
+                 
+                    className="rounded-full px-4 py-2 hover:bg-sky-100 border bg-sky-50 hover:text-sky-700 text-sky-700 font-bold capitalize md:text-sm text-sm  transition-all duration-150 ease-in-out "
+                  >
+                    Details
+                  </button>
+                  </Link>
+              </th>
+            </tr>
+            {/* row 3 */}
+            <tr className="text-center">
+              
+              <td className="flex justify-center items-center">
+              
+                <img className="w-[80px] h-[80px] bg-slate-500 object-cover rounded-lg duration-500" src="https://i.ibb.co/yyqYXZK/download-2.jpg" alt="" />
+                 
+                  
+                
+              </td>
+              <td>
+              Rose Mith
+                
+              </td>
+              <td>Cardio</td>
+              <th>
+              
+             
+             <Link to={"/dashboard/toBeTrainers/trainerDetail"}>
+             <button
+                 
+                    className="rounded-full px-4 py-2 hover:bg-sky-100 border bg-sky-50 hover:text-sky-700 text-sky-700 font-bold capitalize md:text-sm text-sm  transition-all duration-150 ease-in-out "
+                  >
+                    Details
+                  </button>
+                  </Link>
+              </th>
+            </tr>
+            
             <hr />
           </tbody>
           {/* foot */}
           
           
         </table>
-        <div className="flex justify-around">
+        <div className="flex justify-around mt-4">
           <div>
             
           </div>

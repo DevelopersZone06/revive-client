@@ -17,7 +17,7 @@ const Gallery = () => {
   }, [page]);
 
   const fetchGalleryData = () => {
-    fetch(`http://localhost:5000/gallery?page=${page}`)
+    fetch(`https://revive-server-dun.vercel.app/gallery?page=${page}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.length === 0) {
