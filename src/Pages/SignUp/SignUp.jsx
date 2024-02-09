@@ -99,9 +99,9 @@ const SignUp = () => {
       </Helmet>
 
       {/*product Side*/}
-      <div className="w-full lg:w-1/2 h-28 lg:h-full mt-32 lg:mt-0 lg:bg-theme-yellow-dark flex relative order-2 lg:order-1">
+      <div className="w-full lg:w-1/2 h-28 lg:h-full mt-32 lg:mt-0 lg:bg-theme-blue-dark flex relative order-2 lg:order-1">
         <div className="text-center hidden lg:flex items-center justify-start h-full w-full select-none">
-          <span className="transform block whitespace-nowrap h-full -rotate-90 text-[55px] 2xl:text-[70px] font-black uppercase secondary-color opacity-0 transition-all group-hover:opacity-100 ml-10 2xl:ml-12 group-hover:-ml-24 2xl:group-hover:ml-32 lg:group-hover:ml-20 duration-1000 lg:duration-700 ease-in-out">
+          <span className="transform block whitespace-nowrap h-full -rotate-90 text-[55px] 2xl:text-[70px] font-black uppercase text-sky-800 opacity-0 transition-all group-hover:opacity-100 ml-10 2xl:ml-12 group-hover:-ml-24 2xl:group-hover:ml-32 lg:group-hover:ml-20 duration-1000 lg:duration-700 ease-in-out">
             Revive{" "}
           </span>
         </div>
@@ -140,7 +140,7 @@ const SignUp = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="form-element">
                 <label className="space-y-2 w-full lg:w-4/5 block mx-auto">
-                  <span className="block text-sm secondary-color normal font-semibold  tracking-wide">
+                  <span className="block text-sm text-sky-800  normal font-semibold  tracking-wide">
                     Name*
                   </span>
                   <span className="block">
@@ -156,7 +156,7 @@ const SignUp = () => {
 
               <div className="form-element">
                 <label className="space-y-2 w-full lg:w-4/5 block mx-auto">
-                  <span className="block text-sm secondary-color normal font-semibold tracking-wide">
+                  <span className="block text-sm text-sky-800  normal font-semibold tracking-wide">
                     Email*
                   </span>
                   <span className="block">
@@ -173,7 +173,7 @@ const SignUp = () => {
 
               <div className="form-element pb-5">
                 <label className="space-y-2 w-full lg:w-4/5 block mx-auto">
-                  <span className="block   secondary-color normal font-semibold text-sm tracking-wide">
+                  <span className="block   text-sky-800 normal font-semibold text-sm tracking-wide">
                     Password*
                   </span>
                   <span className="block">
@@ -189,14 +189,14 @@ const SignUp = () => {
               {/* form element */}
               <div className="form-element">
                 <label className="space-y-2 w-full lg:w-4/5 block mx-auto">
-                  <span className="block text-sm text-md secondary-color normal font-semibold tracking-wide">
+                  <span className="block text-sm text-md text-sky-800 normal font-semibold tracking-wide">
                     Photo
                   </span>
                   <span className="block">
                     <input
                       {...register("photo", { required: true })}
                       type="file"
-                      className="file-input  max-w-xs bg-teal-50 lg:bg-white    rounded file-input-bordered file-input-sm  w-full  "
+                      className="file-input  max-w-xs bg-sky-50 lg:bg-white text-sky-800   rounded file-input-bordered file-input-sm  w-full  "
                       placeholder="Choose photo"
                     />
                   </span>
@@ -210,7 +210,7 @@ const SignUp = () => {
                   <input
                     type="submit"
                     value="SignUp"
-                    className="cursor-pointer border-2 font-bold text-white rounded-lg  mt-3 border-[#448c74] w-full p-1 normal secondary-bg bg-[#448c74]transition-all"
+                    className="cursor-pointer border-2 font-bold  rounded-lg  mt-3  w-full p-1 normal text-sky-50 border-sky-900 bg-sky-800  transition-all"
                   />
                 </span>
               </div>
@@ -219,7 +219,7 @@ const SignUp = () => {
             <SocialLogin/>
             </div>
             {/* form element*/}
-            <p className="pl-9 text-md secondary-color pb-10  ">
+            <p className="pl-12 text-md text-sky-800 font-semibold  pb-10  ">
               Already have an account?{" "}
               <Link to="/login" className="underline">
                 Login{" "}

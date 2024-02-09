@@ -7,7 +7,7 @@ const AllUsers = () => {
     const [filteredUsers, setFilteredUsers] = useState([]); 
 
     useEffect(() => {
-        fetch('http://localhost:5000/users')
+        fetch('https://revive-server-dun.vercel.app/users')
             .then(res => res.json())
             .then(data => {
                 setUsers(data)
@@ -32,7 +32,7 @@ const AllUsers = () => {
 
     return (
         <>
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto text-white">
 
                 <h2 className="text-3xl font-semibold text-center mt-5 mb-10">All users</h2>
 

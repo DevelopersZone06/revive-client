@@ -1,70 +1,105 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import CommentCard from "./CommentCard";
 import { FaShare } from "react-icons/fa";
-import { FacebookShareButton, TwitterShareButton,FacebookIcon,TwitterIcon, WhatsappShareButton, WhatsappIcon, LinkedinShareButton, LinkedinIcon } from "react-share";
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  FacebookIcon,
+  TwitterIcon,
+  WhatsappShareButton,
+  WhatsappIcon,
+  LinkedinShareButton,
+  LinkedinIcon,
+} from "react-share";
 import BlogTitle from "./BlogTitle";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import { AuthContext } from "../../Provider/AuthProvider";
 
-const BlogDetail = ({ blog }) => {
-  //  practice json datas
+const BlogDetail = () => {
 
-  const [comments, setComments] = useState([]);
 
-  const [reactionNumber, setReactionNumber] = useState(blog?.reacts || 0);
+  const currentPageUrl = `https://soft-monstera-bbb73f.netlify.app/blog/65b2434b8209fff72f1ace46`;
 
-  const [isReacted, setIsReacted] = useState(false);
-  const currentPageUrl= `https://soft-monstera-bbb73f.netlify.app/blog/65b2434b8209fff72f1ace46`
 
-  const [commentOpen, setCommentOpen] = useState(false); 
+  const {user} = useContext(AuthContext)
+  const axiosPublic = useAxiosPublic()
+  const {id} = useParams()
 
-  useEffect(() => {
-    fetch("/comments.json")
-      .then((res) => res.json())
-      .then((data) => setComments(data));
-  }, []);
+  const [blog, setBlog] = useState({})
+  const [comments, setComments] = useState([])
+  const [likes, setLikes] = useState([])
 
-  const handleComment = () => {
-    setCommentOpen(true); 
+
+
+  const { _id, author, authorEmail, authorImage, authorTitle, category, date, description, image, title} = blog
+
+
+  // get single blog comment and like
+  useEffect( () => {
+    axiosPublic(`blogs?id=${id}`)
+    .then(res => {
+      setBlog(res.data)
+
+      // get comment 
+      axiosPublic(`/comment/${res.data._id}`)
+      .then(res => {
+        if(res.data){
+          setComments(res.data.allComment)
+          setLikes(res.data.likes)
+        }
+      })
+    })
+  }, [])
+
+
+  // setComments(res.data.allComment)
+  // setLikes(res.data.likes)
+
+  // post comment 
+  const addComment = (e) => {
+
+    e.preventDefault()
+
+    const comment = e.target.comment.value
+    const commentIs = {
+      name: user?.displayName,
+      comment: comment
+    }
+  
+    const newComment = {
+      commentIs
+    }
+
+    axiosPublic.patch(`/comments/${_id}`, newComment)
+    .then(res => {
+      console.log(res.data)
+      setComments([commentIs, ...comments])
+    })
   }
 
-  const handleIncreaseReaction = () => {
-    setIsReacted(!isReacted);
-    setReactionNumber(reactionNumber + 1);
-  };
 
-  const handleDecreaseReaction = () => {
-    setIsReacted(!isReacted);
-    setReactionNumber(reactionNumber - 1);
-  };
+  // add like 
+  const handleLike = () => {
+    const newLike = {name: user?.displayName}
 
-  const title = "Maditation that makes you strong";
-  const image =
-    "https://images.healthshots.com/healthshots/en/uploads/2023/05/10200007/exercise.jpg";
-  const userProfilePicture =
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Elon_Musk_Colorado_2022_%28cropped2%29.jpg/220px-Elon_Musk_Colorado_2022_%28cropped2%29.jpg";
-  const authorName = "John Doe";
-
-  const publishDate = "12-04-2023";
-
-  const commentNumber = 32;
-
-  const authorPosition = "Trainer and Writer";
-
-  //    practice json data
-
-  // const [isBookmarked, setIsBookmarked] = useState(false);
-
-
-  const [allComments, setAllComments] = useState([{commentText: 'Nice Blog', authorName: 'Ibrahim'}])
-
-  const handleComments = () => {
-    setAllComments([{commentText: 'Helpfully Blog', authorName: 'Ibrahim'}, {commentText: 'Nice Blog', authorName: 'Emran Hossen'}])
+    axiosPublic.patch(`/like/${_id}`, newLike)
+    .then(res => {
+      console.log(res.data)
+      setLikes([user?.displayName, ...likes])
+    })
   }
+
+
+  const isReact = likes.includes(user?.displayName)
+ 
 
   return (
     <>
       {/* main div starts */}
       <BlogTitle></BlogTitle>
-      <div className="md:flex md:max-w-[1600px] mx-auto">
+      <div className="md:flex px-[2%] sm:px-[5%] lg:px-[8%]">
         <div className="md:w-[60%]">
           <div>
             <h3 className="text-5xl my-10 font-bold">{title}</h3>
@@ -76,182 +111,101 @@ const BlogDetail = ({ blog }) => {
               <div className="flex items-center justify-between">
                 {/* published date */}
                 <p className="text-xl mt-1 font-semibold">
-                  Published: {publishDate}
+                  Published: {date}
                 </p>
                 {/* div for reaction and comment */}
                 <div className="flex p-4">
-                  {isReacted ? (
+                  {isReact ? (
                     <img
-                      onClick={handleDecreaseReaction}
+                      
                       src="https://i.ibb.co/KbRDCSX/icons8-love-24-4.png"
                       alt=""
                     />
                   ) : (
                     <img
-                      onClick={handleIncreaseReaction}
+                      onClick={handleLike}
                       src="https://i.ibb.co/zNMtnNc/icons8-love-24-3.png"
                       alt=""
+                      className="cursor-pointer"
                     />
                   )}{" "}
-                  <p className="px-4">{reactionNumber}</p>
+                  <p className="px-4">{likes.length}</p>
                   <img
-                  onClick={handleComment}
-                    className="pe-4 cursor-pointer"
+                   
+                    className="pe-4"
                     src="https://i.ibb.co/80PGNMg/icons8-comment-24-1.png"
                     alt=""
                   />
-                  <p>{commentNumber}</p>
+                  <p>{comments.length}</p>
                   {/* Share */}
-                  <div  className="px-4">
+                  <div className="px-4">
+                    <label htmlFor="my_modal_7" className="subheading w-14 cursor-pointer">
+                      <FaShare className="" />
+                    </label>
 
+                    {/* Put this part before </body> tag */}
+                    <input
+                      type="checkbox"
+                      id="my_modal_7"
+                      className="modal-toggle "
+                    />
+                    <div className="modal" role="dialog">
+                      <div className="modal-box w-80 py-10 pb-10 ">
+                        <h1 className="text-center pb-4 font-bold text-[#448c74]">
+                          Share Now
+                        </h1>
+                        <div className="flex flex-row items-center justify-evenly">
+                          <FacebookShareButton
+                            url={currentPageUrl}
+                            quote="Please share this blog"
+                            hashtag="#revive"
+                          >
+                            {/* <FacebookIcon/> */}
+                            <FacebookIcon className=" rounded-lg" />
+                          </FacebookShareButton>
 
-                  <label htmlFor="my_modal_7" className="subheading w-14"><FaShare className=""/></label>
+                          <TwitterShareButton
+                            url={currentPageUrl}
+                            quote="Please share this blog"
+                            hashtag="#revive"
+                          >
+                            <TwitterIcon className="rounded-lg" />
+                          </TwitterShareButton>
 
-{/* Put this part before </body> tag */}
-<input type="checkbox" id="my_modal_7" className="modal-toggle " />
-<div className="modal" role="dialog">
-  <div className="modal-box w-80 py-10 pb-10 ">
-  <h1 className="text-center pb-4 font-bold text-[#448c74]">Share Now</h1>
- <div className="flex flex-row items-center justify-evenly">
- <FacebookShareButton
- url={ currentPageUrl}
- quote="Please share this blog"
- hashtag="#revive"
- >
- {/* <FacebookIcon/> */}
- <FacebookIcon className=" rounded-lg"/>  
- </FacebookShareButton >
+                          <WhatsappShareButton
+                            url={currentPageUrl}
+                            quote="Please share this blog"
+                            hashtag="#revive"
+                          >
+                            <WhatsappIcon className="rounded-lg" />
+                          </WhatsappShareButton>
 
- <TwitterShareButton  url={ currentPageUrl}
- quote="Please share this blog"
- hashtag="#revive">
- <TwitterIcon className="rounded-lg"/>
- </TwitterShareButton>
-
- <WhatsappShareButton
- url={ currentPageUrl}
- quote="Please share this blog"
- hashtag="#revive"
- >
- <WhatsappIcon className="rounded-lg"/>
- </WhatsappShareButton>
-
- <LinkedinShareButton
- url={ currentPageUrl}
- quote="Please share this blog"
- hashtag="#revive"
- >
- <LinkedinIcon  className="rounded-lg"/>
- </LinkedinShareButton>
- </div>
-  </div>
-  <label className="modal-backdrop" htmlFor="my_modal_7">Close</label>
-</div>
-                  
-
-                
-                   
+                          <LinkedinShareButton
+                            url={currentPageUrl}
+                            quote="Please share this blog"
+                            hashtag="#revive"
+                          >
+                            <LinkedinIcon className="rounded-lg" />
+                          </LinkedinShareButton>
+                        </div>
+                      </div>
+                      <label className="modal-backdrop" htmlFor="my_modal_7">
+                        Close
+                      </label>
+                    </div>
                   </div>
-                
                 </div>
               </div>
             </div>
             {/* mock blog text content */}
             <div className="text-lg px-2 w-full my-20 text-justify">
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Dignissimos voluptatem sint cupiditate, eius ad mollitia quia
-                voluptate fugit expedita dicta qui possimus modi corrupti non
-                nisi temporibus amet voluptates? Delectus eos, totam excepturi
-                tempore sunt rem atque cum voluptatem repudiandae quibusdam qui
-                dolor repellat soluta minus optio sit iste provident ullam
-                magnam maiores, ea mollitia expedita. Laboriosam expedita minus
-                assumenda laborum ut nisi quas placeat praesentium. Quidem minus
-                non incidunt rem et accusantium temporibus, nulla corrupti, nemo
-                ad soluta quasi deserunt iusto impedit! Voluptatem
-                necessitatibus aut veritatis labore blanditiis quibusdam?
-              </p>{" "}
-              <br />
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-                reiciendis vitae quo corporis blanditiis? Odit dignissimos
-                aspernatur ex doloribus mollitia voluptas aut reprehenderit
-                iusto laboriosam asperiores iste voluptatum, soluta optio
-                exercitationem autem obcaecati facilis esse? Amet neque adipisci
-                porro, modi magni optio sit soluta magnam voluptatibus velit
-                nesciunt nulla sapiente dolores impedit, atque perferendis rerum
-                incidunt excepturi similique, architecto a dolor cum quam. Modi
-                aliquid repudiandae dolores esse quasi, deserunt, officia
-                architecto unde quia veniam soluta veritatis a perspiciatis
-                aliquam qui maxime numquam laboriosam fuga, quis tenetur
-                reprehenderit velit! Magnam quasi, delectus fugiat, adipisci
-                repudiandae illum ullam quae cupiditate laboriosam, deleniti
-                dolorum quis soluta quidem fuga sequi eius beatae inventore
-                provident atque hic corporis! Quam voluptatibus est quia in
-                excepturi officiis. Error animi odit obcaecati minima molestiae
-                recusandae ut sed earum doloremque quibusdam veritatis, incidunt
-                magni consequuntur voluptatem nisi quisquam placeat voluptatibus
-                dolor quam quia! Sint esse blanditiis amet officia laudantium
-                eligendi eaque nobis laborum, maxime rem nemo doloremque
-                delectus cumque quia consectetur, aut omnis in minus suscipit
-                voluptatem. Corrupti laudantium minus tenetur cum commodi eum
-                quaerat officiis? Esse tenetur ducimus nulla nesciunt, quasi
-                necessitatibus, id dolorem eligendi labore libero omnis unde
-                doloremque aspernatur! Ducimus nam quis neque nisi iure.
-              </p>
-              <br />
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Doloremque corporis molestias facere optio, expedita repellendus
-                neque dicta quas eum laborum sequi esse qui tenetur, quam
-                voluptatibus adipisci blanditiis, ducimus deserunt tempore ab
-                sapiente quos. Itaque odio illo dignissimos inventore
-                laudantium, incidunt ea odit sed impedit distinctio maxime quae
-                eum animi iste id, fugit possimus assumenda nemo, eius aut
-                perspiciatis natus doloremque vitae fugiat? Tempore modi dolores
-                vero aliquam facilis ex dolor reprehenderit assumenda. Ducimus
-                cupiditate sed minus mollitia facilis nam voluptatibus natus,
-                provident voluptatum nemo soluta qui assumenda nulla dolorum.
-                Incidunt, dolorem. Quia ducimus, placeat minima, incidunt
-                eligendi modi, dolores necessitatibus veritatis quo sunt
-                recusandae ea iste magnam officiis? Eveniet iste voluptatem sed
-                cupiditate natus ipsa fuga recusandae nisi minus cumque.
-                Distinctio aliquid ut amet voluptas excepturi ab saepe eius
-                autem hic repellendus incidunt vero fuga cum, similique a
-                commodi inventore facilis illum atque rerum asperiores dicta. At
-                mollitia iure recusandae aspernatur ad soluta a esse magnam
-                harum consectetur, facilis repellendus possimus id doloribus
-                facere voluptatem aperiam quo, itaque, necessitatibus placeat
-                aliquam expedita perferendis. Quia magni, voluptatum maiores
-                earum neque, cupiditate voluptates sunt hic quasi illo sit
-                aspernatur blanditiis eius, alias sint dolor perspiciatis
-                nostrum repudiandae! Blanditiis possimus sequi numquam culpa
-                assumenda quia? Maiores iste dicta id maxime optio illum quasi
-                sapiente aut, ut alias vero aliquam, iusto libero adipisci quos
-                neque et tempore explicabo nihil. Culpa ab beatae neque quae
-                laudantium nemo totam sed itaque in explicabo veritatis eligendi
-                sint atque vel eaque quod soluta fuga ex, animi similique.
-              </p>{" "}
-              <br />
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Aperiam quibusdam quasi magni. Deserunt corporis, pariatur
-                quidem quia hic voluptas quos rerum harum eos labore eaque?
-                Dolorem animi cum, molestias esse quis ratione quos quidem
-                aspernatur excepturi aperiam? Libero, assumenda fugiat ipsum
-                doloribus quisquam qui velit laudantium necessitatibus, suscipit
-                voluptatum impedit id tempora consequuntur ipsa iure mollitia
-                deleniti magni placeat sunt. Minima dicta, possimus sapiente
-                assumenda voluptate error quibusdam inventore, ducimus,
-                architecto repellat nulla animi laborum repellendus perferendis
-                cum! Maxime eius mollitia quos officia, necessitatibus ullam
-                inventore quam atque vero exercitationem saepe, quo nobis sit
-                fugit! Cum magni aspernatur ex dicta!
-              </p>
+              {description}
             </div>
-            
           </div>
         </div>
+
+
+
         <div className="md:w-[40%] ps-10 ">
           <div className="">
             {/* author related informations */}
@@ -259,15 +213,15 @@ const BlogDetail = ({ blog }) => {
               <div className="my-16 flex">
                 <div className="avatar me-2">
                   <div className="w-16 rounded-btn">
-                    <img src={userProfilePicture} />
+                    <img src={authorImage} />
                   </div>
                 </div>
                 <div>
                   <p className="hover:text-green-600 hover:underline text-2xl font-semibold">
-                    {authorName}
+                    {author}
                   </p>
                   <p className="text-[#E5C466] text-xl font-semibold">
-                    {authorPosition}
+                    {authorTitle}
                   </p>
                 </div>
               </div>
@@ -286,22 +240,31 @@ const BlogDetail = ({ blog }) => {
               <option value="admin">From admin</option>
             </select>
           </div>
-          <textarea
-            className="border mt-1 w-full rounded-lg p-4 my-4 bg-[#cce0d98b]"
-            placeholder="Your comment" rows={5}
-          ></textarea>
-          <div>
-            <button onClick={handleComments} className="bg-[#599983] px-2 py-2 mr-2 rounded-md text-white ms-1">
-              Post
-            </button>
-            <button className="bg-[#599983] px-2 py-2 rounded-md text-white ms-1">
-              Cancel
-            </button>
-          </div>
+          <form onSubmit={addComment}>
+            <textarea
+              className="border mt-1 w-full rounded-lg p-4 my-4 bg-[#cce0d98b]"
+              placeholder="Your comment"
+              id="comment"
+              name="comment"
+              rows={5}
+            ></textarea>
+            <div>
+              <button
+               
+                className="bg-[#599983] px-2 py-2 mr-2 rounded-md text-white ms-1"
+              >
+                Post
+              </button>
+              
+            </div>
+          </form>
           
-          {allComments.map((comment, index) => (
-            <CommentCard key={index} comment={comment}></CommentCard>
-          ))}
+
+          <div className="overflow-auto max-h-[500px] comment-area mb-10">
+            { comments.map((comment, index) => (
+              <CommentCard key={index} comment={comment}></CommentCard>
+            ))}
+          </div>
         </div>
       </div>
     </>

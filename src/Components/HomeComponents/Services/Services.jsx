@@ -5,8 +5,7 @@ import ServiceCard from "../../ServicesComponents/Cards/ServiceCard";
 
 import Loading from "../../../Shared/Loading/Loading";
 import { Link } from "react-router-dom";
-import img from '../../../assets/images/img.jpg'
-import img2 from '../../../assets/banner/bg.jpg'
+
 
 const Services = () => {
   const axiosPublic = useAxiosPublic();
@@ -23,8 +22,8 @@ const Services = () => {
   return (
     <div className=" px-[2%] sm:px-[5%] lg:px-[8%] py-28" style={{backgroundImage:`url('https://i.ibb.co/T1sWNkf/img1.webp')`,backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', }}>
       <Title subHeading={"Services"} heading={"Our Some Services"} fontColor={'sky-100'}></Title>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8">
-        {services.slice(0, 6).map((service) => (
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8">
+        {services.slice(0,8).map((service) => (
           <ServiceCard key={service._id} service={service}></ServiceCard>
         ))}
         {/**All services btn, /services */}

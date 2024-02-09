@@ -31,9 +31,7 @@ const Features = () => {
                 <FeatureCard title="Cycling" icon={MdDirectionsBike} description='Cycling is a low-impact exercise that improves cardiovascular health and leg strength. Get on your bike and enjoy the ride!' />
 
             </div>
-            <div className="w-10 h-10 bg-sky-200">
            
-            </div>
         </div>
     );
 };

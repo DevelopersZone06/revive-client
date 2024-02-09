@@ -8,6 +8,7 @@ import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import moment from "moment";
 import useAdmin from "../../Hooks/useAdmin";
 import logo from '../../assets/images/logo2.png';
+import LogOut from "../../Components/LogOut/LogOut";
 
 
 
@@ -46,7 +47,7 @@ const Navbar = () => {
     .then(res => {
       setNotifications(res.data)
     })
-  }, [user, location.pathname, axiosPublic])
+  }, [user?.email, location.pathname])
 
 
 
@@ -104,7 +105,7 @@ const Navbar = () => {
               <NavLink className="subheading" to="/contact">Contact</NavLink>
             </li>
             <li>
-             {/* <LogOut/> */}
+             <LogOut/>
             </li>
              {
               (user && isAdmin) &&  (<li>
@@ -118,12 +119,12 @@ const Navbar = () => {
           {
             user ?
             <div className="flex justify-end md:gap-2 gap-0">
-              <span className=" md:bg-white rounded-full  md:text-sky-700 p-2 hover:bg-[#448c7400] hover:text-sky-200 md:border   text-sky-400 border-white"><FaSearch  className="w-5 h-5"></FaSearch></span>
-              <span onClick={handleNotification} className=" md:bg-white rounded-full  md:text-sky-700 p-2 hover:bg-[#448c7400] hover:text-sky-200 md:border   text-sky-400 border-white">
+              <span className=" md:bg-white rounded-full  md:text-sky-700 p-2 md:border   text-sky-400 border-white"><FaSearch  className="w-5 h-5"></FaSearch></span>
+              <span onClick={handleNotification} className=" md:bg-white rounded-full  md:text-sky-700 p-2 cursor-pointer hover:bg-[#448c7400] md:border   text-sky-400 border-white">
                  
-                <IoMdNotifications className="w-5 h-5" ></IoMdNotifications>
+                <IoMdNotifications className="w-5 h-5 hover:text-sky-200" ></IoMdNotifications>
 
-                <div className={notification ? "w-96 primary-bg max-h-screen absolute right-0 top-10 rounded-md py-4 ease-in duration-300 border-primary" : "w-96 primary-bg overflow-hidden absolute right-0 -top-[500px] py-10 z-10 ease-in duration-300 max-h-80"}>
+                <div className={notification ? "w-96 primary-bg max-h-screen absolute right-[165px] top-14 rounded-md py-4 ease-in duration-300 border-primary" : "w-96 primary-bg overflow-hidden absolute right-0 -top-[500px] py-10 z-10 ease-in duration-300 max-h-80"}>
                   <h1 className="border-b border-b-white px-4 pb-4">Notification</h1>
                   {
                     notifications?.allNotification && notifications?.allNotification.map((notification,index) => <Link  key={index} to={notification.redirect}><div className="px-4 py-2 border-b border-b-white hover:bg-white">
