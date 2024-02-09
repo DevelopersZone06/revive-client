@@ -75,7 +75,7 @@ const ServicesApproval = () => {
           <div>
             
           </div>
-        <div className="flex gap-2 items-center text-sky-100">
+        <div className="flex gap-2 items-center text-sky-100 mt-5">
                   <h2 className="text-sky-100">Rows Per Page</h2>
                   <p className="flex items-center">5 <IoMdArrowDropdown className="w-[22px]"/></p>
                   <h1 className="text-lg">1-3 of 9</h1>
