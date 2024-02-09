@@ -117,6 +117,8 @@ const Gallery = () => {
         ))}
       </div>
 
+          {/* this is a testing comment */}
+
       {/* pagination system*/}
 
       <div className="flex justify-center items-center my-14 gap-1">
