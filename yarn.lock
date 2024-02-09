@@ -184,7 +184,11 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.22.5"
 
+<<<<<<< HEAD
+"@babel/runtime@^7.12.5", "@babel/runtime@^7.5.5", "@babel/runtime@^7.8.7":
+=======
 "@babel/runtime@^7.1.2", "@babel/runtime@^7.12.5":
+>>>>>>> b289d05924fd2e0cb1d04ca9c70ab3846eeccad7
   version "7.23.8"
   resolved "https://registry.npmjs.org/@babel/runtime/-/runtime-7.23.8.tgz"
   integrity sha512-Y7KbAP984rn1VGMbGqKmBLio9V7y5Je9GvU4rQPCPinCyNfUcToxIXl06d59URp/F3LwinvODxab5N/G6qggkw==
@@ -1497,12 +1501,20 @@ doctrine@^3.0.0:
   dependencies:
     esutils "^2.0.2"
 
+<<<<<<< HEAD
+dom-helpers@^5.0.1:
+  version "5.2.1"
+  resolved "https://registry.npmjs.org/dom-helpers/-/dom-helpers-5.2.1.tgz"
+  integrity sha512-nRCa7CK3VTrM2NmGkIy4cbK7IZlgBE/PYMn55rrXefr5xXDP0LdtfPnblFDoVdcAfslJ7or6iqAUnx0CCGIWQA==
+=======
 dom-helpers@^3.4.0:
   version "3.4.0"
   resolved "https://registry.npmjs.org/dom-helpers/-/dom-helpers-3.4.0.tgz"
   integrity sha512-LnuPJ+dwqKDIyotW1VzmOZ5TONUN7CwkCR5hrgawTUbkBGYdeoNLZo6nNfGkCrjtE1nXXaj7iMMpDa8/d9WoIA==
+>>>>>>> b289d05924fd2e0cb1d04ca9c70ab3846eeccad7
   dependencies:
-    "@babel/runtime" "^7.1.2"
+    "@babel/runtime" "^7.8.7"
+    csstype "^3.0.2"
 
 eastasianwidth@^0.2.0:
   version "0.2.0"
@@ -1790,7 +1802,7 @@ fast-deep-equal@^3.1.1, fast-deep-equal@^3.1.3:
   resolved "https://registry.npmjs.org/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz"
   integrity sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==
 
-fast-equals@^5.0.0:
+fast-equals@^5.0.1:
   version "5.0.1"
   resolved "https://registry.npmjs.org/fast-equals/-/fast-equals-5.0.1.tgz"
   integrity sha512-WF1Wi8PwwSY7/6Kx0vKXtw8RwuSGoM1bvDaJbu7MxDlR1vovZjIAKrnzyrThgAjm6JDTu0fVgWXDlMGspodfoQ==
@@ -2916,7 +2928,11 @@ react-awesome-button@^7.0.5:
   dependencies:
     "@rcaferati/wac" "^1.0.0"
 
+<<<<<<< HEAD
+"react-dom@^16.0.0 || ^17.0.0 || ^18.0.0", "react-dom@^16.6.0 || ^17.0.0 || ^18.0.0", "react-dom@^16.8.0 || ^17.0.0 || ^18.0.0", react-dom@^18.2.0, "react-dom@>= 16.8.0 || 18.0.0", react-dom@>=16.6.0, react-dom@>=16.8, "react-dom@16.x.x || 17.x.x || 18.x.x":
+=======
 "react-dom@^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react-dom@^16.0.0 || ^17.0.0 || ^18.0.0", "react-dom@^16.6.0 || ^17.0.0 || ^18.0.0", "react-dom@^16.8.0 || ^17.0.0 || ^18.0.0", react-dom@^18.2.0, "react-dom@>= 16.8.0 || 18.0.0", react-dom@>=15.0.0, react-dom@>=16.8, "react-dom@16.x.x || 17.x.x || 18.x.x":
+>>>>>>> b289d05924fd2e0cb1d04ca9c70ab3846eeccad7
   version "18.2.0"
   resolved "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"
   integrity sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==
@@ -2965,11 +2981,14 @@ react-is@^16.10.2, react-is@^16.13.1:
   resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
+<<<<<<< HEAD
+=======
 react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.npmjs.org/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
+>>>>>>> b289d05924fd2e0cb1d04ca9c70ab3846eeccad7
 react-messenger-customer-chat@^0.8.0:
   version "0.8.0"
   resolved "https://registry.npmjs.org/react-messenger-customer-chat/-/react-messenger-customer-chat-0.8.0.tgz"
@@ -3010,25 +3029,44 @@ react-share@^5.0.3:
     classnames "^2.3.2"
     jsonp "^0.2.1"
 
+<<<<<<< HEAD
+react-smooth@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.npmjs.org/react-smooth/-/react-smooth-4.0.0.tgz"
+  integrity sha512-2NMXOBY1uVUQx1jBeENGA497HK20y6CPGYL1ZnJLeoQ8rrc3UfmOM82sRxtzpcoCkUMy4CS0RGylfuVhuFjBgg==
+=======
 react-smooth@^2.0.5:
   version "2.0.5"
   resolved "https://registry.npmjs.org/react-smooth/-/react-smooth-2.0.5.tgz"
   integrity sha512-BMP2Ad42tD60h0JW6BFaib+RJuV5dsXJK9Baxiv/HlNFjvRLqA9xrNKxVWnUIZPQfzUwGXIlU/dSYLU+54YGQA==
+>>>>>>> b289d05924fd2e0cb1d04ca9c70ab3846eeccad7
   dependencies:
-    fast-equals "^5.0.0"
-    react-transition-group "2.9.0"
+    fast-equals "^5.0.1"
+    prop-types "^15.8.1"
+    react-transition-group "^4.4.5"
 
+<<<<<<< HEAD
+react-transition-group@^4.4.5:
+  version "4.4.5"
+  resolved "https://registry.npmjs.org/react-transition-group/-/react-transition-group-4.4.5.tgz"
+  integrity sha512-pZcd1MCJoiKiBR2NRxeCRg13uCXbydPnmB4EOeRrY7480qNWO8IIgQG6zlDkm6uRMsURXPuKq0GWtiM59a5Q6g==
+=======
 react-transition-group@2.9.0:
   version "2.9.0"
   resolved "https://registry.npmjs.org/react-transition-group/-/react-transition-group-2.9.0.tgz"
   integrity sha512-+HzNTCHpeQyl4MJ/bdE0u6XRMe9+XG/+aL4mCxVN4DnPBQ0/5bfHWPDuOZUzYdMj94daZaZdCCc1Dzt9R/xSSg==
+>>>>>>> b289d05924fd2e0cb1d04ca9c70ab3846eeccad7
   dependencies:
-    dom-helpers "^3.4.0"
+    "@babel/runtime" "^7.5.5"
+    dom-helpers "^5.0.1"
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
-    react-lifecycles-compat "^3.0.4"
 
+<<<<<<< HEAD
+react@*, "react@^0.14.0 || ^15.0.0-0 || ^16.0.0-0", "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.6.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17 || ^18", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^17 || ^18", react@^18.0.0, react@^18.2.0, "react@>= 16", "react@>= 16.8.0 || 18.0.0", react@>=16.0.0, react@>=16.6.0, react@>=16.8, "react@16.x.x || 17.x.x || 18.x.x":
+=======
 react@*, "react@^0.14.0 || ^15.0.0-0 || ^16.0.0-0", "react@^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.6.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17 || ^18", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^17 || ^18", react@^18.0.0, react@^18.2.0, "react@>= 16", "react@>= 16.8.0 || 18.0.0", react@>=15.0.0, react@>=16.0.0, react@>=16.8, "react@16.x.x || 17.x.x || 18.x.x":
+>>>>>>> b289d05924fd2e0cb1d04ca9c70ab3846eeccad7
   version "18.2.0"
   resolved "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==
@@ -3056,16 +3094,23 @@ recharts-scale@^0.4.4:
   dependencies:
     decimal.js-light "^2.4.1"
 
+<<<<<<< HEAD
+recharts@^2.12.0:
+  version "2.12.0"
+  resolved "https://registry.npmjs.org/recharts/-/recharts-2.12.0.tgz"
+  integrity sha512-rVNcdNQ5b7+40Ue7mcEKZJyEv+3SUk2bDEVvOyXPDXXVE7TU3lrvnJUgAvO36hSzhRP2DnAamKXvHLFIFOU0Ww==
+=======
 recharts@^2.11.0:
   version "2.11.0"
   resolved "https://registry.npmjs.org/recharts/-/recharts-2.11.0.tgz"
   integrity sha512-5s+u1m5Hwxb2nh0LABkE3TS/lFqFHyWl7FnPbQhHobbQQia4ih1t3o3+ikPYr31Ns+kYe4FASIthKeKi/YYvMg==
+>>>>>>> b289d05924fd2e0cb1d04ca9c70ab3846eeccad7
   dependencies:
     clsx "^2.0.0"
     eventemitter3 "^4.0.1"
     lodash "^4.17.19"
     react-is "^16.10.2"
-    react-smooth "^2.0.5"
+    react-smooth "^4.0.0"
     recharts-scale "^0.4.4"
     tiny-invariant "^1.3.1"
     victory-vendor "^36.6.8"
