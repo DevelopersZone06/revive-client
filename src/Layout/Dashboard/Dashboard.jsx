@@ -6,7 +6,7 @@ import {GiMuscleUp } from "react-icons/gi";
 import { GrGallery } from "react-icons/gr";
 import { TbPackages } from "react-icons/tb";
 import { RiServiceFill } from "react-icons/ri";
-import logo from '../../assets/images/Logo2.png'
+import logo from '../../assets/images/logo2.png'
 import { IoLogOut } from "react-icons/io5";
 import LogOut from "../../Components/LogOut/LogOut";
 
@@ -73,7 +73,7 @@ const Dashboard = () => {
                 </li>
                 <li>
                   <NavLink
-                    to={"/"}
+                    to={"/dashboard/postPackages"}
                     className={({ isActive, isPending }) =>
                       isPending ? "pending" : isActive ? "text-sky-200  " : ""
                     }

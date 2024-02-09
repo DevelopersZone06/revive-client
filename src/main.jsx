@@ -131,6 +131,10 @@ const router = createBrowserRouter([
       element:<ToBeTrainers/>
     },
     {
+      path: 'postPackages', 
+      element: <PostedPackages></PostedPackages>
+    },
+    {
       path:'servicesApproval',
       element:<ServicesApproval/>
     }
