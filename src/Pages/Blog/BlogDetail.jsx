@@ -217,7 +217,7 @@ const BlogDetail = () => {
                   </div>
                 </div>
                 <div>
-                  <p className="hover:text-green-600 hover:underline text-2xl font-semibold">
+                  <p className="hover:text-sky-800 hover:underline text-2xl font-semibold">
                     {author}
                   </p>
                   <p className="text-[#E5C466] text-xl font-semibold">
@@ -227,10 +227,13 @@ const BlogDetail = () => {
               </div>
             </div>
           </div>
-          <div className="divider divider-success"></div>
+          <div className="h-[1px] my-5 w-full bg-sky-800"></div>
           <div className="lg:flex items-center justify-between mb-3">
             <h4 className="text-3xl font-semibold">All comments</h4>
-            <select className="p-1 rounded-md bg-[#5999833a]" name="" id="">
+            <select className="p-3 rounded-md  text-sky-100" name="" id=""  style={{
+          background:
+            "radial-gradient(circle, rgba(30,162,184,1) 0%, rgba(6,54,93,1) 100%)",
+        }}>
               <option value="recent">Recent</option>
               <option value="all">All Comments</option>
               <option value="relevant" selected>
@@ -242,7 +245,7 @@ const BlogDetail = () => {
           </div>
           <form onSubmit={addComment}>
             <textarea
-              className="border mt-1 w-full rounded-lg p-4 my-4 bg-[#cce0d98b]"
+              className="border mt-1 w-full rounded-lg p-4 my-4 bg-sky-50"
               placeholder="Your comment"
               id="comment"
               name="comment"
@@ -251,7 +254,10 @@ const BlogDetail = () => {
             <div>
               <button
                
-                className="bg-[#599983] px-2 py-2 mr-2 rounded-md text-white ms-1"
+                className=" px-5 py-2 mr-2 rounded-md text-white ms-1"  style={{
+                  background:
+                    "radial-gradient(circle, rgba(30,162,184,1) 0%, rgba(6,54,93,1) 100%)",
+                }}
               >
                 Post
               </button>
