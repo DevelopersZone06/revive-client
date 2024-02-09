@@ -292,12 +292,12 @@ const TriangleBar = (props) => {
     to={"/dashboard/postGallery"}
     className="underline text-sky-50  hover:text-sky-200 hover:font-semibold"
   >
-    Post Gallery
+    Post Packages
   </Link>
     </div>
        </div>
 
-       <div className="rounded-md py-10 pl-10 "
+       <div className="rounded-md py-10  "
        style={{
          background:
            "radial-gradient(circle, rgba(30,162,184,1) 0%, rgba(6,54,93,1) 100%)",

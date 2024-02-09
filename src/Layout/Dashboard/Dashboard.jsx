@@ -13,7 +13,7 @@ import LogOut from "../../Components/LogOut/LogOut";
 const Dashboard = () => {
     const {isAdmin}=useAdmin();
     return (
-        <div className="flex flex-col md:flex-row py-28 px-[2%] sm:px-[5%] lg:px-[5%] " style={{ background: 'radial-gradient(circle, rgba(0,51,111,1) 0%, rgba(0,0,0,1) 100%)' }}>
+        <div className="flex flex-col md:flex-row py-20 px-[2%] sm:px-[5%] lg:px-[5%] " style={{ background: 'radial-gradient(circle, rgba(0,51,111,1) 0%, rgba(0,0,0,1) 100%)' }}>
         <div className="md:w-64  md:min-h-screen ">
           <ul className="menu flex flex-row md:flex-col text-white space-y-4">
             <li>
