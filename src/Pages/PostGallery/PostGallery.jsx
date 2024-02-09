@@ -2,8 +2,8 @@
 const PostGallery = () => {
     return (
         <>
-            <h2 className="text-center font-semibold text-3xl my-5">Add a new memory</h2>
-            <div>
+            <h2 className="text-center text-white font-semibold text-3xl my-5">Add a new memory</h2>
+            <div className="">
 
 
                 <form className="max-w-[70%] mx-auto">
