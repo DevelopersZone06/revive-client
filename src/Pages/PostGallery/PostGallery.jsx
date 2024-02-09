@@ -79,8 +79,8 @@ const PostGallery = () => {
           </div>
           <div className="relative z-0 w-full mb-5 group">
             <textarea
-              rows="10"
-              cols="10"
+              rows="5"
+              cols="5"
               name="description"
               className="block py-2.5 text-white px-0 w-full text-sm  bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-sky-50 peer"
               placeholder=" "
