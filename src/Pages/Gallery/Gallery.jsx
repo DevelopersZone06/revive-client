@@ -41,7 +41,7 @@ const Gallery = () => {
         dataLength={galleryData.length}
         next={() => setPage(page + 1)}
         hasMore={hasMore}
-        loader={<h4>Loading...</h4>}
+        loader={<h4 className="text-3xl text-center font-semibold">Loading...</h4>}
       >
 
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 px-[2%] sm:px-[5%] lg:px-[8%] gap-10">
