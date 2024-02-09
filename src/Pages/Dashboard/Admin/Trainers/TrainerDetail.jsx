@@ -49,10 +49,10 @@ const TrainerDetail = () => {
          
           <div className="p-6 text-sky-50">
             <h5 className="mb-4 text-lg font-bold">Available in weeks :</h5>
-            <p className="text-sky-100">1.Sunday</p>
-                    <p className="text-sky-100">2.Monday</p>
-                    <p className="text-sky-100">3.Thursday</p>
-                    <p className="text-sky-100"> 4. Friday</p>
+            <p className="text-sky-100">1 . Sunday</p>
+                    <p className="text-sky-100">2 . Monday</p>
+                    <p className="text-sky-100">3 . Thursday</p>
+                    <p className="text-sky-100"> 4 . Friday</p>
             
           </div>
         </div>
@@ -66,10 +66,10 @@ const TrainerDetail = () => {
          
           <div className="p-6 text-sky-50">
             <h5 className="mb-4 text-lg font-bold">Available slots :</h5>
-            <p className="text-sky-100">1.8am-9am</p>
-                    <p className="text-sky-100">2.10am-11am</p>
-                    <p className="text-sky-100">3.11am-12am</p>
-                    <p className="text-sky-100"> 4. 5pm-6pm</p>
+            <p className="text-sky-100">1 . 8am-9am</p>
+                    <p className="text-sky-100">2 . 10am-11am</p>
+                    <p className="text-sky-100">3 . 11am-12am</p>
+                    <p className="text-sky-100"> 4 . 5pm-6pm</p>
             
           </div>
         </div>
