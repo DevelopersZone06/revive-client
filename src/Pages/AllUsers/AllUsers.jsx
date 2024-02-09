@@ -7,7 +7,7 @@ const AllUsers = () => {
     const [filteredUsers, setFilteredUsers] = useState([]); 
 
     useEffect(() => {
-        fetch('http://localhost:5000/users')
+        fetch('https://revive-server-dun.vercel.app/users')
             .then(res => res.json())
             .then(data => {
                 setUsers(data)
