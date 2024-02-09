@@ -15,7 +15,7 @@ const Gallery = () => {
   }, [])
 
   return (
-    <div>
+    <div className="mb-10">
       <Helmet>
         <title>Revive | Galley</title>
       </Helmet>
@@ -27,28 +27,6 @@ const Gallery = () => {
         {galleryData?.map((data) => (
           <GalleryCard data={data} key={data.id}></GalleryCard>
         ))}
-      </div>
-
-          {/* this is a testing comment */}
-
-{/* this is another commit for testitng j */}
-
-      {/* pagination system*/}
-
-      <div className="flex justify-center items-center my-14 gap-1">
-        <button className="border-secondary px-10 py-2 uppercase text-xl font-semibold  bg-sky-700 text-white  hover:text-sky-100">
-          1
-        </button>
-
-        <button className="border-secondary px-10 py-2 uppercase text-xl font-semibold  bg-sky-700 text-white  hover:text-sky-100">
-          2
-        </button>
-        <button className="border-secondary px-10 py-2 uppercase text-xl font-semibold  bg-sky-700 text-white  hover:text-sky-100">
-          ...
-        </button>
-        <button className="border-secondary px-10 py-2 uppercase text-xl font-semibold  bg-sky-700 text-white  hover:text-sky-100">
-          10
-        </button>
       </div>
     </div>
   );
