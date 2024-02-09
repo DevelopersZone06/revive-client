@@ -16,6 +16,8 @@ const Trainers = () => {
         })
       }, [])
 
+    //   some changes 
+
     return (
         <div className='primary-white py-28 px-[10%]'>
             <div>
