@@ -1,9 +1,9 @@
-import React from 'react';
+
 
 const PostedPackages = () => {
     return (
         <div>
-            
+            <h1>Post Packages</h1>
         </div>
     );
 };
