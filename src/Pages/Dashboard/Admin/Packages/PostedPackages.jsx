@@ -192,7 +192,7 @@ const PostedPackages = () => {
                  <input type="text" name="duration" placeholder="Duration" className="input text-sm input-bordered w-full h-10 max-w-xs" />
                  
                </label>
-               <button className="bg-sky-100 hover:bg-sky-200  w-1/2 mb-5 py-2 px-3 flex justify-center  rounded-xl text-sky-900 hover:text-blue-950 hover:font-bold ease-in-out">Update</button>
+               <button className="bg-sky-100 hover:bg-sky-200  w-1/2 mb-6 py-2 px-3 flex justify-center  rounded-xl text-sky-900 hover:text-blue-950 hover:font-bold ease-in-out">Update </button>
                  </div>
                    
                   </div>
