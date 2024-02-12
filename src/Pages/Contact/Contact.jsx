@@ -20,7 +20,7 @@ const Contact = () => {
 <div className="mt-12">
             <div className="px-[2%] sm:px-[5%] lg:px-[8%]">
                 {/* contact header */}
-            <h1 className="text-3xl font-semibold text-center text-sky-700">Contact Us</h1>
+            <h1 className="text-3xl font-semibold text-center text-sky-700 mb-3">Contact Us</h1>
                         <p className="max-w-lg mx-auto text-center text-gray-400">Alternatively, you can contact us directly via email or phone using the information provided below. Our dedicated team is ready to assist you with any questions or concerns you may have.</p>
                 <div className="flex flex-col lg:flex-row mt-14 justify-between">
                     <div className="mb-10">
@@ -71,13 +71,9 @@ const Contact = () => {
                 </div>
                
 
-  <div className="px-[2%] sm:px-[5%] lg:px-[8%]">
-    
-    {/* from and lottie */}
-    <div className="flex justify-between items-center flex-col sm:flex-col md:flex-col lg:flex-row mb-14">
-     
-    </div>
-    <div className="shadow-md border-b-4 border-sky-800 mb-12">
+  <div className="mt-14">
+   
+  <div className="shadow-md border-b-4 border-sky-800 mb-12">
       <div className="grid grid-cols-1 md:grid-cols-3 py-10 gap-5">
         <div className="text-center">
           <div className="flex justify-center items-center">

@@ -111,3 +111,12 @@
   color: #7DD3FC;
 }
 
+
+
+.comment-area {
+  scrollbar-width: none;
+}
+
+.comment-area:hover {
+  scrollbar-width: thin;
+}

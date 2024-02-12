@@ -184,7 +184,7 @@ const TriangleBar = (props) => {
                 <td>
                   <img
                     className="w-[60px] rounded-full h-[60px] bg-slate-500 object-cover  duration-500"
-                    src="https://source.unsplash.com/300x300/?profile"
+                    src="https://i.ibb.co/1sZ16Lj/gym39.webp"
                     alt=""
                   />
                 </td>
@@ -196,7 +196,7 @@ const TriangleBar = (props) => {
                 <td>
                   <img
                     className="w-[60px] rounded-full h-[60px] bg-slate-500 object-cover  duration-500"
-                    src="https://source.unsplash.com/300x300/?profile"
+                    src="https://i.ibb.co/BVTvjn6/fashion-portrait-attractive-smiling-man-white-shirt-poses-wall-with-contrast-shadows.jpg"
                     alt=""
                   />
                 </td>
@@ -208,7 +208,7 @@ const TriangleBar = (props) => {
                 <td>
                   <img
                     className="w-[60px] rounded-full h-[60px] bg-slate-500 object-cover  duration-500"
-                    src="https://source.unsplash.com/300x300/?profile"
+                    src="https://i.ibb.co/GRsmKyJ/portrait-beautiful-young-adult-white-happy-woman-white-wall.jpg"
                     alt=""
                   />
                 </td>
@@ -292,12 +292,12 @@ const TriangleBar = (props) => {
     to={"/dashboard/postGallery"}
     className="underline text-sky-50  hover:text-sky-200 hover:font-semibold"
   >
-    Post Gallery
+    Post Packages
   </Link>
     </div>
        </div>
 
-       <div className="rounded-md py-10 pl-10 "
+       <div className="rounded-md py-10  "
        style={{
          background:
            "radial-gradient(circle, rgba(30,162,184,1) 0%, rgba(6,54,93,1) 100%)",

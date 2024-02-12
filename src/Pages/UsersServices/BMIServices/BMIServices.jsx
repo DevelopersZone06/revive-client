@@ -93,7 +93,7 @@ const BMIServices = () => {
           <div>
             <h2 className="text-2xl md:text-4xl lg:text-6xl font-bold">
               Find Your Exact{" "}
-              <span className="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-[#448c74] relative inline-block">
+              <span className="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-sky-700 relative inline-block">
                 <span className="relative text-white"> BMI</span>
               </span>
             </h2>
@@ -118,19 +118,19 @@ const BMIServices = () => {
         <div className="flex gap-20  md:flex-row flex-col ">
           <form action="" onSubmit={handleBMI}>
             <div className="flex md:flex-row flex-col md:gap-4 gap-2 items-center justify-center ">
-              <span className="secondary-color font-bold text-lg">
+              <span className="text-sky-700 font-bold text-lg">
                 Your Height:
               </span>
               <div className="flex gap-4">
                 <input
                   type="number"
-                  className="w-1/2 border-2  border-[#448c74] rounded-md p-2 "
+                  className="w-1/2 border-2  border-sky-700 rounded-md p-2 "
                   placeholder="Feet"
                   name="feet"
                 />
                 <input
                   type="number"
-                  className="w-1/2 border-2  border-[#448c74] rounded-md p-2"
+                  className="w-1/2 border-2  border-sky-700 rounded-md p-2"
                   placeholder="Inches"
                   name="inches"
                 />
@@ -138,7 +138,7 @@ const BMIServices = () => {
             </div>
             <br />
             <div className="flex md:flex-row flex-col md:gap-4 gap-2 items-center justify-center ">
-              <span className="secondary-color font-bold text-lg">
+              <span className="text-sky-700 font-bold text-lg">
                 Your Weight:
               </span>
               <div className="flex gap-4">
@@ -147,7 +147,7 @@ const BMIServices = () => {
                   id=""
                   placeholder="Weight"
                   name="weight"
-                  className=" border-2  border-[#448c74] rounded-md p-2"
+                  className=" border-2 border-sky-700  rounded-md p-2"
                 />
               </div>
             </div>
@@ -159,7 +159,10 @@ const BMIServices = () => {
                 name=""
                 id=""
                 placeholder="Submit"
-                className="rounded-md px-4 py-2 hover:bg-white hover:border hover:border-[#448c74] hover:text-[#448c74] text-white capitalize secondary-bg md:text-2xl text-base  transition-all duration-150 ease-in-out block mx-auto"
+                className="rounded-md px-4 py-2 hover:bg-white hover:border hover:border-[#448c74] hover:text-sky-200 text-white capitalize  md:text-2xl text-base  transition-all duration-150 ease-in-out block mx-auto"   style={{
+                  background:
+                    "radial-gradient(circle, rgba(30,162,184,1) 0%, rgba(6,54,93,1) 100%)",
+                }}
               />
             </div>
           </form>
@@ -176,7 +179,7 @@ const BMIServices = () => {
               subHeading={"According to your BMI"}
             ></Title>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="py-20 px-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" style={{backgroundImage:`url('https://i.ibb.co/T1sWNkf/img1.webp')`,backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', }} >
               {BMIServices.map((service) => (
                 <ServiceCard key={service._id} service={service}></ServiceCard>
               ))}

@@ -28,8 +28,14 @@ import AdminHome from "./Pages/Dashboard/Admin/Home/AdminHome";
 import AllUsers from "./Pages/AllUsers/AllUsers";
 import PostGallery from "./Pages/PostGallery/PostGallery";
 import ServicesApproval from "./Pages/Dashboard/Admin/Services/ServicesApproval";
+import TrainerDetail from "./Pages/Dashboard/Admin/Trainers/TrainerDetail";
+import ServiceDetail from "./Pages/Dashboard/Admin/Services/ServiceDetail";
 import PostedPackages from "./Pages/Dashboard/Admin/Packages/PostedPackages";
-// import useAxiosPublic from "./Hooks/useAxiosPublic";
+import Calender from "./Pages/Dashboard/User/Calender/Calender";
+import ServicesDetails from "./Pages/Dashboard/User/Services/ServicesDetails";
+
+
+
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
@@ -101,10 +107,7 @@ const router = createBrowserRouter([
         path: "/BMIServices",
         element: <BMIServices></BMIServices>,
       },
-      {
-        path: '/toBeTrainers',
-        element: <ToBeTrainers />
-      }
+      
       
     ],
   }, {
@@ -122,7 +125,9 @@ const router = createBrowserRouter([
       {
         path: 'postGallery',
         element: <PostGallery></PostGallery>
+     
       },
+    
     
     {
       path:'toBeTrainers',
@@ -135,6 +140,23 @@ const router = createBrowserRouter([
     {
       path:'servicesApproval',
       element:<ServicesApproval/>
+    },
+    {
+      path:'/dashboard/toBeTrainers/trainerDetail',
+      element:<TrainerDetail/>
+    },
+    {
+      path:'/dashboard/servicesApproval/serviceDetail',
+      element:<ServiceDetail/>
+    },
+    // user route
+    {
+      path:'calender',
+      element:<Calender/>
+    },
+    {
+      path:'userServiceDetail',
+      element:<ServicesDetails/>
     }
   ]
   }
