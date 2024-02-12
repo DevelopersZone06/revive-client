@@ -34,6 +34,7 @@ import PostedPackages from "./Pages/Dashboard/Admin/Packages/PostedPackages";
 import Calender from "./Pages/Dashboard/User/Calender/Calender";
 import ServicesDetails from "./Pages/Dashboard/User/Services/ServicesDetails";
 import OrderHistory from "./Pages/Dashboard/User/OrderHistory/OrderHistory";
+import UpdateProfile from "./Pages/Dashboard/User/UpdateProfile/UpdateProfile";
 
 
 
@@ -162,6 +163,10 @@ const router = createBrowserRouter([
     {
       path: 'orderHistory', 
       element: <OrderHistory></OrderHistory>
+    }, 
+    {
+      path: 'updateProfile', 
+      element: <UpdateProfile></UpdateProfile>
     }
   ]
   }
