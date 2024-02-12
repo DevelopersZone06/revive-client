@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet-async";
 import { FaSlackHash } from "react-icons/fa";
 
 const TrainerDetail = () => {
