@@ -1,3 +1,5 @@
+import { Helmet } from "react-helmet-async";
+
 const PostGallery = () => {
   const handleForm = (e) => {
     e.preventDefault();
@@ -14,6 +16,11 @@ const PostGallery = () => {
       <h2 className="text-center text-white font-semibold text-3xl my-5">
         Add a new memory
       </h2>
+      <Helmet>
+        <title>
+          Revive | Post a gallery
+        </title>
+      </Helmet>
       <div className="">
         <form onSubmit={handleForm} className="max-w-[70%] mx-auto">
           <div className="relative z-0 w-full mb-5 group">
@@ -74,7 +81,7 @@ const PostGallery = () => {
                 placeholder=" "
                 required
               />
-            
+
             </div>
           </div>
           <div className="relative z-0 w-full mb-5 group">
