@@ -31,6 +31,8 @@ import ServicesApproval from "./Pages/Dashboard/Admin/Services/ServicesApproval"
 import TrainerDetail from "./Pages/Dashboard/Admin/Trainers/TrainerDetail";
 import ServiceDetail from "./Pages/Dashboard/Admin/Services/ServiceDetail";
 import PostedPackages from "./Pages/Dashboard/Admin/Packages/PostedPackages";
+import Calender from "./Pages/Dashboard/User/Calender/Calender";
+import ServicesDetails from "./Pages/Dashboard/User/Services/ServicesDetails";
 
 
 
@@ -146,6 +148,15 @@ const router = createBrowserRouter([
     {
       path:'/dashboard/servicesApproval/serviceDetail',
       element:<ServiceDetail/>
+    },
+    // user route
+    {
+      path:'calender',
+      element:<Calender/>
+    },
+    {
+      path:'userServiceDetail',
+      element:<ServicesDetails/>
     }
   ]
   }
