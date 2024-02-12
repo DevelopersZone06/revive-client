@@ -13,7 +13,7 @@ const BMIServicesTitle = () => {
             Services{" "}
           </Link>
           <IoMdArrowDropright className="w-[22px]" />
-          <h1 className="text-xl font-semibold text-[#448c74]">
+          <h1 className="text-xl font-semibold text-sky-800">
             BMI Related Services
           </h1>
         </div>

@@ -19,7 +19,7 @@ const Home = () => {
         <div>
           <Helmet>
             <title>
-              Revive || Home
+              Revive | Home
             </title>
           </Helmet>
           <Banner></Banner> 
