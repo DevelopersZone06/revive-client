@@ -5,18 +5,18 @@ import { Helmet } from "react-helmet-async";
 // import { Helmet } from "react-helmet";
 
 const Blogs = () => {
-  const [blogs, setBlogs] = useState([]);
+    const [blogs, setBlogs] = useState([]);
 
-  useEffect(() => {
-    fetch("https://revive-server-dun.vercel.app/blogs")
-      .then((res) => res.json())
-      .then((data) => setBlogs(data));
-  }, []);
+    useEffect(() => {
+        fetch("https://revive-server-dun.vercel.app/blogs")
+            .then((res) => res.json())
+            .then((data) => setBlogs(data));
+    }, []);
 
-    useEffect( () => {
+    useEffect(() => {
         fetch('https://revive-server-dun.vercel.app/blogs')
-        .then(res => res.json())
-        .then(data => setBlogs(data))
+            .then(res => res.json())
+            .then(data => setBlogs(data))
     }, [])
 
 
@@ -26,23 +26,28 @@ const Blogs = () => {
         console.log(val)
     }
 
- 
+
 
 
 
 
     return (
         <div>
+            <Helmet>
+                <title>
+                    Revive | blogs
+                </title>
+            </Helmet>
             <div className="sm:flex px-[2%] sm:px-[5%] lg:px-[8%] py-10" style={{ background: 'radial-gradient(circle, rgba(0,51,111,1) 0%, rgba(0,0,0,1) 100%)' }}>
 
                 {/* sidebar for filter blogs  */}
                 <div className="sm:w-[250px]  p-5 border-primary rounded-l-md">
                     <h1 className="text-2xl font-semibold border-b border-b-white pb-1 text-sky-100">Filter Blogs</h1>
                     <div className="grid grid-cols-2 gap-5 sm:block">
-                        <div className=" text-center mt-8 p-5 space-y-2 rounded-md"  style={{
-          background:
-            "radial-gradient(circle, rgba(30,162,184,1) 0%, rgba(6,54,93,1) 100%)",
-        }}>
+                        <div className=" text-center mt-8 p-5 space-y-2 rounded-md" style={{
+                            background:
+                                "radial-gradient(circle, rgba(30,162,184,1) 0%, rgba(6,54,93,1) 100%)",
+                        }}>
                             <h1 className="font-semibold text-sky-100">Filter By Trainer</h1>
                             <select defaultValue="null" onChange={trainer} name="trainer" id="trainer" className="w-full primary-bg text-center py-1 rounded-md outline-0">
                                 <option value="null">Select</option>
@@ -50,10 +55,10 @@ const Blogs = () => {
                             </select>
                         </div>
 
-                        <div className="text-center mt-8 p-5 space-y-2 rounded-md"  style={{
-          background:
-            "radial-gradient(circle, rgba(30,162,184,1) 0%, rgba(6,54,93,1) 100%)",
-        }}>
+                        <div className="text-center mt-8 p-5 space-y-2 rounded-md" style={{
+                            background:
+                                "radial-gradient(circle, rgba(30,162,184,1) 0%, rgba(6,54,93,1) 100%)",
+                        }}>
                             <h1 className="font-semibold text-sky-100">Filter By Category</h1>
                             <select defaultValue="null" name="trainer" id="trainer" className="w-full primary-bg text-center py-1 rounded-md outline-0">
                                 <option value="null">Select</option>
@@ -61,18 +66,18 @@ const Blogs = () => {
                             </select>
                         </div>
 
-                        <div className="bg-white text-center mt-8 p-5 space-y-2 rounded-md"  style={{
-          background:
-            "radial-gradient(circle, rgba(30,162,184,1) 0%, rgba(6,54,93,1) 100%)",
-        }}>
+                        <div className="bg-white text-center mt-8 p-5 space-y-2 rounded-md" style={{
+                            background:
+                                "radial-gradient(circle, rgba(30,162,184,1) 0%, rgba(6,54,93,1) 100%)",
+                        }}>
                             <h1 className="font-semibold">Filter By Date</h1>
-                            <input type="date" className="w-full primary-bg text-center py-1 rounded-md outline-0"/>
+                            <input type="date" className="w-full primary-bg text-center py-1 rounded-md outline-0" />
                         </div>
 
-                        <div className="bg-white text-center mt-8 p-5 space-y-2 rounded-md"  style={{
-          background:
-            "radial-gradient(circle, rgba(30,162,184,1) 0%, rgba(6,54,93,1) 100%)",
-        }}>
+                        <div className="bg-white text-center mt-8 p-5 space-y-2 rounded-md" style={{
+                            background:
+                                "radial-gradient(circle, rgba(30,162,184,1) 0%, rgba(6,54,93,1) 100%)",
+                        }}>
                             <h1 className="font-semibold text-sky-100">Sort By</h1>
                             <select defaultValue="null" name="trainer" id="trainer" className="w-full primary-bg text-center py-1 rounded-md outline-0">
                                 <option value="null">Select</option>
@@ -94,8 +99,8 @@ const Blogs = () => {
                     </div>
                 </div>
             </div>
-    </div>
-  );
+        </div>
+    );
 };
 
 export default Blogs;
