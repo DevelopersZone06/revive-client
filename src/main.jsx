@@ -32,9 +32,13 @@ import TrainerDetail from "./Pages/Dashboard/Admin/Trainers/TrainerDetail";
 import ServiceDetail from "./Pages/Dashboard/Admin/Services/ServiceDetail";
 import PostedPackages from "./Pages/Dashboard/Admin/Packages/PostedPackages";
 import Calender from "./Pages/Dashboard/User/Calender/Calender";
+
 import ServicesDetails from "./Pages/Dashboard/User/Services/ServicesDetails";
+import TrainerProfile from "./Pages/Dashboard/Trainer/TrainerProfile/TrainerProfile";
 import OrderHistory from "./Pages/Dashboard/User/OrderHistory/OrderHistory";
 import UpdateProfile from "./Pages/Dashboard/User/UpdateProfile/UpdateProfile";
+import MyServices from "./Pages/Dashboard/User/Services/MyServices";
+;
 
 
 
@@ -109,6 +113,9 @@ const router = createBrowserRouter([
         path: "/BMIServices",
         element: <BMIServices></BMIServices>,
       },
+
+
+      
       
       
     ],
@@ -121,45 +128,68 @@ const router = createBrowserRouter([
         element: <AdminHome></AdminHome>
       },
       {
-        path: 'allUsers', 
+        path: 'allUsers',
         element: <AllUsers></AllUsers>
-      }, 
+      },
       {
         path: 'postGallery',
         element: <PostGallery></PostGallery>
-     
+
+      },
+
+
+      {
+        path: 'toBeTrainers',
+        element: <ToBeTrainers />
+      },
+      {
+        path: 'postPackages',
+        element: <PostedPackages></PostedPackages>
+      },
+      {
+        path: 'servicesApproval',
+        element: <ServicesApproval />
+      },
+      {
+        path: '/dashboard/toBeTrainers/trainerDetail',
+        element: <TrainerDetail />
+      },
+      {
+        path: '/dashboard/servicesApproval/serviceDetail',
+        element: <ServiceDetail />
+      },
+      // user route
+      {
+        path: 'calender',
+        element: <Calender />
+      },
+      {
+        path: 'myServices',
+        element: <MyServices />
+      },
+      {
+        path:'/dashboard/myServices/myServicesDetails',
+        element:<ServicesDetails/>
+      },
+      {
+        path: 'orderHistory',
+        element: <OrderHistory></OrderHistory>
+      },
+      {
+        path: 'updateProfile',
+        element: <UpdateProfile></UpdateProfile>
       },
     
     
+    
+   
+   
+    //Trainer Route
     {
-      path:'toBeTrainers',
-      element:<ToBeTrainers/>
+      path:'trainerProfile',
+      element:<TrainerProfile/>
     },
-    {
-      path: 'postPackages', 
-      element: <PostedPackages></PostedPackages>
-    },
-    {
-      path:'servicesApproval',
-      element:<ServicesApproval/>
-    },
-    {
-      path:'/dashboard/toBeTrainers/trainerDetail',
-      element:<TrainerDetail/>
-    },
-    {
-      path:'/dashboard/servicesApproval/serviceDetail',
-      element:<ServiceDetail/>
-    },
-    // user route
-    {
-      path:'calender',
-      element:<Calender/>
-    },
-    {
-      path:'userServiceDetail',
-      element:<ServicesDetails/>
-    }, 
+   
     {
       path: 'orderHistory', 
       element: <OrderHistory></OrderHistory>
