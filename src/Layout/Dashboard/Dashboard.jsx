@@ -121,13 +121,13 @@ const Dashboard = () => {
             </li>
             <li>
               <NavLink
-                to={"/dashboard/userServiceDetail"}
+                to={"/dashboard/myServices"}
                 className={({ isActive, isPending }) =>
                   isPending ? "pending" : isActive ? "text-sky-200" : ""
                 }
               >
                 <TbDetails />
-                Service Detail
+                My Services
               </NavLink>
             </li>
             <li>
