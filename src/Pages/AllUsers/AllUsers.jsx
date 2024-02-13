@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import UsersCard from "./UsersCard";
+import { Helmet } from "react-helmet-async";
 
 const AllUsers = () => {
 
     const [users, setUsers] = useState([]);
-    const [filteredUsers, setFilteredUsers] = useState([]); 
+    const [filteredUsers, setFilteredUsers] = useState([]);
 
     useEffect(() => {
         fetch('https://revive-server-dun.vercel.app/users')
@@ -16,24 +17,29 @@ const AllUsers = () => {
     })
 
     const handleNormal = () => {
-        const normalUser = users.filter(user => user.category == 'normal' ); 
+        const normalUser = users.filter(user => user.category == 'normal');
         setFilteredUsers(normalUser)
     }
 
     const handlePremiumUsers = () => {
-        const premiumUser = users.filter(user => user.category == 'premium'); 
+        const premiumUser = users.filter(user => user.category == 'premium');
         setFilteredUsers(premiumUser)
     }
 
     const handleTrainers = () => {
         const trainers = users.filter(user => user.category == 'trainer')
-        setFilteredUsers(trainers); 
+        setFilteredUsers(trainers);
     }
 
     return (
         <>
             <div className="overflow-x-auto text-white">
 
+                <Helmet>
+                    <title>
+                        Revive | All Users
+                    </title>
+                </Helmet>
                 <h2 className="text-3xl font-semibold text-center mt-5 mb-10">All users</h2>
 
                 <ul className="flex justify-start gap-4 text-4xl font-medium ms-4">

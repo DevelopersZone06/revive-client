@@ -12,6 +12,7 @@ import LogOut from "../../Components/LogOut/LogOut";
 // user route icon
 import { FcCalendar } from "react-icons/fc";
 import { TbDetails } from "react-icons/tb";
+import { Helmet } from "react-helmet-async";
 const Dashboard = () => {
   const { isAdmin } = useAdmin();
   return (
@@ -19,6 +20,11 @@ const Dashboard = () => {
       <div className="md:w-64  md:min-h-screen ">
         <ul className="menu flex flex-row md:flex-col text-white space-y-4">
           <li>
+            <Helmet>
+              <title>
+                Revive | Dashboard
+              </title>
+            </Helmet>
             <Link to={"/"}>
               {" "}
               <img src={logo} alt="" className="w-32 h-10 object-cover  -ml-3" />
@@ -96,34 +102,34 @@ const Dashboard = () => {
                 </NavLink>
               </li>
               {/* user route */}
-              
+
             </>
 
           )}
           <div className="divider border-b w-3/4 ml-2  border-sky-100"> </div>
           <>
-          <li>
-                <NavLink
-                  to={"/dashboard/calender"}
-                  className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-sky-200" : ""
-                  }
-                >
-                  <FcCalendar />
-                  Calendar
-                </NavLink>
-              </li>
-          <li>
-                <NavLink
-                  to={"/dashboard/userServiceDetail"}
-                  className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "text-sky-200" : ""
-                  }
-                >
-                  <TbDetails />
-                  Service Detail
-                </NavLink>
-              </li>
+            <li>
+              <NavLink
+                to={"/dashboard/calender"}
+                className={({ isActive, isPending }) =>
+                  isPending ? "pending" : isActive ? "text-sky-200" : ""
+                }
+              >
+                <FcCalendar />
+                Calendar
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to={"/dashboard/userServiceDetail"}
+                className={({ isActive, isPending }) =>
+                  isPending ? "pending" : isActive ? "text-sky-200" : ""
+                }
+              >
+                <TbDetails />
+                Service Detail
+              </NavLink>
+            </li>
             <li>
               <NavLink
                 to={"/dashboard/servicesApproval"}
