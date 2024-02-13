@@ -33,6 +33,7 @@ import ServiceDetail from "./Pages/Dashboard/Admin/Services/ServiceDetail";
 import PostedPackages from "./Pages/Dashboard/Admin/Packages/PostedPackages";
 import Calender from "./Pages/Dashboard/User/Calender/Calender";
 import ServicesDetails from "./Pages/Dashboard/User/Services/ServicesDetails";
+import TrainerProfile from "./Pages/Dashboard/Trainer/TrainerProfile/TrainerProfile";
 
 
 
@@ -157,7 +158,12 @@ const router = createBrowserRouter([
     {
       path:'userServiceDetail',
       element:<ServicesDetails/>
-    }
+    },
+    //Trainer Route
+    {
+      path:'trainerProfile',
+      element:<TrainerProfile/>
+    },
   ]
   }
 ]);
