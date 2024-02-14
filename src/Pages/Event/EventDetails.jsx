@@ -6,11 +6,12 @@ import { MdPhoneInTalk } from "react-icons/md";
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
 const EventDetails = () => {
     const {id} = useParams()
  const [event,setEvent] = useState({})
   useEffect( () => {
-    axios(`https://revive-server-dun.vercel.app/events?id=${id}`)
+    useAxiosPublic(`/events?id=${id}`)
     .then(res => {
         setEvent(res.data)
     })
