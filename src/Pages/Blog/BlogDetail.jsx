@@ -20,7 +20,6 @@ import { AuthContext } from "../../Provider/AuthProvider";
 
 const BlogDetail = () => {
 
-
   const [textForCopy, setTextForCopy] = useState(); 
 
   const [isCopied, setCopied] = useClipboard(textForCopy);
