@@ -3273,7 +3273,7 @@ react-transition-group@^4.4.5:
 
 react-use-clipboard@^1.0.9:
   version "1.0.9"
-  resolved "https://registry.npmjs.org/react-use-clipboard/-/react-use-clipboard-1.0.9.tgz"
+  resolved "https://registry.yarnpkg.com/react-use-clipboard/-/react-use-clipboard-1.0.9.tgz#d34d4d04500f77c606795d3756fc587ec93db8d2"
   integrity sha512-OcMzc14usXhqQnAkvzmhCXAbW5WBT2LSgscVh2vKHXZfg72jFsSOsEearqdeC/nUj8YxEfLnziqe7AE7YkWFwA==
   dependencies:
     copy-to-clipboard "^3.3.1"
