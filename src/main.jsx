@@ -39,6 +39,7 @@ import OrderHistory from "./Pages/Dashboard/User/OrderHistory/OrderHistory";
 import UpdateProfile from "./Pages/Dashboard/User/UpdateProfile/UpdateProfile";
 import MyServices from "./Pages/Dashboard/User/Services/MyServices";
 import AllUsers from "./Pages/Dashboard/AllUsers/AllUsers";
+import SpeechRecog from "./Shared/SpeechRecog/SpeechRecog";
 
 
 
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
       {
         path: "/blog/:id",
         element: <BlogDetail />,
+      },
+      {
+        path: '/speech', 
+        element: <SpeechRecog></SpeechRecog>
       },
       {
         path: "/trainers",
