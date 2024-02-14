@@ -14,7 +14,7 @@ const Blog = ({blog}) => {
 
     useEffect( () => {
         // axiosPublic(`/comment/${res.data._id}`)
-        axios(`http://localhost:5000/comment/${_id}`)
+        axiosPublic(`/comment/${_id}`)
         .then(res => {
             console.log(res.data)
             setComments(res.data.allComment.length)
