@@ -1,9 +1,29 @@
+import { useEffect, useState } from "react";
 import { FaRegHeart } from "react-icons/fa";
 import { MdOutlineTextsms } from "react-icons/md";
 import { Link } from 'react-router-dom';
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import axios from "axios";
 
 const Blog = ({blog}) => {
-    const {title, description, image, category, like, comments, author, authorTitle, date, authorImage, _id} = blog
+    const {title, description, image, category, like, author, authorTitle, date, authorImage, _id} = blog
+
+    const [comments, setComments] = useState(0)
+    const [likes, setLikes] = useState(0)
+    const axiosPublic = useAxiosPublic()
+
+    useEffect( () => {
+        // axiosPublic(`/comment/${res.data._id}`)
+        axios(`http://localhost:5000/comment/${_id}`)
+        .then(res => {
+            console.log(res.data)
+            setComments(res.data.allComment.length)
+            setLikes(res.data.likes.length)
+
+        })
+    }, [])
+
+
     return (
         <div className='shadow-gray-300 shadow-md rounded-md relative '  style={{
             background:
@@ -28,7 +48,7 @@ const Blog = ({blog}) => {
                    </div>
                    <div className="flex gap-3 text-sky-50">
                         <div>
-                            <span>{like}</span>
+                            <span>{likes}</span>
                             <FaRegHeart className="h-4" />
                         </div>
                         <div>
