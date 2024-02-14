@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import TrainerDetailTitle from "./TrainerDetailTitle";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
 const TrainerDetailPage = () => {
 
@@ -9,8 +10,9 @@ const TrainerDetailPage = () => {
   console.log(id)
 
   const [trainer, setTrainer] = useState({})
+  const axiosPublic = useAxiosPublic()
   useEffect( () => {
-    axios(`https://revive-server-dun.vercel.app/trainers?id=${id}`)
+    axiosPublic(`/trainers?id=${id}`)
     .then(res => {
       setTrainer(res.data)
     })

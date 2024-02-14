@@ -1,6 +1,6 @@
 const CommentCard = ({ comment }) => {
 
-  console.log(comment)
+  // console.log(comment)
 
   return (
     <>
