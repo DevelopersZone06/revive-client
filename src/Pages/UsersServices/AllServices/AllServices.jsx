@@ -7,6 +7,8 @@ import ParallaxForBMI from "../../../Components/ServicesComponents/ParallaxForBM
 import { Helmet } from "react-helmet-async";
 import { useEffect, useState } from "react";
 import useAdmin from "../../../Hooks/useAdmin";
+import { SearchIcon } from "@heroicons/react/solid";
+import { IoMdSearch } from "react-icons/io";
 
 // import { Helmet } from "react-helmet";
 
@@ -77,54 +79,67 @@ const AllServices = () => {
         </div>
 
         {/* Search and filter  */}
-        <div className="flex  items-center md:flex-row flex-col mb-6">
-          <div className="md:w-3/4 w-full">
-            <div className="flex items-center  gap-10  ">
+        <div className="flex justify-around  items-center md:flex-row flex-col ">
+         {/*  <div className="md:w-3/4 w-full">
+            <div className="flex items-center   ">
               <input
                 type="search"
                 value={searchQuery}
                 onChange={handleSearchChange}
                 placeholder="Search In Revive (Course Name and Trainer'name)"
-                className="rounded-md px-10 py-2 border-2 border-sky-900 w-full"
-              />
-              {/* <div className="text-2xl  ">
-                <IoMdSearch className=""></IoMdSearch>
-              </div> */}
+                className="rounded-md pl-5 py-2 border-2 border-sky-900 w-2/3"
+              />  <IoMdSearch className="w-10 bg-sky-800 text-sky-100 p-2"></IoMdSearch>
+            
             </div>
-          </div>
-          <div className="bg-white text-center  p-5 space-y-2 rounded-md flex gap-2">
-            <h1 className="font-semibold">Sort By Price</h1>
-            <select
-              value={sortOrder}
-              onChange={handleSortChange}
-              name="sort"
-              id="sort"
-              className="w-full primary-bg text-center py-1 rounded-md outline-0"
-            >
-              <option disabled selected value="">
-                Select
-              </option>
-              <option value="asc">Low To High</option>
-              <option value="desc">High To Low</option>
-            </select>
-          </div>
+          </div> */}
+        
+         <div className="flex   w-1/2 ">
+         <input
+           type="search"
+           className="border border-sky-800 rounded-l-md h-8 outline-0 pl-1 mb-10 w-full p-4 "
+           value={searchQuery}
+           onChange={handleSearchChange}
+           placeholder="Search In Revive (Course Name and Trainer'name)"
+         />
+         <button className="bg-sky-700 text-white text-xl px-2 mb-10 rounded-r-md">
+           <IoMdSearch/>
+         </button>
+       </div>
+
+         <div className="bg-white text-center mb-10 p-5 space-y-2    rounded-md flex gap-2">
+           <h1 className="font-semibold">Sort By Price</h1>
+           <select
+             value={sortOrder}
+             onChange={handleSortChange}
+             name="sort"
+             id="sort"
+             className="w-full primary-bg text-center py-1 rounded-md outline-0"
+           >
+             <option disabled selected value="">
+               Select
+             </option>
+             <option value="asc">Low To High</option>
+             <option value="desc">High To Low</option>
+           </select>
+         </div>
+        
         </div>
         {/* All services with side ber */}
         <div className="sm:flex gap-5">
           <div className="sm:w-[250px] bg-[#05111D] p-5 border-primary rounded-l-md">
-            <h1 className="text-2xl font-semibold text-sky-200 border-b border-b-white pb-1">
-              Filter Services
+            <h1 className="text-sm font-semibold text-center text-sky-200 border-b border-b-white pb-1">
+              Filter By Services
             </h1>
             <div className="grid lg:grid-cols-2 text-sky-200 grid-cols-1 gap-5 sm:block">
-              {/*Category  */}
-              <h1 className="text-2xl font-semibold border-b border-b-white pb-1 mt-8  ">
-                Filter Category
+              {/*Categodgry  */}
+              <h1 className="text-sm font-semibold border-b border-b-white pb-1 mt-8  ">
+                Filter By Category
               </h1>
-              <div className="gap-2 lg:grid-cols-2 grid-cols-3 grid p-5">
+              <div className="gap-2 lg:grid-cols-2 grid-cols-3 grid pt-5">
                 {categories.map(({ label, value }) => (
                   <button
                     key={value}
-                    className="text-sky-200  hover:bg-sky-200 hover:text-sky-900 rounded-sm  border border-sky-200 block font-semibold w-20"
+                    className="text-sky-200  hover:bg-sky-200 hover:text-sky-900 rounded-sm  border border-sky-200 block font-semibold py-1 hover:scale-110 transition-all ease-in-out "
                     onClick={() => handleCategoryClick(value)}
                   >
                     {label}
@@ -133,49 +148,54 @@ const AllServices = () => {
               </div>
               <div>
                 <div>
-                  <h3 className="text-2xl font-semibold border-b border-b-white pb-1 mt-8 ">
+                  <h3 className="text-sm font-semibold border-b border-b-white pb-1 mt-8 ">
                     Filter Course Duration
                   </h3>
                   <div className="p-5">
+                   <div className="flex md:flex-row  lg:flex-row flex-col  gap-4">
+                   <div>
+                   <input
+                     type="radio"
+                     name="price"
+                     id="regular"
+                     value="5-10"
+                     onChange={() => handleDurationChange("5-10")}
+                   />
+                   <label htmlFor="regular"  className="pr-2">5-10</label>
+                 </div>
+                 <div>
+                   <input
+                     type="radio"
+                     name="price"
+                     value="10-20"
+                     id="medium"
+                    
+                     onChange={() => handleDurationChange("10-20")}
+                   />
+                   <label htmlFor="medium"  >10-20</label>
+                 </div>
+                   </div>
+                    <div className="flex lg:flex-row md:flex-row flex-col gap-4 pt-4">
                     <div>
-                      <input
-                        type="radio"
-                        name="price"
-                        id="regular"
-                        value="5-10"
-                        onChange={() => handleDurationChange("5-10")}
-                      />
-                      <label htmlFor="regular">5-10</label>
-                    </div>
-                    <div>
-                      <input
-                        type="radio"
-                        name="price"
-                        value="10-20"
-                        id="medium"
-                        onChange={() => handleDurationChange("10-20")}
-                      />
-                      <label htmlFor="medium">10-20</label>
-                    </div>
-                    <div>
-                      <input
-                        type="radio"
-                        name="price"
-                        value="20-30"
-                        id="large"
-                        onChange={() => handleDurationChange("20-30")}
-                      />
-                      <label htmlFor="large">20-30</label>
-                    </div>
-                    <div>
-                      <input
-                        type="radio"
-                        name="price"
-                        value="30-40"
-                        id="extra-large"
-                        onChange={() => handleDurationChange("30-40")}
-                      />
-                      <label htmlFor="extra-large">30-40</label>
+                    <input
+                      type="radio"
+                      name="price"
+                      value="20-30"
+                      id="large"
+                      onChange={() => handleDurationChange("20-30")}
+                    />
+                    <label htmlFor="large">20-30</label>
+                  </div>
+                  <div>
+                    <input
+                      type="radio"
+                      name="price"
+                      value="30-40"
+                      id="extra-large"
+                      onChange={() => handleDurationChange("30-40")}
+                    />
+                    <label htmlFor="extra-large">30-40</label>
+                  </div>
                     </div>
                   </div>
                 </div>
