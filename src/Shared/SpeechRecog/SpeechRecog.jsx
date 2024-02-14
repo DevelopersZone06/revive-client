@@ -4,7 +4,7 @@ import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognitio
 
 const SpeechRecog = () => {
 
-    const startListenning = () => SpeechRecognition.startListening({ continuous: true, language: 'en' }); 
+    const startListenning = () => SpeechRecognition.startListening({ continuous: true, language: 'en-bn' }); 
 
     const { transcript, browserSupportsSpeechRecognition } = useSpeechRecognition(); 
 
@@ -21,9 +21,9 @@ const SpeechRecog = () => {
                 <p>A React hook that converts speech from the microphone to text and makes it available to your React
                 components.</p>
 
-                <div className="max-w-3xl w-full min-h-[400px] h-auto p-4 relative resize-none shadow-lg bg-[#FFFFFF] border-2 rounded-lg">
+                <p className="max-w-3xl w-full min-h-[400px] h-auto p-4 relative resize-none shadow-lg bg-[#FFFFFF] border-2 rounded-lg">
                     {transcript}
-                </div>
+                </p>
 
                 <div className="btn-style">
 
