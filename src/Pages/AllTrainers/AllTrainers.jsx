@@ -12,25 +12,25 @@ import Title from "../../Shared/Title";
 const AllTrainers = () => {
   const [trainers, setTrainers] = useState([])
 
-  useEffect( () => {
+  useEffect(() => {
     axios('https://revive-server-dun.vercel.app/trainers')
-    .then(res => {
-      setTrainers(res.data)
-    })
+      .then(res => {
+        setTrainers(res.data)
+      })
   }, [])
 
 
   return (
     <div className="px-[2%] sm:px-[5%] lg:px-[8%] py-20">
 
-     <Helmet>
-       <title>Revive | Trainers</title>
-     </Helmet> 
+      <Helmet>
+        <title>Revive | Trainers</title>
+      </Helmet>
 
       <PageTitle title={'Trainers'}></PageTitle>
       <Title heading={'Ours Trainers'} subHeading={'Our Experienced Trainers '}></Title>
       <div className="pt-16 border-b mb-10 border-b-gray-400 flex justify-between items-center">
-      
+
         <div className="flex pb-2  w-1/2 mx-auto">
           <input
             type="search"
