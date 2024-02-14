@@ -64,10 +64,10 @@ const router = createBrowserRouter([
         path: "/blog/:id",
         element: <BlogDetail />,
       },
-      {
-        path: '/speech', 
-        element: <SpeechRecog></SpeechRecog>
-      },
+      // {
+      //   path: '/speech', 
+      //   element: <SpeechRecog></SpeechRecog>
+      // },
       {
         path: "/trainers",
         element: <AllTrainers></AllTrainers>,
