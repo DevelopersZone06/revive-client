@@ -7,13 +7,15 @@ import PageTitle from "../../Shared/PageTitle/PageTitle";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Title from "../../Shared/Title";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
 
 const AllTrainers = () => {
+  const axiosPublic = useAxiosPublic()
   const [trainers, setTrainers] = useState([])
 
   useEffect(() => {
-    axios('https://revive-server-dun.vercel.app/trainers')
+    axiosPublic('/trainers')
       .then(res => {
         setTrainers(res.data)
       })
