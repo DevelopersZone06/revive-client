@@ -62,10 +62,6 @@ const router = createBrowserRouter([
         element: <Blogs></Blogs>,
       },
       {
-        path: '/form', 
-        element: <TrainerForm></TrainerForm>
-      },
-      {
         path: "/blog/:id",
         element: <BlogDetail />,
       },
