@@ -1,20 +1,17 @@
 import { Helmet } from "react-helmet-async";
 import Title from "../../../../Shared/Title";
 
-
 const PostGallery = () => {
-    const handleSubmit=e=>{
-        e.preventDefault()
-    }
-    return (
-        <div>
-            <Helmet>
-  <title>
-    Revive | Admin Dashboard
-  </title>
-</Helmet>
-            <Title></Title>
-              <form onSubmit={handleSubmit}>
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+  return (
+    <div>
+      <Helmet>
+        <title>Revive | Admin Dashboard</title>
+      </Helmet>
+      <Title></Title>
+      <form onSubmit={handleSubmit}>
         <div className="flex gap-4 md:flex-row flex-col">
           {/* Profile name */}
           <div className="relative h-32 w-full items-center  flex md:flex-row flex-col  gap-2 ">
@@ -27,7 +24,6 @@ const PostGallery = () => {
               className="input input-bordered w-full border border-[#c3bd2e]"
               name="email"
               readOnly
-              
             />
           </div>
           {/* Email */}
@@ -39,7 +35,6 @@ const PostGallery = () => {
               type="url"
               className="input input-bordered w-full  border border-[#c3bd2e]"
               name="image"
-              
             />
           </div>
         </div>
@@ -51,7 +46,6 @@ const PostGallery = () => {
             type="text"
             className="input input-bordered w-full  border border-[#c3bd2e]"
             name="name"
-          
           />
         </div>
 
@@ -62,8 +56,8 @@ const PostGallery = () => {
           Update
         </button>
       </form>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default PostGallery;
