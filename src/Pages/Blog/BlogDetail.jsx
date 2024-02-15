@@ -20,7 +20,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 
 const BlogDetail = () => {
 
-  const [textForCopy, setTextForCopy] = useState(); 
+  const [textForCopy, setTextForCopy] = useState(''); 
 
   const [isCopied, setCopied] = useClipboard(textForCopy);
 
@@ -45,6 +45,7 @@ const BlogDetail = () => {
     axiosPublic(`blogs?id=${id}`)
       .then(res => {
         setBlog(res.data)
+        setTextForCopy(res.data.description)
 
         // get comment 
         axiosPublic(`/comment/${res.data._id}`)
