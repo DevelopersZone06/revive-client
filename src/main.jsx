@@ -40,6 +40,7 @@ import UpdateProfile from "./Pages/Dashboard/User/UpdateProfile/UpdateProfile";
 import MyServices from "./Pages/Dashboard/User/Services/MyServices";
 import AllUsers from "./Pages/Dashboard/AllUsers/AllUsers";
 import SpeechRecog from "./Shared/SpeechRecog/SpeechRecog";
+import TrainerForm from "./Pages/TrainerForm/TrainerForm";
 
 
 
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
       {
         path: "/blogs",
         element: <Blogs></Blogs>,
+      },
+      {
+        path: '/form', 
+        element: <TrainerForm></TrainerForm>
       },
       {
         path: "/blog/:id",
