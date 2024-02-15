@@ -26,7 +26,7 @@ import ToBeTrainers from "./Pages/Dashboard/Admin/Trainers/BeTrainers";
 import Dashboard from "./Layout/Dashboard/Dashboard";
 import AdminHome from "./Pages/Dashboard/Admin/Home/AdminHome";
 // import AllUsers from "./Pages/AllUsers/AllUsers";
-import PostGallery from "./Pages/PostGallery/PostGallery";
+import PostGallery from "./Pages/Dashboard/PostGallery/PostGallery";
 import ServicesApproval from "./Pages/Dashboard/Admin/Services/ServicesApproval";
 import TrainerDetail from "./Pages/Dashboard/Admin/Trainers/TrainerDetail";
 import ServiceDetail from "./Pages/Dashboard/Admin/Services/ServiceDetail";
