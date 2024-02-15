@@ -111,6 +111,12 @@ const Navbar = () => {
               (user && isAdmin) &&  (<li>
                 <NavLink className="subheading" to="/dashboard/adminHome">Dashboard</NavLink>
               </li>)
+              
+             }
+             {
+               (user ) &&  (<li>
+                <NavLink className="subheading" to="/dashboard/userProfile">Dashboard</NavLink>
+              </li>)
              }
           </ul>
         </div>
