@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import CommentCard from "./CommentCard";
 import { FaShare } from "react-icons/fa";
+import useClipboard from "react-use-clipboard";
 import {
   FacebookShareButton,
   TwitterShareButton,
@@ -19,13 +20,16 @@ import { AuthContext } from "../../Provider/AuthProvider";
 
 const BlogDetail = () => {
 
+  const [textForCopy, setTextForCopy] = useState(); 
+
+  const [isCopied, setCopied] = useClipboard(textForCopy);
 
   const currentPageUrl = `https://soft-monstera-bbb73f.netlify.app/blog/65b2434b8209fff72f1ace46`;
 
 
-  const {user} = useContext(AuthContext)
+  const { user } = useContext(AuthContext)
   const axiosPublic = useAxiosPublic()
-  const {id} = useParams()
+  const { id } = useParams()
 
   const [blog, setBlog] = useState({})
   const [comments, setComments] = useState([])
@@ -33,24 +37,24 @@ const BlogDetail = () => {
 
 
 
-  const { _id, author, authorEmail, authorImage, authorTitle, category, date, description, image, title} = blog
+  const { _id, author, authorEmail, authorImage, authorTitle, category, date, description, image, title } = blog
 
 
   // get single blog comment and like
-  useEffect( () => {
+  useEffect(() => {
     axiosPublic(`blogs?id=${id}`)
-    .then(res => {
-      setBlog(res.data)
-
-      // get comment 
-      axiosPublic(`/comment/${res.data._id}`)
       .then(res => {
-        if(res.data){
-          setComments(res.data.allComment)
-          setLikes(res.data.likes)
-        }
+        setBlog(res.data)
+
+        // get comment 
+        axiosPublic(`/comment/${res.data._id}`)
+          .then(res => {
+            if (res.data) {
+              setComments(res.data.allComment)
+              setLikes(res.data.likes)
+            }
+          })
       })
-    })
   }, [])
 
 
@@ -67,33 +71,33 @@ const BlogDetail = () => {
       name: user?.displayName,
       comment: comment
     }
-  
+
     const newComment = {
       commentIs
     }
 
     axiosPublic.patch(`/comments/${_id}`, newComment)
-    .then(res => {
-      console.log(res.data)
-      setComments([commentIs, ...comments])
-    })
+      .then(res => {
+        console.log(res.data)
+        setComments([commentIs, ...comments])
+      })
   }
 
 
   // add like 
   const handleLike = () => {
-    const newLike = {name: user?.displayName}
+    const newLike = { name: user?.displayName }
 
     axiosPublic.patch(`/like/${_id}`, newLike)
-    .then(res => {
-      console.log(res.data)
-      setLikes([user?.displayName, ...likes])
-    })
+      .then(res => {
+        console.log(res.data)
+        setLikes([user?.displayName, ...likes])
+      })
   }
 
 
   const isReact = likes.includes(user?.displayName)
- 
+
 
   return (
     <>
@@ -117,7 +121,7 @@ const BlogDetail = () => {
                 <div className="flex p-4">
                   {isReact ? (
                     <img
-                      
+
                       src="https://i.ibb.co/KbRDCSX/icons8-love-24-4.png"
                       alt=""
                     />
@@ -131,7 +135,7 @@ const BlogDetail = () => {
                   )}{" "}
                   <p className="px-4">{likes.length}</p>
                   <img
-                   
+
                     className="pe-4"
                     src="https://i.ibb.co/80PGNMg/icons8-comment-24-1.png"
                     alt=""
@@ -198,8 +202,11 @@ const BlogDetail = () => {
               </div>
             </div>
             {/* mock blog text content */}
-            <div className="text-lg px-2 w-full my-20 text-justify">
+            <div onClick={() => setTextForCopy(description)} className="text-lg px-2 w-full my-20 text-justify">
               {description}
+              <button className="btn" onClick={setCopied}>
+                {isCopied ? "Copied to clipboard" : "Copy"}
+              </button>
             </div>
           </div>
         </div>
@@ -230,10 +237,10 @@ const BlogDetail = () => {
           <div className="h-[1px] my-5 w-full bg-sky-800"></div>
           <div className="lg:flex items-center justify-between mb-3">
             <h4 className="text-3xl font-semibold">All comments</h4>
-            <select className="p-3 rounded-md  text-sky-100" name="" id=""  style={{
-          background:
-            "radial-gradient(circle, rgba(30,162,184,1) 0%, rgba(6,54,93,1) 100%)",
-        }}>
+            <select className="p-3 rounded-md  text-sky-100" name="" id="" style={{
+              background:
+                "radial-gradient(circle, rgba(30,162,184,1) 0%, rgba(6,54,93,1) 100%)",
+            }}>
               <option value="recent">Recent</option>
               <option value="all">All Comments</option>
               <option value="relevant" selected>
@@ -253,21 +260,21 @@ const BlogDetail = () => {
             ></textarea>
             <div>
               <button
-               
-                className=" px-5 py-2 mr-2 rounded-md text-white ms-1"  style={{
+
+                className=" px-5 py-2 mr-2 rounded-md text-white ms-1" style={{
                   background:
                     "radial-gradient(circle, rgba(30,162,184,1) 0%, rgba(6,54,93,1) 100%)",
                 }}
               >
                 Post
               </button>
-              
+
             </div>
           </form>
-          
+
 
           <div className="overflow-auto max-h-[500px] comment-area mb-10">
-            { comments.map((comment, index) => (
+            {comments.map((comment, index) => (
               <CommentCard key={index} comment={comment}></CommentCard>
             ))}
           </div>
