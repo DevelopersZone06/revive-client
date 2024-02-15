@@ -40,6 +40,7 @@ import UpdateProfile from "./Pages/Dashboard/User/UpdateProfile/UpdateProfile";
 import MyServices from "./Pages/Dashboard/User/Services/MyServices";
 import AllUsers from "./Pages/Dashboard/AllUsers/AllUsers";
 import SpeechRecog from "./Shared/SpeechRecog/SpeechRecog";
+import TrainerPostedService from "./Pages/Dashboard/Trainer/TrainerProfile/TrainerPostedService/TrainerPostedService";
 
 
 
@@ -199,6 +200,10 @@ const router = createBrowserRouter([
     {
       path: 'orderHistory', 
       element: <OrderHistory></OrderHistory>
+    }, 
+    {
+      path: 'trainerPostedService', 
+      element: <TrainerPostedService/>
     }, 
     {
       path: 'updateProfile', 

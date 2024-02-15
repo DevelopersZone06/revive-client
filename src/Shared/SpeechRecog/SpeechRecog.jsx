@@ -4,7 +4,7 @@ import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognitio
 
 const SpeechRecog = () => {
 
-    const startListenning = () => SpeechRecognition.startListening({ continuous: true, language: 'en' }); 
+    const startListenning = () => SpeechRecognition.startListening({ continuous: true, language: 'en-bn' }); 
 
     const { transcript, browserSupportsSpeechRecognition } = useSpeechRecognition(); 
 
