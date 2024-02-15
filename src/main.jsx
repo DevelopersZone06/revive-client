@@ -38,7 +38,7 @@ import TrainerProfile from "./Pages/Dashboard/Trainer/TrainerProfile/TrainerProf
 import OrderHistory from "./Pages/Dashboard/User/OrderHistory/OrderHistory";
 import UpdateProfile from "./Pages/Dashboard/User/UpdateProfile/UpdateProfile";
 import MyServices from "./Pages/Dashboard/User/Services/MyServices";
-;
+
 
 
 
