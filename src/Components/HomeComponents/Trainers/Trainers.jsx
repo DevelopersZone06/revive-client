@@ -2,15 +2,17 @@
 import { useEffect, useState } from 'react';
 import Title from '../../../Shared/Title';
 import Trainer from './Trainer';
-import axios from 'axios';
+
 import { Link } from 'react-router-dom';
+import useAxiosPublic from '../../../Hooks/useAxiosPublic';
 
 const Trainers = () => {
+    const axiosPublic = useAxiosPublic()
 
     const [trainers, setTrainers] = useState([])
 
     useEffect( () => {
-        axios('https://revive-server-dun.vercel.app/trainers')
+        axiosPublic('https://revive-server-dun.vercel.app/trainers')
         .then(res => {
           setTrainers(res.data.slice(0, 8))
         })
