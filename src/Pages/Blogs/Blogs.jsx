@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Blog from "./Blog";
 import axios from "axios";
 import { Helmet } from "react-helmet-async";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
 // import { Helmet } from "react-helmet";
 
 const Blogs = () => {
@@ -12,11 +13,11 @@ const Blogs = () => {
     const [date, setDate] = useState("")
     const [sort, setSort] = useState("")
     
+    const axiosPublic = useAxiosPublic()
 
     useEffect(() => {
-        fetch(`http://localhost:5000/blogs?trainer=${trainer}&category=${category}&date=${date}&sort=${sort}`)
-            .then((res) => res.json())
-            .then((data) => setBlogs(data));
+        axiosPublic(`/blogs?trainer=${trainer}&category=${category}&date=${date}&sort=${sort}`)
+            .then(res => setBlogs(res.data));
     }, [trainer, category, date, sort]);
 
 
