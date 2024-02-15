@@ -62,10 +62,6 @@ const router = createBrowserRouter([
         element: <Blogs></Blogs>,
       },
       {
-        path: '/form', 
-        element: <TrainerForm></TrainerForm>
-      },
-      {
         path: "/blog/:id",
         element: <BlogDetail />,
       },
@@ -130,7 +126,8 @@ const router = createBrowserRouter([
       
       
     ],
-  }, {
+  }, 
+  {
     path: 'dashboard',
     element: <Dashboard></Dashboard>,
     children: [
