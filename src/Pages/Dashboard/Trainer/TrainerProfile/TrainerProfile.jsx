@@ -37,7 +37,8 @@ const TrainerProfile = () => {
                   <div className="relative z-0 w-full  group">
                   <input
                     type="text"
-                    name="title" 
+                    
+                    name="title" value={`${user?.displayName}`}
                     className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-sky-50 peer"
                     placeholder=" "
                     required
@@ -49,7 +50,7 @@ const TrainerProfile = () => {
                 <div className="relative z-0 w-full  group">
                   <input
                     type="text"
-                    name="title" value={'ishrat12@gmail.com'}
+                    name="title" value={`${user?.email}`}
                     className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-sky-50 peer"
                     placeholder=" " 
                     required
@@ -143,10 +144,10 @@ const TrainerProfile = () => {
                    </div> */}
                    <form  className="max-w-[70%] mx-auto">
          <div className="flex lg:flex-row my-5 md:flex-row flex-col gap-10 items-center">
-         <div className="relative z-0 w-full  group">
+         <div className="relative z-0 w-full  group my-5">
          <input
            type="text"
-           name="title" value={'Nipi'}
+           name="title" value={`${user?.displayName}`}
            className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-sky-50 peer"
            placeholder=" "
            required
@@ -155,10 +156,10 @@ const TrainerProfile = () => {
            Full Name
          </label>
        </div>
-       <div className="relative z-0 w-full  group">
+       <div className="relative z-0 w-full  group my-5">
          <input
            type="text"
-           name="title" value={'ishrat12@gmail.com'}
+           name="title" value={`${user?.email}`}
            className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-sky-50 peer"
            placeholder=" " 
            required
