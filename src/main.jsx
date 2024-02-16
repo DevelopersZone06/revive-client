@@ -31,7 +31,7 @@ import ServicesApproval from "./Pages/Dashboard/Admin/Services/ServicesApproval"
 import TrainerDetail from "./Pages/Dashboard/Admin/Trainers/TrainerDetail";
 import ServiceDetail from "./Pages/Dashboard/Admin/Services/ServiceDetail";
 import PostedPackages from "./Pages/Dashboard/Admin/Packages/PostedPackages";
-import Calender from "./Pages/Dashboard/User/Calender/Calender";
+// import Calender from "./Pages/Dashboard/User/Calender/Calender";
 
 import ServicesDetails from "./Pages/Dashboard/User/Services/ServicesDetails";
 import TrainerProfile from "./Pages/Dashboard/Trainer/TrainerProfile/TrainerProfile";
@@ -40,6 +40,8 @@ import UpdateProfile from "./Pages/Dashboard/User/UpdateProfile/UpdateProfile";
 import MyServices from "./Pages/Dashboard/User/Services/MyServices";
 import AllUsers from "./Pages/Dashboard/AllUsers/AllUsers";
 import SpeechRecog from "./Shared/SpeechRecog/SpeechRecog";
+import UserProfile from "./Pages/Dashboard/User/UserProfile/UserProfile";
+import Todo from "./Pages/Dashboard/User/Todo/Todo";
 
 
 
@@ -126,10 +128,12 @@ const router = createBrowserRouter([
       
       
     ],
-  }, {
+  }, 
+  {
     path: 'dashboard',
     element: <Dashboard></Dashboard>,
     children: [
+      //Admin routes
       {
         path: 'adminHome',
         element: <AdminHome></AdminHome>
@@ -166,10 +170,10 @@ const router = createBrowserRouter([
         element: <ServiceDetail />
       },
       // user route
-      {
-        path: 'calender',
-        element: <Calender />
-      },
+      // {
+      //   path: 'calender',
+      //   element: <Calender />
+      // },
       {
         path: 'myServices',
         element: <MyServices />
@@ -186,7 +190,14 @@ const router = createBrowserRouter([
         path: 'updateProfile',
         element: <UpdateProfile></UpdateProfile>
       },
-      
+      {
+        path:'userProfile' ,
+        element:<UserProfile></UserProfile>
+      },
+      {
+ path:'todo',
+ element:<Todo/>
+      },
     
     
     

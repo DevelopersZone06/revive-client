@@ -10,11 +10,17 @@ import logo from '../../assets/images/logo2.png'
 import { IoLogOut } from "react-icons/io5";
 import LogOut from "../../Components/LogOut/LogOut";
 // user route icon
-import { FcCalendar } from "react-icons/fc";
+import { FaArrowsToDot } from "react-icons/fa6";
+import { CgProfile } from "react-icons/cg";
 import { TbDetails } from "react-icons/tb";
 import { Helmet } from "react-helmet-async";
+import UpdateProfile from "../../Pages/Dashboard/User/UpdateProfile/UpdateProfile";
+import UserProfile from "../../Pages/Dashboard/User/UserProfile/UserProfile";
+import useAuth from "../../Hooks/useAuth";
+import Profile from "../../Shared/Profile/Profile";
 const Dashboard = () => {
   const { isAdmin } = useAdmin();
+  const {user}=useAuth()
   return (
     <div className="flex flex-col md:flex-row py-20 px-[2%] sm:px-[5%] lg:px-[5%] " style={{ background: 'radial-gradient(circle, rgba(0,51,111,1) 0%, rgba(0,0,0,1) 100%)' }}>
       <div className="md:w-64  md:min-h-screen ">
@@ -30,7 +36,7 @@ const Dashboard = () => {
               <img src={logo} alt="" className="w-32 h-10 object-cover  -ml-3" />
             </Link>
           </li>
-          {isAdmin && (
+          {isAdmin ? (
             <>
               {/* Admin exits */}
               <li >
@@ -105,20 +111,22 @@ const Dashboard = () => {
 
             </>
 
-          )}
-          <div className="divider border-b w-3/4 ml-2  border-sky-100"> </div>
+          ) : 
           <>
+      {/* User info */}
+         <Profile></Profile>
             <li>
               <NavLink
-                to={"/dashboard/calender"}
+                to={"/dashboard/userProfile"}
                 className={({ isActive, isPending }) =>
                   isPending ? "pending" : isActive ? "text-sky-200" : ""
                 }
               >
-                <FcCalendar />
-                Calendar
+                <CgProfile />
+               My Profile
               </NavLink>
             </li>
+           
             <li>
               <NavLink
                 to={"/dashboard/myServices"}
@@ -128,6 +136,17 @@ const Dashboard = () => {
               >
                 <TbDetails />
                 My Services
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to={"/dashboard/todo"}
+                className={({ isActive, isPending }) =>
+                  isPending ? "pending" : isActive ? "text-sky-200" : ""
+                }
+              >
+                <FaArrowsToDot />
+                Todo
               </NavLink>
             </li>
             <li>
@@ -144,6 +163,11 @@ const Dashboard = () => {
               </NavLink>
             </li>
           </>
+
+          
+        
+        }
+         
 
         </ul>
       </div>
