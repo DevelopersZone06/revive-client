@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
+import useTrainer from "../../Hooks/useTrainer";
 
-const Profile = ({img}) => {
+const Profile = ({ img }) => {
+
+  const { isTrainer } = useTrainer()
+
   const { user } = useAuth();
 
   return (
@@ -22,9 +26,12 @@ const Profile = ({img}) => {
           </h1>
           <p className=" text-sm text-blue-300">{user?.email}</p>
         </div>
-        <div>
-          <Link to={'postBlog'}><button className="btn btn-sm mt-3">Post a blog</button></Link>
-        </div>
+        {
+          isTrainer &&
+          <div>
+            <Link to={'postBlog'}><button className="btn btn-sm mt-3">Post a blog</button></Link>
+          </div>
+        }
       </div>
     </div>
   );

@@ -16,7 +16,7 @@ import { TbDetails } from "react-icons/tb";
 import { Helmet } from "react-helmet-async";
 import Profile from "../../Shared/Profile/Profile";
 import useTrainer from "../../Hooks/useTrainer";
-import {  } from "react-icons/ri";
+import { } from "react-icons/ri";
 // import { IoIosPeople } from "react-icons/fa6";
 const Dashboard = () => {
   const { isAdmin } = useAdmin();
@@ -108,83 +108,19 @@ const Dashboard = () => {
                   Services Approval
                 </NavLink>
               </li>
-              
+
               {/* user route */}
 
             </>
 
           ) :
-          //trainer exist 
-          isTrainer ? (
-             <>
-              <Profile img={'https://i.ibb.co/W2680FV/images.jpg'}></Profile>
-              <li>
-              <NavLink
-                to={"/dashboard/trainerProfile"}
-                className={({ isActive, isPending }) =>
-                  isPending ? "pending" : isActive ? "text-sky-200" : ""
-                }
-              >
-                <CgProfile />
-               My Profile
-              </NavLink>
-            </li>
-              <li>
-              <NavLink
-                to={"/dashboard/trainerPostedService"}
-                className={({ isActive, isPending }) =>
-                  isPending ? "pending" : isActive ? "text-sky-200" : ""
-                }
-              >
-                <RiServiceFill />
-              My Services
-              </NavLink>
-            </li>
-              <li>
-              <NavLink
-                to={"/dashboard/trainerProfile"}
-                className={({ isActive, isPending }) =>
-                  isPending ? "pending" : isActive ? "text-sky-200" : ""
-                }
-              >
-                <FaNewspaper />
-               My Blogs
-              </NavLink>
-            </li>
-              <li>
-              <NavLink
-                to={"/dashboard/trainerProfile"}
-                className={({ isActive, isPending }) =>
-                  isPending ? "pending" : isActive ? "text-sky-200" : ""
-                }
-              >
-              {/* <IoIosPeople></IoIosPeople> */}
-               My Customers
-              </NavLink>
-            </li>
-              <li>
-              <NavLink
-                to={"/dashboard/todo"}
-                className={({ isActive, isPending }) =>
-                  isPending ? "pending" : isActive ? "text-sky-200" : ""
-                }
-              >
-                <CgProfile />
-               To-Do
-              </NavLink>
-            </li>
-             </>
-          )
-
-              :
-              (<>
-                <Profile img={'https://i.ibb.co/gM3rG8G/beautiful-woman-park-last-sunny-days.jpg'}></Profile>
-
-                <Link to={'applyTrainerForm'}><button className="btn btn-sm mt-3">Apply to be a trainer</button></Link>
-
+            //trainer exist 
+            isTrainer ? (
+              <>
+                <Profile img={'https://i.ibb.co/W2680FV/images.jpg'}></Profile>
                 <li>
                   <NavLink
-                    to={"/dashboard/userProfile"}
+                    to={"/dashboard/trainerProfile"}
                     className={({ isActive, isPending }) =>
                       isPending ? "pending" : isActive ? "text-sky-200" : ""
                     }
@@ -193,17 +129,37 @@ const Dashboard = () => {
                     My Profile
                   </NavLink>
                 </li>
-
-
                 <li>
                   <NavLink
-                    to={"/dashboard/myServices"}
+                    to={"/dashboard/trainerPostedService"}
                     className={({ isActive, isPending }) =>
                       isPending ? "pending" : isActive ? "text-sky-200" : ""
                     }
                   >
-                    <TbDetails />
+                    <RiServiceFill />
                     My Services
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to={"/dashboard/trainerProfile"}
+                    className={({ isActive, isPending }) =>
+                      isPending ? "pending" : isActive ? "text-sky-200" : ""
+                    }
+                  >
+                    <FaNewspaper />
+                    My Blogs
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to={"/dashboard/trainerProfile"}
+                    className={({ isActive, isPending }) =>
+                      isPending ? "pending" : isActive ? "text-sky-200" : ""
+                    }
+                  >
+                    {/* <IoIosPeople></IoIosPeople> */}
+                    My Customers
                   </NavLink>
                 </li>
                 <li>
@@ -213,26 +169,75 @@ const Dashboard = () => {
                       isPending ? "pending" : isActive ? "text-sky-200" : ""
                     }
                   >
-                    <FaArrowsToDot />
-                    Todo
+                    <CgProfile />
+                    To-Do
                   </NavLink>
                 </li>
-                <li>
-                  <NavLink
-                    to={"/dashboard/servicesApproval"}
-                    className={({ isActive, isPending }) =>
-                      isPending ? "pending" : isActive ? "text-sky-200 flex items-center" : "flex items-center"
-                    }
-                  >
-                    <div className="flex items-center text-sm ">
-                      <IoLogOut className="w-5 -mr-4 " />
-                      <LogOut />
-                    </div>
-                  </NavLink>
-                </li>
+              </>
+            )
+
+              :
+              (<>
+                <Profile img={'https://i.ibb.co/gM3rG8G/beautiful-woman-park-last-sunny-days.jpg'}></Profile>
+
+                <Link to={'applyTrainerForm'}><button className="btn btn-sm mt-3">Apply to be a trainer</button></Link>
+
+                <div className="flex flex-row md:flex-col">
+                  <li>
+                    <NavLink
+                      to={"/dashboard/userProfile"}
+                      className={({ isActive, isPending }) =>
+                        isPending ? "pending" : isActive ? "text-sky-200" : ""
+                      }
+                    >
+                      <CgProfile />
+                      <span className="xl:flex lg:flex md:flex hidden">My Profile</span>
+                    </NavLink>
+                  </li>
+
+
+                  <li>
+                    <NavLink
+                      to={"/dashboard/myServices"}
+                      className={({ isActive, isPending }) =>
+                        isPending ? "pending" : isActive ? "text-sky-200" : ""
+                      }
+                    >
+                      <TbDetails />
+                      <span className="xl:flex lg:flex md:flex hidden">
+                        My Services
+                      </span>
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to={"/dashboard/todo"}
+                      className={({ isActive, isPending }) =>
+                        isPending ? "pending" : isActive ? "text-sky-200" : ""
+                      }
+                    >
+                      <FaArrowsToDot />
+                      <span className="xl:flex lg:flex md:flex hidden">
+                        
+                      Todo
+                      </span>
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to={"/dashboard/servicesApproval"}
+                      className={({ isActive, isPending }) =>
+                        isPending ? "pending" : isActive ? "text-sky-200 flex items-center" : "flex items-center"
+                      }
+                    >
+                      <div className="flex items-center text-sm ">
+                        <IoLogOut className="w-5 -mr-4 " />
+                        <LogOut />
+                      </div>
+                    </NavLink>
+                  </li>
+                </div>
               </>)
-
-
 
           }
 
