@@ -41,8 +41,11 @@ import MyServices from "./Pages/Dashboard/User/Services/MyServices";
 import AllUsers from "./Pages/Dashboard/AllUsers/AllUsers";
 import SpeechRecog from "./Shared/SpeechRecog/SpeechRecog";
 import UserProfile from "./Pages/Dashboard/User/UserProfile/UserProfile";
+import Todo from "./Pages/Dashboard/User/Todo/Todo";
+
 import TrainerForm from "./Pages/TrainerForm/TrainerForm";
 import UserDashboard from "./Layout/UserDashboard/UserDashboard";
+import TrainerPostedService from "./Pages/Dashboard/Trainer/TrainerProfile/TrainerPostedService/TrainerPostedService";
 
 
 
@@ -123,10 +126,6 @@ const router = createBrowserRouter([
         element: <BMIServices></BMIServices>,
       },
 
-
-
-
-
     ],
   },
   {
@@ -183,7 +182,7 @@ const router = createBrowserRouter([
         element: <ServicesDetails />
       },
       {
-        path: 'updateProfile/applyTrainerForm',
+        path: 'applyTrainerForm',
         element: <TrainerForm></TrainerForm>
       }
       ,
@@ -192,12 +191,9 @@ const router = createBrowserRouter([
         element: <OrderHistory></OrderHistory>
       },
       {
-        path: 'updateProfile',
-        element: <UpdateProfile></UpdateProfile>
+        path: 'userProfile',
+        element: <UserProfile></UserProfile>
       },
-
-
-
 
       //Trainer Route
 
@@ -205,10 +201,47 @@ const router = createBrowserRouter([
         path: 'trainerProfile',
         element: <TrainerProfile />
       },
+      {
+        path: 'orderHistory',
+        element: <OrderHistory />
+      },
+      {
+        path: 'updateProfile',
+        element: <UpdateProfile />
+      },
+      {
+        path: 'trainerPostedService',
+        element: <TrainerPostedService />
+      },
+      {
+        path: 'todo',
+        element: <Todo />
+      }
 
 
+
+
+
+      //Trainer Route
+      // {
+      //   path:'trainerProfile',
+      //   element:<TrainerProfile/>
+      // },
+
+      // {
+      //   path: 'orderHistory', 
+      //   element: <OrderHistory></OrderHistory>
+      // }, 
+      // {
+      //   path: 'updateProfile', 
+      //   element: <UpdateProfile></UpdateProfile>
+      // }
     ]
-  },
+  }
+
+
+
+
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
