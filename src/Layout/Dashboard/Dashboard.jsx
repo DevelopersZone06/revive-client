@@ -1,4 +1,5 @@
 import { Link, NavLink, Outlet } from "react-router-dom";
+import { AiOutlineLogout } from "react-icons/ai";
 import useAdmin from "../../Hooks/useAdmin";
 import { MdSpaceDashboard } from "react-icons/md";
 import { FaNewspaper, FaUsers } from "react-icons/fa";
@@ -117,6 +118,7 @@ const Dashboard = () => {
             //trainer exist 
             isTrainer ? (
               <>
+
                 <Profile img={'https://i.ibb.co/W2680FV/images.jpg'}></Profile>
                 <li>
                   <NavLink
@@ -126,7 +128,9 @@ const Dashboard = () => {
                     }
                   >
                     <CgProfile />
-                    My Profile
+                    <span className="xl:flex lg:flex md:flex hidden">
+                      My Profile
+                    </span>
                   </NavLink>
                 </li>
                 <li>
@@ -137,7 +141,10 @@ const Dashboard = () => {
                     }
                   >
                     <RiServiceFill />
-                    My Services
+                    <span className="xl:flex lg:flex md:flex hidden">
+
+                      My Services
+                    </span>
                   </NavLink>
                 </li>
                 <li>
@@ -148,7 +155,10 @@ const Dashboard = () => {
                     }
                   >
                     <FaNewspaper />
-                    My Blogs
+                    <span className="xl:flex lg:flex md:flex hidden">
+
+                      My Blogs
+                    </span>
                   </NavLink>
                 </li>
                 <li>
@@ -159,7 +169,10 @@ const Dashboard = () => {
                     }
                   >
                     {/* <IoIosPeople></IoIosPeople> */}
-                    My Customers
+                    <span className="xl:flex lg:flex md:flex hidden">
+
+                      My Customers
+                    </span>
                   </NavLink>
                 </li>
                 <li>
@@ -170,8 +183,15 @@ const Dashboard = () => {
                     }
                   >
                     <CgProfile />
-                    To-Do
+                    <span className="xl:flex lg:flex md:flex hidden">
+                      To-Do
+
+                    </span>
                   </NavLink>
+                </li>
+                <li>
+                  <IoLogOut className="w-5 -mr-4 " />
+                  <LogOut></LogOut>
                 </li>
               </>
             )
@@ -218,8 +238,8 @@ const Dashboard = () => {
                     >
                       <FaArrowsToDot />
                       <span className="xl:flex lg:flex md:flex hidden">
-                        
-                      Todo
+
+                        Todo
                       </span>
                     </NavLink>
                   </li>
