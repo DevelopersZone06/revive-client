@@ -13,8 +13,6 @@ import LogOut from "../../Components/LogOut/LogOut";
 import { FcCalendar } from "react-icons/fc";
 import { TbDetails } from "react-icons/tb";
 import { Helmet } from "react-helmet-async";
-import UpdateProfile from "../../Pages/Dashboard/User/UpdateProfile/UpdateProfile";
-import UserProfile from "../../Pages/Dashboard/User/UserProfile/UserProfile";
 import useAuth from "../../Hooks/useAuth";
 import Profile from "../../Shared/Profile/Profile";
 const Dashboard = () => {

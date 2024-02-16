@@ -41,6 +41,7 @@ import MyServices from "./Pages/Dashboard/User/Services/MyServices";
 import AllUsers from "./Pages/Dashboard/AllUsers/AllUsers";
 import SpeechRecog from "./Shared/SpeechRecog/SpeechRecog";
 import UserProfile from "./Pages/Dashboard/User/UserProfile/UserProfile";
+import TrainerForm from "./Pages/TrainerForm/TrainerForm";
 
 
 
@@ -180,6 +181,11 @@ const router = createBrowserRouter([
         path:'/dashboard/myServices/myServicesDetails',
         element:<ServicesDetails/>
       },
+      {
+        path: 'applyTrainerForm', 
+        element: <TrainerForm></TrainerForm>
+      }
+      ,
       {
         path: 'orderHistory',
         element: <OrderHistory></OrderHistory>
