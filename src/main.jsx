@@ -41,6 +41,8 @@ import MyServices from "./Pages/Dashboard/User/Services/MyServices";
 import AllUsers from "./Pages/Dashboard/AllUsers/AllUsers";
 import SpeechRecog from "./Shared/SpeechRecog/SpeechRecog";
 import UserProfile from "./Pages/Dashboard/User/UserProfile/UserProfile";
+import TrainerForm from "./Pages/TrainerForm/TrainerForm";
+import UserDashboard from "./Layout/UserDashboard/UserDashboard";
 
 
 
@@ -66,7 +68,7 @@ const router = createBrowserRouter([
         element: <BlogDetail />,
       },
       {
-        path: '/speech', 
+        path: '/speech',
         element: <SpeechRecog></SpeechRecog>
       },
       {
@@ -122,11 +124,11 @@ const router = createBrowserRouter([
       },
 
 
-      
-      
-      
+
+
+
     ],
-  }, 
+  },
   {
     path: 'dashboard',
     element: <Dashboard></Dashboard>,
@@ -167,19 +169,24 @@ const router = createBrowserRouter([
         path: '/dashboard/servicesApproval/serviceDetail',
         element: <ServiceDetail />
       },
+
+
+      
       // user route
-      // {
-      //   path: 'calender',
-      //   element: <Calender />
-      // },
+     
       {
         path: 'myServices',
         element: <MyServices />
       },
       {
-        path:'/dashboard/myServices/myServicesDetails',
-        element:<ServicesDetails/>
+        path: 'myServices/myServicesDetails',
+        element: <ServicesDetails />
       },
+      {
+        path: 'updateProfile/applyTrainerForm',
+        element: <TrainerForm></TrainerForm>
+      }
+      ,
       {
         path: 'orderHistory',
         element: <OrderHistory></OrderHistory>
@@ -187,10 +194,6 @@ const router = createBrowserRouter([
       {
         path: 'updateProfile',
         element: <UpdateProfile></UpdateProfile>
-      },
-      {
-        path:'userProfile' ,
-        element:<UserProfile></UserProfile>
       },
      
     
@@ -214,7 +217,10 @@ const router = createBrowserRouter([
     }
   ]
   }
-]);
+
+
+    ]
+  );
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
