@@ -41,11 +41,10 @@ import MyServices from "./Pages/Dashboard/User/Services/MyServices";
 import AllUsers from "./Pages/Dashboard/AllUsers/AllUsers";
 import SpeechRecog from "./Shared/SpeechRecog/SpeechRecog";
 import UserProfile from "./Pages/Dashboard/User/UserProfile/UserProfile";
+import Todo from "./Pages/Dashboard/User/Todo/Todo";
+
 import TrainerForm from "./Pages/TrainerForm/TrainerForm";
 import UserDashboard from "./Layout/UserDashboard/UserDashboard";
-
-
-
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -68,8 +67,8 @@ const router = createBrowserRouter([
         element: <BlogDetail />,
       },
       {
-        path: '/speech',
-        element: <SpeechRecog></SpeechRecog>
+        path: "/speech",
+        element: <SpeechRecog></SpeechRecog>,
       },
       {
         path: "/trainers",
@@ -122,105 +121,94 @@ const router = createBrowserRouter([
         path: "/BMIServices",
         element: <BMIServices></BMIServices>,
       },
-
-
-
-
-
     ],
   },
   {
-    path: 'dashboard',
+    path: "dashboard",
     element: <Dashboard></Dashboard>,
     children: [
       //Admin routes
       {
-        path: 'adminHome',
-        element: <AdminHome></AdminHome>
+        path: "adminHome",
+        element: <AdminHome></AdminHome>,
       },
       {
-        path: 'allUsers',
-        element: <AllUsers></AllUsers>
+        path: "allUsers",
+        element: <AllUsers></AllUsers>,
       },
       {
-        path: 'postGallery',
-        element: <PostGallery></PostGallery>
-
+        path: "postGallery",
+        element: <PostGallery></PostGallery>,
       },
-
 
       {
-        path: 'toBeTrainers',
-        element: <ToBeTrainers />
+        path: "toBeTrainers",
+        element: <ToBeTrainers />,
       },
       {
-        path: 'postPackages',
-        element: <PostedPackages></PostedPackages>
+        path: "postPackages",
+        element: <PostedPackages></PostedPackages>,
       },
       {
-        path: 'servicesApproval',
-        element: <ServicesApproval />
+        path: "servicesApproval",
+        element: <ServicesApproval />,
       },
       {
-        path: '/dashboard/toBeTrainers/trainerDetail',
-        element: <TrainerDetail />
+        path: "/dashboard/toBeTrainers/trainerDetail",
+        element: <TrainerDetail />,
       },
       {
-        path: '/dashboard/servicesApproval/serviceDetail',
-        element: <ServiceDetail />
+        path: "/dashboard/servicesApproval/serviceDetail",
+        element: <ServiceDetail />,
       },
 
-
-      
       // user route
-     
+
       {
-        path: 'myServices',
-        element: <MyServices />
+        path: "myServices",
+        element: <MyServices />,
       },
       {
-        path: 'myServices/myServicesDetails',
-        element: <ServicesDetails />
+        path: "myServices/myServicesDetails",
+        element: <ServicesDetails />,
       },
       {
-        path: 'updateProfile/applyTrainerForm',
-        element: <TrainerForm></TrainerForm>
-      }
-      ,
-      {
-        path: 'orderHistory',
-        element: <OrderHistory></OrderHistory>
+        path: "updateProfile/applyTrainerForm",
+        element: <TrainerForm></TrainerForm>,
       },
       {
-        path: 'updateProfile',
-        element: <UpdateProfile></UpdateProfile>
+        path: "orderHistory",
+        element: <OrderHistory></OrderHistory>,
       },
-     
-    
-    
-    
-   
-   
-    //Trainer Route
-    {
-      path:'trainerProfile',
-      element:<TrainerProfile/>
-    },
-   
-    {
-      path: 'orderHistory', 
-      element: <OrderHistory></OrderHistory>
-    }, 
-    {
-      path: 'updateProfile', 
-      element: <UpdateProfile></UpdateProfile>
-    }
-  ]
-  }
+      {
+        path: "updateProfile",
+        element: <UpdateProfile></UpdateProfile>,
+      },
+
+      //Trainer Route
+
+      {
+        path: "todo",
+        element: <Todo />,
+      },
 
 
-    ]
-  );
+      {
+        path: "trainerProfile",
+        element: <TrainerProfile />,
+      },
+
+      {
+        path: "orderHistory",
+        element: <OrderHistory></OrderHistory>,
+      },
+      {
+        path: "updateProfile",
+        element: <UpdateProfile></UpdateProfile>,
+      },
+    ],
+  },
+]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

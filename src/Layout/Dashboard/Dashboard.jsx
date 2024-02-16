@@ -10,7 +10,8 @@ import logo from '../../assets/images/logo2.png'
 import { IoLogOut } from "react-icons/io5";
 import LogOut from "../../Components/LogOut/LogOut";
 // user route icon
-import { FcCalendar } from "react-icons/fc";
+import { FaArrowsToDot } from "react-icons/fa6";
+import { CgProfile } from "react-icons/cg";
 import { TbDetails } from "react-icons/tb";
 import { Helmet } from "react-helmet-async";
 import useAuth from "../../Hooks/useAuth";
@@ -119,8 +120,9 @@ const Dashboard = () => {
           )
 
          : 
- (<>
+       (<>
          <Profile></Profile>
+         
             <li>
               <NavLink
                 to={"/dashboard/updateProfile"}
@@ -128,21 +130,12 @@ const Dashboard = () => {
                   isPending ? "pending" : isActive ? "text-sky-200" : ""
                 }
               >
-                <FcCalendar />
+                <CgProfile />
                My Profile
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                to={"/dashboard/calender"}
-                className={({ isActive, isPending }) =>
-                  isPending ? "pending" : isActive ? "text-sky-200" : ""
-                }
-              >
-                <FcCalendar />
-                Calendar
-              </NavLink>
-            </li>
+
+           
             <li>
               <NavLink
                 to={"/dashboard/myServices"}
@@ -152,6 +145,17 @@ const Dashboard = () => {
               >
                 <TbDetails />
                 My Services
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to={"/dashboard/todo"}
+                className={({ isActive, isPending }) =>
+                  isPending ? "pending" : isActive ? "text-sky-200" : ""
+                }
+              >
+                <FaArrowsToDot />
+                Todo
               </NavLink>
             </li>
             <li>
