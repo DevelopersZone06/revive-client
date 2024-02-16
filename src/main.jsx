@@ -45,6 +45,8 @@ import Todo from "./Pages/Dashboard/User/Todo/Todo";
 
 import TrainerForm from "./Pages/TrainerForm/TrainerForm";
 import UserDashboard from "./Layout/UserDashboard/UserDashboard";
+import TrainerPostedService from "./Pages/Dashboard/Trainer/TrainerProfile/TrainerPostedService/TrainerPostedService";
+import PostBlog from "./Pages/Dashboard/Trainer/PostBlog/PostBlog";
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -163,26 +165,30 @@ const router = createBrowserRouter([
       },
 
       // user route
-
+      // {
+      //   path: 'calender',
+      //   element: <Calender />
+      // },
       {
-        path: "myServices",
-        element: <MyServices />,
+        path: 'myServices',
+        element: <MyServices />
       },
       {
-        path: "myServices/myServicesDetails",
-        element: <ServicesDetails />,
+        path: 'myServices/myServicesDetails',
+        element: <ServicesDetails />
       },
       {
-        path: "updateProfile/applyTrainerForm",
-        element: <TrainerForm></TrainerForm>,
+        path: 'applyTrainerForm',
+        element: <TrainerForm></TrainerForm>
+      }
+      ,
+      {
+        path: 'orderHistory',
+        element: <OrderHistory></OrderHistory>
       },
       {
-        path: "orderHistory",
-        element: <OrderHistory></OrderHistory>,
-      },
-      {
-        path: "updateProfile",
-        element: <UpdateProfile></UpdateProfile>,
+        path: 'userProfile',
+        element: <UserProfile></UserProfile>
       },
 
       //Trainer Route
@@ -203,11 +209,50 @@ const router = createBrowserRouter([
         element: <OrderHistory></OrderHistory>,
       },
       {
-        path: "updateProfile",
-        element: <UpdateProfile></UpdateProfile>,
+        path: 'postBlog', 
+        element: <PostBlog />
       },
-    ],
-  },
+      {
+        path: 'orderHistory',
+        element: <OrderHistory />
+      },
+      {
+        path: 'updateProfile',
+        element: <UpdateProfile />
+      },
+      {
+        path: 'trainerPostedService',
+        element: <TrainerPostedService />
+      },
+      {
+        path: 'todo',
+        element: <Todo />
+      }
+
+
+
+
+
+      //Trainer Route
+      // {
+      //   path:'trainerProfile',
+      //   element:<TrainerProfile/>
+      // },
+
+      // {
+      //   path: 'orderHistory', 
+      //   element: <OrderHistory></OrderHistory>
+      // }, 
+      // {
+      //   path: 'updateProfile', 
+      //   element: <UpdateProfile></UpdateProfile>
+      // }
+    ]
+  }
+
+
+
+
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

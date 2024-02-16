@@ -58,7 +58,7 @@ const SignUp = () => {
             Swal.fire({
               position: "center",
               icon: "success",
-              title: "Your work has been saved",
+              title: "Congratulation ! Your Registration successfully complete",
               showConfirmButton: false,
               timer: 1500,
             });
@@ -120,14 +120,14 @@ const SignUp = () => {
           <div className="form-wrapper flex items-center lg:h-full px-10 relative z-10 pt-16 lg:pt-0">
             <div className="w-full space-y-5">
               <div className="form-caption  flex items-end justify-center text-center space-x-3 mb-20">
-                {/* <span className="text-3xl font-semibold secondary-color headingFont">Sign Up</span> */}
-                <div className="lg:text-6xl px-10 rounded-lg   md:text-6xl text-xl">
+                <span className="text-4xl font-semibold text-sky-700  headingFont">Sign Up</span>
+                {/* <div className="lg:text-6xl px-10 rounded-lg   md:text-6xl text-xl">
                   <svg id="animation-heading">
                     <text x="45%" y="50%" dy=".50em" textAnchor="middle">
                       Sign Up
                     </text>
                   </svg>
-                </div>
+                </div> */}
               </div>
               {/*form caption*/}
 

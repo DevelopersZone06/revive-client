@@ -7,17 +7,7 @@ const TrainerProfile = () => {
         <div>
             <div className="flex flex-row gap-8">
             {/* user information */}
-                <div >
-                {/* left side */}
-                    <div >
-                        <img src='https://i.ibb.co/NKsXwgk/tengyart-g-Cfw-D2qb8v-Y-unsplash.jpg' alt="" className="md:w-[120px] md:h-[120px] w-[100px] h-[100px]  rounded-full  bg-gradient-to-r p-[4px] from-teal-400 via-sky-100 to-sky-600 object-cover " />
-                    </div>
-                    <div>
-                        <h1 className=" text-sm font-semibold text-blue-300">Ishrat Jahan</h1>
-                        <p className=" text-sm text-blue-300">Ishrat@gmail.com</p>
-                       
-                    </div>
-                </div>
+               
                 {/* right side */}
                 <div className="w-2/3 ">
                    <div className="flex flex-row justify-evenly   items-center">
@@ -56,7 +46,7 @@ const TrainerProfile = () => {
                   <div className="relative z-0 w-full  group">
                   <input
                     type="text"
-                    name="title" value={'Nipi'}
+                    name="title" value={`${user?.displayName}`}
                     className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-sky-50 peer"
                     placeholder=" "
                     required
@@ -68,7 +58,7 @@ const TrainerProfile = () => {
                 <div className="relative z-0 w-full  group">
                   <input
                     type="text"
-                    name="title" value={'ishrat12@gmail.com'}
+                    name="title" value={`${user?.email}`}
                     className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-sky-50 peer"
                     placeholder=" " 
                     required
@@ -162,10 +152,10 @@ const TrainerProfile = () => {
                    </div> */}
                    <form  className="max-w-[70%] mx-auto">
          <div className="flex lg:flex-row my-5 md:flex-row flex-col gap-10 items-center">
-         <div className="relative z-0 w-full  group">
+         <div className="relative z-0 w-full  group my-5">
          <input
            type="text"
-           name="title" value={'Nipi'}
+           name="title" value={`${user?.displayName}`}
            className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-sky-50 peer"
            placeholder=" "
            required
@@ -174,10 +164,10 @@ const TrainerProfile = () => {
            Full Name
          </label>
        </div>
-       <div className="relative z-0 w-full  group">
+       <div className="relative z-0 w-full  group my-5">
          <input
            type="text"
-           name="title" value={'ishrat12@gmail.com'}
+           name="title" value={`${user?.email}`}
            className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-sky-50 peer"
            placeholder=" " 
            required

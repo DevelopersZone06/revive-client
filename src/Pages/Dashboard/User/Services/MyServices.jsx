@@ -16,22 +16,23 @@ const MyServices = () => {
       </Helmet>
      
       <div>
-        <h1 className="text-sky-50 text-3xl font-semibold mb-5">My Services </h1>
+        <h1 className="text-sky-50 text-lg md:text-xl lg:text-3xl font-semibold mb-5">My Services </h1>
       </div>
       <div className="overflow-x-auto">
-        <div className="flex justify-around text-sky-50 mb-3 py-7" style={{
+        <div className="flex flex-col space-y-3 lg:flex-row justify-around items-center text-sky-50 mb-3 py-7" style={{
           background:
             "radial-gradient(circle, rgba(30,162,184,1) 0%, rgba(6,54,93,1) 100%)",
         }}>
-          <h2 className="text-2xl font-semibold">Total Services : </h2>
-          <h2 className="text-2xl font-semibold">Total Price : </h2>
+         
+         <h2 className="text-2xl font-semibold">Total Services : 03 </h2>
+          <h2 className="text-2xl font-semibold">Total Price : $ 1234 </h2>
 
           <button onClick={() => setOpenModal(true)} className="rounded-sm px-4 py-2 hover:bg-sky-100 border bg-sky-50 hover:text-sky-700 text-sky-700 font-bold capitalize md:text-sm text-sm  transition-all hover:scale-105 duration-150 ease-in-out">Pay Now</button>
-          <div className={`fixed flex justify-center items-center z-[100] ${openModal ? 'visible opacity-1' : 'invisible opacity-0'} duration-300 inset-0 w-full h-full`}>
+          <div className={`fixed flex justify-center items-center z-[100] ${openModal ? 'visible opacity-1' : 'invisible opacity-0'} duration-300 inset-0 w-10/12 mx-auto md:w-full h-full`}>
             <div onClick={(e_) => e_.stopPropagation()} className={`absolute overflow-x-hidden overflow-y-scroll flex justify-center bg-white drop-shadow-2xl rounded-lg ${openModal ? 'translate-y-0 opacity-1 duration-300' : 'translate-y-32 opacity-0 duration-1000'}`}>
               <main className="px-4 sm:px-6 lg:px-8 py-8">
-                <button onClick={() => { setOpenModal(false) }} className="mr-0 mx-auto flex bg-sky-800 text-white px-3 py-2 rounded-lg mb-6">Close</button>
-                <div className="grid gap-8 lg:grid-cols-2 text-black font-semibold">
+                <button onClick={() => { setOpenModal(false) }} className="md:mr-0 md:mx-auto md:flex bg-sky-800 text-white md:px-3 md:py-2 rounded-lg md:mb-6">Close</button>
+                <div className="grid gap-8 grid-cols-1 md:grid-cols-1 lg:grid-cols-2 text-black font-semibold">
                   <div className="space-y-8 lg:mb-6">
 
                     <div className="rounded-lg border bg-card  shadow-sm ">
@@ -87,12 +88,11 @@ const MyServices = () => {
               </main>
             </div>
           </div>
-        </div>
+         </div>
 
-      </div>
-      <table className="table">
+         <table className="table">
         {/* head */}
-        <thead className="text-lg font-semibold">
+        <thead className="text-sm lg:text-lg font-semibold">
           <tr className="text-sky-50 text-center rounded" style={{
             background:
               "radial-gradient(circle, rgba(30,162,184,1) 0%, rgba(6,54,93,1) 100%)",
@@ -106,41 +106,41 @@ const MyServices = () => {
         </thead>
         <tbody>
           {/* row 1 */}
-          <tr className="text-sky-100 text-center">
+          <tr className="text-sky-100 text-xs text-center">
 
             <td> Olivia</td>
             <td>Healthy Habits Workshop</td>
             <td>Yoga</td>
             <td>
               <div>
-                <Link to={'/dashboard/myServices/myServicesDetails'}>
-                  <button className="rounded-full px-4 py-2 hover:bg-sky-100 border bg-sky-50 hover:text-sky-700 text-sky-700 font-bold capitalize md:text-sm text-sm  transition-all hover:scale-105 duration-150 ease-in-out">View  Details</button></Link>
+                <Link to={'https://revive-health.netlify.app/services/65b356bb8209fff72f7ee5f4'}>
+                  <button className="rounded lg:rounded-full px-2 md:px-4 py-2 hover:bg-sky-100 border bg-sky-50 hover:text-sky-700 text-sky-700 font-bold capitalize md:text-sm text-sm  transition-all hover:scale-105 duration-150 ease-in-out">View  Details</button></Link>
               </div>
             </td>
           </tr>
           {/* row 2 */}
-          <tr className="text-sky-100 text-center">
+          <tr className="text-sky-100 text-xs text-center">
 
             <td>White</td>
             <td>Core Strength Challenge</td>
             <td>Nutrition</td>
             <td>
               <div>
-                <Link to={''}>
-                  <button className="rounded-full px-4 py-2 hover:bg-sky-100 border bg-sky-50 hover:text-sky-700 text-sky-700 font-bold capitalize md:text-sm text-sm  transition-all duration-150 ease-in-out">View  Details</button></Link>
+                <Link to={'https://revive-health.netlify.app/services/65b356bb8209fff72f7ee5f4'}>
+                  <button className="rounded lg:rounded-full px-4 py-2 hover:bg-sky-100 border bg-sky-50 hover:text-sky-700 text-sky-700 font-bold capitalize md:text-sm text-sm  transition-all duration-150 ease-in-out">View  Details</button></Link>
               </div>
             </td>
           </tr>
           {/* row 3 */}
-          <tr className="text-sky-100 text-center">
+          <tr className="text-sky-100 text-xs text-center">
 
             <td> Olivia White</td>
             <td>Mood-Boosting Dance</td>
             <td>Workout</td>
             <td>
               <div>
-                <Link to={''}>
-                  <button className="rounded-full px-4 py-2 hover:bg-sky-100 border bg-sky-50 hover:text-sky-700 text-sky-700 font-bold capitalize md:text-sm text-sm  transition-all duration-150 ease-in-out">View  Details</button></Link>
+                <Link to={'https://revive-health.netlify.app/services/65b356bb8209fff72f7ee5f4'}>
+                  <button className="rounded lg:rounded-full px-4 py-2 hover:bg-sky-100 border bg-sky-50 hover:text-sky-700 text-sky-700 font-bold capitalize md:text-sm text-sm  transition-all duration-150 ease-in-out">View  Details</button></Link>
               </div>
             </td>
           </tr>
@@ -149,6 +149,10 @@ const MyServices = () => {
         </tbody>
         {/* foot */}
       </table>
+        
+
+      </div>
+      
 
 
     </div>

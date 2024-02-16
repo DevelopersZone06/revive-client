@@ -4,7 +4,7 @@ const ServiceCard = ({ service }) => {
     service;
   return (
     
-    <section className="mx-auto w-full  rounded-md shadow-lg shadow-white bg-white">
+    <section className="mx-auto w-full  rounded-md shadow-md shadow-white bg-white">
       <div className="h-fit group" >
         <div className="relative overflow-hidden w-full rounded-md">
           <img className="h-52 w-full object-cover" src={serviceImg} alt="" />
