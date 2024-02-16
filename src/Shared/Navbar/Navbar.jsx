@@ -15,10 +15,13 @@ import moment from "moment";
 import useAdmin from "../../Hooks/useAdmin";
 import logo from "../../assets/images/logo2.png";
 import LogOut from "../../Components/LogOut/LogOut";
+import useTrainer from "../../Hooks/useTrainer";
 
 const Navbar = () => {
   const { isAdmin } = useAdmin();
-  console.log(isAdmin);
+  const {isTrainer}=useTrainer();
+  console.log(isTrainer);
+  // console.log(isAdmin);
   // const user = true
   const [menu, setMenu] = useState(false);
   const [notification, setNotification] = useState(false);
@@ -104,12 +107,17 @@ const Navbar = () => {
             <li>
               <LogOut />
             </li>
-            {user && isAdmin && (
+            {user && isAdmin && !isTrainer && (
               <li>
                 <NavLink to="/dashboard/adminHome">Dashboard</NavLink>
               </li>
             )}
-            {user &&  !isAdmin &&  (
+            {user &&  !isAdmin && !isTrainer &&  (
+              <li>
+                <NavLink to="/dashboard/updateProfile">Dashboard</NavLink>
+              </li>
+            )}
+            {user &&  !isAdmin && isTrainer &&  (
               <li>
                 <NavLink to="/dashboard/updateProfile">Dashboard</NavLink>
               </li>
