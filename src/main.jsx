@@ -44,6 +44,7 @@ import SpeechRecog from "./Shared/SpeechRecog/SpeechRecog";
 
 
 
+
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
@@ -185,6 +186,7 @@ const router = createBrowserRouter([
         path: 'updateProfile',
         element: <UpdateProfile></UpdateProfile>
       },
+      
     
     
     
