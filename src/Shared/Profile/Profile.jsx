@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 
 const Profile = () => {
@@ -19,6 +20,9 @@ const Profile = () => {
             {user?.displayName}
           </h1>
           <p className=" text-sm text-blue-300">{user?.email}</p>
+        </div>
+        <div>
+          <Link to={'postBlog'}><button className="btn btn-sm mt-3">Post a blog</button></Link>
         </div>
       </div>
     </div>

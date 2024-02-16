@@ -14,11 +14,9 @@ import { FaArrowsToDot } from "react-icons/fa6";
 import { CgProfile } from "react-icons/cg";
 import { TbDetails } from "react-icons/tb";
 import { Helmet } from "react-helmet-async";
-import useAuth from "../../Hooks/useAuth";
 import Profile from "../../Shared/Profile/Profile";
 import useTrainer from "../../Hooks/useTrainer";
 import {  } from "react-icons/ri";
-import { IoIosPeople } from "react-icons/fa6";
 const Dashboard = () => {
   const { isAdmin } = useAdmin();
   const { isTrainer } = useTrainer()
@@ -158,7 +156,7 @@ const Dashboard = () => {
                   isPending ? "pending" : isActive ? "text-sky-200" : ""
                 }
               >
-                <IoIosPeople />
+                {/* <IoIosPeople /> */}
                My Customers
               </NavLink>
             </li>
