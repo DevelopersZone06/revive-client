@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { useForm } from "react-hook-form"
+import useAuth from "../../Hooks/useAuth";
 
 const TrainerForm = () => {
 
@@ -9,11 +10,14 @@ const TrainerForm = () => {
         handleSubmit,
         watch,
         formState: { errors },
-      } = useForm()
+    } = useForm()
 
-    const {user} = useContext(AuthContext);
 
-    const onSubmit = (data) => console.log(data) 
+    const { user } = useContext(AuthContext);
+    const defaultSelection = user?.selectedOption || "yoga";
+
+
+    const onSubmit = (data) => console.log(data)
 
     // console.log(user)
 
@@ -25,22 +29,23 @@ const TrainerForm = () => {
 
                 <form onSubmit={handleSubmit(onSubmit)} className="max-w-md my-20 mx-auto">
                     <div className="relative z-0 w-full mb-5 group">
-                        <input type="email" name="email" value={user?.email} className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none          focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                        <input type="email" {...register("email")} name="email" value={user?.email} className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none          focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
                         <label className="peer-focus:font-medium absolute text-sm text-gray-500     duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email address</label>
                     </div>
                     <div className="">
                         <div className="relative z-0 w-full mb-5 group">
-                            <input type="text" name="first_name" value={user?.displayName} className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none          focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                            <input type="text" {...register("name")} name="name" value={user?.displayName} className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none          focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
                             <label className="peer-focus:font-medium absolute text-sm text-gray-500     duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600       peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Name</label>
                         </div>
                     </div>
                     <div className="grid md:grid-cols-2 md:gap-6">
                         <div className="relative z-0 w-full mb-5 group">
-                            <input type="text" {...register("phone")} pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="phone" id="floating_phone" className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none          focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                            <input type="text" {...register("phone")} name="phone"
+                                className="block py-2.5 WWpx-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " />
                             <label className="peer-focus:font-medium absolute text-sm text-gray-500     duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600       peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Phone number</label>
                         </div>
                         <div className="relative z-0 w-full mb-5 group">
-                            <select className="w-full bg-transparent border-b-2 pb-3 p-2 rounded-sm " name="" id="">
+                            <select {...register("selection")} defaultValue={defaultSelection} className="w-full bg-transparent border-b-2 pb-3 p-2 rounded-sm " name="selection" id="">
                                 <option value="yoga">Yoga</option>
                                 <option value="workout">Workout</option>
                                 <option value="fitness">Fitness</option>
@@ -50,7 +55,7 @@ const TrainerForm = () => {
                         </div>
                     </div>
                     <div>
-                    <div className="relative z-0 w-full mb-5 group">
+                        <div className="relative z-0 w-full mb-5 group">
                             <input type="text" name="first_name" {...register("experience")} className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
                             <label className="peer-focus:font-medium absolute text-sm text-gray-500     duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600       peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Experience</label>
                         </div>
