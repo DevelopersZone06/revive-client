@@ -10,6 +10,7 @@ import useAdmin from "../../../Hooks/useAdmin";
 import { SearchIcon } from "@heroicons/react/solid";
 import { IoMdSearch } from "react-icons/io";
 
+
 // import { Helmet } from "react-helmet";
 
 const AllServices = () => {
@@ -52,8 +53,9 @@ const AllServices = () => {
     const fetchData = async () => {
       try {
         const response = await axiosPublic.get(
-          `/servicesAll?sort=${sortOrder}&search=${searchQuery}&category=${selectedCategory}`
+          `/servicesAll?sort=${sortOrder}&search=${searchQuery}&category=${selectedCategory}&duration=${selectedDuration}`
         );
+       
         setSearchResults(response.data);
       } catch (error) {
         console.error(error);
@@ -62,7 +64,7 @@ const AllServices = () => {
 
     // Fetch data initially without search or category
     fetchData();
-  }, [sortOrder, searchQuery, selectedCategory, axiosPublic]);
+  }, [sortOrder, searchQuery, selectedCategory, axiosPublic,selectedDuration]);
 
   return (
     <>

@@ -24,7 +24,7 @@ const useAdmin = () => {
       if (admin) {
         isAdmin = true;
       }
-      console.log(isAdmin, user);
+     
     }
     return { isAdmin, isPending };
 };

@@ -25,11 +25,10 @@ const TrainerPostedService = () => {
             <h1 className="text-white" >Trainer posted service</h1>
             
             <div>
-            {/* Open the modal using document.getElementById('ID').showModal() method */}
-
+          
             
             </div>
-            {/* chumki apur modal */}
+           
             <div className="flex justify-around text-sky-50 mb-3  py-7" style={{
               background:
                 "radial-gradient(circle, rgba(30,162,184,1) 0%, rgba(6,54,93,1) 100%)",

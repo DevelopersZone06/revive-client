@@ -41,6 +41,7 @@ import MyServices from "./Pages/Dashboard/User/Services/MyServices";
 import AllUsers from "./Pages/Dashboard/AllUsers/AllUsers";
 import SpeechRecog from "./Shared/SpeechRecog/SpeechRecog";
 import TrainerPostedService from "./Pages/Dashboard/Trainer/TrainerProfile/TrainerPostedService/TrainerPostedService";
+import UserProfile from "./Pages/Dashboard/User/UserProfile/UserProfile";
 
 
 
@@ -126,10 +127,12 @@ const router = createBrowserRouter([
       
       
     ],
-  }, {
+  }, 
+  {
     path: 'dashboard',
     element: <Dashboard></Dashboard>,
     children: [
+      //Admin routes
       {
         path: 'adminHome',
         element: <AdminHome></AdminHome>
@@ -185,6 +188,10 @@ const router = createBrowserRouter([
       {
         path: 'updateProfile',
         element: <UpdateProfile></UpdateProfile>
+      },
+      {
+        path:'userProfile' ,
+        element:<UserProfile></UserProfile>
       },
     
     
