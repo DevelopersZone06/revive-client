@@ -228,7 +228,7 @@ const TrainerPostedService = () => {
                   
                 </p>
     
-                <Link to={``}>
+                <Link to={"https://revive-health.netlify.app/services/65b356bb8209fff72f7ee5f4"}>
                   <button className="  capitalize font-semibold  mt-4 rounded-md border-sky-200 border  px-4 py-2 hover:bg-sky-900  text-white ">
                     More Details
                   </button>
@@ -351,7 +351,7 @@ const TrainerPostedService = () => {
                 
               </p>
   
-              <Link to={``}>
+              <Link to={"https://revive-health.netlify.app/services/65b356bb8209fff72f7ee5f4"}>
                 <button className="  capitalize font-semibold  mt-4 rounded-md border-sky-200 border  px-4 py-2 hover:bg-sky-900  text-white ">
                   More Details
                 </button>
@@ -472,7 +472,7 @@ const TrainerPostedService = () => {
       
     </p>
 
-    <Link to={``}>
+    <Link to={"https://revive-health.netlify.app/services/65b356bb8209fff72f7ee5f4"}>
       <button className="  capitalize font-semibold  mt-4 rounded-md border-sky-200 border  px-4 py-2 hover:bg-sky-900  text-white ">
         More Details
       </button>
