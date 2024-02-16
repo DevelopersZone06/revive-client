@@ -460,11 +460,11 @@ const TrainerPostedService = () => {
   <img className="h-52 w-full object-cover" src={'https://i.ibb.co/MDHczVd/male-athlete-with-bare-torso-doing-abdominal-exercises.jpg'} alt="" />
   <div className="absolute h-full w-full bg-black/60 flex flex-col items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300 space-y-1 text-center">
     <p className=" text-sky-200">
-      <span className="font-bold">Trainer`s Name:Md. Ibrahim Khalil </span>
+      <span className="font-bold">Trainer`s Name: Md. Faysal </span>
      
     </p>
     <p className=" text-sky-200">
-      <span className="font-bold">Price: $69 </span>
+      <span className="font-bold">Price: $79 </span>
       
     </p>
     <p className=" text-sky-200">
