@@ -114,7 +114,7 @@ const Navbar = () => {
             )}
             {user &&  !isAdmin && !isTrainer &&  (
               <li>
-                <NavLink to="/dashboard/updateProfile">Dashboard</NavLink>
+                <NavLink to="/dashboard/userProfile">Dashboard</NavLink>
               </li>
             )}
             {user &&  !isAdmin && isTrainer &&  (

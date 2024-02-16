@@ -5,7 +5,6 @@ const UserProfile = () => {
         <div>
              <div>
             <div className="flex flex-row gap-8">
-          
                 {/* right side */}
                 <div className="w-2/3 ">
                    <div className="flex flex-row justify-evenly   items-center">

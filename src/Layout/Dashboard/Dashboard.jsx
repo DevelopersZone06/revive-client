@@ -21,8 +21,8 @@ import {  } from "react-icons/ri";
 import { IoIosPeople } from "react-icons/fa6";
 const Dashboard = () => {
   const { isAdmin } = useAdmin();
-  const {isTrainer} =useTrainer()
-  const {user}=useAuth()
+  const { isTrainer } = useTrainer()
+  // const { user } = useAuth()
   return (
     <div className="flex flex-col md:flex-row py-20 px-[2%] sm:px-[5%] lg:px-[5%] " style={{ background: 'radial-gradient(circle, rgba(0,51,111,1) 0%, rgba(0,0,0,1) 100%)' }}>
       <div className="md:w-64  md:min-h-screen ">
@@ -176,64 +176,66 @@ const Dashboard = () => {
              </>
           )
 
-         : 
-       (<>
-         <Profile></Profile>
-         
-            <li>
-              <NavLink
-                to={"/dashboard/userProfile"}
-                className={({ isActive, isPending }) =>
-                  isPending ? "pending" : isActive ? "text-sky-200" : ""
-                }
-              >
-                <CgProfile />
-               My Profile
-              </NavLink>
-            </li>
+              :
+              (<>
+                <Profile></Profile>
 
-           
-            <li>
-              <NavLink
-                to={"/dashboard/myServices"}
-                className={({ isActive, isPending }) =>
-                  isPending ? "pending" : isActive ? "text-sky-200" : ""
-                }
-              >
-                <TbDetails />
-                My Services
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to={"/dashboard/todo"}
-                className={({ isActive, isPending }) =>
-                  isPending ? "pending" : isActive ? "text-sky-200" : ""
-                }
-              >
-                <FaArrowsToDot />
-                Todo
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to={"/dashboard/servicesApproval"}
-                className={({ isActive, isPending }) =>
-                  isPending ? "pending" : isActive ? "text-sky-200 flex items-center" : "flex items-center"
-                }
-              >
-                <div className="flex items-center text-sm ">
-                  <IoLogOut className="w-5 -mr-4 " />
-                  <LogOut />
-                </div>
-              </NavLink>
-            </li>
-          </>)
+                <Link to={'applyTrainerForm'}><button className="btn btn-sm mt-3">Apply to be a trainer</button></Link>
 
-          
-        
-        }
-         
+                <li>
+                  <NavLink
+                    to={"/dashboard/userProfile"}
+                    className={({ isActive, isPending }) =>
+                      isPending ? "pending" : isActive ? "text-sky-200" : ""
+                    }
+                  >
+                    <CgProfile />
+                    My Profile
+                  </NavLink>
+                </li>
+
+
+                <li>
+                  <NavLink
+                    to={"/dashboard/myServices"}
+                    className={({ isActive, isPending }) =>
+                      isPending ? "pending" : isActive ? "text-sky-200" : ""
+                    }
+                  >
+                    <TbDetails />
+                    My Services
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to={"/dashboard/todo"}
+                    className={({ isActive, isPending }) =>
+                      isPending ? "pending" : isActive ? "text-sky-200" : ""
+                    }
+                  >
+                    <FaArrowsToDot />
+                    Todo
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to={"/dashboard/servicesApproval"}
+                    className={({ isActive, isPending }) =>
+                      isPending ? "pending" : isActive ? "text-sky-200 flex items-center" : "flex items-center"
+                    }
+                  >
+                    <div className="flex items-center text-sm ">
+                      <IoLogOut className="w-5 -mr-4 " />
+                      <LogOut />
+                    </div>
+                  </NavLink>
+                </li>
+              </>)
+
+
+
+          }
+
 
         </ul>
       </div>
