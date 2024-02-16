@@ -17,12 +17,12 @@ import { Helmet } from "react-helmet-async";
 import useAuth from "../../Hooks/useAuth";
 import Profile from "../../Shared/Profile/Profile";
 import useTrainer from "../../Hooks/useTrainer";
-import {  } from "react-icons/ri";
-import { IoIosPeople } from "react-icons/fa6";
+import { IoIosPeople } from "react-icons/io";
+import { RiCalendarTodoFill } from "react-icons/ri";
 const Dashboard = () => {
   const { isAdmin } = useAdmin();
   const { isTrainer } = useTrainer()
-  // const { user } = useAuth()
+ const { user } = useAuth()
   return (
     <div className="flex flex-col md:flex-row py-20 px-[2%] sm:px-[5%] lg:px-[5%] " style={{ background: 'radial-gradient(circle, rgba(0,51,111,1) 0%, rgba(0,0,0,1) 100%)' }}>
       <div className="md:w-64  md:min-h-screen ">
@@ -126,7 +126,7 @@ const Dashboard = () => {
                 }
               >
                 <CgProfile />
-               My Profile
+               <span className="xl:flex lg:flex  hidden"> My Profile</span>  
               </NavLink>
             </li>
               <li>
@@ -137,7 +137,8 @@ const Dashboard = () => {
                 }
               >
                 <RiServiceFill />
-              My Services
+                <span className="xl:flex lg:flex  hidden">  My Services</span>  
+             
               </NavLink>
             </li>
               <li>
@@ -148,7 +149,8 @@ const Dashboard = () => {
                 }
               >
                 <FaNewspaper />
-               My Blogs
+                <span className="xl:flex lg:flex  hidden">  My Blogs</span>  
+              
               </NavLink>
             </li>
               <li>
@@ -159,7 +161,8 @@ const Dashboard = () => {
                 }
               >
                 <IoIosPeople />
-               My Customers
+                <span className="xl:flex lg:flex  hidden">  My Customers</span>  
+              
               </NavLink>
             </li>
               <li>
@@ -169,8 +172,9 @@ const Dashboard = () => {
                   isPending ? "pending" : isActive ? "text-sky-200" : ""
                 }
               >
-                <CgProfile />
-               To-Do
+                < RiCalendarTodoFill/>
+                <span className="xl:flex lg:flex  hidden"> To-Do</span>  
+             
               </NavLink>
             </li>
              </>

@@ -9,19 +9,10 @@ const TrainerProfile = () => {
             {/* user information */}
                
                 {/* right side */}
-                <div className="w-2/3 ">
+                <div className="lg:w-2/3 mx-auto">
                    <div className="flex flex-row justify-evenly   items-center">
-                   <h1 className="text-2xl p-4 w-full font-bold text-left from-sky-600  via-sky-200 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">My Profile</h1>
-                  {/*  <button
-                   type="submit"
-                   className="text-white   my-3 bg-sky-50 hover:bg-sky-50focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center  "
-                   style={{
-                     background:
-                       "radial-gradient(circle, rgba(30,162,184,1) 0%, rgba(6,54,93,1) 100%)",
-                   }}
-                 >
-                   Update
-                 </button> */}
+                   <h1 className="lg:text-2xl py-4 w-full font-bold text-left from-sky-600  via-sky-200 to-blue-600 bg-gradient-to-r bg-clip-text md:text-lg text-sm  text-transparent">My Profile</h1>
+                 
                  <label
                   htmlFor="my_modal_7"
                   className=" rounded-full px-4 py-2 hover:bg-sky-100 border bg-sky-50 hover:text-sky-700 text-sky-700 font-bold capitalize md:text-sm text-sm ml-10 transition-all duration-150 ease-in-out" 
@@ -46,13 +37,13 @@ const TrainerProfile = () => {
                   <div className="relative z-0 w-full  group">
                   <input
                     type="text"
-                    name="title" value={'Nipi'}
+                    name="title" 
                     className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-sky-50 peer"
                     placeholder=" "
                     required
                   />
                   <label className="peer-focus:font-medium absolute text-sm text-sky-50  transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-sky-50 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-                    Full Name
+                    {user?.displayName}
                   </label>
                 </div>
                 <div className="relative z-0 w-full  group">
@@ -64,7 +55,7 @@ const TrainerProfile = () => {
                     required
                   />
                   <label className="peer-focus:font-medium absolute text-sm text-sky-50  transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-sky-50 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-                    Email
+                  {user?.email}
                   </label>
                 </div>
                   </div>
