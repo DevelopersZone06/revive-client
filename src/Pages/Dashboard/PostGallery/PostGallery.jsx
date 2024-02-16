@@ -1,15 +1,37 @@
 import { Helmet } from "react-helmet-async";
+import useAxiosPublic from "../../../Hooks/useAxiosPublic";
+import { useForm } from "react-hook-form";
 
+
+
+
+
+const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
+const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 const PostGallery = () => {
-  const handleForm = (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const title = form.title.value;
-    const category = form.category.value;
-    const description = form.description.value;
-    const galleryPost = { title, category, description };
-    console.log(galleryPost);
-  };
+  const axiosPublic = useAxiosPublic();
+  const { register,handleSubmit, formState: { errors }, } = useForm()
+  const onSubmit =async (data) => {
+    const imageFile = { image: data.photo[0] };
+    const res = await axiosPublic.post(image_hosting_api, imageFile, {
+      headers: {
+        "content-type": "multipart/form-data",
+      },
+    });
+    console.log(res.data);
+  }
+
+  // const handleForm = async(e) => {
+  //   e.preventDefault();
+  //   const form = e.target;
+  //   const title = form.title.value;
+  //   const category = form.category.value;
+  //   const description = form.description.value;
+  //   const galleryPost = { title, category, description };
+  //   console.log(galleryPost);
+    
+
+  // };
 
   return (
     <>
@@ -22,13 +44,14 @@ const PostGallery = () => {
         </title>
       </Helmet>
       <div className="">
-        <form onSubmit={handleForm} className="max-w-[70%] mx-auto">
+        <form onSubmit={handleSubmit(onSubmit)} className="max-w-[70%] mx-auto">
           <div className="relative z-0 w-full mb-5 group">
             <input
               type="text"
               name="title"
+              {...register("title", { required: true })}
               className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-sky-50 peer"
-              placeholder=" "
+              placeholder="title "
               required
             />
             <label className="peer-focus:font-medium absolute text-sm text-sky-50  transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-sky-50 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
@@ -41,7 +64,8 @@ const PostGallery = () => {
               <select
                 className="w-full p-2 rounded-md  text-white"
                 name="category"
-                id=""
+               
+                {...register("category", { required: true })}
                 style={{
                   background:
                     "radial-gradient(circle, rgba(30,162,184,1) 0%, rgba(6,54,93,1) 100%)",
@@ -72,6 +96,7 @@ const PostGallery = () => {
                 type="file"
                 name="photo"
                 id="floating_last_name"
+                {...register("photo", { required: true })}
                 className="block w-full text-sm text-sky-50
       file:mr-4 file:py-2 file:px-4
       file:rounded-full file:border-0
@@ -89,6 +114,7 @@ const PostGallery = () => {
               rows="5"
               cols="5"
               name="description"
+              {...register("description", { required: true })}
               className="block py-2.5 text-white px-0 w-full text-sm  bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-sky-50 peer"
               placeholder=" "
               required
@@ -97,16 +123,18 @@ const PostGallery = () => {
               Description
             </label>
           </div>
-          <button
+          <span className="w-full lg:w-4/5 block mx-auto ">
+          <input
             type="submit"
+            value="Post Photos"
             className="text-white bg-sky-50 hover:bg-sky-50focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center  "
             style={{
               background:
                 "radial-gradient(circle, rgba(30,162,184,1) 0%, rgba(6,54,93,1) 100%)",
             }}
-          >
-            Submit
-          </button>
+          />
+        </span>
+         
         </form>
       </div>
     </>

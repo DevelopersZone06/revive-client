@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const UpdateProfile = () => {
     return (
@@ -12,7 +13,9 @@ const UpdateProfile = () => {
                     <div>
                         <h1 className=" text-sm font-semibold text-blue-300">Ishrat Jahan</h1>
                         <p className=" text-sm text-blue-300">Ishrat@gmail.com</p>
-
+                    </div>
+                    <div>
+                        <Link to={'applyTrainerForm'}><button className="btn btn-sm mt-3">Apply to be a trainer</button></Link>
                     </div>
                 </div>
                 {/* right side */}
@@ -210,10 +213,6 @@ const UpdateProfile = () => {
                                     </label>
                                 </div>
                             </div>
-
-
-
-
                         </form>
                     </div>
                 </div>

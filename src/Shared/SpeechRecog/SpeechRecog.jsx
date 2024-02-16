@@ -7,12 +7,12 @@ import { useState } from 'react';
 
 const SpeechRecog = () => {
 
+    const startListenning = () => SpeechRecognition.startListening({ continuous: true, language: 'en-bn' }); 
 
     const [textForCopy, setTextForCopy] = useState();
 
     const [isCopied, setCopied] = useClipboard(textForCopy);
 
-    const startListenning = () => SpeechRecognition.startListening({ continuous: true, language: 'en-bn' });
 
     const { transcript, browserSupportsSpeechRecognition } = useSpeechRecognition();
 

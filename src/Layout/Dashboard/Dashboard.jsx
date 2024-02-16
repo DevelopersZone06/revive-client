@@ -10,11 +10,17 @@ import logo from '../../assets/images/logo2.png'
 import { IoLogOut } from "react-icons/io5";
 import LogOut from "../../Components/LogOut/LogOut";
 // user route icon
-import { FcCalendar } from "react-icons/fc";
+import { FaArrowsToDot } from "react-icons/fa6";
+import { CgProfile } from "react-icons/cg";
 import { TbDetails } from "react-icons/tb";
 import { Helmet } from "react-helmet-async";
+import useAuth from "../../Hooks/useAuth";
+import Profile from "../../Shared/Profile/Profile";
+import useTrainer from "../../Hooks/useTrainer";
 const Dashboard = () => {
   const { isAdmin } = useAdmin();
+  const { isTrainer } = useTrainer()
+  const { user } = useAuth()
   return (
     <div className="flex flex-col md:flex-row py-20 px-[2%] sm:px-[5%] lg:px-[5%] " style={{ background: 'radial-gradient(circle, rgba(0,51,111,1) 0%, rgba(0,0,0,1) 100%)' }}>
       <div className="md:w-64  md:min-h-screen ">
@@ -22,7 +28,7 @@ const Dashboard = () => {
           <li>
             <Helmet>
               <title>
-                Revive | Dashboard
+                Revive | Admin Dashboard
               </title>
             </Helmet>
             <Link to={"/"}>
@@ -30,7 +36,7 @@ const Dashboard = () => {
               <img src={logo} alt="" className="w-32 h-10 object-cover  -ml-3" />
             </Link>
           </li>
-          {isAdmin && (
+          {isAdmin ? (
             <>
               {/* Admin exits */}
               <li >
@@ -105,45 +111,74 @@ const Dashboard = () => {
 
             </>
 
-          )}
-          <div className="divider border-b w-3/4 ml-2  border-sky-100"> </div>
-          <>
-            <li>
-              <NavLink
-                to={"/dashboard/calender"}
-                className={({ isActive, isPending }) =>
-                  isPending ? "pending" : isActive ? "text-sky-200" : ""
-                }
-              >
-                <FcCalendar />
-                Calendar
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to={"/dashboard/myServices"}
-                className={({ isActive, isPending }) =>
-                  isPending ? "pending" : isActive ? "text-sky-200" : ""
-                }
-              >
-                <TbDetails />
-                My Services
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to={"/dashboard/servicesApproval"}
-                className={({ isActive, isPending }) =>
-                  isPending ? "pending" : isActive ? "text-sky-200 flex items-center" : "flex items-center"
-                }
-              >
-                <div className="flex items-center text-sm ">
-                  <IoLogOut className="w-5 -mr-4 " />
-                  <LogOut />
-                </div>
-              </NavLink>
-            </li>
-          </>
+          ) :
+            //trainer exist 
+            isTrainer ? (
+              <>
+                <Profile></Profile>
+              </>
+            )
+
+              :
+              (<>
+                <Profile></Profile>
+
+                <Link to={'applyTrainerForm'}><button className="btn btn-sm mt-3">Apply to be a trainer</button></Link>
+
+                <li>
+                  <NavLink
+                    to={"/dashboard/userProfile"}
+                    className={({ isActive, isPending }) =>
+                      isPending ? "pending" : isActive ? "text-sky-200" : ""
+                    }
+                  >
+                    <CgProfile />
+                    My Profile
+                  </NavLink>
+                </li>
+
+
+                <li>
+                  <NavLink
+                    to={"/dashboard/myServices"}
+                    className={({ isActive, isPending }) =>
+                      isPending ? "pending" : isActive ? "text-sky-200" : ""
+                    }
+                  >
+                    <TbDetails />
+                    My Services
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to={"/dashboard/todo"}
+                    className={({ isActive, isPending }) =>
+                      isPending ? "pending" : isActive ? "text-sky-200" : ""
+                    }
+                  >
+                    <FaArrowsToDot />
+                    Todo
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to={"/dashboard/servicesApproval"}
+                    className={({ isActive, isPending }) =>
+                      isPending ? "pending" : isActive ? "text-sky-200 flex items-center" : "flex items-center"
+                    }
+                  >
+                    <div className="flex items-center text-sm ">
+                      <IoLogOut className="w-5 -mr-4 " />
+                      <LogOut />
+                    </div>
+                  </NavLink>
+                </li>
+              </>)
+
+
+
+          }
+
 
         </ul>
       </div>

@@ -1,6 +1,4 @@
-import { IoMdArrowDropdown } from "react-icons/io";
-import { IoIosArrowBack } from "react-icons/io";
-import { IoIosArrowForward } from "react-icons/io";
+
 
 import { Link } from "react-router-dom";
 import Title from "../../../../Shared/Title";
@@ -65,18 +63,7 @@ const ToBeTrainers = () => {
 
 
         </table>
-        <div className="flex justify-around mt-4">
-          <div>
-
-          </div>
-          <div className="flex gap-2 items-center text-sky-100">
-            <h2>Rows Per Page</h2>
-            <p className="flex items-center">5 <IoMdArrowDropdown className="w-[22px]" /></p>
-            <h1 className="text-lg">1-3 of 9</h1>
-            <IoIosArrowBack className="w-[25px]" />
-            <IoIosArrowForward className="w-[25px]" />
-          </div>
-        </div>
+       
       </div>
 
     </>

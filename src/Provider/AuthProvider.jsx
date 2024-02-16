@@ -3,50 +3,50 @@ import { app } from "../Firebase/firebase.config";
 import { FacebookAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile, onAuthStateChanged } from "firebase/auth";
 
 export const AuthContext = createContext(null)
-const auth= getAuth(app)
-const AuthProvider = ({children}) => {
-    const [user,setUser] = useState(null)
+const auth = getAuth(app)
+const AuthProvider = ({ children }) => {
+    const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
     const googleProvider = new GoogleAuthProvider();
     const fbProvider = new FacebookAuthProvider()
 
-    const createUser= (email,password)=>{
+    const createUser = (email, password) => {
         setLoading(true)
-    return createUserWithEmailAndPassword(auth,email,password)
+        return createUserWithEmailAndPassword(auth, email, password)
 
     }
 
-    const signIn = (email,password)=>{
+    const signIn = (email, password) => {
         setLoading(true)
-        return signInWithEmailAndPassword(auth,email,password)
+        return signInWithEmailAndPassword(auth, email, password)
     }
 
-    const googleSignIn=() =>{
+    const googleSignIn = () => {
         setLoading(true)
         return signInWithPopup(auth, googleProvider)
 
     }
 
-    const fbSignIn=()=>{
+    const fbSignIn = () => {
         setLoading(true)
-        return signInWithPopup(auth,fbProvider)
+        return signInWithPopup(auth, fbProvider)
     }
 
-    const logOut=() =>{
+    const logOut = () => {
         setLoading(true)
         return signOut(auth)
 
     }
 
-    const updateUserProfile=(name,photo)=>{
-        return updateProfile(auth.currentUser,{
-            displayName:name, photoURL:photo
+    const updateUserProfile = (name, photo) => {
+        return updateProfile(auth.currentUser, {
+            displayName: name, photoURL: photo
         })
     }
 
 
-     // user observe 
-     useEffect( () => {
+    // user observe 
+    useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, newUser => {
             setUser(newUser)
             setLoading(false)
@@ -54,7 +54,7 @@ const AuthProvider = ({children}) => {
         return unSubscribe
     }, [])
 
-    const authInfo={user,loading, createUser,signIn,googleSignIn, logOut,updateUserProfile,fbSignIn}
+    const authInfo = { user, loading, createUser, signIn, googleSignIn, logOut, updateUserProfile, fbSignIn }
     return (
         <AuthContext.Provider value={authInfo}>
             {children}

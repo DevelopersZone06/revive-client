@@ -91,10 +91,10 @@ const BMIServices = () => {
       <div className="px-[2%] sm:px-[5%] lg:px-[8%] py-28">
         <div className="flex items-center gap-10 md:flex-row flex-col">
           <div>
-            <h2 className="text-2xl md:text-4xl lg:text-6xl font-bold">
+            <h2 className="text-xl md:text-2xl lg:text-4xl font-bold">
               Find Your Exact{" "}
               <span className="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-sky-700 relative inline-block">
-                <span className="relative text-white"> BMI</span>
+                <span className="relative  text-white"> BMI</span>
               </span>
             </h2>
             <p className="my-5">
