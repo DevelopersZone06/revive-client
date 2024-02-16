@@ -8,10 +8,11 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 const EventDetails = () => {
+    const axiosPublic = useAxiosPublic();
     const {id} = useParams()
  const [event,setEvent] = useState({})
   useEffect( () => {
-    useAxiosPublic(`/events?id=${id}`)
+    axiosPublic(`/events?id=${id}`)
     .then(res => {
         setEvent(res.data)
     })
@@ -64,9 +65,9 @@ useEffect(() => {
                     <p className="font-medium text-justify py-4">Discover the joy of movement and the benefits of a well-rounded fitness routine, all while connecting with like-minded individuals in a supportive and uplifting environment. This workshop is not just about breaking a sweat; it's about cultivating a healthier lifestyle that encompasses both physical and mental well-being.</p>
                     <p className="font-medium text-justify py-4">Don't miss the opportunity to revitalize your fitness routine and explore the fusion of different exercise modalities. Secure your spot now for a day of inspiration, motivation, and a holistic approach to health at our Fitness Fusion Workshop. Let's redefine fitness together!"</p>
                 </div>
-                <div className="col-span-2 primary-bg text-center h-[500px] space-y-2 rounded-md my-10 md:my-0 ">
+                <div className="col-span-2 bg-sky-900 text-center h-[500px] space-y-2 rounded-md my-10 md:my-0 ">
                     <div className="grid grid-flow-col gap-5 text-center auto-cols-max px-7 py-7">
-                        <div className="flex flex-col p-2 secondary-color rounded-box text-neutral-content">
+                        <div className="flex flex-col p-2 text-sky-50 rounded-box">
                        
                             <span className="countdown font-mono text-4xl">
                                
@@ -75,7 +76,7 @@ useEffect(() => {
                             
                             days
                         </div>
-                        <div className="flex flex-col p-2 secondary-color rounded-box text-neutral-content">
+                        <div className="flex flex-col p-2 text-sky-50 rounded-box">
                         <span className="countdown font-mono text-4xl">
                                
                         {timeLeft.hours}
@@ -83,7 +84,7 @@ useEffect(() => {
                             
                             hours
                         </div>
-                        <div className="flex flex-col p-2 secondary-color rounded-box text-neutral-content">
+                        <div className="flex flex-col p-2 text-sky-50 rounded-box">
                         <span className="countdown font-mono text-4xl">
                                
                         {timeLeft.minutes}
@@ -91,7 +92,7 @@ useEffect(() => {
                            
                             min
                         </div>
-                        <div className="flex flex-col p-2 secondary-color rounded-box text-neutral-content">
+                        <div className="flex flex-col p-2 text-sky-50 rounded-box">
                             <span className="countdown font-mono text-4xl">
                                 
                                 {timeLeft.seconds}
@@ -100,12 +101,12 @@ useEffect(() => {
                             sec
                         </div>
                     </div>
-                    <h2 className="font-semibold">WE ARE GOING TO OPEN OUR EVENT</h2>
-                    <p className="font-medium py-4 text-justify px-5" >Welcome to our Fitness Fusion Workshop – an exhilarating event that combines various fitness disciplines to create a holistic and dynamic approach to well-being.</p>
-                    <p className="flex px-5 gap-4 text-[#448c74]"><MdMarkEmailRead className="w-[25px]" />DevelopersZone06.com</p>
-                    <p className="flex px-5 gap-4 text-[#448c74]"><MdPhoneInTalk className="w-[25px]" />+880 111 222 333 999</p>
+                    <h2 className="font-semibold text-sky-100">WE ARE GOING TO OPEN OUR EVENT</h2>
+                    <p className="font-medium text-sky-100 py-4 text-justify px-5" >Welcome to our Fitness Fusion Workshop – an exhilarating event that combines various fitness disciplines to create a holistic and dynamic approach to well-being.</p>
+                    <p className="flex px-5 gap-4 text-sky-50"><MdMarkEmailRead className="w-[25px]" />DevelopersZone06.com</p>
+                    <p className="flex px-5 gap-4 text-sky-50"><MdPhoneInTalk className="w-[25px]" />+880 111 222 333 999</p>
                     <div className="py-5 ">
-                       <Link to='https://meet.google.com/jsz-qmex-cpr'> <button className='border-secondary px-10 py-2 rounded-md uppercase text-xl font-semibold secondary-color hover:bg-[#448c74] hover:text-white cursor-not-allowed'>Join Now</button></Link>
+                       <Link to='https://meet.google.com/jsz-qmex-cpr'> <button className='border-secondary px-10 py-2 rounded-md uppercase text-xl font-semibold text-sky-100 border border-sky-50  hover:bg-sky-100 hover:text-sky-950 cursor-not-allowed'>Join Now</button></Link>
                     </div>
                 </div>
             </div>

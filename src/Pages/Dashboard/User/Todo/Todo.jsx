@@ -74,7 +74,7 @@ const Todo = () => {
         <DragDropContext onDragEnd={handleDragEnd}>
         <Droppable droppableId="board" direction="horizontal" type="COLUMN">
           {provided => (
-            <div className="flex flex-col md:flex-row bg-sky-950 mt-4" {...provided.droppableProps} ref={provided.innerRef}>
+            <div className="flex flex-col md:flex-row bg-sky-950 mt-4"  {...provided.droppableProps} ref={provided.innerRef}>
               {columns.map((column, index) => (
                 <Column key={column.id} column={column} index={index} onAddTask={handleAddTask} />
               ))}
