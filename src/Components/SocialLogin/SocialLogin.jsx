@@ -51,7 +51,7 @@ const SocialLogin = () => {
             background:
               "radial-gradient(circle, rgba(30,162,184,1) 0%, rgba(6,54,93,1) 100%)",
           }}
-          className="cursor-pointer border-2 font-bold  text-sky-50 border-sky-900  w-2/3 py-2 normal rounded-lg hover:secondary-bg   items-center justify-center  transition-all flex mx-auto text-center"
+          className="cursor-pointer border-2 font-bold  text-sky-50 border-sky-900  w-2/3 py-2 normal rounded-xl hover:secondary-bg   items-center justify-center  transition-all flex mx-auto text-center"
           type=""
         >
           {" "}

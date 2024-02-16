@@ -1,20 +1,22 @@
 import Lottie from "lottie-react";
 import LoginAni from "../../assets/loginAni.json";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
-import "../../Styles/banner.css";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
-import '../../Styles/banner.css'
+
+import '../../Styles/Login.css'
 
 import useAuth from '../../Hooks/useAuth';
 import SocialLogin from '../../Components/SocialLogin/SocialLogin';
 
 // import { Helmet } from "react-helmet-async";
 import PageTitle from "../../Shared/PageTitle/PageTitle";
+import Swal from "sweetalert2";
 
 // import { HelmetData } from "react-helmet-async";
 const Login = () => {
-  
+  const location = useLocation();
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -25,11 +27,20 @@ const Login = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-    signIn(data.email, data.password).then((result) => {
-      const user = result.user;
-      console.log(user);
+    signIn(data.email, data.password).then(() => {
+      Swal.fire({
+        position: "center",
+        icon: "success",
+
+        title: "Successfully Login by email and password ",
+
+        showConfirmButton: false,
+        timer: 1500,
+      });
       
-    });
+      navigate(location?.state ? location.state : "/");
+    })
+    
   };
   return (
     <div className="primary-bg overflow-x-hidden lg:overflow-x-auto lg:overflow-hidden flex items-center justify-center lg:h-screen">
@@ -66,14 +77,14 @@ const Login = () => {
           <div className="form-wrapper flex items-center lg:h-full px-10 relative z-10 pt-16 lg:pt-0">
             <div className="w-full space-y-5">
               <div className="form-caption flex items-end justify-center text-center space-x-3 mb-20">
-                {/*  <span className="text-3xl secondary-color font-bold headingFont ">Login</span> */}
-                <div className="lg:text-7xl md:text-7xl text-xl">
+                 <span className="text-4xl font-semibold text-sky-700  headingFont ">Login</span>
+                {/* <div className="lg:text-7xl md:text-7xl text-xl">
                   <svg id="animation-heading">
                     <text x="45%" y="50%" dy=".50em" textAnchor="middle">
                       Login
                     </text>
                   </svg>
-                </div>
+                </div> */}
               </div>
               {/*form caption*/}
 
@@ -134,8 +145,11 @@ const Login = () => {
                   <span className="w-full lg:w-4/5 block mx-auto ">
                     <input
                       type="submit"
-                      value="Login"
-                      className="cursor-pointer border-2 font-bold text-sky-50 border-sky-900 bg-sky-800 w-full p-1 normal rounded-xl hover:secondary-bg     transition-all"
+                      value="Login" style={{
+                        background:
+                          "radial-gradient(circle, rgba(30,162,184,1) 0%, rgba(6,54,93,1) 100%)",
+                      }}
+                      className="cursor-pointer border-2 mt-5 font-bold  text-sky-50 border-sky-900  w-2/3 py-2 normal rounded-xl hover:secondary-bg   items-center justify-center  transition-all flex mx-auto text-center"
                     />
                   </span>
                 </div>
