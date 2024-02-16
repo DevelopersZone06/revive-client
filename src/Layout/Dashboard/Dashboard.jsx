@@ -114,13 +114,13 @@ const Dashboard = () => {
           //trainer exist 
           isTrainer ? (
              <>
-              <Profile></Profile>
+              <Profile img={'https://i.ibb.co/W2680FV/images.jpg'}></Profile>
              </>
           )
 
          : 
-      {/* User info */} (<>
-         <Profile></Profile>
+     (<>
+         <Profile img={'https://i.ibb.co/gM3rG8G/beautiful-woman-park-last-sunny-days.jpg'}></Profile>
             <li>
               <NavLink
                 to={"/dashboard/userProfile"}
