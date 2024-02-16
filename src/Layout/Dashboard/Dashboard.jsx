@@ -18,7 +18,7 @@ import useAuth from "../../Hooks/useAuth";
 import Profile from "../../Shared/Profile/Profile";
 import useTrainer from "../../Hooks/useTrainer";
 import {  } from "react-icons/ri";
-import { IoIosPeople } from "react-icons/fa6";
+// import { IoIosPeople } from "react-icons/fa6";
 const Dashboard = () => {
   const { isAdmin } = useAdmin();
   const { isTrainer } = useTrainer()
@@ -117,7 +117,7 @@ const Dashboard = () => {
           //trainer exist 
           isTrainer ? (
              <>
-              <Profile></Profile>
+              <Profile img={'https://i.ibb.co/W2680FV/images.jpg'}></Profile>
               <li>
               <NavLink
                 to={"/dashboard/trainerProfile"}
@@ -158,7 +158,7 @@ const Dashboard = () => {
                   isPending ? "pending" : isActive ? "text-sky-200" : ""
                 }
               >
-                <IoIosPeople />
+              {/* <IoIosPeople></IoIosPeople> */}
                My Customers
               </NavLink>
             </li>
@@ -178,7 +178,7 @@ const Dashboard = () => {
 
               :
               (<>
-                <Profile></Profile>
+                <Profile img={'https://i.ibb.co/gM3rG8G/beautiful-woman-park-last-sunny-days.jpg'}></Profile>
 
                 <Link to={'applyTrainerForm'}><button className="btn btn-sm mt-3">Apply to be a trainer</button></Link>
 
