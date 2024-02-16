@@ -42,6 +42,7 @@ import AllUsers from "./Pages/Dashboard/AllUsers/AllUsers";
 import SpeechRecog from "./Shared/SpeechRecog/SpeechRecog";
 import UserProfile from "./Pages/Dashboard/User/UserProfile/UserProfile";
 import TrainerForm from "./Pages/TrainerForm/TrainerForm";
+import UserDashboard from "./Layout/UserDashboard/UserDashboard";
 
 
 
@@ -67,7 +68,7 @@ const router = createBrowserRouter([
         element: <BlogDetail />,
       },
       {
-        path: '/speech', 
+        path: '/speech',
         element: <SpeechRecog></SpeechRecog>
       },
       {
@@ -123,11 +124,11 @@ const router = createBrowserRouter([
       },
 
 
-      
-      
-      
+
+
+
     ],
-  }, 
+  },
   {
     path: 'dashboard',
     element: <Dashboard></Dashboard>,
@@ -169,55 +170,56 @@ const router = createBrowserRouter([
         element: <ServiceDetail />
       },
       // user route
+
+
+
+
+
+
+      //Trainer Route
+
       {
-        path: 'calender',
-        element: <Calender />
+        path: 'trainerProfile',
+        element: <TrainerProfile />
       },
-      {
-        path: 'myServices',
-        element: <MyServices />
-      },
-      {
-        path:'/dashboard/myServices/myServicesDetails',
-        element:<ServicesDetails/>
-      },
-      {
-        path: 'applyTrainerForm', 
-        element: <TrainerForm></TrainerForm>
-      }
-      ,
-      {
-        path: 'orderHistory',
-        element: <OrderHistory></OrderHistory>
-      },
-      {
-        path: 'updateProfile',
-        element: <UpdateProfile></UpdateProfile>
-      },
-      {
-        path:'userProfile' ,
-        element:<UserProfile></UserProfile>
-      },
-    
-    
-    
-   
-   
-    //Trainer Route
+
+
+    ]
+  },
+  {
+    path: 'userDashboard',
+    element: <UserDashboard></UserDashboard>,
+    children: [
     {
-      path:'trainerProfile',
-      element:<TrainerProfile/>
-    },
-   
-    {
-      path: 'orderHistory', 
+      path: 'orderHistory',
       element: <OrderHistory></OrderHistory>
-    }, 
+    },
     {
-      path: 'updateProfile', 
-      element: <UpdateProfile></UpdateProfile>
+      path: 'calender',
+      element: <Calender />
+    },
+    {
+      path: 'myServices',
+      element: <MyServices />
+    },
+    {
+      path: 'myServices/myServicesDetails',
+      element: <ServicesDetails />
+    },
+    {
+      path: 'applyTrainerForm',
+      element: <TrainerForm></TrainerForm>
     }
-  ]
+      ,
+    {
+      path: 'orderHistory',
+      element: <OrderHistory></OrderHistory>
+    },
+    {
+      path: 'updateProfile',
+      element: <UpdateProfile></UpdateProfile>
+    },
+    ]
   }
 ]);
 

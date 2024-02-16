@@ -25,7 +25,7 @@ const Dashboard = () => {
           <li>
             <Helmet>
               <title>
-                Revive | Dashboard
+                Revive | Admin Dashboard
               </title>
             </Helmet>
             <Link to={"/"}>
