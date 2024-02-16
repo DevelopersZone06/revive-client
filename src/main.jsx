@@ -31,7 +31,7 @@ import ServicesApproval from "./Pages/Dashboard/Admin/Services/ServicesApproval"
 import TrainerDetail from "./Pages/Dashboard/Admin/Trainers/TrainerDetail";
 import ServiceDetail from "./Pages/Dashboard/Admin/Services/ServiceDetail";
 import PostedPackages from "./Pages/Dashboard/Admin/Packages/PostedPackages";
-import Calender from "./Pages/Dashboard/User/Calender/Calender";
+// import Calender from "./Pages/Dashboard/User/Calender/Calender";
 
 import ServicesDetails from "./Pages/Dashboard/User/Services/ServicesDetails";
 import TrainerProfile from "./Pages/Dashboard/Trainer/TrainerProfile/TrainerProfile";
@@ -168,10 +168,10 @@ const router = createBrowserRouter([
         element: <ServiceDetail />
       },
       // user route
-      {
-        path: 'calender',
-        element: <Calender />
-      },
+      // {
+      //   path: 'calender',
+      //   element: <Calender />
+      // },
       {
         path: 'myServices',
         element: <MyServices />
