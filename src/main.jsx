@@ -171,7 +171,35 @@ const router = createBrowserRouter([
       },
       // user route
 
-
+      {
+        path: 'orderHistory',
+        element: <OrderHistory></OrderHistory>
+      },
+      {
+        path: 'calender',
+        element: <Calender />
+      },
+      {
+        path: 'myServices',
+        element: <MyServices />
+      },
+      {
+        path: 'myServices/myServicesDetails',
+        element: <ServicesDetails />
+      },
+      {
+        path: 'updateProfile/applyTrainerForm',
+        element: <TrainerForm></TrainerForm>
+      }
+      ,
+      {
+        path: 'orderHistory',
+        element: <OrderHistory></OrderHistory>
+      },
+      {
+        path: 'updateProfile',
+        element: <UpdateProfile></UpdateProfile>
+      },
 
 
 
@@ -186,41 +214,6 @@ const router = createBrowserRouter([
 
     ]
   },
-  {
-    path: 'userDashboard',
-    element: <UserDashboard></UserDashboard>,
-    children: [
-    {
-      path: 'orderHistory',
-      element: <OrderHistory></OrderHistory>
-    },
-    {
-      path: 'calender',
-      element: <Calender />
-    },
-    {
-      path: 'myServices',
-      element: <MyServices />
-    },
-    {
-      path: 'myServices/myServicesDetails',
-      element: <ServicesDetails />
-    },
-    {
-      path: 'applyTrainerForm',
-      element: <TrainerForm></TrainerForm>
-    }
-      ,
-    {
-      path: 'orderHistory',
-      element: <OrderHistory></OrderHistory>
-    },
-    {
-      path: 'updateProfile',
-      element: <UpdateProfile></UpdateProfile>
-    },
-    ]
-  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
