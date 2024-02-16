@@ -7,17 +7,7 @@ const TrainerProfile = () => {
         <div>
             <div className="flex flex-row gap-8">
             {/* user information */}
-                <div >
-                {/* left side */}
-                    <div >
-                        <img src='https://i.ibb.co/NKsXwgk/tengyart-g-Cfw-D2qb8v-Y-unsplash.jpg' alt="" className="md:w-[120px] md:h-[120px] w-[100px] h-[100px]  rounded-full  bg-gradient-to-r p-[4px] from-teal-400 via-sky-100 to-sky-600 object-cover " />
-                    </div>
-                    <div>
-                        <h1 className=" text-sm font-semibold text-blue-300">Ishrat Jahan</h1>
-                        <p className=" text-sm text-blue-300">Ishrat@gmail.com</p>
-                       
-                    </div>
-                </div>
+               
                 {/* right side */}
                 <div className="w-2/3 ">
                    <div className="flex flex-row justify-evenly   items-center">

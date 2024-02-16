@@ -22,7 +22,7 @@ const TrainerPostedService = () => {
     // console.log(res.data);
       }
     return (
-        <div className="flex  flex-col gap-10 ">
+        <div className="flex  flex-col gap-10  ">
            
             
             <div>
@@ -209,10 +209,12 @@ const TrainerPostedService = () => {
 
             {/* Cards */}
 
-            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 ">
               {/* 1ST CARD */}
-            <div className="h-fit group" >
-            <div className="relative overflow-hidden w-full rounded-md">
+            <div className="h-fit  group rounded-b-lg"  style={{
+              background:
+                "radial-gradient(circle, rgba(30,162,184,1) 0%, rgba(6,54,93,1) 100%)"}} >
+            <div className="relative  overflow-hidden w-full rounded-md">
               <img className="h-52 w-full object-cover" src={'https://i.ibb.co/rtZJqNq/athletic-man-with-face-mask-having-weight-training-lunge-position-gym.jpg'} alt="" />
               <div className="absolute h-full w-full bg-black/60 flex flex-col items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300 space-y-1 text-center">
                 <p className=" text-sky-200">
@@ -246,16 +248,16 @@ const TrainerPostedService = () => {
             </span>
             Cardio
           </p>
-          <div className="flex flex-row  justify-around items-center text-sky-50">
+          <div className="flex flex-row  justify-between mr-10  items-center text-sky-50 mb-10">
           
           {/* Update Modal*/}
-          <div>
+          <div >
           
 
           {/* The button to open modal */}
           <label
             htmlFor="my_modal_7"
-            className=" rounded-full px-4 py-2 hover:bg-sky-100 border bg-sky-50 hover:text-sky-700 text-sky-700 font-bold capitalize md:text-sm text-sm ml-10 transition-all duration-150 ease-in-out"
+            className=" rounded-full px-4 py-2  hover:bg-sky-100 border bg-sky-50 hover:text-sky-700 text-sky-700 font-bold capitalize md:text-sm text-sm ml-10 transition-all duration-150 ease-in-out"
           >
             Update
           </label>
@@ -334,7 +336,9 @@ const TrainerPostedService = () => {
             </div>
           {/* 2ND card */}
           
-          <div className="h-fit group" >
+          <div className="h-fit  group rounded-b-lg"  style={{
+            background:
+              "radial-gradient(circle, rgba(30,162,184,1) 0%, rgba(6,54,93,1) 100%)"}} >
           <div className="relative overflow-hidden w-full rounded-md">
             <img className="h-52 w-full object-cover" src={'https://i.ibb.co/3mxMCJ3/fitness-man.jpg'} alt="" />
             <div className="absolute h-full w-full bg-black/60 flex flex-col items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300 space-y-1 text-center">
@@ -368,15 +372,15 @@ const TrainerPostedService = () => {
             </span>
             Workout
           </p>
-          <div className="flex flex-row  justify-around items-center text-sky-50">
+          <div className="flex flex-row  justify-between items-center text-sky-50 mb-10 mr-10">
             
             {/* Update Modal*/}
-            <div>
+            <div >
             
 
             {/* The button to open modal */}
             <label
-              htmlFor="my_modal_7"
+              htmlFor="my_modal_7 "
               className=" rounded-full px-4 py-2 hover:bg-sky-100 border bg-sky-50 hover:text-sky-700 text-sky-700 font-bold capitalize md:text-sm text-sm ml-10 transition-all duration-150 ease-in-out"
             >
               Update
@@ -455,7 +459,9 @@ const TrainerPostedService = () => {
         </div>
 {/* 3rd card */}
 
-<div className="h-fit group" >
+<div className="h-fit  group rounded-b-lg"  style={{
+  background:
+    "radial-gradient(circle, rgba(30,162,184,1) 0%, rgba(6,54,93,1) 100%)"}} >
 <div className="relative overflow-hidden w-full rounded-md">
   <img className="h-52 w-full object-cover" src={'https://i.ibb.co/MDHczVd/male-athlete-with-bare-torso-doing-abdominal-exercises.jpg'} alt="" />
   <div className="absolute h-full w-full bg-black/60 flex flex-col items-center justify-center -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300 space-y-1 text-center">
@@ -489,7 +495,7 @@ Strength Fusion
   </span>
   Workout
 </p>
-<div className="flex flex-row  justify-around items-center text-sky-50">
+<div className="flex flex-row  justify-between mr-10 items-center text-sky-50 mb-10">
             
 {/* Update Modal*/}
 <div>

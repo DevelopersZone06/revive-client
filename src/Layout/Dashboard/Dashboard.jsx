@@ -1,7 +1,7 @@
 import { Link, NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../../Hooks/useAdmin";
 import { MdSpaceDashboard } from "react-icons/md";
-import { FaUsers } from "react-icons/fa";
+import { FaNewspaper, FaUsers } from "react-icons/fa";
 import { GiMuscleUp } from "react-icons/gi";
 import { GrGallery } from "react-icons/gr";
 import { TbPackages } from "react-icons/tb";
@@ -17,6 +17,8 @@ import { Helmet } from "react-helmet-async";
 import useAuth from "../../Hooks/useAuth";
 import Profile from "../../Shared/Profile/Profile";
 import useTrainer from "../../Hooks/useTrainer";
+import {  } from "react-icons/ri";
+import { IoIosPeople } from "react-icons/fa6";
 const Dashboard = () => {
   const { isAdmin } = useAdmin();
   const {isTrainer} =useTrainer()
@@ -116,6 +118,61 @@ const Dashboard = () => {
           isTrainer ? (
              <>
               <Profile></Profile>
+              <li>
+              <NavLink
+                to={"/dashboard/trainerProfile"}
+                className={({ isActive, isPending }) =>
+                  isPending ? "pending" : isActive ? "text-sky-200" : ""
+                }
+              >
+                <CgProfile />
+               My Profile
+              </NavLink>
+            </li>
+              <li>
+              <NavLink
+                to={"/dashboard/trainerPostedService"}
+                className={({ isActive, isPending }) =>
+                  isPending ? "pending" : isActive ? "text-sky-200" : ""
+                }
+              >
+                <RiServiceFill />
+              My Services
+              </NavLink>
+            </li>
+              <li>
+              <NavLink
+                to={"/dashboard/trainerProfile"}
+                className={({ isActive, isPending }) =>
+                  isPending ? "pending" : isActive ? "text-sky-200" : ""
+                }
+              >
+                <FaNewspaper />
+               My Blogs
+              </NavLink>
+            </li>
+              <li>
+              <NavLink
+                to={"/dashboard/trainerProfile"}
+                className={({ isActive, isPending }) =>
+                  isPending ? "pending" : isActive ? "text-sky-200" : ""
+                }
+              >
+                <IoIosPeople />
+               My Customers
+              </NavLink>
+            </li>
+              <li>
+              <NavLink
+                to={"/dashboard/todo"}
+                className={({ isActive, isPending }) =>
+                  isPending ? "pending" : isActive ? "text-sky-200" : ""
+                }
+              >
+                <CgProfile />
+               To-Do
+              </NavLink>
+            </li>
              </>
           )
 
