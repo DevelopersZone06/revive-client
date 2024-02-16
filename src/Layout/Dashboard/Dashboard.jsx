@@ -15,8 +15,10 @@ import { TbDetails } from "react-icons/tb";
 import { Helmet } from "react-helmet-async";
 import useAuth from "../../Hooks/useAuth";
 import Profile from "../../Shared/Profile/Profile";
+import useTrainer from "../../Hooks/useTrainer";
 const Dashboard = () => {
   const { isAdmin } = useAdmin();
+  const {isTrainer} =useTrainer()
   const {user}=useAuth()
   return (
     <div className="flex flex-col md:flex-row py-20 px-[2%] sm:px-[5%] lg:px-[5%] " style={{ background: 'radial-gradient(circle, rgba(0,51,111,1) 0%, rgba(0,0,0,1) 100%)' }}>
@@ -108,9 +110,16 @@ const Dashboard = () => {
 
             </>
 
-          ) : 
-          <>
-      {/* User info */}
+          ) :
+          //trainer exist 
+          isTrainer ? (
+             <>
+              <Profile></Profile>
+             </>
+          )
+
+         : 
+      {/* User info */} (<>
          <Profile></Profile>
             <li>
               <NavLink
@@ -158,7 +167,7 @@ const Dashboard = () => {
                 </div>
               </NavLink>
             </li>
-          </>
+          </>)
 
           
         
