@@ -109,7 +109,7 @@ const Navbar = () => {
                 <NavLink to="/dashboard/adminHome">Dashboard</NavLink>
               </li>
             )}
-            {user && (
+            {user &&  !isAdmin &&  (
               <li>
                 <NavLink to="/dashboard/updateProfile">Dashboard</NavLink>
               </li>
