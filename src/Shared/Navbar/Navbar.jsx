@@ -111,7 +111,7 @@ const Navbar = () => {
             )}
             {user && (
               <li>
-                <NavLink to="/dashboard/userProfile">Dashboard</NavLink>
+                <NavLink to="/dashboard/updateProfile">Dashboard</NavLink>
               </li>
             )}
           </ul>
