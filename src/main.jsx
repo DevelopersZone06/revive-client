@@ -46,6 +46,7 @@ import Todo from "./Pages/Dashboard/User/Todo/Todo";
 import TrainerForm from "./Pages/TrainerForm/TrainerForm";
 import UserDashboard from "./Layout/UserDashboard/UserDashboard";
 import TrainerPostedService from "./Pages/Dashboard/Trainer/TrainerProfile/TrainerPostedService/TrainerPostedService";
+import PostBlog from "./Pages/Dashboard/Trainer/PostBlog/PostBlog";
 
 
 
@@ -200,6 +201,10 @@ const router = createBrowserRouter([
       {
         path: 'trainerProfile',
         element: <TrainerProfile />
+      },
+      {
+        path: 'postBlog', 
+        element: <PostBlog />
       },
       {
         path: 'orderHistory',
