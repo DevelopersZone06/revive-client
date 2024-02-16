@@ -48,7 +48,7 @@ const Column = ({ column, index, onAddTask }) => {
             onChange={handleInputChange}
             className="border p-2"
           />
-          <button onClick={handleAddTask} className="mt-2 bg-[#10a0a0] text-white py-2 px-2 rounded">
+          <button onClick={handleAddTask} className="mt-2 bg-[#10a0a0] text-white py-2 px-2 rounded-l">
             Add Task
           </button>
         </div>

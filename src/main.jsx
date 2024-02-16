@@ -43,6 +43,8 @@ import SpeechRecog from "./Shared/SpeechRecog/SpeechRecog";
 import UserProfile from "./Pages/Dashboard/User/UserProfile/UserProfile";
 import Todo from "./Pages/Dashboard/User/Todo/Todo";
 
+import TrainerForm from "./Pages/TrainerForm/TrainerForm";
+import UserDashboard from "./Layout/UserDashboard/UserDashboard";
 
 
 
@@ -68,7 +70,7 @@ const router = createBrowserRouter([
         element: <BlogDetail />,
       },
       {
-        path: '/speech', 
+        path: '/speech',
         element: <SpeechRecog></SpeechRecog>
       },
       {
@@ -124,11 +126,11 @@ const router = createBrowserRouter([
       },
 
 
-      
-      
-      
+
+
+
     ],
-  }, 
+  },
   {
     path: 'dashboard',
     element: <Dashboard></Dashboard>,
@@ -179,9 +181,14 @@ const router = createBrowserRouter([
         element: <MyServices />
       },
       {
-        path:'/dashboard/myServices/myServicesDetails',
-        element:<ServicesDetails/>
+        path: 'myServices/myServicesDetails',
+        element: <ServicesDetails />
       },
+      {
+        path: 'updateProfile/applyTrainerForm',
+        element: <TrainerForm></TrainerForm>
+      }
+      ,
       {
         path: 'orderHistory',
         element: <OrderHistory></OrderHistory>
@@ -190,9 +197,15 @@ const router = createBrowserRouter([
         path: 'updateProfile',
         element: <UpdateProfile></UpdateProfile>
       },
+
+
+
+
+      //Trainer Route
+
       {
-        path:'userProfile' ,
-        element:<UserProfile></UserProfile>
+        path: 'trainerProfile',
+        element: <TrainerProfile />
       },
       {
  path:'todo',
@@ -218,7 +231,11 @@ const router = createBrowserRouter([
       element: <UpdateProfile></UpdateProfile>
     }
   ]
-  }
+}
+
+
+    
+  
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
