@@ -18,7 +18,7 @@ const Column = ({ column, index, onAddTask }) => {
   };
     return (
         <div className="w-full md:w-1/3 p-2 pt-5 rounded">
-        <h2 className="text-2xl text-sky-50 font-semibold text-center py-4">{column.title}</h2>
+        <h2 className="text-2xl pb-2 text-sky-50 font-semibold text-center">{column.title}</h2>
         <Droppable droppableId={column.id} type="CARD">
           {(provided, snapshot) => (
             <div {...provided.droppableProps} ref={provided.innerRef}>
@@ -26,7 +26,7 @@ const Column = ({ column, index, onAddTask }) => {
                 <Draggable key={card.id} draggableId={card.id} index={index}>
                   {(provided, snapshot) => (
                     <div
-                      className="bg-sky-100 p-2 m-2 rounded"
+                      className="bg-sky-200 p-2 m-2 rounded"
                       ref={provided.innerRef}
                       {...provided.draggableProps}
                       {...provided.dragHandleProps}
@@ -40,15 +40,16 @@ const Column = ({ column, index, onAddTask }) => {
             </div>
           )}
         </Droppable>
-        <div className="mt-4">
+        <div className="mt-4 mb-4 block mx-auto">
           <input
+          
             type="text"
             placeholder="Enter task..."
             value={newTaskContent}
             onChange={handleInputChange}
-            className="border p-2"
+            className="border  ml-3 p-2"
           />
-          <button onClick={handleAddTask} className="mt-2 bg-[#10a0a0] text-white py-2 px-2 rounded-l">
+          <button onClick={handleAddTask} className="mt-2 bg-[#10a0a0] text-white py-2 px-2 rounded-r">
             Add Task
           </button>
         </div>
