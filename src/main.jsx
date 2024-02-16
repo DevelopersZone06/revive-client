@@ -45,6 +45,7 @@ import Todo from "./Pages/Dashboard/User/Todo/Todo";
 
 import TrainerForm from "./Pages/TrainerForm/TrainerForm";
 import UserDashboard from "./Layout/UserDashboard/UserDashboard";
+import TrainerPostedService from "./Pages/Dashboard/Trainer/TrainerProfile/TrainerPostedService/TrainerPostedService";
 
 
 
@@ -208,28 +209,40 @@ const router = createBrowserRouter([
         element: <TrainerProfile />
       },
       {
+        path: 'orderHistory',
+        element: <OrderHistory/>
+      },
+      {
+        path: 'updateProfile',
+        element: <UpdateProfile/>
+      },
+      {
+        path:'trainerPostedService',
+        element:<TrainerPostedService/>
+      },
+      {
  path:'todo',
  element:<Todo/>
-      },
+      }
     
     
     
    
    
     //Trainer Route
-    {
-      path:'trainerProfile',
-      element:<TrainerProfile/>
-    },
+    // {
+    //   path:'trainerProfile',
+    //   element:<TrainerProfile/>
+    // },
    
-    {
-      path: 'orderHistory', 
-      element: <OrderHistory></OrderHistory>
-    }, 
-    {
-      path: 'updateProfile', 
-      element: <UpdateProfile></UpdateProfile>
-    }
+    // {
+    //   path: 'orderHistory', 
+    //   element: <OrderHistory></OrderHistory>
+    // }, 
+    // {
+    //   path: 'updateProfile', 
+    //   element: <UpdateProfile></UpdateProfile>
+    // }
   ]
 }
 
