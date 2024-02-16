@@ -104,9 +104,7 @@ const Navbar = () => {
             <li>
               <NavLink to="/contact">Contact</NavLink>
             </li>
-            <li>
-              <LogOut />
-            </li>
+           
             {user && isAdmin && !isTrainer && (
               <li>
                 <NavLink to="/dashboard/adminHome">Dashboard</NavLink>
@@ -122,6 +120,9 @@ const Navbar = () => {
                 <NavLink to="/dashboard/trainerProfile">Dashboard</NavLink>
               </li>
             )}
+             <li>
+              <LogOut />
+            </li>
           </ul>
         </div>
 
