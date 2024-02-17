@@ -15,7 +15,7 @@ const Profile = ({ img }) => {
         <div className="text-center">
           <img
             // src={user?.photoURL}
-            src={img}
+            src={user?.photoURL}
             alt=""
             className="md:w-[100px] md:h-[100px] my-4 w-[100px] h-[100px]  rounded-full  bg-gradient-to-r p-[4px] from-teal-400 via-sky-100 to-sky-600 object-cover "
           />
