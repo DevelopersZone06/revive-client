@@ -119,7 +119,7 @@ const Dashboard = () => {
             isTrainer ? (
               <>
 
-                <Profile img={'https://i.ibb.co/W2680FV/images.jpg'}></Profile>
+                <Profile></Profile>
                 <li>
                   <NavLink
                     to={"/dashboard/trainerProfile"}
