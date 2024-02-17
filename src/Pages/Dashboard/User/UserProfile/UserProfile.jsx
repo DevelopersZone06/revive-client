@@ -81,6 +81,7 @@ const UserProfile = () => {
                             Full Name
                           </label>
                         </div>
+                        
                         <div className="relative z-0 w-full  group">
                           <input
                           readOnly

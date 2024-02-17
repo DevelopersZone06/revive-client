@@ -188,8 +188,10 @@ const Dashboard = () => {
 {/* this specific span is for to make it textless in the smaller devices */}
                     </span>
                   </NavLink>
+                  
                 </li>
                 <li>
+                  
                   <IoLogOut className="w-5 -mr-4 " />
                   <LogOut></LogOut>
                 </li>
