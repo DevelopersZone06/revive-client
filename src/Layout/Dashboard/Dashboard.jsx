@@ -185,7 +185,7 @@ const Dashboard = () => {
                     <CgProfile />
                     <span className="xl:flex lg:flex md:flex hidden">
                       To-Do
-
+{/* this specific span is for to make it textless in the smaller devices */}
                     </span>
                   </NavLink>
                 </li>
