@@ -47,6 +47,7 @@ import TrainerForm from "./Pages/TrainerForm/TrainerForm";
 import UserDashboard from "./Layout/UserDashboard/UserDashboard";
 import TrainerPostedService from "./Pages/Dashboard/Trainer/TrainerProfile/TrainerPostedService/TrainerPostedService";
 import PostBlog from "./Pages/Dashboard/Trainer/PostBlog/PostBlog";
+import PrivateRoute from "./Routes/PrivateRoute";
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -110,7 +111,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/services",
-        element: <AllServices></AllServices>,
+        element: <PrivateRoute><AllServices></AllServices></PrivateRoute>,
       },
       {
         path: "/services/:id",
