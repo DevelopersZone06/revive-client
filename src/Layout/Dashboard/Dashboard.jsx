@@ -114,7 +114,7 @@ const Dashboard = () => {
                 </NavLink>
               </li>
               
-              {/* user route */}
+              <li><LogOut></LogOut></li>
 
             </>
 
