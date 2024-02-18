@@ -6,12 +6,12 @@ import { useQuery } from "@tanstack/react-query";
 
 const useTrainer = () => {
     const axiosPublic = useAxiosPublic();
-    const { user } = useContext(AuthContext);
+    const { user,loading } = useContext(AuthContext);
   
     let isTrainer = false;
     const { data, isPending } = useQuery({
       queryKey: [user?.email, "trainers"],
-    //   enabled: !loading,
+    // enabled: !loading,
       queryFn: async () => {
         const res = await axiosPublic.get(`/users`);
         return res.data;

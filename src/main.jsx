@@ -48,6 +48,7 @@ import UserDashboard from "./Layout/UserDashboard/UserDashboard";
 import TrainerPostedService from "./Pages/Dashboard/Trainer/TrainerProfile/TrainerPostedService/TrainerPostedService";
 import PostBlog from "./Pages/Dashboard/Trainer/PostBlog/PostBlog";
 import PrivateRoute from "./Routes/PrivateRoute";
+import AdminRoute from "./Routes/AdminRoute";
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -128,12 +129,12 @@ const router = createBrowserRouter([
   },
   {
     path: "dashboard",
-    element: <Dashboard></Dashboard>,
+    element:<PrivateRoute> <Dashboard></Dashboard></PrivateRoute>,
     children: [
       //Admin routes
       {
         path: "adminHome",
-        element: <AdminHome></AdminHome>,
+        element: <AdminRoute><AdminHome></AdminHome></AdminRoute>,
       },
       {
         path: "allUsers",
