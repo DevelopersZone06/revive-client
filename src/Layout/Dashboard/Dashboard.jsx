@@ -126,7 +126,7 @@ const Dashboard = () => {
              {" "}
              <img src={logo} alt="" className="w-32 h-10 object-cover  -ml-3" />
            </Link></li>
-              <Profile img={'https://i.ibb.co/W2680FV/images.jpg'}></Profile>
+              <Profile></Profile>
              <div className="flex flex-row md:flex-col">
              <li>
              <NavLink
@@ -219,7 +219,7 @@ const Dashboard = () => {
 
                 <Link to={'applyTrainerForm'}><button className="btn btn-sm mt-3">Apply to be a trainer</button></Link>
 
-                <Profile></Profile>
+
                 <li>
                   <NavLink
                     to={"/dashboard/userProfile"}
@@ -253,11 +253,8 @@ const Dashboard = () => {
                   >
                     <FaArrowsToDot />
                     Todo
-                    <CgProfile />
-                    <span className="xl:flex lg:flex md:flex hidden">
-                      To-Do
-
-                    </span>
+                    
+                   
                   </NavLink>
                   
                 </li>
