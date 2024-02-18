@@ -7,11 +7,12 @@ import axios from "axios";
 const useAdmin = () => {
     // const axiosPublic = useAxiosPublic();
     let isAdmin = false;
-    const { user } = useContext(AuthContext);
+    const { user,loading } = useContext(AuthContext);
     const userEmail = user?.email;
   
     const { data, isPending } = useQuery({
       queryKey: [user?.email, "isAdmin"],
+      enabled :!loading,
       queryFn: async () => {
         const res = await axios.get(`https://revive-server-dun.vercel.app/admin`);
         return res.data;
