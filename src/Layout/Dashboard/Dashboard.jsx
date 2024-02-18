@@ -126,7 +126,7 @@ const Dashboard = () => {
              {" "}
              <img src={logo} alt="" className="w-32 h-10 object-cover  -ml-3" />
            </Link></li>
-              <Profile img={'https://i.ibb.co/W2680FV/images.jpg'}></Profile>
+              <Profile></Profile>
              <div className="flex flex-row md:flex-col">
              <li>
              <NavLink
@@ -187,6 +187,24 @@ const Dashboard = () => {
             
              </NavLink>
            </li>
+           <div className="divide-y divide-blue-200 h-2"></div>
+             <li >
+             <NavLink
+             
+               className={({ isActive, isPending }) =>
+                 isPending ? "pending" : isActive ? "text-sky-200" : ""
+               }
+             >
+              
+              
+             <IoLogOut/>
+               <div className="xl:flex lg:flex md:flex hidden text-sm">
+               <LogOut></LogOut>
+               </div>
+               
+            
+             </NavLink>
+           </li>
              </div>
              </>
           )
@@ -200,6 +218,7 @@ const Dashboard = () => {
                 <Profile img={'https://i.ibb.co/gM3rG8G/beautiful-woman-park-last-sunny-days.jpg'}></Profile>
 
                 <Link to={'applyTrainerForm'}><button className="btn btn-sm mt-3">Apply to be a trainer</button></Link>
+
 
                 <li>
                   <NavLink
@@ -234,10 +253,13 @@ const Dashboard = () => {
                   >
                     <FaArrowsToDot />
                     Todo
+                    
+                   
                   </NavLink>
+                  
                 </li>
                 <li>
-                  <NavLink
+                  {/* <NavLink
                     to={"/dashboard/servicesApproval"}
                     className={({ isActive, isPending }) =>
                       isPending ? "pending" : isActive ? "text-sky-200 flex items-center" : "flex items-center"
@@ -247,7 +269,10 @@ const Dashboard = () => {
                       <IoLogOut className="w-5 -mr-4 " />
                       <LogOut />
                     </div>
-                  </NavLink>
+                  </NavLink> */}
+                  
+                  <IoLogOut className="w-5 -mr-4 " />
+                  <LogOut></LogOut>
                 </li>
               </>)
 

@@ -120,9 +120,6 @@ const Navbar = () => {
                 <NavLink to="/dashboard/trainerProfile">Dashboard</NavLink>
               </li>
             )}
-             <li>
-              <LogOut />
-            </li>
           </ul>
         </div>
 

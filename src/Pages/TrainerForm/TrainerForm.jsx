@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { useForm } from "react-hook-form"
 import useAuth from "../../Hooks/useAuth";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
 const TrainerForm = () => {
 
@@ -14,10 +15,25 @@ const TrainerForm = () => {
 
 
     const { user } = useContext(AuthContext);
-    const defaultSelection = user?.selectedOption || "yoga";
+    // const defaultSelection = user?.selectedOption || "yoga";
+    const axiosPublic = useAxiosPublic()
 
 
-    const onSubmit = (data) => console.log(data)
+    const onSubmit = (data) => {
+        const name = data.name
+        const email = data.email
+        const phone = data.phone
+        const category = data.category
+        const experience = data.experience
+        const image = user.photoURL
+
+        const userDetails = {name, email, category, experience, phone, image}
+
+        console.log(userDetails)
+        axiosPublic.post(`/appliedTrainer`, userDetails)
+        .then(res => console.log(res.data))
+        
+    }
 
     // console.log(user)
 
@@ -45,7 +61,8 @@ const TrainerForm = () => {
                             <label className="peer-focus:font-medium absolute text-sm text-gray-500     duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600       peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Phone number</label>
                         </div>
                         <div className="relative z-0 w-full mb-5 group">
-                            <select {...register("selection")} defaultValue={defaultSelection} className="w-full bg-transparent border-b-2 pb-3 p-2 rounded-sm " name="selection" id="">
+                            <select {...register("category")} name="category" className="w-full bg-transparent border-b-2 pb-3 p-2 rounded-sm " id="">
+                               
                                 <option value="yoga">Yoga</option>
                                 <option value="workout">Workout</option>
                                 <option value="fitness">Fitness</option>
@@ -56,7 +73,7 @@ const TrainerForm = () => {
                     </div>
                     <div>
                         <div className="relative z-0 w-full mb-5 group">
-                            <input type="text" name="first_name" {...register("experience")} className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                            <input type="text" name="experience" {...register("experience")} className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
                             <label className="peer-focus:font-medium absolute text-sm text-gray-500     duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600       peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Experience</label>
                         </div>
                     </div>

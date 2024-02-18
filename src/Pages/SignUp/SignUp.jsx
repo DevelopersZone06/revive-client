@@ -26,6 +26,7 @@ const SignUp = () => {
   } = useForm();
   const axiosPublic = useAxiosPublic();
   const { createUser, updateUserProfile } = useAuth();
+
   const onSubmit = async (data) => {
     // console.log(data);
     // console.log(data.email);
@@ -36,19 +37,27 @@ const SignUp = () => {
         "content-type": "multipart/form-data",
       },
     });
-    console.log(res.data);
+
+
+    const photo = (res.data.data.url);
+
+    // const name = data.name
+    // const email = data.email 
+    // const role = "user"
+    // const newUser = {name, email, photo, role}
+
     createUser(data.email, data.password)
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
-        updateUserProfile(data.name, data.photoUrl);
+        updateUserProfile(data.name, photo);
       })
       .then(() => {
         const userInfo = {
           name: data.name,
           email: data.email,
-          photoUrl: data.photoUrl,
           role: "user",
+          photo
         };
         console.log(userInfo);
 
@@ -94,11 +103,11 @@ const SignUp = () => {
 
         {/*product Side*/}
         <div className="w-full lg:w-1/2 h-28 lg:h-full mt-32 lg:mt-0 lg:bg-theme-blue-dark flex relative order-2 lg:order-1">
-          <div className="text-center hidden lg:flex items-center justify-start h-full w-full select-none">
+         {/*  <div className="text-center hidden lg:flex items-center justify-start h-full w-full select-none">
             <span className="transform block whitespace-nowrap h-full -rotate-90 text-[55px] 2xl:text-[70px] font-black uppercase text-sky-800 opacity-0 transition-all group-hover:opacity-100 ml-10 2xl:ml-12 group-hover:-ml-24 2xl:group-hover:ml-32 lg:group-hover:ml-20 duration-1000 lg:duration-700 ease-in-out">
               Revive{" "}
             </span>
-          </div>
+          </div> */}
           {/*product text*/}
 
           <div className="product absolute right-0 bottom-0 flex items-center lg:justify-center w-full opacity-50 lg:opacity-100">
