@@ -26,6 +26,7 @@ const SignUp = () => {
   } = useForm();
   const axiosPublic = useAxiosPublic();
   const { createUser, updateUserProfile } = useAuth();
+
   const onSubmit = async (data) => {
     // console.log(data);
     // console.log(data.email);
@@ -36,19 +37,27 @@ const SignUp = () => {
         "content-type": "multipart/form-data",
       },
     });
-    console.log(res.data);
+
+
+    const photo = (res.data.data.url);
+
+    // const name = data.name
+    // const email = data.email 
+    // const role = "user"
+    // const newUser = {name, email, photo, role}
+
     createUser(data.email, data.password)
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
-        updateUserProfile(data.name, data.photoUrl);
+        updateUserProfile(data.name, photo);
       })
       .then(() => {
         const userInfo = {
           name: data.name,
           email: data.email,
-          photoUrl: data.photoUrl,
           role: "user",
+          photo
         };
         console.log(userInfo);
 

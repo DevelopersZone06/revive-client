@@ -187,6 +187,24 @@ const Dashboard = () => {
             
              </NavLink>
            </li>
+           <div className="divide-y divide-blue-200 h-2"></div>
+             <li >
+             <NavLink
+             
+               className={({ isActive, isPending }) =>
+                 isPending ? "pending" : isActive ? "text-sky-200" : ""
+               }
+             >
+              
+              
+             <IoLogOut/>
+               <div className="xl:flex lg:flex md:flex hidden text-sm">
+               <LogOut></LogOut>
+               </div>
+               
+            
+             </NavLink>
+           </li>
              </div>
              </>
           )
