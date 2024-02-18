@@ -138,32 +138,32 @@ const router = createBrowserRouter([
       },
       {
         path: "allUsers",
-        element: <AllUsers></AllUsers>,
+        element: <AdminRoute><AllUsers></AllUsers></AdminRoute>,
       },
       {
         path: "postGallery",
-        element: <PostGallery></PostGallery>,
+        element:<AdminRoute> <PostGallery></PostGallery></AdminRoute>,
       },
 
       {
         path: "toBeTrainers",
-        element: <ToBeTrainers />,
+        element: <AdminRoute><ToBeTrainers /></AdminRoute>,
       },
       {
         path: "postPackages",
-        element: <PostedPackages></PostedPackages>,
+        element: <AdminRoute><PostedPackages></PostedPackages></AdminRoute>,
       },
       {
         path: "servicesApproval",
-        element: <ServicesApproval />,
+        element: <AdminRoute><ServicesApproval /></AdminRoute>,
       },
       {
         path: "/dashboard/toBeTrainers/trainerDetail",
-        element: <TrainerDetail />,
+        element: <AdminRoute><TrainerDetail /></AdminRoute>,
       },
       {
         path: "/dashboard/servicesApproval/serviceDetail",
-        element: <ServiceDetail />,
+        element: <AdminRoute><ServiceDetail /></AdminRoute>,
       },
 
       // user route
