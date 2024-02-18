@@ -1,12 +1,10 @@
 
+import AllLoading from '../Shared/Loading/AllLoading';
+import useTrainer from '../Hooks/useTrainer';
 import { Navigate } from 'react-router-dom';
 
-import AllLoading from '../Shared/Loading/AllLoading';
-import useAdmin from '../Hooks/useAdmin';
-
-const AdminRoute = ({children}) => {
-    // const { user, loading } = useContext(AuthContext);
-    const {isAdmin,isPending}=useAdmin()
+const TrainerRoute = ({children}) => {
+    const {isTrainer,isPending}=useTrainer()
     
     if (isPending) {
       return (
@@ -15,7 +13,7 @@ const AdminRoute = ({children}) => {
         </>
       );
     }
-    if (isAdmin) {
+    if (isTrainer) {
       return children;
     }
       return (
@@ -23,4 +21,4 @@ const AdminRoute = ({children}) => {
       );
 };
 
-export default AdminRoute;
+export default TrainerRoute;
