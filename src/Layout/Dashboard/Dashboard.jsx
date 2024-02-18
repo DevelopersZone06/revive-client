@@ -219,6 +219,7 @@ const Dashboard = () => {
 
                 <Link to={'applyTrainerForm'}><button className="btn btn-sm mt-3">Apply to be a trainer</button></Link>
 
+                <Profile></Profile>
                 <li>
                   <NavLink
                     to={"/dashboard/userProfile"}
@@ -252,10 +253,16 @@ const Dashboard = () => {
                   >
                     <FaArrowsToDot />
                     Todo
+                    <CgProfile />
+                    <span className="xl:flex lg:flex md:flex hidden">
+                      To-Do
+
+                    </span>
                   </NavLink>
+                  
                 </li>
                 <li>
-                  <NavLink
+                  {/* <NavLink
                     to={"/dashboard/servicesApproval"}
                     className={({ isActive, isPending }) =>
                       isPending ? "pending" : isActive ? "text-sky-200 flex items-center" : "flex items-center"
@@ -265,7 +272,10 @@ const Dashboard = () => {
                       <IoLogOut className="w-5 -mr-4 " />
                       <LogOut />
                     </div>
-                  </NavLink>
+                  </NavLink> */}
+                  
+                  <IoLogOut className="w-5 -mr-4 " />
+                  <LogOut></LogOut>
                 </li>
               </>)
 

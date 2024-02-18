@@ -1,6 +1,44 @@
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../../../Provider/AuthProvider";
+import useAxiosPublic from "../../../../Hooks/useAxiosPublic";
+import axios from "axios";
 
 
 const UserProfile = () => {
+
+  const {user} = useContext(AuthContext)
+  const [userDetails, setUserDetails] = useState({})
+  const axiosPublic = useAxiosPublic()
+
+  useEffect( () => {
+    axiosPublic(`/users?email=${user?.email}`)
+    .then(res => {
+      setUserDetails(res.data)
+      console.log(res.data)
+    })
+  }, [])
+
+  const {name, email, photo, phone, experience} = userDetails
+
+
+  const handleUpdate = e => {
+    e.preventDefault()
+    
+    const form = e.target 
+    const updateName = form.title.value 
+    const updateEmail = form.email.value
+    const updatePhone = form.phone.value
+    const updateExperience = form.experience.value
+
+    const updatedData = {updateName, updateEmail, updateExperience, updatePhone}
+    console.log(updatedData)
+
+    axiosPublic.put(`/updateProfile/${email}`, updatedData)
+    .then(res => {
+      console.log(res.data)
+    })
+  }
+
   return (
     <div>
       <div>
@@ -29,12 +67,12 @@ const UserProfile = () => {
                     background:
                       "radial-gradient(circle, rgba(30,162,184,1) 0%, rgba(6,54,93,1) 100%)",
                   }}>
-                    <form className="max-w-[70%] mx-auto  ">
+                    <form onSubmit={handleUpdate} className="max-w-[70%] mx-auto  ">
                       <div className="flex lg:flex-row my-5 md:flex-row flex-col gap-10 items-center">
                         <div className="relative z-0 w-full  group">
                           <input
                             type="text"
-                            name="title" value={'Nipi'}
+                            name="title" defaultValue={name}
                             className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-sky-50 peer"
                             placeholder=" "
                             required
@@ -43,10 +81,12 @@ const UserProfile = () => {
                             Full Name
                           </label>
                         </div>
+                        
                         <div className="relative z-0 w-full  group">
                           <input
-                            type="text"
-                            name="title" value={'ishrat12@gmail.com'}
+                          readOnly
+                            type="email"
+                            name="email" value={email}
                             className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-sky-50 peer"
                             placeholder=" "
                             required
@@ -59,8 +99,9 @@ const UserProfile = () => {
                       <div className="flex lg:flex-row   md:flex-row flex-col gap-10 items-center py-10">
                         <div className="relative z-0 w-full mb-5 group">
                           <input
-                            type="text"
-                            name="title" value={'01823468392'}
+                            type="tel"
+                           
+                            name="phone" defaultValue={userDetails ? userDetails.phone : 'N/A'}
                             className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-sky-50 peer"
                             placeholder=" "
                             required
@@ -72,7 +113,7 @@ const UserProfile = () => {
                         <div className="relative z-0 w-full mb-5 group">
                           <input
                             type="text"
-                            name="title" value={'Experience'}
+                            name="experience" defaultValue={userDetails ? userDetails.experience : 'N/A'}
                             className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-sky-50 peer"
                             placeholder=" "
                             required
@@ -82,16 +123,19 @@ const UserProfile = () => {
                           </label>
                         </div>
                       </div>
+                      <div className="text-center">
+                      <button className="text-white border border-white hover:scale-125 transition-all ease-in-out my-3 bg-sky-50 hover:bg-sky-50focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center  "
+                      style={{
+                        background:
+                          "radial-gradient(circle, rgba(30,162,184,1) 0%, rgba(6,54,93,1) 100%)",
+                      }}>Update</button>
+                      </div>
 
 
 
 
                     </form>
-                    <button className="text-white border border-white hover:scale-125 transition-all ease-in-out my-3 bg-sky-50 hover:bg-sky-50focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center  "
-                      style={{
-                        background:
-                          "radial-gradient(circle, rgba(30,162,184,1) 0%, rgba(6,54,93,1) 100%)",
-                      }}>Update</button>
+                    
                   </div>
 
                 </div>
@@ -107,8 +151,9 @@ const UserProfile = () => {
                 <div className="flex lg:flex-row my-5 md:flex-row flex-col gap-10 items-center">
                   <div className="relative z-0 w-full  group">
                     <input
+                    readOnly
                       type="text"
-                      name="title" value={'Nipi'}
+                      name="title" value={name}
                       className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-sky-50 peer"
                       placeholder=" "
                       required
@@ -120,7 +165,8 @@ const UserProfile = () => {
                   <div className="relative z-0 w-full  group">
                     <input
                       type="text"
-                      name="title" value={'ishrat12@gmail.com'}
+                      readOnly
+                      name="title" value={email}
                       className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-sky-50 peer"
                       placeholder=" "
                       required
@@ -134,7 +180,8 @@ const UserProfile = () => {
                   <div className="relative z-0 w-full mb-5 group">
                     <input
                       type="text"
-                      name="title" value={'01823468392'}
+                      readOnly
+                      name="title" value={phone ? phone : 'N/A'}
                       className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-sky-50 peer"
                       placeholder=" "
                       required
@@ -146,7 +193,8 @@ const UserProfile = () => {
                   <div className="relative z-0 w-full mb-5 group">
                     <input
                       type="text"
-                      name="title" value={'Experience'}
+                      readOnly
+                      name="title" value={experience ? experience : 'N/A'}
                       className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-sky-50 peer"
                       placeholder=" "
                       required
