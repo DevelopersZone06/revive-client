@@ -50,6 +50,7 @@ import PostBlog from "./Pages/Dashboard/Trainer/PostBlog/PostBlog";
 import PrivateRoute from "./Routes/PrivateRoute";
 import AdminRoute from "./Routes/AdminRoute";
 import TrainerRoute from "./Routes/TrainerRoute";
+import UserRoute from "./Routes/UserRoute";
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -174,24 +175,24 @@ const router = createBrowserRouter([
       // },
       {
         path: 'myServices',
-        element: <MyServices />
+        element: <UserRoute><MyServices /></UserRoute>
       },
       {
         path: 'myServices/myServicesDetails',
-        element: <ServicesDetails />
+        element: <UserRoute><ServicesDetails /></UserRoute>
       },
       {
         path: 'applyTrainerForm',
-        element: <TrainerForm></TrainerForm>
+        element: <UserRoute><TrainerForm></TrainerForm></UserRoute>
       }
       ,
       {
         path: 'orderHistory',
-        element: <OrderHistory></OrderHistory>
+        element: <UserRoute><OrderHistory></OrderHistory></UserRoute>
       },
       {
         path: 'userProfile',
-        element: <UserProfile></UserProfile>
+        element:<UserRoute> <UserProfile></UserProfile></UserRoute>
       },
 
       //Trainer Route
