@@ -49,6 +49,7 @@ import TrainerPostedService from "./Pages/Dashboard/Trainer/TrainerProfile/Train
 import PostBlog from "./Pages/Dashboard/Trainer/PostBlog/PostBlog";
 import PrivateRoute from "./Routes/PrivateRoute";
 import AdminRoute from "./Routes/AdminRoute";
+import TrainerRoute from "./Routes/TrainerRoute";
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -197,38 +198,38 @@ const router = createBrowserRouter([
 
       {
         path: "todo",
-        element: <Todo />,
+        element: <TrainerRoute><Todo /></TrainerRoute>,
       },
 
 
       {
         path: "trainerProfile",
-        element: <TrainerProfile />,
+        element: <TrainerRoute><TrainerProfile /></TrainerRoute>,
       },
 
       {
         path: "orderHistory",
-        element: <OrderHistory></OrderHistory>,
+        element: <TrainerRoute><OrderHistory></OrderHistory></TrainerRoute>,
       },
       {
         path: 'postBlog', 
-        element: <PostBlog />
+        element: <TrainerRoute><PostBlog /></TrainerRoute>
       },
       {
         path: 'orderHistory',
-        element: <OrderHistory />
+        element:<TrainerRoute> <OrderHistory /></TrainerRoute>
       },
       {
         path: 'updateProfile',
-        element: <UpdateProfile />
+        element:<TrainerRoute> <UpdateProfile /></TrainerRoute>
       },
       {
         path: 'trainerPostedService',
-        element: <TrainerPostedService />
+        element:<TrainerRoute> <TrainerPostedService /></TrainerRoute>
       },
       {
         path: 'todo',
-        element: <Todo />
+        element: <TrainerRoute><Todo /></TrainerRoute>
       }
 
 
