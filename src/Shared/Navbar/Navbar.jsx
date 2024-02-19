@@ -17,10 +17,9 @@ import logo from "../../assets/images/logo2.png";
 import LogOut from "../../Components/LogOut/LogOut";
 import useTrainer from "../../Hooks/useTrainer";
 
-
 const Navbar = () => {
   const { isAdmin } = useAdmin();
-  const {isTrainer}=useTrainer();
+  const { isTrainer } = useTrainer();
   console.log(isTrainer);
   // console.log(isAdmin);
   // const user = true
@@ -52,8 +51,6 @@ const Navbar = () => {
   return (
     <div className="bg-[#05111D] px-[2%] sm:px-[5%] lg:px-[8%]  text-sky-200 relative z-20">
       <nav className="flex justify-between items-center py-2">
-       
-     
         <div className="block lg:hidden">
           <span onClick={handleMenu}>
             <FaBars className="text-xl" />
@@ -107,18 +104,18 @@ const Navbar = () => {
             <li>
               <NavLink to="/contact">Contact</NavLink>
             </li>
-           
+
             {user && isAdmin && !isTrainer && (
               <li>
                 <NavLink to="/dashboard/adminHome">Dashboard</NavLink>
               </li>
             )}
-            {user &&  !isAdmin && !isTrainer &&  (
+            {user && !isAdmin && !isTrainer && (
               <li>
                 <NavLink to="/dashboard/userProfile">Dashboard</NavLink>
               </li>
             )}
-            {user &&  !isAdmin && isTrainer &&  (
+            {user && !isAdmin && isTrainer && (
               <li>
                 <NavLink to="/dashboard/trainerProfile">Dashboard</NavLink>
               </li>
