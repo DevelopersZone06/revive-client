@@ -4,9 +4,9 @@ import useTrainer from '../Hooks/useTrainer';
 import { Navigate } from 'react-router-dom';
 
 const TrainerRoute = ({children}) => {
-    const {isTrainer,isPending}=useTrainer()
+    const {isTrainer,loading}=useTrainer()
     
-    if (isPending) {
+    if (loading) {
       return (
         <>
           <AllLoading></AllLoading>
