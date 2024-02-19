@@ -6,9 +6,9 @@ import useAdmin from '../Hooks/useAdmin';
 
 const AdminRoute = ({children}) => {
     // const { user, loading } = useContext(AuthContext);
-    const {isAdmin,loading}=useAdmin()
+    const {isAdmin, adminLoading }=useAdmin()
     
-    if (loading) {
+    if ( adminLoading ) {
       return (
         <>
           <AllLoading></AllLoading>

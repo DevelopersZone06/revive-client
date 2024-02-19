@@ -1,33 +1,38 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import useAxiosPublic from "./useAxiosPublic";
 import { AuthContext } from "../Provider/AuthProvider";
-import { useQuery } from "@tanstack/react-query";
+
 
 
 const useUser = () => {
+   
     const axiosPublic = useAxiosPublic();
-    const { user,loading } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
+  const [loading, setLoading] = useState(true);
+  const [isUser, setIsUser] = useState(false);
   
-    let isUser = false;
-    const { data, isPending } = useQuery({
-      queryKey: [user?.email, "user"],
-    // enabled: !loading,
-      queryFn: async () => {
-        const res = await axiosPublic.get(`/users`);
-        return res.data;
-      },
-    });
-    if (isPending) return  <span className="loading loading-spinner loading-lg"></span>
-  
-    const isUserExist = data?.find((user) => user.email === user?.email);
-  
-    const role = isUserExist?.role === "user";
-  
-    if (role) {
-      isUser = true;
-    }
-  
-    return { isUser, isPending };
+  useEffect(() => {
+      setLoading(true); // Set loading to true when starting query
+      const fetchData = async () => {
+          try {
+              const res = await axiosPublic.get(`/users`);
+              const isTrainerExist = res.data.find(trainer => trainer.email === user?.email);
+              setIsUser(isTrainerExist?.role === "user");
+          } catch (error) {
+              console.error("Error fetching data:", error);
+          } finally {
+              setLoading(false); // Set loading to false when query completes
+          }
+      };
+
+      if (user) {
+          fetchData();
+      } else {
+          setLoading(false); // If no user, no need to load, set loading to false
+      }
+  }, [axiosPublic, user]);
+
+  return { isUser, loading };
 };
 
 export default useUser;
