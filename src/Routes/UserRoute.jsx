@@ -4,9 +4,9 @@ import AllLoading from "../Shared/Loading/AllLoading";
 
 
 const UserRoute = ({children}) => {
-    const {isUser,isPending}=useUser()
+    const {isUser,loading}=useUser()
     
-    if (isPending) {
+    if (loading) {
       return (
         <>
           <AllLoading></AllLoading>

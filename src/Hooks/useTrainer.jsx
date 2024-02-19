@@ -1,34 +1,39 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import useAxiosPublic from "./useAxiosPublic";
 import { AuthContext } from "../Provider/AuthProvider";
-import { useQuery } from "@tanstack/react-query";
+
 
 
 const useTrainer = () => {
-    const axiosPublic = useAxiosPublic();
-    const { user,loading } = useContext(AuthContext);
+  const axiosPublic = useAxiosPublic();
+  const { user } = useContext(AuthContext);
+  const [trainerLoading, setLoading] = useState(true);
+  const [isTrainer, setIsTrainer] = useState(false);
   
-    let isTrainer = false;
-    const { data, isPending } = useQuery({
-      queryKey: [user?.email, "trainers"],
-    // enabled: !loading,
-      queryFn: async () => {
-        const res = await axiosPublic.get(`/users`);
-        return res.data;
-      },
-    });
-    if (isPending) return  <span className="loading loading-spinner loading-lg"></span>
-  
-    const isTrainerExist = data?.find((trainer) => trainer.email === user?.email);
-  
-    const role = isTrainerExist?.role === "trainer";
-  
-    if (role) {
-      isTrainer = true;
-    }
-  
-    return { isTrainer, isPending };
-  
+  useEffect(() => {
+      setLoading(true); // Set loading to true when starting query
+      const fetchData = async () => {
+          try {
+              const res = await axiosPublic.get(`/users`);
+              const isTrainerExist = res.data.find(trainer => trainer.email === user?.email);
+              setIsTrainer(isTrainerExist?.role === "trainer");
+          } catch (error) {
+              console.error("Error fetching data:", error);
+          } finally {
+              setLoading(false); // Set loading to false when query completes
+          }
+      };
+
+      if (user) {
+          fetchData();
+      } else {
+          setLoading(false); // If no user, no need to load, set loading to false
+      }
+  }, [axiosPublic, user]);
+
+  return { isTrainer, trainerLoading};
 };
+
+ 
 
 export default useTrainer;
