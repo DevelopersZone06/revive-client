@@ -4,13 +4,13 @@ import { AuthContext } from "../Provider/AuthProvider";
 import { useQuery } from "@tanstack/react-query";
 
 
-const useTrainer = () => {
+const useUser = () => {
     const axiosPublic = useAxiosPublic();
     const { user,loading } = useContext(AuthContext);
   
-    let isTrainer = false;
+    let isUser = false;
     const { data, isPending } = useQuery({
-      queryKey: [user?.email, "trainers"],
+      queryKey: [user?.email, "user"],
     // enabled: !loading,
       queryFn: async () => {
         const res = await axiosPublic.get(`/users`);
@@ -19,16 +19,15 @@ const useTrainer = () => {
     });
     if (isPending) return  <span className="loading loading-spinner loading-lg"></span>
   
-    const isTrainerExist = data?.find((trainer) => trainer.email === user?.email);
+    const isUserExist = data?.find((user) => user.email === user?.email);
   
-    const role = isTrainerExist?.role === "trainer";
+    const role = isUserExist?.role === "user";
   
     if (role) {
-      isTrainer = true;
+      isUser = true;
     }
   
-    return { isTrainer, isPending };
-  
+    return { isUser, isPending };
 };
 
-export default useTrainer;
+export default useUser;
