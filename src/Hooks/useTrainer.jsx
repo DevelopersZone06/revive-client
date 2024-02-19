@@ -7,7 +7,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 const useTrainer = () => {
   const axiosPublic = useAxiosPublic();
   const { user } = useContext(AuthContext);
-  const [loading, setLoading] = useState(true);
+  const [trainerLoading, setLoading] = useState(true);
   const [isTrainer, setIsTrainer] = useState(false);
   
   useEffect(() => {
@@ -31,7 +31,7 @@ const useTrainer = () => {
       }
   }, [axiosPublic, user]);
 
-  return { isTrainer, loading };
+  return { isTrainer, trainerLoading};
 };
 
  
