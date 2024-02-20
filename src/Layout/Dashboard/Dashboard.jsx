@@ -83,7 +83,7 @@ const Dashboard = () => {
                     isPending ? "pending" : isActive ? "text-sky-200" : ""
                   }
                 >
-                  <GrGallery></GrGallery>
+                  <GrGallery className="text-2xl"></GrGallery>
                   Post Gallery
                 </NavLink>
               </li>
@@ -94,7 +94,7 @@ const Dashboard = () => {
                     isPending ? "pending" : isActive ? "text-sky-200  " : ""
                   }
                 >
-                  <TbPackages></TbPackages>
+                  <TbPackages className="text-2xl"></TbPackages>
                   Post Packages
                 </NavLink>
               </li>
@@ -105,12 +105,12 @@ const Dashboard = () => {
                     isPending ? "pending" : isActive ? "text-sky-200" : ""
                   }
                 >
-                  <RiServiceFill></RiServiceFill>
+                  <RiServiceFill className="text-2xl"></RiServiceFill>
                   Services Approval
                 </NavLink>
               </li>
 
-              {/* user route */}
+
 
             </>
 
@@ -119,7 +119,7 @@ const Dashboard = () => {
             isTrainer ? (
               <>
 
-                <Profile img={'https://i.ibb.co/W2680FV/images.jpg'}></Profile>
+                <li><Profile img={'https://i.ibb.co/W2680FV/images.jpg'}></Profile></li>
                 <li>
                   <NavLink
                     to={"/dashboard/trainerProfile"}
@@ -127,7 +127,7 @@ const Dashboard = () => {
                       isPending ? "pending" : isActive ? "text-sky-200" : ""
                     }
                   >
-                    <CgProfile />
+                    <CgProfile className="text-2xl"/>
                     <span className="xl:flex lg:flex md:flex hidden">
                       My Profile
                     </span>
@@ -140,7 +140,7 @@ const Dashboard = () => {
                       isPending ? "pending" : isActive ? "text-sky-200" : ""
                     }
                   >
-                    <RiServiceFill />
+                    <RiServiceFill className="text-2xl"/>
                     <span className="xl:flex lg:flex md:flex hidden">
 
                       My Services
@@ -154,7 +154,7 @@ const Dashboard = () => {
                       isPending ? "pending" : isActive ? "text-sky-200" : ""
                     }
                   >
-                    <FaNewspaper />
+                    <FaNewspaper className="text-2xl"/>
                     <span className="xl:flex lg:flex md:flex hidden">
 
                       My Blogs
@@ -182,7 +182,7 @@ const Dashboard = () => {
                       isPending ? "pending" : isActive ? "text-sky-200" : ""
                     }
                   >
-                    <CgProfile />
+                    <CgProfile className="text-2xl"/>
                     <span className="xl:flex lg:flex md:flex hidden">
                       To-Do
 
@@ -198,9 +198,11 @@ const Dashboard = () => {
 
               :
               (<>
-                <Profile img={'https://i.ibb.co/gM3rG8G/beautiful-woman-park-last-sunny-days.jpg'}></Profile>
+                <li>
+                  <Profile img={'https://i.ibb.co/gM3rG8G/beautiful-woman-park-last-sunny-days.jpg'}></Profile>
 
-                <Link to={'applyTrainerForm'}><button className="btn btn-sm mt-3">Apply to be a trainer</button></Link>
+                  <Link to={'applyTrainerForm'}><button className="btn btn-sm mt-3">Apply to be a trainer</button></Link>
+                  </li>
 
                 <div className="flex flex-row md:flex-col">
                   <li>
@@ -210,7 +212,7 @@ const Dashboard = () => {
                         isPending ? "pending" : isActive ? "text-sky-200" : ""
                       }
                     >
-                      <CgProfile />
+                      <CgProfile className="text-2xl"/>
                       <span className="xl:flex lg:flex md:flex hidden">My Profile</span>
                     </NavLink>
                   </li>
@@ -223,7 +225,7 @@ const Dashboard = () => {
                         isPending ? "pending" : isActive ? "text-sky-200" : ""
                       }
                     >
-                      <TbDetails />
+                      <TbDetails className="text-2xl"/>
                       <span className="xl:flex lg:flex md:flex hidden">
                         My Services
                       </span>
@@ -236,7 +238,7 @@ const Dashboard = () => {
                         isPending ? "pending" : isActive ? "text-sky-200" : ""
                       }
                     >
-                      <FaArrowsToDot />
+                      <FaArrowsToDot className="text-2xl"/>
                       <span className="xl:flex lg:flex md:flex hidden">
 
                         Todo
