@@ -20,14 +20,10 @@ import useTrainer from "../../Hooks/useTrainer";
 const Navbar = () => {
   const { isAdmin } = useAdmin();
   const { isTrainer } = useTrainer();
-  console.log(isTrainer);
-  // console.log(isAdmin);
-  // const user = true
   const [menu, setMenu] = useState(false);
   const [notification, setNotification] = useState(false);
 
   const { user } = useContext(AuthContext);
-  console.log(user);
 
   const handleMenu = () => {
     setMenu(!menu);
