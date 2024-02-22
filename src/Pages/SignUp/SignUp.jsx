@@ -18,12 +18,7 @@ const SignUp = () => {
 
   const date = moment().format("YYYY MM DD HH mm");
 
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit, reset, formState: { errors }, } = useForm();
   const axiosPublic = useAxiosPublic();
   const { createUser, updateUserProfile } = useAuth();
 
