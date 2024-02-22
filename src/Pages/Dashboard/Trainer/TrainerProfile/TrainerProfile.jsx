@@ -1,8 +1,44 @@
+import { useEffect, useState } from "react";
 import useAuth from "../../../../Hooks/useAuth";
+import useAxiosPublic from "../../../../Hooks/useAxiosPublic";
 
 
 const TrainerProfile = () => {
     const {user} = useAuth()
+
+    const [userDetails, setUserDetails] = useState({})
+    const axiosPublic = useAxiosPublic()
+  
+    useEffect( () => {
+      axiosPublic(`/users?email=${user?.email}`)
+      .then(res => {
+        setUserDetails(res.data)
+        console.log(res.data)
+      })
+    }, [])
+  
+    const {name, email, photo, phone, experience} = userDetails
+
+
+    const handleUpdate = e => {
+      e.preventDefault()
+      
+      const form = e.target 
+      const updateName = form.name.value 
+      const updateEmail = form.email.value
+      const updatePhone = form.phone.value
+      const updateExperience = form.experience.value
+  
+      const updatedData = {updateName, updateEmail, updateExperience, updatePhone}
+      console.log(updatedData)
+  
+      axiosPublic.put(`/updateProfile/${email}`, updatedData)
+      .then(res => {
+        console.log(res.data)
+      })
+    }
+
+
     return (
         <div>
             <div className="flex flex-row gap-8">
@@ -32,31 +68,32 @@ const TrainerProfile = () => {
                     background:
                       "radial-gradient(circle, rgba(30,162,184,1) 0%, rgba(6,54,93,1) 100%)",
                   }}>
-                  <form  className="max-w-[70%] mx-auto  ">
+                  <form onSubmit={handleUpdate}  className="max-w-[70%] mx-auto  ">
                   <div className="flex lg:flex-row my-5  md:flex-row flex-col gap-10 items-center">
                   <div className="relative z-0 w-full  group">
                   <input
                     type="text"
                     
-                    name="title" value={`${user?.displayName}`}
+                    name="name" defaultValue={name}
                     className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-sky-50 peer"
                     placeholder=" "
                     required
                   />
                   <label className="peer-focus:font-medium absolute text-sm text-sky-50  transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-sky-50 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-                    {user?.displayName}
+                    {name}
                   </label>
                 </div>
                 <div className="relative z-0 w-full  group">
                   <input
-                    type="text"
-                    name="title" value={`${user?.email}`}
+                    type="email"
+                    readOnly
+                    name="email" value={`${email}`}
                     className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-sky-50 peer"
                     placeholder=" " 
                     required
                   />
                   <label className="peer-focus:font-medium absolute text-sm text-sky-50  transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-sky-50 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-                  {user?.email}
+                  Email
                   </label>
                 </div>
                   </div>
@@ -64,7 +101,7 @@ const TrainerProfile = () => {
                  <div className="relative z-0 w-full mb-5 group">
                  <input
                    type="text"
-                   name="title" value={'01823468392'}
+                   name="phone" defaultValue={phone}
                    className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-sky-50 peer"
                    placeholder=" "
                    required
@@ -76,7 +113,7 @@ const TrainerProfile = () => {
                <div className="relative z-0 w-full mb-5 group">
                  <input
                    type="text"
-                   name="title"  value={'Experience'}
+                   name="experience"  defaultValue={experience}
                    className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-sky-50 peer"
                    placeholder=" "
                    required
@@ -87,15 +124,17 @@ const TrainerProfile = () => {
                </div>
                  </div>
          
-                  
-                 
-                  
-                 </form>
-               <button  className="text-white border border-white hover:scale-125 transition-all ease-in-out my-3 bg-sky-50 hover:bg-sky-50focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center  "
+                  <div className="text-center">
+                  <button  className="text-white border border-white hover:scale-125 transition-all ease-in-out my-3 bg-sky-50 hover:bg-sky-50focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center  "
                style={{
                  background:
                    "radial-gradient(circle, rgba(30,162,184,1) 0%, rgba(6,54,93,1) 100%)",
                }}>Update</button>
+                  </div>
+                 
+                  
+                 </form>
+               
                  </div>
                    
                   </div>
@@ -147,10 +186,11 @@ const TrainerProfile = () => {
          <div className="relative z-0 w-full  group my-5">
          <input
            type="text"
-           name="title" value={`${user?.displayName}`}
+           name="title" value={`${name}`}
            className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-sky-50 peer"
            placeholder=" "
            required
+           readOnly
          />
          <label className="peer-focus:font-medium absolute text-sm text-sky-50  transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-sky-50 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
            Full Name
@@ -159,7 +199,8 @@ const TrainerProfile = () => {
        <div className="relative z-0 w-full  group my-5">
          <input
            type="text"
-           name="title" value={`${user?.email}`}
+           readOnly
+           name="title" value={`${email}`}
            className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-sky-50 peer"
            placeholder=" " 
            required
@@ -173,7 +214,8 @@ const TrainerProfile = () => {
         <div className="relative z-0 w-full mb-5 group">
         <input
           type="text"
-          name="title" value={'01823468392'}
+          readOnly
+          name="title" value={phone}
           className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-sky-50 peer"
           placeholder=" "
           required
@@ -185,7 +227,8 @@ const TrainerProfile = () => {
       <div className="relative z-0 w-full mb-5 group">
         <input
           type="text"
-          name="title"  value={'Experience'}
+          readOnly
+          name="title"  value={experience}
           className="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-sky-50 peer"
           placeholder=" "
           required

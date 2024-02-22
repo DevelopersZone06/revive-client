@@ -19,15 +19,11 @@ import useTrainer from "../../Hooks/useTrainer";
 
 const Navbar = () => {
   const { isAdmin } = useAdmin();
-  const {isTrainer}=useTrainer();
-  console.log(isTrainer);
-  // console.log(isAdmin);
-  // const user = true
+  const { isTrainer } = useTrainer();
   const [menu, setMenu] = useState(false);
   const [notification, setNotification] = useState(false);
 
   const { user } = useContext(AuthContext);
-  console.log(user);
 
   const handleMenu = () => {
     setMenu(!menu);
@@ -104,18 +100,18 @@ const Navbar = () => {
             <li>
               <NavLink to="/contact">Contact</NavLink>
             </li>
-           
+
             {user && isAdmin && !isTrainer && (
               <li>
                 <NavLink to="/dashboard/adminHome">Dashboard</NavLink>
               </li>
             )}
-            {user &&  !isAdmin && !isTrainer &&  (
+            {user && !isAdmin && !isTrainer && (
               <li>
                 <NavLink to="/dashboard/userProfile">Dashboard</NavLink>
               </li>
             )}
-            {user &&  !isAdmin && isTrainer &&  (
+            {user && !isAdmin && isTrainer && (
               <li>
                 <NavLink to="/dashboard/trainerProfile">Dashboard</NavLink>
               </li>

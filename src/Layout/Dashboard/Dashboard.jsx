@@ -19,9 +19,11 @@ import Profile from "../../Shared/Profile/Profile";
 import useTrainer from "../../Hooks/useTrainer";
 import { IoIosPeople } from "react-icons/io";
 import { RiCalendarTodoFill } from "react-icons/ri";
+import useUser from "../../Hooks/useUser";
 const Dashboard = () => {
-  const { isAdmin } = useAdmin();
-  const { isTrainer } = useTrainer()
+  const { isAdmin, adminLoading  } = useAdmin();
+  const { isTrainer,trainerLoading} = useTrainer();
+  const { isUser, loading} =useUser()
  const { user } = useAuth()
   return (
     <div className="flex flex-col md:flex-row py-20 px-[2%] sm:px-[5%] lg:px-[5%] " style={{ background: 'radial-gradient(circle, rgba(0,51,111,1) 0%, rgba(0,0,0,1) 100%)' }}>
@@ -38,7 +40,7 @@ const Dashboard = () => {
               <img src={logo} alt="" className="w-32 h-10 object-cover  -ml-3" />
             </Link> */}
           </li>
-          {isAdmin ? (
+          {(isAdmin && !adminLoading) ? (
             <>
               {/* Admin exits */}
               <li> <Link to={"/"}>
@@ -114,26 +116,26 @@ const Dashboard = () => {
                 </NavLink>
               </li>
               
-              {/* user route */}
+              <li><LogOut></LogOut></li>
 
             </>
 
           ) :
           //trainer exist {/* responsive idea */}
-          isTrainer ? (
+          (isTrainer && !trainerLoading) ? (
              <>
              <li> <Link to={"/"}>
              {" "}
              <img src={logo} alt="" className="w-32 h-10 object-cover  -ml-3" />
            </Link></li>
-              <Profile img={'https://i.ibb.co/W2680FV/images.jpg'}></Profile>
+              <Profile></Profile>
              <div className="flex flex-row md:flex-col">
              <li>
              <NavLink
                to={"/dashboard/trainerProfile"}
-               className={({ isActive, isPending }) =>
-                 isPending ? "pending" : isActive ? "text-sky-200" : ""
-               }
+              //  className={({ isActive, isPending }) =>
+              //    isPending ? "pending" : isActive ? "text-sky-200" : ""
+              //  }
              >
                <CgProfile />
               <span className="xl:flex lg:flex md:flex hidden"> My Profile</span>  
@@ -142,9 +144,9 @@ const Dashboard = () => {
              <li>
              <NavLink
                to={"/dashboard/trainerPostedService"}
-               className={({ isActive, isPending }) =>
-                 isPending ? "pending" : isActive ? "text-sky-200" : ""
-               }
+              //  className={({ isActive, isPending }) =>
+              //    isPending ? "pending" : isActive ? "text-sky-200" : ""
+              //  }
              >
                <RiServiceFill />
                <span className="xl:flex lg:flex md:flex hidden">  My Services</span>  
@@ -154,9 +156,9 @@ const Dashboard = () => {
              <li>
              <NavLink
                to={"/dashboard/trainerProfile"}
-               className={({ isActive, isPending }) =>
-                 isPending ? "pending" : isActive ? "text-sky-200" : ""
-               }
+              //  className={({ isActive, isPending }) =>
+              //    isPending ? "pending" : isActive ? "text-sky-200" : ""
+              //  }
              >
                <FaNewspaper />
                <span className="xl:flex lg:flex md:flex  hidden">  My Blogs</span>  
@@ -166,9 +168,9 @@ const Dashboard = () => {
              <li>
              <NavLink
                to={"/dashboard/trainerProfile"}
-               className={({ isActive, isPending }) =>
-                 isPending ? "pending" : isActive ? "text-sky-200" : ""
-               }
+              //  className={({ isActive, isPending }) =>
+              //    isPending ? "pending" : isActive ? "text-sky-200" : ""
+              //  }
              >
                <IoIosPeople />
                <span className="xl:flex lg:flex md:flex hidden">  My Customers</span>  
@@ -178,9 +180,9 @@ const Dashboard = () => {
              <li>
              <NavLink
                to={"/dashboard/todo"}
-               className={({ isActive, isPending }) =>
-                 isPending ? "pending" : isActive ? "text-sky-200" : ""
-               }
+              //  className={({ isActive, isPending }) =>
+              //    isPending ? "pending" : isActive ? "text-sky-200" : ""
+              //  }
              >
                < RiCalendarTodoFill/>
                <span className="xl:flex lg:flex md:flex hidden"> To-Do</span>  
@@ -191,9 +193,9 @@ const Dashboard = () => {
              <li >
              <NavLink
              
-               className={({ isActive, isPending }) =>
-                 isPending ? "pending" : isActive ? "text-sky-200" : ""
-               }
+              //  className={({ isActive, isPending }) =>
+              //    isPending ? "pending" : isActive ? "text-sky-200" : ""
+              //  }
              >
               
               
@@ -210,16 +212,16 @@ const Dashboard = () => {
           )
 
               :
-              (<>
+              ( isUser && !loading && <>
                 <li> <Link to={"/"}>
                 {" "}
                 <img src={logo} alt="" className="w-32 h-10 object-cover  -ml-3" />
               </Link></li>
-                <Profile img={'https://i.ibb.co/gM3rG8G/beautiful-woman-park-last-sunny-days.jpg'}></Profile>
+                <Profile ></Profile>
 
                 <Link to={'applyTrainerForm'}><button className="btn btn-sm mt-3">Apply to be a trainer</button></Link>
 
-                <Profile></Profile>
+
                 <li>
                   <NavLink
                     to={"/dashboard/userProfile"}
@@ -253,11 +255,8 @@ const Dashboard = () => {
                   >
                     <FaArrowsToDot />
                     Todo
-                    <CgProfile />
-                    <span className="xl:flex lg:flex md:flex hidden">
-                      To-Do
-
-                    </span>
+                    
+                   
                   </NavLink>
                   
                 </li>
@@ -278,6 +277,8 @@ const Dashboard = () => {
                   <LogOut></LogOut>
                 </li>
               </>)
+
+              
 
 
 

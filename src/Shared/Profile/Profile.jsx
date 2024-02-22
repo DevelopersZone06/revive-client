@@ -23,11 +23,12 @@ const Profile = () => {
   }, [])
 
 
-  //const {name, email, photo} = userDetails
-  const { photo} = userDetails
+  const {name, email, photo} = userDetails
+  console.log(userDetails)
+
 
   return (
-    <div className="border-2 border-red-500">
+    <div>
       <div>
         {/* left side */}
         <div className="md:text-center text-left">
@@ -40,10 +41,10 @@ const Profile = () => {
         </div>
         <div className="  lg:pr-0 md:pr-5 pr-6 ">
           <h1 className=" text-sm font-semibold text-blue-300 ">
-            {user?.displayName}
+            {name}
         
           </h1>
-          <p className=" lg:text-sm md:text-xs text-xs text-blue-300">{user?.email}</p>
+          <p className=" lg:text-sm md:text-xs text-xs text-blue-300">{email}</p>
         </div>
         {
           isTrainer &&
