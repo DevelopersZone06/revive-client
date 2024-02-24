@@ -127,7 +127,7 @@ const Footer = () => {
       </div>
       <div className='flex gap-2 items-center justify-center px-5'>
                
-                <p><small>Copyright <span></span> {} - All right reserved by Revive</small></p>
+                <p><small>Copyright @ <span></span> {} - All right reserved by Revive</small></p>
             </div>
 
 
