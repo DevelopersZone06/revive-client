@@ -18,7 +18,7 @@ const LogOut = () => {
     }
     return (
         <div>
-            <button onClick={handleLogOut} className='text-lg px-6 text-sky-200' type="">
+            <button onClick={handleLogOut} className='text-sm pl-6 text-sky-200' type="">
                 <span className="xl:flex lg:flex md:flex hidden">
                     LogOut
                 </span>

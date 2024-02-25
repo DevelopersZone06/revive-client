@@ -6,7 +6,7 @@ import axios from "axios";
 
 
 const SocialLogin = () => {
-  const { googleSignIn, fbSignIn } = useAuth();
+  const { googleSignIn} = useAuth();
   const axiosPublic = useAxiosPublic();
   const navigate = useNavigate();
   const handleGoogleLogin = () => {
@@ -17,7 +17,7 @@ const SocialLogin = () => {
         const userInfo = {
           email: result.user?.email,
           name: result.user?.displayName,
-          photoURL: result.user?.photoURL,
+          photo: result.user?.photoURL,
           role: "user",
         };
         axiosPublic.post("/users", userInfo).then((res) => {
@@ -27,19 +27,7 @@ const SocialLogin = () => {
       })
       .catch((error) => console.log(error));
   };
-  const handleFbLogin = () => {
-    console.log("fb clicked");
-    fbSignIn()
-      .then((result) => {
-        console.log(result.user);
-        // const userInfo ={
-        //     email:result.user?.email,
-        //     name:result.user?.displayName,
-        //     photoURL:result.user?.photoURL
-        // }
-      })
-      .catch((error) => console.log(error));
-  };
+ 
 
   return (
     <div className="flex flex-col gap-3">
@@ -58,9 +46,7 @@ const SocialLogin = () => {
           Login with Google{" "}
         </button>
       </div>
-      {/* <div>
-                <button  onClick={handleFbLogin} className="cursor-pointer border-2 font-bold text-teal-50 border-[#448c74] w-full py-1 normal rounded-lg hover:secondary-bg bg-[#448c74]  flex items-center justify-center  transition-all" type=""> Login with Fb </button>
-            </div> */}
+      
     </div>
   );
 };

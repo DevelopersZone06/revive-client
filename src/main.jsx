@@ -47,9 +47,10 @@ import TrainerForm from "./Pages/TrainerForm/TrainerForm";
 import UserDashboard from "./Layout/UserDashboard/UserDashboard";
 import TrainerPostedService from "./Pages/Dashboard/Trainer/TrainerProfile/TrainerPostedService/TrainerPostedService";
 import PostBlog from "./Pages/Dashboard/Trainer/PostBlog/PostBlog";
-
-
-
+import PrivateRoute from "./Routes/PrivateRoute";
+import AdminRoute from "./Routes/AdminRoute";
+import TrainerRoute from "./Routes/TrainerRoute";
+import UserRoute from "./Routes/UserRoute";
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -72,8 +73,8 @@ const router = createBrowserRouter([
         element: <BlogDetail />,
       },
       {
-        path: '/speech',
-        element: <SpeechRecog></SpeechRecog>
+        path: "/speech",
+        element: <SpeechRecog></SpeechRecog>,
       },
       {
         path: "/trainers",
@@ -113,7 +114,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/services",
-        element: <AllServices></AllServices>,
+        element: <PrivateRoute><AllServices></AllServices></PrivateRoute>,
       },
       {
         path: "/services/:id",
@@ -126,49 +127,47 @@ const router = createBrowserRouter([
         path: "/BMIServices",
         element: <BMIServices></BMIServices>,
       },
-
     ],
   },
   {
-    path: 'dashboard',
-    element: <Dashboard></Dashboard>,
+    path: "dashboard",
+    element:<PrivateRoute> <Dashboard></Dashboard></PrivateRoute>,
     children: [
       //Admin routes
       {
-        path: 'adminHome',
-        element: <AdminHome></AdminHome>
+        path: "adminHome",
+        element: <AdminRoute><AdminHome></AdminHome></AdminRoute>,
       },
       {
-        path: 'allUsers',
-        element: <AllUsers></AllUsers>
+        path: "allUsers",
+        element: <AdminRoute><AllUsers></AllUsers></AdminRoute>,
       },
       {
-        path: 'postGallery',
-        element: <PostGallery></PostGallery>
-
+        path: "postGallery",
+        element:<AdminRoute> <PostGallery></PostGallery></AdminRoute>,
       },
-
 
       {
-        path: 'toBeTrainers',
-        element: <ToBeTrainers />
+        path: "toBeTrainers",
+        element: <AdminRoute><ToBeTrainers /></AdminRoute>,
       },
       {
-        path: 'postPackages',
-        element: <PostedPackages></PostedPackages>
+        path: "postPackages",
+        element: <AdminRoute><PostedPackages></PostedPackages></AdminRoute>,
       },
       {
-        path: 'servicesApproval',
-        element: <ServicesApproval />
+        path: "servicesApproval",
+        element: <AdminRoute><ServicesApproval /></AdminRoute>,
       },
       {
-        path: '/dashboard/toBeTrainers/trainerDetail',
-        element: <TrainerDetail />
+        path: "/dashboard/toBeTrainers/trainerDetail",
+        element: <AdminRoute><TrainerDetail /></AdminRoute>,
       },
       {
-        path: '/dashboard/servicesApproval/serviceDetail',
-        element: <ServiceDetail />
+        path: "/dashboard/servicesApproval/serviceDetail",
+        element: <AdminRoute><ServiceDetail /></AdminRoute>,
       },
+
       // user route
       // {
       //   path: 'calender',
@@ -176,51 +175,66 @@ const router = createBrowserRouter([
       // },
       {
         path: 'myServices',
-        element: <MyServices />
+        element: <UserRoute><MyServices /></UserRoute>
       },
       {
         path: 'myServices/myServicesDetails',
-        element: <ServicesDetails />
+        element: <UserRoute><ServicesDetails /></UserRoute>
       },
       {
         path: 'applyTrainerForm',
-        element: <TrainerForm></TrainerForm>
+        element: <UserRoute><TrainerForm></TrainerForm></UserRoute>
       }
       ,
       {
         path: 'orderHistory',
-        element: <OrderHistory></OrderHistory>
+        element: <UserRoute><OrderHistory></OrderHistory></UserRoute>
       },
       {
         path: 'userProfile',
-        element: <UserProfile></UserProfile>
+        element:<UserRoute> <UserProfile></UserProfile></UserRoute>
+      },
+      {
+    path:'todo',
+    element:<UserRoute> <Todo/></UserRoute>
       },
 
       //Trainer Route
 
       {
-        path: 'trainerProfile',
-        element: <TrainerProfile />
+        path: "todo",
+        element: <TrainerRoute><Todo /></TrainerRoute>,
+      },
+
+
+      {
+        path: "trainerProfile",
+        element: <TrainerRoute><TrainerProfile /></TrainerRoute>,
+      },
+
+      {
+        path: "orderHistory",
+        element: <TrainerRoute><OrderHistory></OrderHistory></TrainerRoute>,
       },
       {
         path: 'postBlog', 
-        element: <PostBlog />
+        element: <TrainerRoute><PostBlog /></TrainerRoute>
       },
       {
         path: 'orderHistory',
-        element: <OrderHistory />
+        element:<TrainerRoute> <OrderHistory /></TrainerRoute>
       },
       {
         path: 'updateProfile',
-        element: <UpdateProfile />
+        element:<TrainerRoute> <UpdateProfile /></TrainerRoute>
       },
       {
         path: 'trainerPostedService',
-        element: <TrainerPostedService />
+        element:<TrainerRoute> <TrainerPostedService /></TrainerRoute>
       },
       {
         path: 'todo',
-        element: <Todo />
+        element: <TrainerRoute><Todo /></TrainerRoute>
       }
 
 

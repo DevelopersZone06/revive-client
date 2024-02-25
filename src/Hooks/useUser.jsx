@@ -4,11 +4,12 @@ import { AuthContext } from "../Provider/AuthProvider";
 
 
 
-const useTrainer = () => {
-  const axiosPublic = useAxiosPublic();
+const useUser = () => {
+   
+    const axiosPublic = useAxiosPublic();
   const { user } = useContext(AuthContext);
-  const [trainerLoading, setLoading] = useState(true);
-  const [isTrainer, setIsTrainer] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [isUser, setIsUser] = useState(false);
   
   useEffect(() => {
       setLoading(true); // Set loading to true when starting query
@@ -16,7 +17,7 @@ const useTrainer = () => {
           try {
               const res = await axiosPublic.get(`/users`);
               const isTrainerExist = res.data.find(trainer => trainer.email === user?.email);
-              setIsTrainer(isTrainerExist?.role === "trainer");
+              setIsUser(isTrainerExist?.role === "user");
           } catch (error) {
               console.error("Error fetching data:", error);
           } finally {
@@ -31,9 +32,7 @@ const useTrainer = () => {
       }
   }, [axiosPublic, user]);
 
-  return { isTrainer, trainerLoading};
+  return { isUser, loading };
 };
 
- 
-
-export default useTrainer;
+export default useUser;

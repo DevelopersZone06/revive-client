@@ -19,7 +19,7 @@ import useTrainer from "../../Hooks/useTrainer";
 
 const Navbar = () => {
   const { isAdmin } = useAdmin();
-  const {isTrainer}=useTrainer();
+  const { isTrainer } = useTrainer();
   console.log(isTrainer);
   // console.log(isAdmin);
   // const user = true
@@ -104,18 +104,18 @@ const Navbar = () => {
             <li>
               <NavLink to="/contact">Contact</NavLink>
             </li>
-           
+
             {user && isAdmin && !isTrainer && (
               <li>
                 <NavLink to="/dashboard/adminHome">Dashboard</NavLink>
               </li>
             )}
-            {user &&  !isAdmin && !isTrainer &&  (
+            {user && !isAdmin && !isTrainer && (
               <li>
                 <NavLink to="/dashboard/userProfile">Dashboard</NavLink>
               </li>
             )}
-            {user &&  !isAdmin && isTrainer &&  (
+            {user && !isAdmin && isTrainer && (
               <li>
                 <NavLink to="/dashboard/trainerProfile">Dashboard</NavLink>
               </li>

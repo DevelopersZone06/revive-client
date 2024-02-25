@@ -1,25 +1,26 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-//import useAxiosPublic from "../../../../../Hooks/useAxiosPublic";
+import useAxiosPublic from "../../../../../Hooks/useAxiosPublic";
 
 
-//const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
-//const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
+const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
+const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 const TrainerPostedService = () => {
- // const axiosPublic = useAxiosPublic();
+ const axiosPublic = useAxiosPublic();
  const [openModal, setOpenModal] = useState(false);
     const { register,handleSubmit,formState: { errors },
       } = useForm()
-      const onSubmit =(data) => {
+      const onSubmit =async(data) => {
+        console.log(data.photo);
         console.log(data);
-        // const imageFile = { image: data.photo[1] };
-        // const res = await useAxiosPublic.post(image_hosting_api, imageFile, {
-        //   headers: {
-        //     "content-type": "multipart/form-data",
-        //   },
-        // });
-    // console.log(res.data);
+        const imageFile = { image: data.photo[0] };
+        const res = await axiosPublic.post(image_hosting_api, imageFile, {
+          headers: {
+            "content-type": "multipart/form-data",
+          },
+        });
+    console.log(res.data.data.url);
       }
     return (
         <div className="flex  flex-col gap-10  ">
@@ -52,21 +53,7 @@ const TrainerPostedService = () => {
                             
                             </label>
                             
-                            <label className="form-control w-full mb-4 max-w-xs">
-                            <div className="label">
-                              <span className="label-text text-sky-50">Trainer Image</span>
-                            
-                            </div>
-                            {/* include validation with required or other standard HTML validation rules */}
-                            <input   name="trainerImage"  type="file" {...register("trainerImage", { required: true })} className="block w-full text-sm text-sky-50
-                            file:mr-4 file:py-2 file:px-4
-                            file:rounded-full file:border-0
-                            file:text-sm file:font-semibold
-                            file:bg-sky-50 file:text-sky-700
-                            hover:file:bg-sky-100" />
-                            {/* errors will return when field validation fails  */}
-                            
-                            </label>
+                           
                             
                              
                               </div>
@@ -78,7 +65,7 @@ const TrainerPostedService = () => {
                                 <span className="label-text text-sky-50">Service Title</span>
                             
                               </div>
-                              <input  name="trainerTitle"  type="text" {...register("trainerTitle", { required: true })} className="input text-sm input-bordered w-full h-10 max-w-xs" />
+                              <input  name="trainerTitle"  type="text" {...register("trainerTitle", { required: true })} className="input  text-sm input-bordered w-full h-10 max-w-xs" />
                             
                             </label>
                             
@@ -137,8 +124,8 @@ const TrainerPostedService = () => {
                              
                               <select className="input text-sm input-bordered w-full h-10 max-w-xs" {...register("category" , { required: true })}>
                                 <option value="" >Select Category</option>
-                                <option  value="female">female</option>
-                                <option  value="male">male</option>
+                                <option  value="female">Yoga</option>
+                                <option  value="male">Cardio</option>
                                 <option value="other">other</option>
                               </select>
                             
@@ -169,7 +156,7 @@ const TrainerPostedService = () => {
                                <span className="label-text text-sky-50">Service Image</span>
                             
                              </div>
-                             <input  type="file" name="ServiceImage" {...register("ServiceImage", { required: true })} className="block w-full text-sm text-sky-50
+                             <input  type="file" name="photo" {...register("photo", { required: true })} className="block w-full text-sm text-sky-50
                              file:mr-4 file:py-2 file:px-4
                              file:rounded-full file:border-0
                              file:text-sm file:font-semibold
@@ -279,7 +266,7 @@ const TrainerPostedService = () => {
                     <span className="label-text text-sky-50">Trainer Name</span>
 
                   </div>
-                  <input type="text" name="trainerName" placeholder="Trainer Name" className="input text-sm input-bordered w-full h-10 max-w-xs" />
+                  <input type="text" name="trainerName" placeholder="Trainer Name" className="input text-zinc-950 text-sm input-bordered w-full h-10 max-w-xs" />
 
                 </label>
                 <label className="form-control w-full mb-4 max-w-xs">
@@ -287,7 +274,7 @@ const TrainerPostedService = () => {
                     <span className="label-text text-sky-50">Price</span>
 
                   </div>
-                  <input type="text" name="price" placeholder="Price" className="input text-sm input-bordered w-full h-10 max-w-xs" />
+                  <input type="text" name="price" placeholder="Price" className="input text-sm input-bordered w-full h-10 max-w-xs text-zinc-950" />
 
                 </label>
                 <label className="form-control w-full mb-4 max-w-xs">
@@ -295,15 +282,20 @@ const TrainerPostedService = () => {
                     <span className="label-text text-sky-50">Duration</span>
 
                   </div>
-                  <input type="text" name="duration" placeholder="Duration" className="input text-sm input-bordered w-full h-10 max-w-xs" />
+                  <input type="text" name="duration" placeholder="Duration" className="input text-sm input-bordered w-full h-10 max-w-xs text-zinc-950" />
 
                 </label>
                 <label className="form-control w-full mb-4 max-w-xs">
                   <div className="label">
-                    <span className="label-text text-sky-50">Category</span>
+                    <span className="label-text text-sky-50 ">Category</span>
 
                   </div>
-                  <input type="text" name="category" placeholder="Category" className="input text-sm input-bordered w-full h-10 max-w-xs" />
+                  <select className="input text-sm input-bordered w-full h-10 bg-sky-100 text-zinc-950 max-w-xs" {...register("category" , { required: true })}>
+                  <option value="" >Select Category</option>
+                  <option  value="female">Yoga</option>
+                  <option  value="male">Cardio</option>
+                  <option value="other">other</option>
+                </select>
 
                 </label>
                 <label className="form-control w-full mb-4 max-w-xs">
