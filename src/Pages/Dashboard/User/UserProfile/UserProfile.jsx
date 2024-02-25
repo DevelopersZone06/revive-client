@@ -44,9 +44,9 @@ const UserProfile = () => {
       <div>
         <div className="flex flex-row gap-8">
           {/* right side */}
-          <div className="w-2/3 ">
-            <div className="flex flex-row justify-evenly   items-center">
-              <h1 className="text-2xl p-4 w-full font-bold text-left from-sky-600  via-sky-200 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">My Profile</h1>
+          <div className="w-full md:w-2/3">
+            <div className="flex flex-row justify-evenly my-3  items-center">
+              <h1 className="text-2xl p-2 w-full font-bold text-left from-sky-600  via-sky-200 to-blue-600 bg-gradient-to-r bg-clip-text text-transparent">My Profile</h1>
             
               <label
                 htmlFor="my_modal_7"
@@ -69,7 +69,7 @@ const UserProfile = () => {
                   }}>
                     <form onSubmit={handleUpdate} className="max-w-[70%] mx-auto  ">
                       <div className="flex lg:flex-row my-5 md:flex-row flex-col gap-10 items-center">
-                        <div className="relative z-0 w-full  group">
+                        <div className="relative z-0 w-full space-y-3 py-4  group">
                           <input
                             type="text"
                             name="title" defaultValue={name}
