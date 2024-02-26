@@ -89,7 +89,7 @@ const Dashboard = () => {
                     isPending ? "pending" : isActive ? "text-sky-200" : ""
                   }
                 >
-                  <GrGallery></GrGallery>
+                  <GrGallery className="text-2xl"></GrGallery>
                   Post Gallery
                 </NavLink>
               </li>
@@ -100,7 +100,7 @@ const Dashboard = () => {
                     isPending ? "pending" : isActive ? "text-sky-200  " : ""
                   }
                 >
-                  <TbPackages></TbPackages>
+                  <TbPackages className="text-2xl"></TbPackages>
                   Post Packages
                 </NavLink>
               </li>
@@ -111,7 +111,7 @@ const Dashboard = () => {
                     isPending ? "pending" : isActive ? "text-sky-200" : ""
                   }
                 >
-                  <RiServiceFill></RiServiceFill>
+                  <RiServiceFill className="text-2xl"></RiServiceFill>
                   Services Approval
                 </NavLink>
               </li>
@@ -133,9 +133,9 @@ const Dashboard = () => {
              <li>
              <NavLink
                to={"/dashboard/trainerProfile"}
-               className={({ isActive, isPending }) =>
-                 isPending ? "pending" : isActive ? "text-sky-200" : ""
-               }
+              //  className={({ isActive, isPending }) =>
+              //    isPending ? "pending" : isActive ? "text-sky-200" : ""
+              //  }
              >
                <CgProfile />
               <span className="xl:flex lg:flex md:flex hidden"> My Profile</span>  
@@ -144,9 +144,9 @@ const Dashboard = () => {
              <li>
              <NavLink
                to={"/dashboard/trainerPostedService"}
-               className={({ isActive, isPending }) =>
-                 isPending ? "pending" : isActive ? "text-sky-200" : ""
-               }
+              //  className={({ isActive, isPending }) =>
+              //    isPending ? "pending" : isActive ? "text-sky-200" : ""
+              //  }
              >
                <RiServiceFill />
                <span className="xl:flex lg:flex md:flex hidden">  My Services</span>  
@@ -156,9 +156,9 @@ const Dashboard = () => {
              <li>
              <NavLink
                to={"/dashboard/trainerProfile"}
-               className={({ isActive, isPending }) =>
-                 isPending ? "pending" : isActive ? "text-sky-200" : ""
-               }
+              //  className={({ isActive, isPending }) =>
+              //    isPending ? "pending" : isActive ? "text-sky-200" : ""
+              //  }
              >
                <FaNewspaper />
                <span className="xl:flex lg:flex md:flex  hidden">  My Blogs</span>  
@@ -168,9 +168,9 @@ const Dashboard = () => {
              <li>
              <NavLink
                to={"/dashboard/trainerProfile"}
-               className={({ isActive, isPending }) =>
-                 isPending ? "pending" : isActive ? "text-sky-200" : ""
-               }
+              //  className={({ isActive, isPending }) =>
+              //    isPending ? "pending" : isActive ? "text-sky-200" : ""
+              //  }
              >
                <IoIosPeople />
                <span className="xl:flex lg:flex md:flex hidden">  My Customers</span>  
@@ -180,9 +180,9 @@ const Dashboard = () => {
              <li>
              <NavLink
                to={"/dashboard/todo"}
-               className={({ isActive, isPending }) =>
-                 isPending ? "pending" : isActive ? "text-sky-200" : ""
-               }
+              //  className={({ isActive, isPending }) =>
+              //    isPending ? "pending" : isActive ? "text-sky-200" : ""
+              //  }
              >
                < RiCalendarTodoFill/>
                <span className="xl:flex lg:flex md:flex hidden"> To-Do</span>  
@@ -193,9 +193,9 @@ const Dashboard = () => {
              <li >
              <NavLink
              
-               className={({ isActive, isPending }) =>
-                 isPending ? "pending" : isActive ? "text-sky-200" : ""
-               }
+              //  className={({ isActive, isPending }) =>
+              //    isPending ? "pending" : isActive ? "text-sky-200" : ""
+              //  }
              >
               
               

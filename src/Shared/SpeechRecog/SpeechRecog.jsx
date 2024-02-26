@@ -1,9 +1,7 @@
 import 'regenerator-runtime/runtime';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
-
 import useClipboard from "react-use-clipboard";
 import { useState } from 'react';
-
 
 const SpeechRecog = () => {
 
@@ -12,7 +10,6 @@ const SpeechRecog = () => {
     const [textForCopy, setTextForCopy] = useState();
 
     const [isCopied, setCopied] = useClipboard(textForCopy);
-
 
     const { transcript, browserSupportsSpeechRecognition } = useSpeechRecognition();
 
@@ -39,11 +36,8 @@ const SpeechRecog = () => {
                     </button>
                     <button className='btn mx-10  text-white btn-success' onClick={startListenning}>Start Listening</button>
                     <button className='btn mx-10 text-white btn-success' onClick={SpeechRecognition.stopListening}>Stop Listening</button>
-
                 </div>
-
             </div>
-
         </>
     );
 };

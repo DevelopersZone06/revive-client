@@ -194,6 +194,10 @@ const router = createBrowserRouter([
         path: 'userProfile',
         element:<UserRoute> <UserProfile></UserProfile></UserRoute>
       },
+      {
+    path:'todo',
+    element:<UserRoute> <Todo/></UserRoute>
+      },
 
       //Trainer Route
 
