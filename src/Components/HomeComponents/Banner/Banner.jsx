@@ -2,6 +2,7 @@
 import img3 from "../../../assets/banner/woman-lotus-pose-park.jpg";
 import '../../../Styles/banner.css'
 import bannerImg from '../../../assets/banner/bg2.jpg'
+import { Link } from "react-router-dom";
 
 
 const Banner = () => {
@@ -28,7 +29,7 @@ const Banner = () => {
             </p>
 
             <div className="text-center lg:text-left"> 
-              <a
+              <Link to={'/contact'}
                 data-aos="fade-up"
                 href="#contact"
                 className="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-[#0D1322] transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 group"
@@ -69,7 +70,7 @@ const Banner = () => {
                 <span className="relative w-full text-left transition-colors duration-200 ease-in-out group-hover:text-[#000000]">
                   Contact
                 </span>
-              </a>
+              </Link>
 
             </div>
             
