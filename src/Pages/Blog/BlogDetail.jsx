@@ -82,6 +82,7 @@ const BlogDetail = () => {
         console.log(res.data)
         setComments([commentIs, ...comments])
       })
+    e.target.reset()
   }
 
 
