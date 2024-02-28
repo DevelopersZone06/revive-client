@@ -70,7 +70,8 @@ const BlogDetail = () => {
     const comment = e.target.comment.value
     const commentIs = {
       name: user?.displayName,
-      comment: comment
+      comment: comment,
+      img:user?.photoURL
     }
 
     const newComment = {
