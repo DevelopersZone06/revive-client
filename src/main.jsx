@@ -70,7 +70,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/blog/:id",
-        element: <BlogDetail />,
+        element:<PrivateRoute> <BlogDetail /></PrivateRoute>,
       },
       {
         path: "/speech",
