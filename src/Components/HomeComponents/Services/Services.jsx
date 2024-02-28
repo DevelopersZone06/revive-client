@@ -20,7 +20,7 @@ const Services = () => {
 
  
   return (
-    <div className=" px-[2%] sm:px-[5%] lg:px-[8%] py-28" style={{backgroundImage:`url('https://i.ibb.co/T1sWNkf/img1.webp')`,backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', }}>
+    <div className=" px-[2%] sm:px-[5%] lg:px-[8%] py-28"  style={{ background: 'radial-gradient(circle, rgba(0,51,111,1) 0%, rgba(0,0,0,1) 100%)' }} >
       <Title subHeading={"Services"} heading={"Our Some Services"} fontColor={'sky-100'}></Title>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8">
         {services.slice(0,8).map((service) => (

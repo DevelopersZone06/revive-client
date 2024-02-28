@@ -10,7 +10,7 @@ const CommentCard = ({ comment }) => {
     <>
       <div className="shadow-lg shadow-gray-400 my-3 py-7 px-4 rounded-xl">
       <div className="flex items-center gap-3 my-3">
-      <img src={comment.img} alt="" className="h-12 w-12 rounded-full" />
+      <img src={comment.img} alt="" className="h-10 w-10 rounded-full" />
         <h3 className="py-2 text-lg  text-sky-800 font-bold">{comment.name}</h3>
       </div>
         <hr className="w-1/4 text-lg"/>
