@@ -70,7 +70,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/blog/:id",
-        element: <BlogDetail />,
+        element:<PrivateRoute> <BlogDetail /></PrivateRoute>,
       },
       {
         path: "/speech",
@@ -193,6 +193,10 @@ const router = createBrowserRouter([
       {
         path: 'userProfile',
         element:<UserRoute> <UserProfile></UserProfile></UserRoute>
+      },
+      {
+    path:'todo',
+    element:<UserRoute> <Todo/></UserRoute>
       },
 
       //Trainer Route

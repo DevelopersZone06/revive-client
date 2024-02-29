@@ -89,7 +89,7 @@ const Dashboard = () => {
                     isPending ? "pending" : isActive ? "text-sky-200" : ""
                   }
                 >
-                  <GrGallery></GrGallery>
+                  <GrGallery className="text-2xl"></GrGallery>
                   Post Gallery
                 </NavLink>
               </li>
@@ -100,7 +100,7 @@ const Dashboard = () => {
                     isPending ? "pending" : isActive ? "text-sky-200  " : ""
                   }
                 >
-                  <TbPackages></TbPackages>
+                  <TbPackages className="text-2xl"></TbPackages>
                   Post Packages
                 </NavLink>
               </li>
@@ -111,7 +111,7 @@ const Dashboard = () => {
                     isPending ? "pending" : isActive ? "text-sky-200" : ""
                   }
                 >
-                  <RiServiceFill></RiServiceFill>
+                  <RiServiceFill className="text-2xl"></RiServiceFill>
                   Services Approval
                 </NavLink>
               </li>
