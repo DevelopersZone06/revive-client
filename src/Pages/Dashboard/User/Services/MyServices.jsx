@@ -25,7 +25,7 @@ const MyServices = () => {
         }}>
          
          <h2 className="text-2xl font-semibold">Total Services : 03 </h2>
-          <h2 className="text-2xl font-semibold">Total Price : $ 1234 </h2>
+          {/* <h2 className="text-2xl font-semibold">Total Price : $ 1234 </h2> */}
 
           <button onClick={() => setOpenModal(true)} className="rounded-sm px-4 py-2 hover:bg-sky-100 border bg-sky-50 hover:text-sky-700 text-sky-700 font-bold capitalize md:text-sm text-sm  transition-all hover:scale-105 duration-150 ease-in-out">Pay Now</button>
           <div className={`fixed flex justify-center items-center z-[100] ${openModal ? 'visible opacity-1' : 'invisible opacity-0'} duration-300 inset-0 w-10/12 mx-auto md:w-full h-full`}>
@@ -52,14 +52,11 @@ const MyServices = () => {
                               <input className="flex h-10 w-full rounded-md border px-3" placeholder="MM/YY" />
                             </div>
                             <div className="space-y-2">
-                              <label className="text-sm font-medium leading-none">CVV</label>
+                              <label className="text-sm font-medium leading-none">CVC</label>
                               <input className="flex h-10 w-full rounded-md border px-3" placeholder="Enter your CVV" />
                             </div>
                           </div>
-                          <div className="space-y-2">
-                            <label className="text-sm font-medium leading-none">Billing Address</label>
-                            <input className="flex h-10 w-full rounded-md border px-3" placeholder="Enter your billing address" />
-                          </div>
+                         
                         </form>
                       </div>
                     </div>
