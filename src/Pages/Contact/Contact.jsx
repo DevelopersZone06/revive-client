@@ -5,9 +5,37 @@ import { MdLocationOn, MdMarkEmailRead, MdOutlineMailLock } from "react-icons/md
 import { BsTextareaT } from "react-icons/bs";
 
 import { Helmet } from "react-helmet-async";
-
+import emailjs from '@emailjs/browser';
+import { useRef } from "react";
+import Swal from "sweetalert2";
 
 const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_ilsffoj', 'template_qmg0v3d', form.current, {
+        publicKey: 'WHBBA7aoOqbJLSb0i',
+      })
+      .then(
+        () => {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Your mail has been sent",
+            showConfirmButton: false,
+            timer: 1500
+          });
+          // console.log('SUCCESS!');
+          form.current.reset();
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
+  };
   return (
  
       <div>
@@ -25,14 +53,14 @@ const Contact = () => {
                 <div className="flex flex-col lg:flex-row mt-14 justify-between">
                     <div className="mb-10">
                         
-                       <form action="">
+                       <form ref={form} onSubmit={sendEmail}>
                          {/* name input */}
                          <label className="relative block my-3">
                             <span className="sr-only">Name</span>
                             <span className="absolute inset-y-0 left-0 flex items-center pl-2">
                             <FaUserCog className="dark:text-black w-[20px]"/>
                                 </span>
-                            <input className="placeholder:italic w-full md:w-[500px] placeholder:text-slate-400 block bg-white border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-600 focus:ring-sky-700 focus:ring-1 sm:text-sm" placeholder="Write your name..." type="text" name="name" />
+                            <input className="placeholder:italic w-full md:w-[500px] placeholder:text-slate-400 block bg-white border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-600 focus:ring-sky-700 focus:ring-1 sm:text-sm" placeholder="Write your name..." type="text" name="user_name" />
                         </label>
                         {/* email input */}
                         <label className="relative block my-3">
@@ -40,7 +68,7 @@ const Contact = () => {
                             <span className="absolute inset-y-0 left-0 flex items-center pl-2">
                             <MdOutlineMailLock className="dark:text-black w-[20px]"/>
                                 </span>
-                            <input className="placeholder:italic w-full md:w-[500px] placeholder:text-slate-400 block bg-white border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-600 focus:ring-sky-700 focus:ring-1 sm:text-sm" placeholder="Write your email..." type="email" name="email" />
+                            <input className="placeholder:italic w-full md:w-[500px] placeholder:text-slate-400 block bg-white border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-600 focus:ring-sky-700 focus:ring-1 sm:text-sm" placeholder="Write your email..." type="email" name="user_email" />
                         </label>
                         {/* textarea */}
                         <label className="relative block my-3">
@@ -50,11 +78,11 @@ const Contact = () => {
                             <BsTextareaT className="dark:text-black mt-3 w-[20px]"/>
                                 </span>
                             
-                            <textarea  className="placeholder:italic w-full md:w-[500px] placeholder:text-slate-400 block bg-white border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-600 focus:ring-sky-700 focus:ring-1 sm:text-sm" placeholder="Write your email..." name="" id="" cols="30" rows="7"></textarea>
+                            <textarea  className="placeholder:italic w-full md:w-[500px] placeholder:text-slate-400 block bg-white border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-600 focus:ring-sky-700 focus:ring-1 sm:text-sm" placeholder="Write your email..." name="message" id="" cols="30" rows="7"></textarea>
                         </label>
                         <button
                  
-                 className="rounded-xl px-8 py-3 hover:bg-[#144479] border border-sky-700 hover:text-sky-100 text-sky-700 font-bold capitalize md:text-sm text-sm  transition-all duration-150 ease-in-out "
+                 className="rounded-xl px-8 py-3 hover:bg-[#144479] border border-sky-700 hover:text-sky-100 text-sky-700 font-bold capitalize md:text-sm text-sm  transition-all duration-150 ease-in-out " type="submit" value="Send" 
                >
                Submit
                </button>
