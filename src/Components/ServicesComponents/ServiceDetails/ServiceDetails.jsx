@@ -2,9 +2,11 @@ import { Link, useLoaderData } from "react-router-dom";
 import ServicesTitle from "./ServicesTitle";
 import Frequently from "./Frequently";
 import { IoCheckmarkDone } from "react-icons/io5";
+import { useState } from "react";
 
 
 const ServiceDetails = () => {
+    
     const serviceData = useLoaderData();
 
 
@@ -55,7 +57,8 @@ const ServiceDetails = () => {
                             <Link to={serviceData?.video}><button className='rounded-lg px-8 py-2 hover:bg-sky-100 border bg-sky-50 hover:text-sky-700 text-sky-700 font-bold capitalize md:text-sm text-sm  transition-all duration-150 ease-in-out'>watch video</button></Link>
                         </div>
                         <div className="flex justify-center items-center py-3 px-3">
-                            <Link><button className='rounded-lg px-7 py-2 hover:bg-sky-100 border bg-sky-50 hover:text-sky-700 text-sky-700 font-bold capitalize md:text-sm text-sm  transition-all duration-150 ease-in-out'>talk to trainer</button></Link>
+                            <Link to="/payment"><button className='rounded-lg px-7 py-2 hover:bg-sky-100 border bg-sky-50 hover:text-sky-700 text-sky-700 font-bold capitalize md:text-sm text-sm  transition-all duration-150 ease-in-out'>Book the trainer</button></Link> 
+                           
                         </div>
 
                     </div>

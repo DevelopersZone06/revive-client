@@ -51,6 +51,7 @@ import PrivateRoute from "./Routes/PrivateRoute";
 import AdminRoute from "./Routes/AdminRoute";
 import TrainerRoute from "./Routes/TrainerRoute";
 import UserRoute from "./Routes/UserRoute";
+import Payment from "./Components/ServicesComponents/ServiceDetails/Payment";
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -121,6 +122,10 @@ const router = createBrowserRouter([
         element: <ServiceDetails />,
         loader: ({ params }) =>
           fetch(`https://revive-server-dun.vercel.app/service/${params.id}`),
+      },
+      {
+        path: "payment",
+        element: <Payment></Payment>
       },
 
       {
