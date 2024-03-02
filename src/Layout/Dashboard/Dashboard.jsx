@@ -14,7 +14,6 @@ import { FaArrowsToDot } from "react-icons/fa6";
 import { CgProfile } from "react-icons/cg";
 import { TbDetails } from "react-icons/tb";
 import { Helmet } from "react-helmet-async";
-import useAuth from "../../Hooks/useAuth";
 import Profile from "../../Shared/Profile/Profile";
 import useTrainer from "../../Hooks/useTrainer";
 import { IoIosPeople } from "react-icons/io";
@@ -24,7 +23,6 @@ const Dashboard = () => {
   const { isAdmin, adminLoading  } = useAdmin();
   const { isTrainer,trainerLoading} = useTrainer();
   const { isUser, loading} =useUser()
- const { user } = useAuth()
   return (
     <div className="flex flex-col md:flex-row py-20 px-[2%] sm:px-[5%] lg:px-[5%] " style={{ background: 'radial-gradient(circle, rgba(0,51,111,1) 0%, rgba(0,0,0,1) 100%)' }}>
       <div className="md:w-64  md:min-h-screen ">
