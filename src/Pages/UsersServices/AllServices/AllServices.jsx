@@ -206,7 +206,7 @@ const AllServices = () => {
               {/* end of category */}
             </div>
           </div>
-          <div className="flex-1 p-5 " style={{backgroundImage:`url('https://i.ibb.co/GpYsZ4Z/img2.jpg')`}}>
+          <div className="flex-1 p-5 "  style={{ background: 'radial-gradient(circle, rgba(0,51,111,1) 0%, rgba(0,0,0,1) 100%)' }}>
           {/* All services  */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 p-10">
               {/* services card */}

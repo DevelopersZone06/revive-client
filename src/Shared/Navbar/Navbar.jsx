@@ -23,6 +23,7 @@ const Navbar = () => {
   const [menu, setMenu] = useState(false);
   const [notification, setNotification] = useState(false);
 
+  console.log(isTrainer)
   const { user } = useContext(AuthContext);
 
   const handleMenu = () => {

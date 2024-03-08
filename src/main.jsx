@@ -52,7 +52,13 @@ import AdminRoute from "./Routes/AdminRoute";
 import TrainerRoute from "./Routes/TrainerRoute";
 import UserRoute from "./Routes/UserRoute";
 
+
+
 const queryClient = new QueryClient();
+
+
+
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -70,7 +76,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/blog/:id",
-        element: <BlogDetail />,
+        element:<PrivateRoute> <BlogDetail /></PrivateRoute>,
       },
       {
         path: "/speech",
@@ -144,7 +150,7 @@ const router = createBrowserRouter([
       },
       {
         path: "postGallery",
-        element:<AdminRoute> <PostGallery></PostGallery></AdminRoute>,
+        element: <PostGallery></PostGallery>,
       },
 
       {
@@ -194,16 +200,13 @@ const router = createBrowserRouter([
         path: 'userProfile',
         element:<UserRoute> <UserProfile></UserProfile></UserRoute>
       },
-      {
-    path:'todo',
-    element:<UserRoute> <Todo/></UserRoute>
-      },
+    
 
       //Trainer Route
 
       {
         path: "todo",
-        element: <TrainerRoute><Todo /></TrainerRoute>,
+        element: <PrivateRoute> <Todo></Todo></PrivateRoute>
       },
 
 
@@ -233,7 +236,7 @@ const router = createBrowserRouter([
         element:<TrainerRoute> <TrainerPostedService /></TrainerRoute>
       },
       {
-        path: 'todo',
+        path: '/dashboard/todo',
         element: <TrainerRoute><Todo /></TrainerRoute>
       }
 
