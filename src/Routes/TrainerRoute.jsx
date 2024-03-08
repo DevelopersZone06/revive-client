@@ -17,7 +17,7 @@ const TrainerRoute = ({children}) => {
       return children;
     }
       return (
-          <Navigate to="/dashboard" ></Navigate>
+          <Navigate to="/" ></Navigate>
       );
 };
 
