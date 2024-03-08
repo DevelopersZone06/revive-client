@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import useAxiosPublic from "./useAxiosPublic";
 import { AuthContext } from "../Provider/AuthProvider";
 
-
+ 
 
 const useTrainer = () => {
   const axiosPublic = useAxiosPublic();

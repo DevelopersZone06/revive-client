@@ -155,7 +155,7 @@ const Dashboard = () => {
            </li>
              <li>
              <NavLink
-               to={"/dashboard/trainerProfile"}
+               to={"/dashboard/blogs"}
               //  className={({ isActive, isPending }) =>
               //    isPending ? "pending" : isActive ? "text-sky-200" : ""
               //  }
@@ -167,7 +167,7 @@ const Dashboard = () => {
            </li>
              <li>
              <NavLink
-               to={"/dashboard/trainerProfile"}
+               to={"/dashboard/customers"}
               //  className={({ isActive, isPending }) =>
               //    isPending ? "pending" : isActive ? "text-sky-200" : ""
               //  }
@@ -191,7 +191,7 @@ const Dashboard = () => {
            </li>
            <div className="divide-y divide-blue-200 h-2"></div>
              <li >
-             <NavLink
+             <div
              
               //  className={({ isActive, isPending }) =>
               //    isPending ? "pending" : isActive ? "text-sky-200" : ""
@@ -205,7 +205,7 @@ const Dashboard = () => {
                </div>
                
             
-             </NavLink>
+             </div>
            </li>
              </div>
              </>
