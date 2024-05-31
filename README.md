@@ -26,3 +26,29 @@ Welcome to Revive, your ultimate destination for health and fitness insights. Re
    Go to the revive-client folder
    <code>npm i</code> or
    <code>yarn</code>
+
+   It will install all libraries, frameworks and packages
+
+   then start the project
+   <code>npm run dev </code> or
+   <code>yarn run dev</code>
+
+3. **Necessary Keys**
+
+   After starting the application you'll see an error related to firebase api key
+   to solve this
+
+   create a folder in the root called <code>.env.local </code>
+   There add your firebase api keys or try ours
+   <code>
+   VITE_apiKey=AIzaSyANKtBFkA6L9-6C4gj9a5bzBVTa7mcZdmQ
+VITE_authDomain=revive-auth.firebaseapp.com
+VITE_projectId=revive-auth
+VITE_storageBucket=revive-auth.appspot.com
+VITE_messagingSenderId=229474170183
+VITE_appId=1:229474170183:web:2b56c72b52821f68458862
+VITE_IMAGE_HOSTING_KEY=2dcaa544aad104b5d74070bae2ff3838
+
+</code>
+
+**Following this way, you should start the Project**
