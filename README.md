@@ -40,15 +40,14 @@ Welcome to Revive, your ultimate destination for health and fitness insights. Re
 
    create a folder in the root called <code>.env.local </code>
    There add your firebase api keys or try ours
-   <code>
-   VITE_apiKey=AIzaSyANKtBFkA6L9-6C4gj9a5bzBVTa7mcZdmQ
+   <code>VITE_apiKey=AIzaSyANKtBFkA6L9-6C4gj9a5bzBVTa7mcZdmQ
 VITE_authDomain=revive-auth.firebaseapp.com
 VITE_projectId=revive-auth
 VITE_storageBucket=revive-auth.appspot.com
 VITE_messagingSenderId=229474170183
 VITE_appId=1:229474170183:web:2b56c72b52821f68458862
-VITE_IMAGE_HOSTING_KEY=2dcaa544aad104b5d74070bae2ff3838
+VITE_IMAGE_HOSTING_KEY=2dcaa544aad104b5d74070bae2ff3838</code>
 
-</code>
+This way the error should be gone and the project should run properly 
 
 **Following this way, you should start the Project**
