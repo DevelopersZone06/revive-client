@@ -39,7 +39,7 @@ Welcome to Revive, your ultimate destination for health and fitness insights. Re
    to solve this
 
    create a folder in the root called <code>.env.local </code>
-   There add your firebase api keys or try ours
+   There add your firebase api keys or try ours </br>
    <code>VITE_apiKey=AIzaSyANKtBFkA6L9-6C4gj9a5bzBVTa7mcZdmQ
 VITE_authDomain=revive-auth.firebaseapp.com
 VITE_projectId=revive-auth
