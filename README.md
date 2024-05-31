@@ -14,7 +14,7 @@ Welcome to Revive, your ultimate destination for health and fitness insights. Re
 
 ## Getting Started
 
-1. **Clone the Repository:**
+1. **Clone the Repository:** </br>
    ```bash```
    git clone https://github.com/DevelopersZone06/revive-client.git
 
