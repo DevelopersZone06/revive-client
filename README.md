@@ -16,10 +16,10 @@ Welcome to Revive, your ultimate destination for health and fitness insights. Re
 
 1. **Clone the Repository:** </br>
    ```bash```
-   git clone https://github.com/DevelopersZone06/revive-client.git
+   <code>git clone https://github.com/DevelopersZone06/revive-client.git</code>
 
    ```SSH``` 
-   git clone git@github.com:DevelopersZone06/revive-client.git
+   <code>git clone git@github.com:DevelopersZone06/revive-client.git</code>
 
 2. **Start the project:**
    
