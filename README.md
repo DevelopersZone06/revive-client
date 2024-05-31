@@ -15,8 +15,14 @@ Welcome to Revive, your ultimate destination for health and fitness insights. Re
 ## Getting Started
 
 1. **Clone the Repository:**
-   ```bash
+   ```bash```
    git clone https://github.com/DevelopersZone06/revive-client.git
 
-   ```SSH 
+   ```SSH``` 
    git clone git@github.com:DevelopersZone06/revive-client.git
+
+2. **Start the project:**
+   
+   Go to the revive-client folder
+   <code>npm i</code> or
+   <code>yarn</code>
